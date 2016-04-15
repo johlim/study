@@ -1,1 +1,0 @@
-cmd_/home/jhlim/study/lddstudy/test.ko := arm-cortex_a9-linux-gnueabi-ld -EL -r  -T /home/jhlim/git_local/myproject/kernel/kernel-3.4.39/scripts/module-common.lds --build-id  -o /home/jhlim/study/lddstudy/test.ko /home/jhlim/study/lddstudy/test.o /home/jhlim/study/lddstudy/test.mod.o
