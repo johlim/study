@@ -1,0 +1,14 @@
+obj-m 	:= test.o
+
+KERNELDIR	:= ../../kernel
+KDIR	:= ../../kernel
+PWD		:= $(shell pwd)
+
+default :
+	$(MAKE) -C $(KERNELDIR) SUBDIR=$(PWD) modules
+
+clean:
+	rm -rf *.ko
+	rm -rf *.mod.*
+	rm -rf .*.cmd
+	rm -rf *.o
