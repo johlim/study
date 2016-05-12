@@ -1,0 +1,1 @@
+cmd_/home/limjh/lddstudy/paramtest.ko := ld -r -m elf_i386 -T /usr/src/linux-headers-3.2.0-82-generic-pae/scripts/module-common.lds --build-id  -o /home/limjh/lddstudy/paramtest.ko /home/limjh/lddstudy/paramtest.o /home/limjh/lddstudy/paramtest.mod.o
