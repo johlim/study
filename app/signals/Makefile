@@ -1,8 +1,9 @@
 TARGET = signal_test
 #SOURCE = blocksignal.c 
 #SOURCE = blocksigusr.c 
-SOURCE = pibonacci.c
-CC=$(CROSSNAME)gcc
+#SOURCE = pibonacci.c
+SOURCE = signal_ctrl.c
+#CC=$(CROSSNAME)gcc
 LIB = -lpthread
 DEBUGOPTS = -fprofile-arcs -ftest-coverage -pg
 
