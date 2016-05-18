@@ -1,0 +1,8 @@
+cmake_minimum_required (VERSION 2.6)
+project (list0721)
+include_directories(/usr/include/glib-2.0)
+include_directories(/usr/lib/i386-linux-gnu/glib-2.0/include)
+add_executable (list0721  list0721.c)
+find_library(NAMES glib-2.0 PATHS /usr/lib)
+TARGET_LINK_LIBRARIES(list0721  glib-2.0 )	
+add_definitions(-Wall -g -O0)

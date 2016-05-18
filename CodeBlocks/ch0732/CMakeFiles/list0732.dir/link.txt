@@ -1,0 +1,1 @@
+/usr/bin/gcc      CMakeFiles/list0732.dir/list0732.c.o  -o list0732 -rdynamic -lglib-2.0 -lxml2 

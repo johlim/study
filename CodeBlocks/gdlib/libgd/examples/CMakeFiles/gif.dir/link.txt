@@ -1,0 +1,1 @@
+/usr/bin/gcc      CMakeFiles/gif.dir/gif.c.o  -o gif -rdynamic ../src/libgd.so -lfreetype -lpng -lz ../libimagequant/libimagequant.a -lfontconfig -Wl,-rpath,/home/limjh/src/gdlib/libgd/src 

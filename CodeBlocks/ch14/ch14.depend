@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1364642189 source:/home/limjh/src/ch14/list1414B.c
+	<stdlib.h>
+	<gtk/gtk.h>
+	<unicap.h>
+	<unicapgtk.h>
+
+1364644007 source:/home/limjh/src/ch14/list1421.c
+	<usb.h>
+	<stdio.h>
+

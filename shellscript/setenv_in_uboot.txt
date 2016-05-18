@@ -1,0 +1,83 @@
+
+-- android usb booting
+
+setenv bootargs console=ttyAMA0,115200 ip=192.168.144.72:192.168.144.77:192.168.144.254:255.255.255.0::eth0:off init=/init root=/dev/uba2 rw rootfstype=ext3 rootdelay=1
+
+setenv bootargs console=ttyAMA0,115200 init=/init root=/dev/uba2 rw rootfstype=ext3 rootdelay=1
+
+setenv bootcmd nand read 0x61000000 0x100000 0x400000;bootm 0x61000000
+
+setenv ethact dm9000
+
+setenv ethaddr 12:23:34:45:56:62
+
+setenv gatewayip 192.168.0.10
+
+setenv ipaddr 192.168.0.11
+
+setenv netmask 255.255.255.0
+
+setenv serverip 192.168.0.10
+
+
+setenv bootcmd tftp 0x61000000 uImage\;bootm 0x61000000
+
+-- linux ramdisk
+
+setenv bootargs console=ttyAMA0,115200 ip=192.168.0.11:192.168.0.10::255.255.255.0::eth0:off initrd=0x63000000,32M root=/dev/ram rw rootdelay=1
+
+setenv bootcmd nand read 0x61000000 0x100000 0x400000\;nand read 0x62000000 0x500000 0x700000\; bootm 0x61000000
+
+setenv bootcmd tftp 0x61000000 uImage\;tftp 0x63000000 ramdisk_32m.gz\; bootm 0x61000000
+setenv bootcmd tftp 0x61000000 uImage-120221-0932\;tftp 0x63000000 ramdisk_32m.gz\; bootm 0x61000000
+
+
+
+-- android nfs
+
+setenv bootargs console=ttyAMA0,115200 ip=192.168.0.11:192.168.0.10:192.168.0.10:255.255.255.0::eth0:on init=/init root=/dev/nfs rw nfsroot=192.168.0.10:/home/_nfs_root/and rootdelay=1
+
+setenv bootcmd nand read 0x61000000 0x100000 0x400000; bootm 0x61000000
+
+
+
+-- android nand booting
+
+setenv bootargs console=ttyAMA0,115200 init=/init root=ubi0:root rw rootfstype=ubifs ubi.mtd=3
+
+setenv bootargs console=ttyAMA0,115200 init=/init root=ubi0:root rw rootfstype=ubifs ubi.mtd=6
+
+setenv bootcmd nand read 61000000 kernel\; bootm 61000000
+
+
+-- realtek wifi
+
+CONFIG_BCM4329 module define -> CONFIG_WIRELESS_EXT define.
+
+
+
+- sd booting
+1. nfs
+setenv bootargs console=ttyAMA0,115200 ip=192.168.0.11:192.168.0.11:192.168.0.10:255.255.255.0::eth0:on init=/init root=/dev/nfs rw nfsroot=192.168.0.10:/home/_nfs_root/and rootdelay=5
+setenv bootcmd movi read kernel 0x61000000 \; bootm 0x61000000
+
+2. kernel@SD
+이건 SD의 세번째 파티션을 ext2로 포맷하고 root fs로 지정할 경우
+
+setenv bootargs console=ttyAMA0,115200 init=/init root=/dev/mmcblk0p3 rootfstype=ext4 rw rootdelay=8
+setenv bootargs console=ttyAMA0,115200 init=/init root=/dev/mmcblk0p3 rootfstype=ext2 rw rootdelay=8
+
+
+- farm
+setenv bootargs console=ttyAMA0,115200 init=/init ubi.mtd=6 root=ubi0:root rootfstype=ubifs rw
+setenv bootcmd nand read 0x61000000 nand.kernel \;bootm 0x61000000
+
+
+
+setenv bootargs root=ubi0:rootfs rootfstype=ubifs console=ttyAMA0,115200 mac=00:a1:b2:c3:d4:03 ip=192.168.0.11:192.168.0.11:192.168.0.10:255.255.255.0::eth0:on ubi.mtd=rootfs,2048
+
+setenv bootargs root=ubi0:rootfs rootfstype=ubifs console=ttyAMA0,115200 ubi.mtd=rootfs,2048		
+setenv bootargs root=ubi0:rootfs rootfstype=ubifs console=ttyAMA0,115200 ubi.mtd=rootfs,2048 ubi.mtd=userdata,2048
+
+setenv bootargs console=ttyAMA0,115200 ip=192.168.0.11:192.168.0.10::255.255.255.0::eth0:on init=/init root=/dev/nfs rw nfsroot=192.168.0.10:/home/_nfs_root/sysroot rootdelay=1
+

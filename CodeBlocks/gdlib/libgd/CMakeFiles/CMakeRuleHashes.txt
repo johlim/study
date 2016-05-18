@@ -1,0 +1,10 @@
+# Hashes of file build rules.
+1f45a32f87b8e0cc54a225321f3a1cff CMakeFiles/libimagequant
+7d959450fd6a7211a7e953f9cc298414 CMakeFiles/libimagequant-complete
+645ac67827b2a041a962b975e8511a4e libimagequant-prefix/src/libimagequant-stamp/libimagequant-build
+01eef640c878ef8fd37f64c37a26b22d libimagequant-prefix/src/libimagequant-stamp/libimagequant-configure
+bf5bae4876ecbdfdc8b53b897dcdadcb libimagequant-prefix/src/libimagequant-stamp/libimagequant-download
+2d1e58720f6230ec98410617632ac61e libimagequant-prefix/src/libimagequant-stamp/libimagequant-install
+e4544ea86938d67687dcb638197b632a libimagequant-prefix/src/libimagequant-stamp/libimagequant-mkdir
+4bfb490231c6786f89dd4be9e86848b0 libimagequant-prefix/src/libimagequant-stamp/libimagequant-patch
+1471ae1ad8aed056bdc8aca4754562ed libimagequant-prefix/src/libimagequant-stamp/libimagequant-update

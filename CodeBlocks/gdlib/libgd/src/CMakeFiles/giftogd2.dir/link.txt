@@ -1,0 +1,1 @@
+/usr/bin/gcc      CMakeFiles/giftogd2.dir/giftogd2.c.o  -o giftogd2 -rdynamic libgd.so -lfreetype -lpng -lz ../libimagequant/libimagequant.a -lfontconfig -Wl,-rpath,/home/limjh/src/gdlib/libgd/src: 

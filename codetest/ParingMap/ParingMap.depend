@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1445099785 source:/home/limjh/codetest/ParingMap/conflict.c
+
+1445096532 source:/home/limjh/codetest/ParingMap/main.c
+	<stdio.h>
+	<stdlib.h>
+
