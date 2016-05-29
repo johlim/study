@@ -1,0 +1,32 @@
+Performing C++ SOURCE FILE Test memchrExists failed with the following output:
+Change Dir: /home/limjh/src/gdlib/libgd/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/limjh/src/gdlib/libgd/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/limjh/src/gdlib/libgd/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DmemchrExists -I/usr/local/include    -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/limjh/src/gdlib/libgd/CMakeFiles/CMakeTmp/src.cxx
+/home/limjh/src/gdlib/libgd/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/limjh/src/gdlib/libgd/CMakeFiles/CMakeTmp/src.cxx:9:31: error: address of overloaded function with no contextual type information
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] 오류 1
+make[1]: Leaving directory `/home/limjh/src/gdlib/libgd/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] 오류 2
+
+Source file was:
+
+#include <string.h>
+
+void cmakeRequireSymbol(int dummy,...){(void)dummy;}
+int main()
+{
+#ifndef memchr
+#ifndef _MSC_VER
+  cmakeRequireSymbol(0,&memchr);
+#else
+  char i = sizeof(&memchr);
+#endif
+#endif
+  return 0;
+}
+

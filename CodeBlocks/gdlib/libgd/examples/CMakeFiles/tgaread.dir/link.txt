@@ -1,0 +1,1 @@
+/usr/bin/gcc      CMakeFiles/tgaread.dir/tgaread.c.o  -o tgaread -rdynamic ../src/libgd.so -lfreetype -lpng -lz ../libimagequant/libimagequant.a -lfontconfig -Wl,-rpath,/home/limjh/src/gdlib/libgd/src 

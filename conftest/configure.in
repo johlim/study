@@ -1,0 +1,12 @@
+dnl test comment
+AC_PREREQ(2.59)
+
+
+AC_INIT([foobar], [1.0], [limjh@corelogic.co.kr])
+AM_CONFIG_HEADER(config.h)
+AM_INIT_AUTOMAKE([foobar], [1.0], [limjh@corelogic.co.kr])
+AC_PROG_CC
+AC_CHECK_HEADER(malloc.h , AC_DEFINE(HAVE_MALLOC_H, 1, [Do you have malloc.h]))
+
+AC_CONFIG_FILES([Makefile])
+AC_OUTPUT	

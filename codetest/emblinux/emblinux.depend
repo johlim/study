@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1445605341 source:/home/limjh/codetest/emblinux/main.c
+	<stdio.h>
+	<stdlib.h>
+	<fcntl.h>
+

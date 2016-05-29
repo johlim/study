@@ -1,0 +1,1 @@
+/usr/bin/gcc      CMakeFiles/list0721.dir/list0721.c.o  -o list0721 -rdynamic -lglib-2.0 

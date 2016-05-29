@@ -1,0 +1,1 @@
+/usr/bin/gcc      CMakeFiles/arugmenttest.dir/arg_main.c.o  -o arugmenttest -rdynamic 

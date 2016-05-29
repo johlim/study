@@ -1,0 +1,4 @@
+#!/bin/sh
+
+/usr/bin/agingtest -cfg /usr/dvr_fhd1ch_tv.cfg >/mnt/mmc/1.txt 2>/mnt/mmc/2.txt &
+

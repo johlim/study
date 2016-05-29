@@ -1,0 +1,8 @@
+cmake_minimum_required (VERSION 2.6)
+project (list1221)
+include_directories(/usr/include/glib-2.0)
+include_directories(/usr/lib/i386-linux-gnu/glib-2.0/include)
+add_executable (list1221  list1221.c)
+find_library(NAMES gtk+-2.0 PATHS /usr/lib)
+TARGET_LINK_LIBRARIES(list1221  gtk+-2.0 )	
+add_definitions(-Wall -g -O0)

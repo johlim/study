@@ -1,0 +1,40 @@
+<main>
+	<state id='0' name='MAIN_MENU'
+			x='0' y='0' w='720' h='480' bg_color='0x005AB4'>
+		<button x='210' y='120' w='300' h='80' style='s' func='m_bbox'
+				text='0' font='5' color_n='0xFFFFFF' color_f='0xFFFF00'></button>
+		<button x='210' y='240' w='300' h='80' style='s' func='m_browser'
+				text='1' font='5' color_n='0xFFFFFF' color_f='0xFFFF00'></button>
+		<rect x='0' y='400' w='720' h='80' color='0x252525' fill='1'></rect>
+		<text x='20' y='410' w='680' h='60' text='37' font='3' color='0xFFFFFF' align='LM'></text>
+	</state>
+
+	<state id='1' name='BBOX'
+			x='0' y='400' w='720' h='80' bg_color='0x252525'>
+		<text x='20' y='410' w='680' h='60' text='38' font='3' color='0xFFFFFF' align='LM'></text>
+	</state>
+
+	<state id='2' name='FILE_BROWSER'
+			x='0' y='0' w='720' h='480' bg_color='0x252525'>
+		<tab x='0' y='0' w='144' h='50' img='40' img_f='41' func='fb_sort_inf'
+				text='14' font='4' color_n='0xFFFFFF' color_f='0xFFFF00'></tab>
+		<tab x='144' y='0' w='144' h='50' img='40' img_f='41' func='fb_sort_evt'
+				text='15' font='4' color_n='0xFFFFFF' color_f='0xFFFF00'></tab>
+		<tab x='288' y='0' w='144' h='50' img='40' img_f='41' func='fb_sort_park'
+				text='16' font='4' color_n='0xFFFFFF' color_f='0xFFFF00'></tab>
+		<tab x='432' y='0' w='144' h='50' img='40' img_f='41' func='fb_sort_man'
+				text='17' font='4' color_n='0xFFFFFF' color_f='0xFFFF00'></tab>
+		<tab x='576' y='0' w='144' h='50' img='40' img_f='41' func='fb_sort_jpg'
+				text='18' font='4' color_n='0xFFFFFF' color_f='0xFFFF00'></tab>
+		<list id='1' x='0' y='50' w='720' h='303' color='0xEAE8E4'></list>
+		<text id='2' x='300' y='360' w='100' h='40' text='20' font='3' color='0xFFFFFF' align='CM'></text>
+		<text x='20' y='400' w='680' h='80' text='40' font='3' color='0xFFFFFF' align='LM'></text>
+	</state>
+
+	<state id='3' name='PLAYER'
+			x='0' y='370' w='720' h='110' bg_color='0x252525'>
+		<text id='1' x='20' y='370' w='680' h='30' font='3' color='0xFFFFFF' align='LM'></text>
+		<progress id='2' x='20' y='400' w='680' h='10' bg_color='0x0' bar_color='0x0080FF'></progress>
+		<text x='20' y='410' w='680' h='60' text='41' font='3' color='0xFFFFFF' align='LM'></text>
+	</state>
+</main>
