@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1364646858 source:/home/limjh/src/ch15/list1511_no_error_handling.c
+	<barcode.h>
+
+1364647743 source:/home/limjh/src/ch15/list1513.c
+	<qrencode.h>
+	<stdio.h>
+

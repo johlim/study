@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/limjh/src/gdlib/libgd/src/gd.h
+stdio.h
+-
+gd_io.h
+/home/limjh/src/gdlib/libgd/src/gd_io.h
+gdfx.h
+/home/limjh/src/gdlib/libgd/src/gdfx.h
+
+/home/limjh/src/gdlib/libgd/src/gd_io.h
+stdio.h
+-
+
+/home/limjh/src/gdlib/libgd/src/gdfx.h
+gd.h
+/home/limjh/src/gdlib/libgd/src/gd.h
+
+/home/limjh/src/gdlib/libgd/src/webpng.c
+config.h
+/home/limjh/src/gdlib/libgd/src/config.h
+gd.h
+/home/limjh/src/gdlib/libgd/src/gd.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+process.h
+-
+unistd.h
+-
+
+config.h
+
