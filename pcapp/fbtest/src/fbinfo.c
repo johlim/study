@@ -72,7 +72,7 @@ static void draw_pixel(void *fbmem, int x, int y, unsigned color)
 		fbmem += fix.line_length * y;
 
 		p = fbmem;
-
+		printf("fbmem (%x)a x(%x)\n", fbmem, x);
 		p += x;
 
 		*p = (color | ( alpha << 28 ));
@@ -86,6 +86,7 @@ void fill_screen(void *fbmem)
 	unsigned h = var.yres_virtual;
 	unsigned w = var.xres_virtual;
 //	int color;
+	printf("%s %d\n", __func__, __LINE__);
 
 	for (y = 0; y < h; y++) {
 		for (x = 0; x < w; x++) {
