@@ -1,0 +1,20 @@
+RESET
+SYStem.RESet
+MMU.RESet
+
+SYStem.CPU CORTEXA8
+SYStem.JtagClock 10Mhz
+SYStem.Option EnReset Off
+SYStem.Option DACR ON
+SYStem.Option ResBreak OFF
+SYStem.Option MMUSPACES ON
+TrOnchip.Set DABORT Off
+TrOnchip.Set PABORT Off
+TrOnchip.Set UNDEF Off
+
+SYStem.CONFIG COREBASE 0x80007000
+SYStem.CONFIG ETMBASE 0x80008000
+
+
+SYStem.Up
+enddo

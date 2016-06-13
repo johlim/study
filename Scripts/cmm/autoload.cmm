@@ -1,0 +1,117 @@
+// Autoload script, called by TRACE32 if symbols are to be loaded
+
+// define local macros
+ local &filename &basename &progname &filepath &code &data &space
+ local &symfilename1 &symfilename2
+
+// get filename and relocation information
+ // these parameters are passed from TRACE32 when calling this skript
+ 
+ entry &filename &type &code &data &space
+ 
+ //print "autoload: " &filename " " &type " " &code " " &data " " &space
+ 
+ // &filename:      name of process/file
+ // &type:          type of file: 1=process, 2=library, 3=kernel module
+ // &code:          text segment address
+ // &data:          data segment address
+ // &space:         space id of process
+ 
+// get symbol file name and program name
+ &filepath=""
+ &basename=string.cut(&filename,-string.len(os.file.extension(&filename)))
+ if (&type==1)
+ (
+   // processes
+   &symfilename1="&basename"        // without extension
+   &symfilename2=&filename          // as given in parameter
+   if task.y.o.s(rootpath)!=""
+   (
+     // root path option set, use target path
+     local &magic
+     &magic=task.proc.magic(&filename)
+     &filepath=task.y.o.s(rootpath)+task.proc.path(&magic)
+   )
+ )
+ if ((&type&0xffff)==2)
+ (
+   // libraries
+   &symfilename1=&filename
+   &symfilename2="&basename"+".so"
+   if task.y.o.s(rootpath)!=""
+   (
+     // root path option set, use target path
+     local &magic
+     &magic=task.proc.sid2magic(&type>>16.)
+     &filepath=task.y.o.s(rootpath)+task.lib.path(&filename,&magic)
+   )
+ )
+ if (&type==3)
+ (
+   // kernel modules
+   if "&mod_debug_name"=="&basename"    ; changed file name in mod_debug.cmm?
+     &symfilename1="&mod_debug_file"+".ko"
+   else
+     &symfilename1="&basename"+".ko"
+   &symfilename2=&filename
+ )
+
+// get program name
+ &progname=os.file.name("&basename")
+
+// set space id to zero if not given
+ if "&space"==""
+  &space=0
+
+// delete symbols if they already exist
+ if y.exist("\\&progname")
+ (
+   // create program path - due to possible special characters
+   &progpath="`"+"\\"+"&progname"+"`"
+   sYmbol.Delete &progpath
+ )
+ GROUP.Delete "&progname"
+
+// check if preset file path is valid
+ if !os.file("&filepath")
+    &filepath=y.searchfile("&symfilename1")
+// search file in source search path and open dialog when not there
+ if !os.file("&filepath")
+    &filepath=y.searchfile("&symfilename2")
+ if !os.file("&filepath")
+ (
+   local &file &spath
+   &file=os.file.name("&symfilename1")
+   winpos ,,,,,, filebox normal "Searching symbols for &filename"
+   dialog.file "*\&file"
+   entry %line &filepath
+   if "&filepath"==""
+     enddo
+   &spath=os.file.path("&filepath")
+   sYmbol.SourcePATH.Set &spath
+ )
+
+// load symbol file (options for sourcepath, e.g. /STRIPPART may need to be added when required)
+
+ if (&type==1)  // processes
+ (
+   Data.LOAD.Elf "&filepath" &space:0 /nocode /noclear
+   if task.y.o(mmuscan)==1      // scan only if TRANSlation.TABLEWALK not configured
+     MMU.TaskPageTable.SCAN &space:0
+   GROUP.Create "&progname" &space:0x0--0xffffffff /GREEN
+ )
+ 
+ if (&type==3)  // modules
+ (
+   Data.LOAD.Elf &filepath 0:0 /nocode /noclear /name &progname /reloctype &type
+   ;MMU.SCAN ALL     // not necessary: done by TRANSlation.TABLEWALK
+   GROUP.Create "&progname" y.secrange(\\&progname\.text) /YELLOW
+ )
+ 
+ if ((&type&0xffff)==2) // libraries
+ (
+   Data.LOAD.Elf &filepath &space:&code /nocode /noclear
+ )
+ 
+ enddo
+

@@ -1,0 +1,589 @@
+;&kernel_dir="\\192.9.201.186\windice\Workspace\KERNEL\clm9720_dtk"
+;&kernel_dir="\\192.168.141.23\devuser\kernel"
+;&kernel_dir="\\192.168.141.21\hphdd\kernel"
+&kernel_dir="\\192.168.141.21\limjh\kernel"
+;&kernel_dir="\\192.168.141.23\limjh\output\kernel"
+
+
+;&kernel_dir="y:\src\falco\kernel"
+;&kernel_dir="W:\my_ws\kernel"
+
+&tag_addr=0x60000100
+
+;RESET
+SYStem.RESet
+MMU.RESet
+
+SYStem.CPU CORTEXA8
+SYStem.JtagClock RTCK
+;
+;SYStem.Option EnReset Off
+;
+SYStem.Option DACR ON
+SYStem.Option ResBreak OFF
+SYStem.Option MMUSPACES ON
+TrOnchip.Set DABORT Off
+TrOnchip.Set PABORT Off
+TrOnchip.Set UNDEF Off
+
+SYStem.CONFIG COREBASE 0x80007000
+SYStem.CONFIG ETMBASE 0x80008000
+
+
+SYStem.Up
+
+SETUP.IMASKASM ON
+
+;===================================
+; SSTL Setting 
+;===================================
+d.s 0xF088007C %l  0x00000000    ; DDR0/1 Differential mode 
+d.s 0xF08800E0 %l  0x00000001    ; DDR0 Impcnt control, Auto Calibration
+d.s 0xF08800EC %l  0x00000001    ; DDR1 Impcnt control, Auto Calibration
+
+
+wait 100.ms
+
+d.s 0xF08800E0 %l  0x00000010; DDR0 Impcnt control, update calibrated value  
+d.s 0xF08800EC %l  0x00000010; DDR1 Impcnt control, update calibrated value
+d.s 0xF08800E4 %l  0x00017000;  DDR0 Impcnt param, DDS config
+d.s 0xF08800F0 %l  0x00017000;  DDR1 Impcnt param, DDS config
+
+
+;===================================
+; Clock Setting 
+;===================================
+d.s 0xF0600030 %l  0x00000000
+d.s 0xF0600000 %l  0x7FFFFFFF
+;========================================================
+
+;;533MHz, 177MHz  
+;;800MHz, 266MHz
+d.s 0xF060004C %l  0x22509260		; DIV=3	ACLK_M1
+d.s 0xF0600050 %l  0x03333322		; DIV=3 ACLK_M0	
+
+;; 800MHz, 200MHz
+;d.s 0xF060004C %l  0x33509260		; DIV=4	ACLK_M1
+;d.s 0xF0600050 %l  0x03333333		; DIV=4 ACLK_M0
+
+; 440MHz, 220MHz
+;d.s 0xF060004C %l  0x21509260		; DIV=2	ACLK_M1
+;d.s 0xF0600050 %l  0x02222221		; DIV=2 ACLK_M0
+;========================================================
+
+;========================================================
+; External Clock : 24MHz
+;========================================================
+;24MHz -> 800MHz
+d.s 0xF0600094 %l  0x00000370	; PLL 800MHz EXT_AFC=28
+;d.s 0xF0600094 %l  0x00063370	; PLL 800MHz EXT_AFC=28 + PLL2
+d.s 0xF0600000 %l  0x80640301	; PLL0 800MHz Enable
+;d.s 0xF0600004 %l  0x80960901	; PLL 800MHz Enable
+d.s 0xF0600004 %l  0x80640301	; PLL1 800MHz Enable
+;d.s 0xF0600008 %l  0x80870601	; PLL2 800MHz Enable + PLL2
+
+;d.s 0xf0600004 %l 0x80fa0601
+
+;24MHz -> 700MHz
+;d.s 0xF0600000 %l  0x00AF0601	; PLL 700MHz
+;d.s 0xF0600094 %l  0x000003B4	; PLL 700MHz EXT_AFC=13
+;d.s 0xF0600000 %l  0x80AF0601	; PLL 700MHz Enable
+
+;24MHz -> 533MHz
+;d.s 0xF0600000 %l  0x006F0501	; PLL 533MHz
+;d.s 0xF0600094 %l  0x00000394	; PLL 533MHz EXT_AFC=5
+;d.s 0xF0600000 %l  0x806F0501	; PLL 533MHz Enable
+
+;24MHz -> 440MHz
+;d.s 0xF0600000 %l  0x006E0302	; PLL 440MHz
+;d.s 0xF0600094 %l  0x00000370	; PLL 440MHz EXT_AFC=28
+;d.s 0xF0600000 %l  0x806E0302	; PLL 440MHz Enable
+;========================================================
+
+;========================================================
+; External Clock : 48MHz
+;========================================================
+;d.s 0xF0600000 %l  0x00fa0c01	; PLL 800MHz
+;d.s 0xF0600094 %l  0x00000370	; PLL 800MHz EXT_AFC=28
+;d.s 0xF0600000 %l  0x80fa0c01	; PLL 800MHz Enable
+
+
+
+;800MHz
+;d.s 0xF0600000 %l  0x00960901	; PLL 800MHz
+;d.s 0xF0600094 %l  0x00000370	; PLL 800MHz EXT_AFC=28
+;d.s 0xF0600000 %l  0x80960901	; PLL 800MHz Enable
+
+;700MHz
+;d.s 0xF0600000 %l  0x00AF0C01	; PLL 700MHz
+;d.s 0xF0600094 %l  0x000003B4	; PLL 700MHz EXT_AFC=13
+;d.s 0xF0600000 %l  0x80AF0C01	; PLL 700MHz Enable
+
+;533MHz
+;d.s 0xF0600000 %l  0x00D31301	; PLL 533MHz
+;d.s 0xF0600094 %l  0x00000394	; PLL 533MHz EXT_AFC=5
+;d.s 0xF0600000 %l  0x80D31301	; PLL 533MHz Enable
+
+;440MHz
+;d.s 0xF0600000 %l  0x00A50902	; PLL 440MHz
+;d.s 0xF0600094 %l  0x00000370	; PLL 440MHz EXT_AFC=28
+;d.s 0xF0600000 %l  0x80A50902	; PLL 440MHz Enable
+;========================================================
+
+
+
+;wait 100.ms
+;clk_div2_val
+;d.s 0xF0600054 %l  0x00012222
+
+d.s 0xF0600054 %l  0x00003333
+;d.s 0xF0600054 %l  0x00003233; + PLL2
+
+
+
+;Sync
+;d.s 0xF060013C %l  0x24900000
+;d.s 0xF0600140 %l  0x00924924
+
+;Async
+d.s 0xF060013C %l  0x00000000
+d.s 0xF0600140 %l  0x00000000
+
+
+d.s 0xF0600034 %l 0x1B6DB6DB	; CLKSEL1
+d.s 0xF0600038 %l 0x1B6DB6DB	; CLKSEL2
+d.s 0xF060003C %l 0x1B6DB6DB	; CLKSEL3
+d.s 0xF0600040 %l 0x1B6DB6DB	; CLKSEL4
+d.s 0xF0600044 %l 0x1B6DB6DB	; CLKSEL5
+
+;d.s 0xF0600030 %l  0x000000df	; Clock Path PLL0+PLL2
+d.s 0xF0600030 %l  0x000000db	; Clock Path PLL0
+;d.s 0xF0600030 %l  0x00000009	; Clock Path PLL0
+
+
+;===================================
+; Denali DDR Controller 0 (DDR2) 
+;===================================
+
+
+
+d.s 0xe4000000  %l  0x00000100  ;[24]:AREFRESH(WO),        [16]:AP(RW),            [8]:ADDR_CMP_EN(RW)
+d.s 0xe4000004  %l  0x00000100  ;[16]:CONCURRENTAP(RW),     [8]:BANK_SPLIT_EN(RW), [0]:AUTO_REFRESH_MODE(RW) 
+d.s 0xe4000008  %l  0x01000000  ;[24]:DRIVE_DQ_DQS(RW),     [8]:DLL_BYPASS_MODE,
+d.s 0xe400000c  %l  0x00000101  ;[16]:FAST_WRITE,           [8]:EN_QUICK_SREFRESH, [0]:EIGHT_BANK_MODE
+d.s 0xe4000010  %l  0x00000000  ;[24]:ODT_ALT_EN ,         [16]:NO_CMD_INIT
+d.s 0xe4000014  %l  0x00010001  ;[24]:PWRUP_SREFRESH_EXIT, [16]:PRIORITY_EN,       [8]:POWER_DOWN,          [0]:PLACEMENT_EN
+d.s 0xe4000018  %l  0x01000000  ;
+d.s 0xe400001c  %l  0x01000001  ;
+d.s 0xe4000020  %l  0x01010001  ;
+d.s 0xe4000024  %l  0x02020030  ;
+d.s 0xe4000028  %l  0x00000200  ;
+d.s 0xe400002c  %l  0x00000003  ;
+d.s 0xe4000030  %l  0x02020001  ;
+d.s 0xe4000034  %l  0x02000301  ;
+d.s 0xe4000038  %l  0x01000002  ;
+d.s 0xe400003c  %l  0x01000000  ;
+d.s 0xe4000040  %l  0x08080a0f  ;
+d.s 0xe4000044  %l  0x0f0f0101  ;
+d.s 0xe4000048  %l  0x00020004  ;
+d.s 0xe400004c  %l  0x04080000  ;
+d.s 0xe4000050  %l  0x04080102  ;
+d.s 0xe4000054  %l  0x04000102  ; rdlat_adj
+d.s 0xe4000058  %l  0x06010200  ; tdfi_phy_rdlat   
+d.s 0xe400005c  %l  0x02000200  ; tdfi_rddataen_base, tdfi_rddata_en, tdfi_phy_wrlat_base, tdfi_phy_wrlat   
+d.s 0xe4000060  %l  0x03040404  ; wrlat [31:24] 
+d.s 0xe4000064  %l  0x00000003  ; wrlat_adj [7:0]d.s 0xe4000068  %l  0x04010200  
+d.s 0xe4000068  %l  0x04010200  ;
+d.s 0xe400006c  %l  0x0b000402  ; 
+d.s 0xe4000070  %l  0x0000000a  ;
+d.s 0xe4000074  %l  0x00040b04  ;
+d.s 0xe4000078  %l  0x00000000  ;
+d.s 0xe400007c  %l  0x00000000  ;
+d.s 0xe4000080  %l  0x00000000  ;
+d.s 0xe4000084  %l  0x04090409  ;
+d.s 0xe4000088  %l  0x04090409  ;
+d.s 0xe400008c  %l  0x04090409  ;
+d.s 0xe4000090  %l  0x06420409  ;     //0_000000000110010 mr0_data_0(RW) 00_00010000001001 tref(RW)      
+d.s 0xe4000094  %l  0x06420642  ;     //0_000000000110010 mr0_data_2(RW) 0_000000000110010 mr0_data_1(RW)
+d.s 0xe4000098  %l  0x00400642  ;     //0_000000000000000 mr1_data_0(RW) 0_000000000110010 mr0_data_3(RW)
+d.s 0xe400009c  %l  0x00400040  ;     //0_000000000000000 mr1_data_2(RW) 0_000000000000000 mr1_data_1(RW)
+d.s 0xe40000a0  %l  0x00000040  ;     //0_000000000000000 mr2_data_0(RW) 0_000000000000000 mr1_data_3(RW)
+d.s 0xe40000a4  %l  0x00000000  ;
+d.s 0xe40000a8  %l  0x00000000  ;
+d.s 0xe40000ac  %l  0x00000000  ;
+d.s 0xe40000b0  %l  0xffff0000  ;
+d.s 0xe40000b4  %l  0x00000000  ;
+d.s 0xe40000b8  %l  0x0000ffff  ;
+d.s 0xe40000bc  %l  0x0fff0000  ;
+d.s 0xe40000c0  %l  0x00000000  ;
+d.s 0xe40000c4  %l  0x246C0002  ;
+d.s 0xe40000c8  %l  0x00c8008a  ;
+d.s 0xe40000d0  %l  0x0000001b  ;
+d.s 0xe40000d4  %l  0x00000000  ;
+d.s 0xe40000d8  %l  0x00071f10  ;
+//d.s 0xe40000d8  %l  0x00070f60
+d.s 0xe40000dc  %l  0x00071f10  ;
+d.s 0xe40000e0  %l  0x00071f10  ;
+d.s 0xe40000e4  %l  0x00071f10  ;
+
+d.s 0xe40000e8  %l  0x1005b704  ;0108 15:55 ~ 
+;d.s 0xe40000e8  %l  0x1005AB04  ;
+
+d.s 0xe40000ec  %l  0x1005af04  ;
+d.s 0xe40000f0  %l  0x10059704  ;
+d.s 0xe40000f4  %l  0x10059704  ;
+d.s 0xe4000108  %l  0x00000000  ;
+d.s 0xe400010c  %l  0xe3012725  ;
+d.s 0xe4000110  %l  0xe3012725  ;
+d.s 0xe4000114  %l  0xe3012725  ;
+d.s 0xe4000118  %l  0xe3012725  ;
+d.s 0xe400011c  %l  0x07400310  ;
+d.s 0xe4000120  %l  0x07400310  ;
+d.s 0xe4000124  %l  0x07400310  ;
+d.s 0xe4000128  %l  0x07400310  ;
+d.s 0xe400012c  %l  0x00800004  ;
+d.s 0xe40002d0  %l  0x00002200  ;
+d.s 0xe400001c  %l  0x01010001  ;		//Start
+
+
+;-------------------------------------------------------------------------------
+; DDR2 >>>
+;-------------------------------------------------------------------------------
+;===================================
+; Denali DDR Controller 1 (DDR2) 
+;===================================
+d.s 0xe1000000  %l  0x00000100  ;[24]:AREFRESH(WO),        [16]:AP(RW),            [8]:ADDR_CMP_EN(RW)
+d.s 0xe1000004  %l  0x00000100  ;[16]:CONCURRENTAP(RW),     [8]:BANK_SPLIT_EN(RW), [0]:AUTO_REFRESH_MODE(RW) 
+d.s 0xe1000008  %l  0x01000000  ;[24]:DRIVE_DQ_DQS(RW),     [8]:DLL_BYPASS_MODE,
+d.s 0xe100000c  %l  0x00000101  ;[16]:FAST_WRITE,           [8]:EN_QUICK_SREFRESH, [0]:EIGHT_BANK_MODE
+d.s 0xe1000010  %l  0x00000000  ;[24]:ODT_ALT_EN ,         [16]:NO_CMD_INIT
+d.s 0xe1000014  %l  0x00010001  ;[24]:PWRUP_SREFRESH_EXIT, [16]:PRIORITY_EN,       [8]:POWER_DOWN,          [0]:PLACEMENT_EN
+d.s 0xe1000018  %l  0x01000000  ;
+d.s 0xe100001c  %l  0x01000001  ;
+d.s 0xe1000020  %l  0x00010001  ;
+d.s 0xe1000024  %l  0x02020000  ;
+d.s 0xe1000028  %l  0x00000200  ;
+d.s 0xe100002c  %l  0x00000003  ;
+d.s 0xe1000030  %l  0x02020001  ;
+d.s 0xe1000034  %l  0x02000301  ;
+d.s 0xe1000038  %l  0x01000002  ;W2W_DIFFCS_DLY, W2R_SAMECS_DLY, W2R_DIFFCS_DLY, TRTP
+d.s 0xe100003c  %l  0x01000000  ;
+d.s 0xe1000040  %l  0x08080A0F  ;
+d.s 0xe1000044  %l  0x010F0101  ;
+d.s 0xe1000048  %l  0x00020004  ;
+d.s 0xe100004c  %l  0x04080000  ;
+d.s 0xe1000050  %l  0x04080102  ;
+d.s 0xe1000054  %l  0x05000102  ; rdlat_adj
+d.s 0xe1000058  %l  0x06010200  ; tdfi_phy_rdlat
+d.s 0xe100005c  %l  0x02000200  ; tdfi_rddataen_base, tdfi_rddata_en, tdfi_phy_wrlat_base, tdfi_phy_wrlat
+d.s 0xe1000060  %l  0x03040404  ; wrlat [31:24]
+d.s 0xe1000064  %l  0x00000003  ; wrlat_adj [7:0]
+d.s 0xe1000068  %l  0x04010200  ;
+d.s 0xe100006c  %l  0x0B000402  ; 
+d.s 0xe1000070  %l  0x0000000A  ;
+d.s 0xe1000074  %l  0x00040B04  ;
+d.s 0xe1000078  %l  0x00000000  ;
+d.s 0xe100007c  %l  0x00000000  ;
+d.s 0xe1000080  %l  0x00000000  ;
+d.s 0xe1000084  %l  0x04090409  ;
+d.s 0xe1000088  %l  0x04090409  ;
+d.s 0xe100008c  %l  0x04090409  ;
+d.s 0xe1000090  %l  0x06420409  ;     //0_000000000110010 mr0_data_0(RW) 00_00010000001001 tref(RW)      
+d.s 0xe1000094  %l  0x06420642  ;     //0_000000000110010 mr0_data_2(RW) 0_000000000110010 mr0_data_1(RW)
+d.s 0xe1000098  %l  0x00400642  ;     //0_000000000000000 mr1_data_0(RW) 0_000000000110010 mr0_data_3(RW)
+d.s 0xe100009c  %l  0x00400040  ;     //0_000000000000000 mr1_data_2(RW) 0_000000000000000 mr1_data_1(RW)
+d.s 0xe10000a0  %l  0x00000040  ;     //0_000000000000000 mr2_data_0(RW) 0_000000000000000 mr1_data_3(RW)
+d.s 0xe10000a4  %l  0x00000000  ;
+d.s 0xe10000a8  %l  0x00000000  ;
+d.s 0xe10000ac  %l  0x00000000  ;
+d.s 0xe10000b0  %l  0xFFFF0000  ;
+d.s 0xe10000b4  %l  0x00000000  ;
+d.s 0xe10000b8  %l  0x00000000  ;
+d.s 0xe10000bc  %l  0x00000000  ;
+d.s 0xe10000c0  %l  0x00000000  ;
+d.s 0xe10000c4  %l  0x246C0002  ;
+d.s 0xe10000c8  %l  0x00C8008A  ;
+d.s 0xe10000d0  %l  0x0000001B  ;
+d.s 0xe10000d4  %l  0x00000000  ;
+
+; DQS_DELAY
+d.s 0xe10000d8  %l  0x00071F20  ;
+d.s 0xe10000dc  %l  0x00071F20  ;
+d.s 0xe10000e0  %l  0x00071F20  ;
+d.s 0xe10000e4  %l  0x00071F20  ;
+
+; CLK_WR
+d.s 0xe10000e8  %l  0x00059704  ; [14:8] CLK_WR (DLL_ON)
+d.s 0xe10000ec  %l  0x00059704  ;
+d.s 0xe10000f0  %l  0x00059704  ;
+d.s 0xe10000f4  %l  0x00059704  ;
+d.s 0xe1000108  %l  0x00000000  ;
+
+; PHY_CTRL_REG_0_X
+d.s 0xe100010c  %l  0xE3012725  ;
+d.s 0xe1000110  %l  0xE3012725  ;
+d.s 0xe1000114  %l  0xE3012725  ;
+d.s 0xe1000118  %l  0xE3012725  ;
+
+d.s 0xe100011c  %l  0x07400310  ;
+d.s 0xe1000120  %l  0x07400310  ;
+d.s 0xe1000124  %l  0x07400310  ;
+d.s 0xe1000128  %l  0x07400310  ;
+d.s 0xe100012c  %l  0x00800004  ;
+d.s 0xe10002d0  %l  0x00002200  ;
+d.s 0xe100001c  %l  0x01010001  ;		//Start
+
+;===================================
+; vectoer base address
+;===================================
+PER.S.F C15:0x0C %L 0xFFFFFFE0 0x20 0x60000000
+
+; uart external clock
+;d.s 0xF0600034 %l  0x00000003
+;d.s 0xF0600058 %l  0x00000001
+
+wait 50.ms
+
+
+
+;==========================================
+;
+;	Loading images
+;
+;==========================================
+symbol.SOURCEPATH.SETRECURSEDIR &kernel_dir
+
+print "loading linux image..."
+; i.e.:Data.Load.Elf vmlinux <physical start>-<virtual start>
+Data.LOAD.Elf &kernel_dir/vmlinux 0x60008000-0xc0008000 /gnu /nosymbol
+
+;print "loading ramdisk image..."
+;Data.LOAD.Binary Z:/ramdisk/ramdisk_luca_pm_r2.gz 0x62000000 /noclear /nosymbol
+;Data.LOAD.Binary &main_dir/ubifs.img 0x62000000 /noclear /nosymbol
+
+
+print "loading kernel symbols..."
+Data.LOAD.Elf &kernel_dir/vmlinux /nocode /gnu /strippart 6. /path &kernel_dir
+;Data.LOAD.Elf &kernel_dir/vmlinux /nocode /gnu /strippart 4. /path &kernel_dir
+;Data.LOAD.Elf &kernel_dir/vmlinux /nocode /gnu /strippart 5. /path &kernel_dir
+;data.load.elf \\192.168.141.21\limjh\kernel/vmlinux /nocode /gnu /strippart 6 /path \\192.168.141.21\limjh\kernel
+;Data.LOAD.Elf &kernel_dir/vmlinux /nocode /gnu /strippart 2. /path "\\192.168.144.46\works\"
+
+;Data.LOAD.Elf &kernel_dir/vmlinux /nocode /macro /include /gnu /strippart 6. /path "Y:\mFalco\kernel"
+;Data.LOAD.Elf &kernel_dir/vmlinux /nocode /gnu /strippart 8. /path "Y:\SVN\mFalco\dvr\kernel"
+;Data.LOAD.Elf &kernel_dir/vmlinux /nocode /gnu /strippart 8. /path "Y:\mFalco\SVN_New\dvr\kernel"
+;Data.LOAD.Elf &kernel_dir/vmlinux /nocode /gnu /strippart 6. /path "Y:\mFalco\kernel_old"
+
+;Data.LOAD.Elf &kernel_dir/vmlinux 0x60008000-0xc0008000 /gnu /nosymbol /nocode /strippart 6. /path &kernel_dir
+
+
+;==========================================
+;
+;	Setting ATAG
+;
+;==========================================
+Register.RESet
+Register.Set PC 0x60008000
+;Register.Set R1 5522.
+;Register.Set R1 5540.	// Falco DTK
+Register.Set R1 5541.	// mini Falco DTK
+;Register.Set R1 2266.
+Register.Set R2 &tag_addr
+
+;ATAG_CORE
+Data.Set &tag_addr %LONG %LE 0x00000002
+&tag_addr=&tag_addr+0x4
+Data.Set &tag_addr %LONG %LE 0x54410001
+&tag_addr=&tag_addr+0x4
+
+;ATAG_MEM
+Data.Set &tag_addr %LONG %LE 0x00000004
+&tag_addr=&tag_addr+0x4
+Data.Set &tag_addr %LONG %LE 0x54410002
+&tag_addr=&tag_addr+0x4
+;Data.Set &tag_addr %LONG %LE 0x00c00000		; 256MB
+Data.Set &tag_addr %LONG %LE 0x10000000
+;Data.Set &tag_addr %LONG %LE 0x0c000000
+&tag_addr=&tag_addr+0x4
+Data.Set &tag_addr %LONG %LE 0x60000000		; start address
+&tag_addr=&tag_addr+0x4
+
+;ATAG_MEM
+;Data.Set &tag_addr %LONG %LE 0x00000004
+;&tag_addr=&tag_addr+0x4
+;Data.Set &tag_addr %LONG %LE 0x54410002
+;&tag_addr=&tag_addr+0x4
+;Data.Set &tag_addr %LONG %LE 0x08000000		; 256MB
+;&tag_addr=&tag_addr+0x4
+;Data.Set &tag_addr %LONG %LE 0xa0000000		; start address
+;&tag_addr=&tag_addr+0x4
+
+; ATAG_INITRD2
+Data.Set &tag_addr %LONG %LE 0x00000004
+&tag_addr=&tag_addr+0x4
+Data.Set &tag_addr %LONG %LE 0x54420005
+&tag_addr=&tag_addr+0x4
+Data.Set &tag_addr %LONG %LE 0x62000000		; start address
+&tag_addr=&tag_addr+0x4
+Data.Set &tag_addr %LONG %LE 0x01000000		; file size is 16M
+&tag_addr=&tag_addr+0x4;
+
+; ATAG_CMDLINE
+Data.Set &tag_addr %LONG %LE 0x0000002A
+&tag_addr=&tag_addr+0x4
+Data.Set &tag_addr %LONG %LE 0x54410009
+&tag_addr=&tag_addr+0x4
+; Customize !!
+;Data.Set &tag_addr "console=ttyAMA0,115200 mac=00:11:22:33:44:55 ip=192.168.144.45:192.168.141.23::::eth0:on root=/dev/nfs rw nfsroot=192.168.141.23:/nfsroot" 0
+;Data.Set &tag_addr "console=ttyAMA0,115200 mac=00:a1:b2:c3:d4:02 init=/init ip=192.168.0.10:192.168.0.1 root=/dev/nfs rw nfsroot=192.168.0.1:/works/Falco/sysroot" 0
+;Data.Set &tag_addr "console=ttyAMA0,115200 init=/init ip=192.168.0.10:192.168.0.1 root=/dev/nfs rw nfsroot=192.168.0.1:/works/Falco/sysroot" 0
+;Data.Set &tag_addr "console=ttyAMA0,115200 cs89x0_media=rj45 ip=192.168.0.10:192.168.0.1::::eth0:off root=/dev/nfs rw nfsroot=192.168.0.1:/works/Falco/sysroot" 0
+
+;Data.Set &tag_addr "console=ttyAMA0,115200 mac=00:a1:b2:c3:d4:04 ip=192.168.144.82:192.168.124.188:192.168.144.48:::eth0:off root=/dev/nfs rw nfsroot=192.168.124.188:/nfsroot/r9" 0
+
+;Data.Set &tag_addr "console=ttyAMA0,115200 root=/dev/ram rw initrd=0x62000000,25M mem=128M no_console_suspend" 0
+;Data.Set &tag_addr "console=ttyAMA0,115200 ip=dhcp root=/dev/nfs rw nfsroot=192.1___cfg80211_scan_done68.1.5:/nfs/linux ubi.mtd=3,2048" 0
+;Data.Set &tag_addr "console=ttyAMA0,115200 root=/dev/ram rw ip=dhcp" 0
+;Data.Set &tag_addr "console=ttyAMA0,115200 root=ubi0:root rw rootfstype=ubifs ubi.mtd=6 init=/init" 0
+Data.Set &tag_addr "console=ttyAMA0,115200 root=ubi0:rootfs rootfstype=ubifs ubi.mtd=rootfs,2048" 0
+;                    console=ttyAMA0,115200 root=ubi0:rootfs rootfstype=ubifs ubi.mtd=rootfs,2048"
+&tag_addr=&tag_addr+0xA0
+
+; ATAG_NONE
+Data.Set &tag_addr %LONG %LE 0x0
+&tag_addr=&tag_addr+0x4
+Data.Set &tag_addr %LONG %LE 0x0
+&tag_addr=&tag_addr+0x4
+
+print "init debugger mmu"
+; Declare the MMU Format to the debugger
+; format is LINUX
+; base address is at label 
+; kernel address translation
+
+;MMU.FORMAT LINUX swapper_pg_dir
+;MMU.Create 0xc0000000--0xdfffffff 
+;MMU.Create 0xc0000000--0xdfffffff 0x60000000
+;MMU.COMMON 0xc0000000--0xffffffff
+;MMU.TableWalk ON
+;MMU.ON
+
+;Prepare debugger translation
+MMU.FORMAT LINUX swapper_pg_dir 0xc0000000--0xd7ffffff 0x60000000
+TRANS.Create 0xc0000000--0xd7ffffff 0x60000000
+TRANS.COMMON 0xBF000000--0xffffffff
+TRANS.TableWalk ON
+TRANS.ON
+
+
+
+
+;================================================
+;
+;	Setting up for Linux awareness
+;
+;================================================
+;TASK.CONFIG C:\T32C\linux/linux.t32          ; loads Linux awareness (linux.t32)
+;MENU.ReProgram C:\T32C\linux/linux.men       ; loads Linux menu (linux.men)
+TASK.CONFIG C:\T32C\demo/arm/kernel/linux/linux.t32          ; loads Linux awareness (linux.t32)
+MENU.ReProgram C:\T32C\demo/arm/kernel/linux/linux.men       ; loads Linux menu (linux.men)
+HELP.FILTER.Add rtoslinux  	; add linux awareness manual to help filter
+
+TASK.sYmbol.Option MMUSCAN OFF  ; not necessary with tablewalk
+
+;sYmbol.AutoLoad.CHECKLINUX "do "+os.ppd()+"/autoload "
+;sYmbol.AutoLoad.CHECKLINUX "C:\T32C\demo/arm/kernel/linux/autoload"
+sYmbol.AutoLoad.CHECKLINUX "autoload"
+
+; Group kernel area to be displayed with red bar
+GROUP.Create "kernel" 0xc0000000--0xffffffff /RED
+
+TASK.sYmbol.Option autoload process
+TASK.sYmbol.Option autoload CurrLib
+
+
+; Ok, we're done, let's start Linux
+ 
+ print "starting Linux... (please wait)"
+ ;Go
+ ;wait 8.s
+ d.l
+ 
+ print "done."     ; done with loading and starting Linux
+
+; limjh add
+; -------- Application Debugging --------------
+; ------------- e.g. "cldvr" ------------------
+
+ ; activate autoloader for processes:
+ ; TASK.sYmbol.Option AutoLoad Process
+
+ print "please log in and start 'cldvr'"
+
+ ; script based
+   ; using the script based application debugging
+   ; gives more control over the single commands
+   ; see file "app_debug.cmm"
+   
+   ;do C:\T32C\demo\arm\kernel\linux\app_debug cldvr ; waits for 
+   
+ ; process watch system
+   ; the process watch system automates the actions
+   ; for application debugging
+   
+;   WINPOS 55. 25. 40. 4.
+;   TASK.Watch.View "cldvr"
+
+;   Go
+enddo
+;print "y.spath.translate "/works/dvr/project" "Y://falco"
+;print "y.spath.translate "/home/limjh/src/falco" "Y://src/falco"
+;print "y.spath.translate "/home/limjh/src/falco/cldvr" "Y://src/falco/cldvr"
+;print "y.spath.translate "/home/limjh/src/falco/clui" "Y://src/falco/clui"
+;SYStem.Option MMUSPACES ON
+; library source symbol 매핑을 위한 폴더지정
+;y.spath.translate "/" "\\192.168.141.23\"
+
+;여기서부터 사용자 directory customize menu
+;TASK.CONFIG C:\T32C\demo\arm\kernel\linux\linux.t32          ; loads Linux awareness (linux.t32)
+;MENU.ReProgram C:\T32C\demo\arm\kernel\linux\linux.men       ; loads Linux menu (linux.men)
+;HELP.FILTER.Add rtoslinux  	; add linux awareness manual to help filter
+
+;sYmbol.AutoLoad.CHECKLINUX "C:\T32C\demo\arm\kernel\linux\autoload "
+
+;TASK.sYmbol.Option autoload process
+;TASK.sYmbol.Option autoload CurrLib
+;TASK.sYmbol.Option MMUSCAN OFF
+
+;d.l
+;enddo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

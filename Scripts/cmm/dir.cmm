@@ -1,0 +1,10 @@
+// 1of2 Fri Dec 14 08:54:34 2012
+
+ B::
+ 
+ SYMBOL.SPATH.RESET
+ SYMBOL.SPATH.SETRECURSEDIR "\\192.168.141.23\djlee_ws\falco_s\data\nano_x\microwindows-0.92\src"
+ SYMBOL.SPATH.SET "Y:\cldvr\build\src"
+ SYMBOL.SPATH.SET "Y:\cldvr\src"
+ 
+ ENDDO

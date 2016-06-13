@@ -1,0 +1,209 @@
+
+&uboot_dir="\\192.168.141.23\limjh\adics\u-boot"
+;&uboot_dir="\\192.168.141.23\limjh\
+
+;RESet
+SYStem.RESet
+MMU.RESet
+
+SYStem.CPU CORTEXA8
+SYStem.JtagClock rtck
+SYStem.Option DACR ON
+SYStem.Option ResBreak OFF
+;SYStem.Option MMUSPACES ON
+TrOnchip.Set DABORT Off
+TrOnchip.Set PABORT Off
+TrOnchip.Set UNDEF Off
+
+SYStem.CONFIG COREBASE 0x80007000
+SYStem.CONFIG ETMBASE 0x80008000
+
+
+SYStem.Up
+
+SETUP.IMASKASM ON
+
+
+;===================================
+; Clock Setting 
+;===================================
+d.s 0xF0600030 %l  0x00000000
+
+;===================================
+; Ext Clock 24Mhz
+;===================================
+d.s 0xF0600000 %l  0x00C80604	; PLL 100MHz
+d.s 0xF0600094 %l  0x00000394	; PLL 100MHz EXT_AFC=5
+d.s 0xF0600000 %l  0x80C80604	; PLL 100MHz Enable
+
+;===================================
+; Ext Clock 48Mhz
+;===================================
+;d.s 0xF0600000 %l  0x00C00605	; PLL 96MHz
+;d.s 0xF0600094 %l  0x00000394	; PLL 96MHz EXT_AFC=5
+;d.s 0xF0600000 %l  0x80C00605	; PLL 96MHz Enable
+
+;d.s 0xF0600000 %l  0x00969604	; PLL 96MHz
+;d.s 0xF0600094 %l  0x00000394	; PLL 96MHz EXT_AFC=5
+;d.s 0xF0600000 %l  0x80960904	; PLL 96MHz Enable
+
+;========================================================
+
+
+;===================================
+; SSTL Setting 
+;===================================
+d.s 0xF088007C %l  0x00000000 ; DDR0/1 Differential mode 
+d.s 0xF08800E0 %l  0x00000001 ; DDR0 Impcnt control, Auto Calibration
+d.s 0xF08800EC %l  0x00000001 ; DDR1 Impcnt control, Auto Calibration
+d.s 0xF08800E0 %l  0x00000010 ; DDR0 Impcnt control, update calibrated value
+d.s 0xF08800EC %l  0x00000010 ; DDR1 Impcnt control, update calibrated value
+d.s 0xF08800E4 %l  0x00017000 ; DDR0 Impcnt param, DDS config
+d.s 0xF08800F0 %l  0x00017000 ; DDR1 Impcnt param, DDS config
+;d.s 0xF08800E4 %l  0x00015000 ; DDR0 Impcnt param, DDS config
+;d.s 0xF08800F0 %l  0x00015000 ; DDR1 Impcnt param, DDS config
+
+d.s 0xF0600030 %l  0x000000db		; Clock Path PLL0
+
+
+;===================================
+; Denali DDR Controller 0 (DDR2) 
+;===================================
+d.s 0xe4000000  %l  0x00000100  ;[24]:AREFRESH(WO),        [16]:AP(RW),            [8]:ADDR_CMP_EN(RW)
+d.s 0xe4000004  %l  0x00000100  ;[16]:CONCURRENTAP(RW),     [8]:BANK_SPLIT_EN(RW), [0]:AUTO_REFRESH_MODE(RW) 
+d.s 0xe4000008  %l  0x01000000  ;[24]:DRIVE_DQ_DQS(RW),     [8]:DLL_BYPASS_MODE,
+d.s 0xe400000c  %l  0x00000101  ;[16]:FAST_WRITE,           [8]:EN_QUICK_SREFRESH, [0]:EIGHT_BANK_MODE
+d.s 0xe4000010  %l  0x01000000  ;[24]:ODT_ALT_EN ,         [16]:NO_CMD_INIT
+d.s 0xe4000014  %l  0x00010001  ;[24]:PWRUP_SREFRESH_EXIT, [16]:PRIORITY_EN,       [8]:POWER_DOWN,          [0]:PLACEMENT_EN
+d.s 0xe4000018  %l  0x01000000  ;
+d.s 0xe400001c  %l  0x01000001  ;
+d.s 0xe4000020  %l  0x01010001  ;
+d.s 0xe4000024  %l  0x02020030  ;
+d.s 0xe4000028  %l  0x00000200  ;
+d.s 0xe400002c  %l  0x00000003  ;
+d.s 0xe4000030  %l  0x02020001  ;
+d.s 0xe4000034  %l  0x02000301  ;
+d.s 0xe4000038  %l  0x01000002  ;
+d.s 0xe400003c  %l  0x01000000  ;
+d.s 0xe4000040  %l  0x08080A0F  ;
+;d.s 0xe4000044  %l  0x010F0101  ;256MB
+d.s 0xe4000044  %l  0x0F0F0101  ;521MB
+d.s 0xe4000048  %l  0x00020004  ;
+d.s 0xe400004c  %l  0x04080000  ;
+d.s 0xe4000050  %l  0x04080102  ;
+d.s 0xe4000054  %l  0x04000102  ; rdlat_adj
+d.s 0xe4000058  %l  0x06010200  ; tdfi_phy_rdlat   
+d.s 0xe400005c  %l  0x02000200  ; tdfi_rddataen_base, tdfi_rddata_en, tdfi_phy_wrlat_base, tdfi_phy_wrlat   
+d.s 0xe4000060  %l  0x03040404  ; wrlat [31:24] 
+d.s 0xe4000064  %l  0x00000003  ; wrlat_adj [7:0]d.s 0xe4000068  %l  0x04010200  
+d.s 0xe4000068  %l  0x04010200  ;
+d.s 0xe400006c  %l  0x0B000402  ; 
+d.s 0xe4000070  %l  0x0000000A  ;
+d.s 0xe4000074  %l  0x00040B04  ;
+d.s 0xe4000078  %l  0x00000000  ;
+d.s 0xe400007c  %l  0x00000000  ;
+d.s 0xe4000080  %l  0x00000000  ;
+d.s 0xe4000084  %l  0x04090409  ;
+d.s 0xe4000088  %l  0x04090409  ;
+d.s 0xe400008c  %l  0x04090409  ;
+
+d.s 0xe4000090  %l  0x06420409  ;     //0_000000000110010 mr0_data_0(RW) 00_00010000001001 tref(RW)      
+d.s 0xe4000094  %l  0x06420642  ;     //0_000000000110010 mr0_data_2(RW) 0_000000000110010 mr0_data_1(RW)
+d.s 0xe4000098  %l  0x00400642  ;     //0_000000000000000 mr1_data_0(RW) 0_000000000110010 mr0_data_3(RW)
+d.s 0xe400009c  %l  0x00400040  ;     //0_000000000000000 mr1_data_2(RW) 0_000000000000000 mr1_data_1(RW)
+d.s 0xe40000a0  %l  0x00000040  ;     //0_000000000000000 mr2_data_0(RW) 0_000000000000000 mr1_data_3(RW)
+
+d.s 0xe40000a4  %l  0x00000000  ;
+d.s 0xe40000a8  %l  0x00000000  ;
+d.s 0xe40000ac  %l  0x00000000  ;
+d.s 0xe40000b0  %l  0xFFFF0000  ;
+d.s 0xe40000b4  %l  0x00000000  ;
+d.s 0xe40000b8  %l  0x00000000  ;
+d.s 0xe40000bc  %l  0x00000000  ;
+d.s 0xe40000c0  %l  0x00000000  ;
+d.s 0xe40000c4  %l  0x246C0002  ;
+d.s 0xe40000c8  %l  0x00C8008A  ;
+d.s 0xe40000d0  %l  0x0000001B  ;
+d.s 0xe40000d4  %l  0x00000000  ;
+
+; DQS_DELAY
+d.s 0xe40000d8  %l  0x00071F10  ;
+d.s 0xe40000dc  %l  0x00071F10  ;
+d.s 0xe40000e0  %l  0x00071F10  ;
+d.s 0xe40000e4  %l  0x00071F10  ;
+
+; CLK_WR
+d.s 0xe40000e8  %l  0x10059704  ;
+d.s 0xe40000ec  %l  0x10059704  ;
+d.s 0xe40000f0  %l  0x10059704  ;
+d.s 0xe40000f4  %l  0x10059704  ;
+d.s 0xe4000108  %l  0x00000000  ;
+
+; PHY_CTRL_REG_0_X
+d.s 0xe400010c  %l  0xE3012725  ;
+d.s 0xe4000110  %l  0xE3012725  ;
+d.s 0xe4000114  %l  0xE3012725  ;
+d.s 0xe4000118  %l  0xE3012725  ;
+d.s 0xe400011c  %l  0x07400310  ;
+d.s 0xe4000120  %l  0x07400310  ;
+d.s 0xe4000124  %l  0x07400310  ;
+d.s 0xe4000128  %l  0x07400310  ;
+d.s 0xe400012c  %l  0x00800004  ;
+d.s 0xe40002d0  %l  0x00002200  ;
+d.s 0xe400001c  %l  0x01010001  ;		//Start
+
+d.s 0xe400001c %l  0x01010001 ;	
+
+d.s 0x60000000 %l  0x12345678 ;
+d.s 0x60000004 %l  0x23456789 ;
+
+; uart external clock
+d.s 0xF0600034 %l  0x00000003
+d.s 0xF0600058 %l  0x00000000
+
+wait 50.ms
+
+
+
+;==========================================
+;
+;	Loading images
+;
+;==========================================
+print "loading uboot symbols..."
+symbol.SOURCEPATH.SETRECURSEDIR &uboot_dir
+Data.LOAD.Elf &uboot_dir/u-boot /macro /gnu /strippart 6. /path &uboot_dir 
+;d.load.elf &working_dir/u-boot /gnu /nosymbol
+;d.load.elf &working_dir/u-boot /gnu /nocode /reloc .text at 0x6ff7b000
+;d.load.elf y:/src/falco/uboot/u-boot /gnu /nocode /reloc .text at 0x6ff7b000
+; Data.LOAD.Elf &uboot_dir/u-boot /verify /macro /gnu /strippart 6. /path &uboot_dir /reloc .text at 0x6fe3e000
+
+;go mem_malloc_init
+;d.l
+
+enddo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+; Set appliation name
+&app_name="obdtest"
+;&app_name="agingtest"
+;&app_name="cldvr"
+;&app_name="clmp"
+;&app_name="clui"
+
+; Set App source path
+&app_src_path="\\192.168.141.21\limjh\svn\export\dvr\test\obdtest\src"
+;&app_src_path="\\192.168.141.21\devuser\dvr\cldvr\src"
+;&app_src_path="\\192.168.141.21\limjh\svn\export\dvr\dev_control\src"
+;&app_src_path="\\192.168.141.21\limjh\svn\export\dvr\cldvr\src"
+;&app_src_path="\\192.168.141.21\limjh\svn\export\dvr\clmp\src"
+;&app_src_path="\\192.168.141.21\limjh\svn\export\dvr\clui\src"
+
+; Set App elf path
+;&app_elf_path="\\192.168.141.21\limjh\svn\export\dvr\test\obdtest\build\src"
+;&app_elf_path="\\192.168.141.21\devuser\dvr\cldvr\build\src"
+;&app_elf_path="\\192.168.141.21\limjh\svn\export\dvr\dev_control\build\src"
+;&app_elf_path="\\192.168.141.21\limjh\svn\export\dvr\cldvr\build\src"
+;&app_elf_path="\\192.168.141.21\limjh\svn\export\dvr\clmp\build\src"
+;&app_elf_path="\\192.168.141.21\limjh\svn\export\dvr\clui\build\src"
+
+&local spaceid
+
+; Running 하고 있다면 Break 함.
+if run()
+	Break
+
+; set_binfmt() Function은 모든 프로세스가 Call 될 때 불리어 짐.
+; Breakpoint의 Condition 으로 user process가 실행될 때 멈춤
+Break.Set set_binfmt /CONDition task.proc.spaceid("&app_name")!=0xffffffff
+Go
+print "waiting for user process to be started..."
+wait !run()
+Break.Delete set_binfmt
+
+; user process의 space id값을 획득
+&spaceid=task.proc.spaceid("&app_name")
+
+; user process의 심볼을 해당 process의 space id 에 심볼을 로딩함
+;Data.LOAD.Elf "\\192.168.141.21\limjh\svn\export\dvr\test\obdtest\build\src\obdtest" &spaceid:0 /strippart 4 /gnu /nocode /noclear /include /macro
+Data.LOAD.Elf &app_elf_path\&app_name &spaceid:0 /strippart 4 /gnu /nocode /noclear /include /macro
+
+
+; 새로운 Task에 대한 Target의 MMU 값을 SCAN 해서 디버거 장비에게 알려줌.
+print "scanning process mmu tables..."
+TASK.MMU.SCAN &spaceid
+print "done."
+
+symbol.SOURCEPATH.SETRECURSEDIR &app_src_path
+symbol.SOURCEPATH.SETRECURSEDIR "\\192.168.141.21\limjh\svn\export\dvr\test\obdtest\src"
+
+;symbol.SOURCEPATH.SETRECURSEDIR "\\192.168.141.23\djlee_ws\falco_s\data\nano_x\microwindows-0.92\src"
+
+; 아직 use141.23ess의 코드가 loading 되지 않았기 때문에 main에 Onchip으로 Breakpoint를 설정해줄 것
+Break.Set main /ONCHIP
+
+; System을 running 해서 user process의 main function 에 Break가 걸릴 때까지 running 함.
+Go
+print "starting user process..."
+wait !run()
+;Break.Delete main
+
+d.l
+
+enddo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
