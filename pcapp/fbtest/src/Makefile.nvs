@@ -1,0 +1,168 @@
+#######################################################
+#
+# Makefile for NextChip Board
+#
+#######################################################
+
+
+########################################################################
+# Get Linux Build Enviornment:
+include ../../build.env
+
+ARCHNAME        := nxp4330
+CROSSNAME       := arm-cortex_a9-linux-gnueabi-
+
+KERNDIR         := ../../../kernel/kernel-3.4.39
+ARCHDIR         := ../../../application
+
+LIBSDIR         := $(ARCHDIR)/library
+LIB_INSTALL     := $(LIBSDIR)/lib
+INC_INSTALL     := $(LIBSDIR)/include
+
+SRC_DIR		:= $(ARCHDIR)/i2c_test/src
+PORT_DIR		:= $(ARCHDIR)/i2c_test/port
+
+######################################################################
+# NFS path
+NFS_PATH = /nfs/$(shell whoami)/nvs3320/nand1
+#NFS_PATH = /nfs/jhlim/nvs3320
+NFS_COPY = y
+
+#########################################################################
+#	Toolchain.
+#########################################################################
+CROSS 	 	:= $(CROSSNAME)
+CC			:= $(CROSS)gcc
+CPP			:= $(CROSS)g++
+AR			:= $(CROSS)ar
+AS			:= $(CROSS)as
+LD			:= $(CROSS)ld
+NM			:= $(CROSS)nm
+RANLIB		:= $(CROSS)ranlib
+OBJCOPY		:= $(CROSS)objcopy
+STRIP		:= $(CROSS)strip
+
+###############################################################################
+ifdef V
+	ifeq ("$(origin V)", "command line")
+		BUILD_VERBOSE = $(V)
+		Q =
+	endif
+endif
+
+ifndef BUILD_VERBOSE
+	BUILD_VERBOSE = 0
+	Q = @
+endif
+
+export BUILD_VERBOSE Q
+
+###############################################################################
+# Target application
+###############################################################################
+TARGET_APP	= fb_test
+
+
+###############################################################################
+# LIBRARY
+###############################################################################
+# GLIB
+INCDIR += -I/opt/crosstools/arm-cortex_a9-eabi-4.7-eglibc-2.18/arm-cortex_a9-linux-gnueabi/sysroot/usr/include/glib-2.0
+INCDIR += -I/opt/crosstools/arm-cortex_a9-eabi-4.7-eglibc-2.18/arm-cortex_a9-linux-gnueabi/sysroot/usr/lib/glib-2.0/include
+LIBDIR += -L/opt/crosstools/arm-cortex_a9-eabi-4.7-eglibc-2.18/arm-cortex_a9-linux-gnueabi/sysroot/usr/lib
+LIBS   += 
+
+#ETC
+#LIBS   += -lstdc++ -lasound
+
+# HW PORTING
+#LIBS   += -lnch_i2c
+INCDIR += -I$(PORT_DIR)/include
+LIBDIR += -L$(PORT_DIR)/lib
+
+# PLK
+INCDIR += -I$(ARCHDIR)/include
+LIBS	+= 
+
+###############################################################################
+# application include
+###############################################################################
+INCDIR	+= -I$(PROJ_HOME)
+
+###############################################################################
+# application link
+###############################################################################
+LIBS	+= #-lpthread	# pthread library
+#LIBS	+= -lrt
+#LIBS	+= -lz	# z of gx library
+LIBS	+= #-lm
+#LIBS	+= -rdynamic
+###############################################################################
+# Functions
+DEFINES += -DDEBUG
+DEFINES += -D_GNU_SOURCE
+DEFINES += -DOPX_PLT
+
+
+###############################################################################
+#DEBUGOPTS = -pg -fprofile-arcs -ftest-coverage
+DEBUGOPTS = -g -Wall
+CFLAGS = $(INCDIR) $(DEFINES) -msoft-float $(DEBUGOPTS)
+#LFLAGS = $(LIBDIR) $(LIBS) -lgcov -coverage
+LFLAGS = $(LIBDIR) $(LIBS)
+
+SUB_DIR=	`find ./ -type d`
+
+###############################################################################
+OBJECTS += fbinfo.c
+###############################################################################
+all: $(TARGET_APP) install
+
+$(TARGET_APP) : $(OBJECTS)
+ifeq ($(BUILD_VERBOSE),0)
+	@echo "Linking.......	[$@]"
+#	@echo "$(LIBDIR)"
+endif
+	$(CC) -o $(TARGET_APP) $(OBJECTS) $(LFLAGS)
+
+.c.o:
+ifeq ($(BUILD_VERBOSE),0)
+	@echo "Compiling.....	[$<]"
+endif
+	@echo "option [$(Q)], [$(CC)]"
+	$(CC)  $(CFLAGS) -o $@ -c $<
+
+install:	$(TARGET_APP)
+ifeq ($(NFS_COPY),y)
+	$(Q)cp -f $(TARGET_APP) ${NFS_PATH}
+	@echo "copying.nfs...	[OK]"
+	@echo "Install.......	[OK]"
+endif
+ifeq ($(NAND_COPY),y)
+	@cp -f $(TARGET_APP) ${NAND_PATH}
+	@echo "copying.nand	[OK]"
+	@echo "Install.......	[OK]"
+endif
+
+strip:
+	$(STRIP) $(TARGET_APP)
+
+clean:
+	@for SDIR in $(SUB_DIR) ; do	\
+		rm -f $${SDIR}/*.o;			\
+		rm -f $${SDIR}/*.bak;		\
+	done;
+	@rm -f ${PORT_DIR}/*.o;			\
+
+	@rm -f $(TARGET_APP)
+
+	@echo "Cleaning......	[OK]"
+
+tag:
+	@ctags -R   *.c *.h * ../port ../port
+	@echo "Making tags...   [OK]"
+
+touch:
+	@find ./ -name "*.*" -print -exec touch {} \;
+	@chmod -R 775 *
+
