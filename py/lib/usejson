@@ -1,0 +1,8 @@
+import json
+data = [{'id':123, 'ent':1, 'b':0}]
+print(json.dumps(data))
+
+from decimal import Decimal
+
+json_str = '[{"id":123, "ent":1, "b":0}]'
+json.loads(json_str)
