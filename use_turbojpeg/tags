@@ -1,0 +1,794 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AFLAGS	./Makefile	/^AFLAGS          :=$/;"	m
+ALL_OBJS	./Makefile	/^ALL_OBJS = \\$/;"	m
+AR	./Makefile	/^AR              =       $(CROSSNAME)ar cqs $/;"	m
+ARFLAGS	./Makefile	/^ARFLAGS         := crv$/;"	m
+Adobe_transform	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT8 Adobe_transform;	\/* Color transform code from Adobe marker *\/$/;"	m	struct:jpeg_decompress_struct
+Ah	/opt/libjpeg-turbo/include/jpeglib.h	/^  int Ah, Al;			\/* progressive JPEG successive approx. parms *\/$/;"	m	struct:__anon6
+Ah	/opt/libjpeg-turbo/include/jpeglib.h	/^  int Ss, Se, Ah, Al;		\/* progressive JPEG parameters for scan *\/$/;"	m	struct:jpeg_compress_struct
+Ah	/opt/libjpeg-turbo/include/jpeglib.h	/^  int Ss, Se, Ah, Al;		\/* progressive JPEG parameters for scan *\/$/;"	m	struct:jpeg_decompress_struct
+Al	/opt/libjpeg-turbo/include/jpeglib.h	/^  int Ah, Al;			\/* progressive JPEG successive approx. parms *\/$/;"	m	struct:__anon6
+Al	/opt/libjpeg-turbo/include/jpeglib.h	/^  int Ss, Se, Ah, Al;		\/* progressive JPEG parameters for scan *\/$/;"	m	struct:jpeg_compress_struct
+Al	/opt/libjpeg-turbo/include/jpeglib.h	/^  int Ss, Se, Ah, Al;		\/* progressive JPEG parameters for scan *\/$/;"	m	struct:jpeg_decompress_struct
+BITS_IN_JSAMPLE	/opt/libjpeg-turbo/include/jmorecfg.h	25;"	d
+BLOCK_SMOOTHING_SUPPORTED	/opt/libjpeg-turbo/include/jmorecfg.h	290;"	d
+BUILD_VERBOSE	./Makefile	/^BUILD_VERBOSE = 0 $/;"	m
+CC	./Makefile	/^CC              =       $(CROSSNAME)gcc$/;"	m
+CCIR601_sampling	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean CCIR601_sampling;	\/* TRUE=first samples are cosited *\/$/;"	m	struct:jpeg_compress_struct
+CCIR601_sampling	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean CCIR601_sampling;	\/* TRUE=first samples are cosited *\/$/;"	m	struct:jpeg_decompress_struct
+CENTERJSAMPLE	/opt/libjpeg-turbo/include/jmorecfg.h	76;"	d
+CENTERJSAMPLE	/opt/libjpeg-turbo/include/jmorecfg.h	90;"	d
+CFLAGS	./Makefile	/^CFLAGS          := $(COPTS)$/;"	m
+COMMON_INCLUDE	./Makefile	/^COMMON_INCLUDE = .\/ $/;"	m
+CP	./Makefile	/^CP              =       @cp -f$/;"	m
+CPPFLAGS	./Makefile	/^CPPFLAGS        := $(CPPOPTS)$/;"	m
+CPPOPTS	./Makefile	/^CPPOPTS         := $(OPTS) -Wnon-virtual-dtor$/;"	m
+CROSSNAME	./Makefile	/^CROSSNAME      =$/;"	m
+CTAG	./Makefile	/^CTAG    =       @ctags -R$/;"	m
+C_ARITH_CODING_SUPPORTED	/opt/libjpeg-turbo/include/jconfig.h	11;"	d
+C_MAX_BLOCKS_IN_MCU	/opt/libjpeg-turbo/include/jpeglib.h	58;"	d
+C_MULTISCAN_FILES_SUPPORTED	/opt/libjpeg-turbo/include/jmorecfg.h	272;"	d
+C_PROGRESSIVE_SUPPORTED	/opt/libjpeg-turbo/include/jmorecfg.h	273;"	d
+DCTSIZE	/opt/libjpeg-turbo/include/jpeglib.h	44;"	d
+DCTSIZE2	/opt/libjpeg-turbo/include/jpeglib.h	45;"	d
+DCT_FLOAT_SUPPORTED	/opt/libjpeg-turbo/include/jmorecfg.h	268;"	d
+DCT_IFAST_SUPPORTED	/opt/libjpeg-turbo/include/jmorecfg.h	267;"	d
+DCT_ISLOW_SUPPORTED	/opt/libjpeg-turbo/include/jmorecfg.h	266;"	d
+DCT_h_scaled_size	/opt/libjpeg-turbo/include/jpeglib.h	/^  int DCT_h_scaled_size;$/;"	m	struct:__anon5
+DCT_scaled_size	/opt/libjpeg-turbo/include/jpeglib.h	/^  int DCT_scaled_size;$/;"	m	struct:__anon5
+DCT_v_scaled_size	/opt/libjpeg-turbo/include/jpeglib.h	/^  int DCT_v_scaled_size;$/;"	m	struct:__anon5
+DLLCALL	/opt/libjpeg-turbo/include/turbojpeg.h	37;"	d
+DLLEXPORT	/opt/libjpeg-turbo/include/turbojpeg.h	33;"	d
+DLLEXPORT	/opt/libjpeg-turbo/include/turbojpeg.h	35;"	d
+D_ARITH_CODING_SUPPORTED	/opt/libjpeg-turbo/include/jconfig.h	14;"	d
+D_MAX_BLOCKS_IN_MCU	/opt/libjpeg-turbo/include/jpeglib.h	60;"	d
+D_MULTISCAN_FILES_SUPPORTED	/opt/libjpeg-turbo/include/jmorecfg.h	287;"	d
+D_PROGRESSIVE_SUPPORTED	/opt/libjpeg-turbo/include/jmorecfg.h	288;"	d
+ECHO	./Makefile	/^ECHO    =       @echo$/;"	m
+ENTROPY_OPT_SUPPORTED	/opt/libjpeg-turbo/include/jmorecfg.h	274;"	d
+ERREXIT	/opt/libjpeg-turbo/include/jerror.h	228;"	d
+ERREXIT1	/opt/libjpeg-turbo/include/jerror.h	231;"	d
+ERREXIT2	/opt/libjpeg-turbo/include/jerror.h	235;"	d
+ERREXIT3	/opt/libjpeg-turbo/include/jerror.h	240;"	d
+ERREXIT4	/opt/libjpeg-turbo/include/jerror.h	246;"	d
+ERREXITS	/opt/libjpeg-turbo/include/jerror.h	253;"	d
+EXE	./Makefile	/^EXE = doturbojpeg$/;"	m
+EXTERN	/opt/libjpeg-turbo/include/jmorecfg.h	192;"	d
+EXT_BGRX_BLUE	/opt/libjpeg-turbo/include/jmorecfg.h	339;"	d
+EXT_BGRX_GREEN	/opt/libjpeg-turbo/include/jmorecfg.h	338;"	d
+EXT_BGRX_PIXELSIZE	/opt/libjpeg-turbo/include/jmorecfg.h	340;"	d
+EXT_BGRX_RED	/opt/libjpeg-turbo/include/jmorecfg.h	337;"	d
+EXT_BGR_BLUE	/opt/libjpeg-turbo/include/jmorecfg.h	334;"	d
+EXT_BGR_GREEN	/opt/libjpeg-turbo/include/jmorecfg.h	333;"	d
+EXT_BGR_PIXELSIZE	/opt/libjpeg-turbo/include/jmorecfg.h	335;"	d
+EXT_BGR_RED	/opt/libjpeg-turbo/include/jmorecfg.h	332;"	d
+EXT_RGBX_BLUE	/opt/libjpeg-turbo/include/jmorecfg.h	329;"	d
+EXT_RGBX_GREEN	/opt/libjpeg-turbo/include/jmorecfg.h	328;"	d
+EXT_RGBX_PIXELSIZE	/opt/libjpeg-turbo/include/jmorecfg.h	330;"	d
+EXT_RGBX_RED	/opt/libjpeg-turbo/include/jmorecfg.h	327;"	d
+EXT_RGB_BLUE	/opt/libjpeg-turbo/include/jmorecfg.h	324;"	d
+EXT_RGB_GREEN	/opt/libjpeg-turbo/include/jmorecfg.h	323;"	d
+EXT_RGB_PIXELSIZE	/opt/libjpeg-turbo/include/jmorecfg.h	325;"	d
+EXT_RGB_RED	/opt/libjpeg-turbo/include/jmorecfg.h	322;"	d
+EXT_XBGR_BLUE	/opt/libjpeg-turbo/include/jmorecfg.h	344;"	d
+EXT_XBGR_GREEN	/opt/libjpeg-turbo/include/jmorecfg.h	343;"	d
+EXT_XBGR_PIXELSIZE	/opt/libjpeg-turbo/include/jmorecfg.h	345;"	d
+EXT_XBGR_RED	/opt/libjpeg-turbo/include/jmorecfg.h	342;"	d
+EXT_XRGB_BLUE	/opt/libjpeg-turbo/include/jmorecfg.h	349;"	d
+EXT_XRGB_GREEN	/opt/libjpeg-turbo/include/jmorecfg.h	348;"	d
+EXT_XRGB_PIXELSIZE	/opt/libjpeg-turbo/include/jmorecfg.h	350;"	d
+EXT_XRGB_RED	/opt/libjpeg-turbo/include/jmorecfg.h	347;"	d
+FALSE	/opt/libjpeg-turbo/include/jmorecfg.h	235;"	d
+FAR	/opt/libjpeg-turbo/include/jmorecfg.h	216;"	d
+FAR	/opt/libjpeg-turbo/include/jmorecfg.h	219;"	d
+FAR	/opt/libjpeg-turbo/include/jmorecfg.h	220;"	d
+FAST_FLOAT	/opt/libjpeg-turbo/include/jmorecfg.h	402;"	d
+FAST_FLOAT	/opt/libjpeg-turbo/include/jmorecfg.h	404;"	d
+GETJOCTET	/opt/libjpeg-turbo/include/jmorecfg.h	113;"	d
+GETJOCTET	/opt/libjpeg-turbo/include/jmorecfg.h	119;"	d
+GETJOCTET	/opt/libjpeg-turbo/include/jmorecfg.h	121;"	d
+GETJSAMPLE	/opt/libjpeg-turbo/include/jmorecfg.h	62;"	d
+GETJSAMPLE	/opt/libjpeg-turbo/include/jmorecfg.h	68;"	d
+GETJSAMPLE	/opt/libjpeg-turbo/include/jmorecfg.h	70;"	d
+GETJSAMPLE	/opt/libjpeg-turbo/include/jmorecfg.h	87;"	d
+GLOBAL	/opt/libjpeg-turbo/include/jmorecfg.h	190;"	d
+HAVE_PROTOTYPES	/opt/libjpeg-turbo/include/jconfig.h	20;"	d
+HAVE_STDDEF_H	/opt/libjpeg-turbo/include/jconfig.h	23;"	d
+HAVE_STDLIB_H	/opt/libjpeg-turbo/include/jconfig.h	26;"	d
+HAVE_UNSIGNED_CHAR	/opt/libjpeg-turbo/include/jconfig.h	29;"	d
+HAVE_UNSIGNED_SHORT	/opt/libjpeg-turbo/include/jconfig.h	32;"	d
+IDCT_SCALING_SUPPORTED	/opt/libjpeg-turbo/include/jmorecfg.h	291;"	d
+INCLUDE	./Makefile	/^INCLUDE		:=-I\/opt\/libjpeg-turbo\/include\/ $(INCLUDE)$/;"	m
+INPUT_SMOOTHING_SUPPORTED	/opt/libjpeg-turbo/include/jmorecfg.h	283;"	d
+INT16	/opt/libjpeg-turbo/include/jmorecfg.h	/^typedef short INT16;$/;"	t
+INT32	/opt/libjpeg-turbo/include/jmorecfg.h	/^typedef long INT32;$/;"	t
+JBLOCK	/opt/libjpeg-turbo/include/jpeglib.h	/^typedef JCOEF JBLOCK[DCTSIZE2];	\/* one block of coefficients *\/$/;"	t
+JBLOCKARRAY	/opt/libjpeg-turbo/include/jpeglib.h	/^typedef JBLOCKROW *JBLOCKARRAY;		\/* a 2-D array of coefficient blocks *\/$/;"	t
+JBLOCKIMAGE	/opt/libjpeg-turbo/include/jpeglib.h	/^typedef JBLOCKARRAY *JBLOCKIMAGE;	\/* a 3-D array of coefficient blocks *\/$/;"	t
+JBLOCKROW	/opt/libjpeg-turbo/include/jpeglib.h	/^typedef JBLOCK FAR *JBLOCKROW;	\/* pointer to one row of coefficient blocks *\/$/;"	t
+JCOEF	/opt/libjpeg-turbo/include/jmorecfg.h	/^typedef short JCOEF;$/;"	t
+JCOEFPTR	/opt/libjpeg-turbo/include/jpeglib.h	/^typedef JCOEF FAR *JCOEFPTR;	\/* useful in a couple of places *\/$/;"	t
+JCS_ALPHA_EXTENSIONS	/opt/libjpeg-turbo/include/jpeglib.h	215;"	d
+JCS_CMYK	/opt/libjpeg-turbo/include/jpeglib.h	/^	JCS_CMYK,		\/* C\/M\/Y\/K *\/$/;"	e	enum:__anon7
+JCS_EXTENSIONS	/opt/libjpeg-turbo/include/jpeglib.h	214;"	d
+JCS_EXT_ABGR	/opt/libjpeg-turbo/include/jpeglib.h	/^	JCS_EXT_ABGR,		\/* alpha\/blue\/green\/red *\/$/;"	e	enum:__anon7
+JCS_EXT_ARGB	/opt/libjpeg-turbo/include/jpeglib.h	/^	JCS_EXT_ARGB		\/* alpha\/red\/green\/blue *\/$/;"	e	enum:__anon7
+JCS_EXT_BGR	/opt/libjpeg-turbo/include/jpeglib.h	/^	JCS_EXT_BGR,		\/* blue\/green\/red *\/$/;"	e	enum:__anon7
+JCS_EXT_BGRA	/opt/libjpeg-turbo/include/jpeglib.h	/^	JCS_EXT_BGRA,		\/* blue\/green\/red\/alpha *\/$/;"	e	enum:__anon7
+JCS_EXT_BGRX	/opt/libjpeg-turbo/include/jpeglib.h	/^	JCS_EXT_BGRX,		\/* blue\/green\/red\/x *\/$/;"	e	enum:__anon7
+JCS_EXT_RGB	/opt/libjpeg-turbo/include/jpeglib.h	/^	JCS_EXT_RGB,		\/* red\/green\/blue *\/$/;"	e	enum:__anon7
+JCS_EXT_RGBA	/opt/libjpeg-turbo/include/jpeglib.h	/^	JCS_EXT_RGBA,		\/* red\/green\/blue\/alpha *\/$/;"	e	enum:__anon7
+JCS_EXT_RGBX	/opt/libjpeg-turbo/include/jpeglib.h	/^	JCS_EXT_RGBX,		\/* red\/green\/blue\/x *\/$/;"	e	enum:__anon7
+JCS_EXT_XBGR	/opt/libjpeg-turbo/include/jpeglib.h	/^	JCS_EXT_XBGR,		\/* x\/blue\/green\/red *\/$/;"	e	enum:__anon7
+JCS_EXT_XRGB	/opt/libjpeg-turbo/include/jpeglib.h	/^	JCS_EXT_XRGB,		\/* x\/red\/green\/blue *\/$/;"	e	enum:__anon7
+JCS_GRAYSCALE	/opt/libjpeg-turbo/include/jpeglib.h	/^	JCS_GRAYSCALE,		\/* monochrome *\/$/;"	e	enum:__anon7
+JCS_RGB	/opt/libjpeg-turbo/include/jpeglib.h	/^	JCS_RGB,		\/* red\/green\/blue as specified by the RGB_RED, RGB_GREEN,$/;"	e	enum:__anon7
+JCS_UNKNOWN	/opt/libjpeg-turbo/include/jpeglib.h	/^	JCS_UNKNOWN,		\/* error\/unspecified *\/$/;"	e	enum:__anon7
+JCS_YCCK	/opt/libjpeg-turbo/include/jpeglib.h	/^	JCS_YCCK,		\/* Y\/Cb\/Cr\/K *\/$/;"	e	enum:__anon7
+JCS_YCbCr	/opt/libjpeg-turbo/include/jpeglib.h	/^	JCS_YCbCr,		\/* Y\/Cb\/Cr (also known as YUV) *\/$/;"	e	enum:__anon7
+JDCT_DEFAULT	/opt/libjpeg-turbo/include/jpeglib.h	253;"	d
+JDCT_FASTEST	/opt/libjpeg-turbo/include/jpeglib.h	256;"	d
+JDCT_FLOAT	/opt/libjpeg-turbo/include/jpeglib.h	/^	JDCT_FLOAT		\/* floating-point: accurate, fast on fast HW *\/$/;"	e	enum:__anon8
+JDCT_IFAST	/opt/libjpeg-turbo/include/jpeglib.h	/^	JDCT_IFAST,		\/* faster, less accurate integer method *\/$/;"	e	enum:__anon8
+JDCT_ISLOW	/opt/libjpeg-turbo/include/jpeglib.h	/^	JDCT_ISLOW,		\/* slow but accurate integer algorithm *\/$/;"	e	enum:__anon8
+JDIMENSION	/opt/libjpeg-turbo/include/jmorecfg.h	/^typedef unsigned int JDIMENSION;$/;"	t
+JDITHER_FS	/opt/libjpeg-turbo/include/jpeglib.h	/^	JDITHER_FS		\/* Floyd-Steinberg error diffusion dither *\/$/;"	e	enum:__anon9
+JDITHER_NONE	/opt/libjpeg-turbo/include/jpeglib.h	/^	JDITHER_NONE,		\/* no dithering *\/$/;"	e	enum:__anon9
+JDITHER_ORDERED	/opt/libjpeg-turbo/include/jpeglib.h	/^	JDITHER_ORDERED,	\/* simple ordered dither *\/$/;"	e	enum:__anon9
+JERROR_H	/opt/libjpeg-turbo/include/jerror.h	222;"	d
+JFIF_major_version	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT8 JFIF_major_version;	\/* JFIF version number *\/$/;"	m	struct:jpeg_decompress_struct
+JFIF_major_version	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT8 JFIF_major_version;	\/* What to write for the JFIF version number *\/$/;"	m	struct:jpeg_compress_struct
+JFIF_minor_version	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT8 JFIF_minor_version;$/;"	m	struct:jpeg_compress_struct
+JFIF_minor_version	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT8 JFIF_minor_version;$/;"	m	struct:jpeg_decompress_struct
+JHUFF_TBL	/opt/libjpeg-turbo/include/jpeglib.h	/^} JHUFF_TBL;$/;"	t	typeref:struct:__anon4
+JMAKE_ENUM_LIST	/opt/libjpeg-turbo/include/jerror.h	214;"	d
+JMAKE_ENUM_LIST	/opt/libjpeg-turbo/include/jerror.h	25;"	d
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_ARITH_NOTIMPL,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_ALIGN_TYPE, "ALIGN_TYPE is wrong, please fix")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_ALLOC_CHUNK, "MAX_ALLOC_CHUNK is wrong, please fix")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_BUFFER_MODE, "Bogus buffer control mode")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_COMPONENT_ID, "Invalid component ID %d in SOS")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_CROP_SPEC, "Invalid crop request")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_DCTSIZE, "IDCT output block size %d not supported")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_DCT_COEF, "DCT coefficient out of range")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_DROP_SAMPLING,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_HUFF_TABLE, "Bogus Huffman table definition")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_IN_COLORSPACE, "Bogus input colorspace")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_J_COLORSPACE, "Bogus JPEG colorspace")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_LENGTH, "Bogus marker length")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_LIB_VERSION,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_MCU_SIZE, "Sampling factors too large for interleaved scan")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_POOL_ID, "Invalid memory pool code %d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_PRECISION, "Unsupported JPEG data precision %d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_PROGRESSION,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_PROG_SCRIPT,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_SAMPLING, "Bogus sampling factors")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_SCAN_SCRIPT, "Invalid scan script at entry %d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_STATE, "Improper call to JPEG library in state %d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_STRUCT_SIZE,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BAD_VIRTUAL_ACCESS, "Bogus virtual array access")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_BUFFER_SIZE, "Buffer passed to JPEG library is too small")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_CANT_SUSPEND, "Suspension not allowed here")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_CCIR601_NOTIMPL, "CCIR601 sampling not implemented yet")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_COMPONENT_COUNT, "Too many color components: %d, max %d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_CONVERSION_NOTIMPL, "Unsupported color conversion request")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_DAC_INDEX, "Bogus DAC index %d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_DAC_VALUE, "Bogus DAC value 0x%x")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_DHT_INDEX, "Bogus DHT index %d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_DQT_INDEX, "Bogus DQT index %d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_EMPTY_IMAGE, "Empty JPEG image (DNL not supported)")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_EMS_READ, "Read from EMS failed")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_EMS_WRITE, "Write to EMS failed")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_EOI_EXPECTED, "Didn't expect more than one scan")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_FILE_READ, "Input file read error")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_FILE_WRITE, "Output file write error --- out of disk space?")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_FRACT_SAMPLE_NOTIMPL, "Fractional sampling not implemented yet")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_HUFF_CLEN_OVERFLOW, "Huffman code size table overflow")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_HUFF_MISSING_CODE, "Missing Huffman code table entry")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_IMAGE_TOO_BIG, "Maximum supported image dimension is %u pixels")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_INPUT_EMPTY, "Empty input file")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_INPUT_EOF, "Premature end of input file")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_MISMATCHED_QUANT_TABLE,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_MISSING_DATA, "Scan script does not transmit all data")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_MODE_CHANGE, "Invalid color quantization mode change")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_NOTIMPL, "Not implemented yet")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_NOT_COMPILED, "Requested feature was omitted at compile time")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_NO_ARITH_TABLE, "Arithmetic table 0x%02x was not defined")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_NO_BACKING_STORE, "Backing store not supported")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_NO_HUFF_TABLE, "Huffman table 0x%02x was not defined")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_NO_IMAGE, "JPEG datastream contains no image")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_NO_QUANT_TABLE, "Quantization table 0x%02x was not defined")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_NO_SOI, "Not a JPEG file: starts with 0x%02x 0x%02x")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_OUT_OF_MEMORY, "Insufficient memory (case %d)")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_QUANT_COMPONENTS,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_QUANT_FEW_COLORS, "Cannot quantize to fewer than %d colors")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_QUANT_MANY_COLORS, "Cannot quantize to more than %d colors")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_SOF_DUPLICATE, "Invalid JPEG file structure: two SOF markers")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_SOF_NO_SOS, "Invalid JPEG file structure: missing SOS marker")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_SOF_UNSUPPORTED, "Unsupported JPEG process: SOF type 0x%02x")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_SOI_DUPLICATE, "Invalid JPEG file structure: two SOI markers")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_SOS_NO_SOF, "Invalid JPEG file structure: SOS before SOF")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_TFILE_CREATE, "Failed to create temporary file %s")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_TFILE_READ, "Read failed on temporary file")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_TFILE_SEEK, "Seek failed on temporary file")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_TFILE_WRITE,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_TOO_LITTLE_DATA, "Application transferred too few scanlines")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_UNKNOWN_MARKER, "Unsupported marker type 0x%02x")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_VIRTUAL_BUG, "Virtual array controller messed up")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_WIDTH_OVERFLOW, "Image too wide for this implementation")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_XMS_READ, "Read from XMS failed")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JERR_XMS_WRITE, "Write to XMS failed")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JMSG_COPYRIGHT, JCOPYRIGHT)$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JMSG_NOMESSAGE, "Bogus message code %d") \/* Must be first entry! *\/$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JMSG_VERSION, JVERSION)$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_16BIT_TABLES,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_ADOBE,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_APP0, "Unknown APP0 marker (not JFIF), length %u")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_APP14, "Unknown APP14 marker (not Adobe), length %u")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_DAC, "Define Arithmetic Table 0x%02x: 0x%02x")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_DHT, "Define Huffman Table 0x%02x")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_DQT, "Define Quantization Table %d  precision %d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_DRI, "Define Restart Interval %u")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_EMS_CLOSE, "Freed EMS handle %u")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_EMS_OPEN, "Obtained EMS handle %u")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_EOI, "End Of Image")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_HUFFBITS, "        %3d %3d %3d %3d %3d %3d %3d %3d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_JFIF, "JFIF APP0 marker: version %d.%02d, density %dx%d  %d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_JFIF_BADTHUMBNAILSIZE,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_JFIF_EXTENSION,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_JFIF_THUMBNAIL, "    with %d x %d thumbnail image")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_MISC_MARKER, "Miscellaneous marker 0x%02x, length %u")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_PARMLESS_MARKER, "Unexpected marker 0x%02x")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_QUANTVALS, "        %4u %4u %4u %4u %4u %4u %4u %4u")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_QUANT_3_NCOLORS, "Quantizing to %d = %d*%d*%d colors")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_QUANT_NCOLORS, "Quantizing to %d colors")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_QUANT_SELECTED, "Selected %d colors for quantization")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_RECOVERY_ACTION, "At marker 0x%02x, recovery action %d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_RST, "RST%d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_SMOOTH_NOTIMPL,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_SOF, "Start Of Frame 0x%02x: width=%u, height=%u, components=%d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_SOF_COMPONENT, "    Component %d: %dhx%dv q=%d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_SOI, "Start of Image")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_SOS, "Start Of Scan: %d components")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_SOS_COMPONENT, "    Component %d: dc=%d ac=%d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_SOS_PARAMS, "  Ss=%d, Se=%d, Ah=%d, Al=%d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_TFILE_CLOSE, "Closed temporary file %s")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_TFILE_OPEN, "Opened temporary file %s")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_THUMB_JPEG,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_THUMB_PALETTE,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_THUMB_RGB,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_UNKNOWN_IDS,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_XMS_CLOSE, "Freed XMS handle %u")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JTRC_XMS_OPEN, "Obtained XMS handle %u")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JWRN_ADOBE_XFORM, "Unknown Adobe color transform code %d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JWRN_ARITH_BAD_CODE, "Corrupt JPEG data: bad arithmetic code")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JWRN_BOGUS_PROGRESSION,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JWRN_EXTRANEOUS_DATA,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JWRN_HIT_MARKER, "Corrupt JPEG data: premature end of data segment")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JWRN_HUFF_BAD_CODE, "Corrupt JPEG data: bad Huffman code")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JWRN_JFIF_MAJOR, "Warning: unknown JFIF revision number %d.%02d")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JWRN_JPEG_EOF, "Premature end of JPEG file")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JWRN_MUST_RESYNC,$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JWRN_NOT_SEQUENTIAL, "Invalid SOS parameters for sequential JPEG")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	/^JMESSAGE(JWRN_TOO_MUCH_DATA, "Application transferred too many scanlines")$/;"	e	enum:__anon11
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	218;"	d
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	28;"	d
+JMESSAGE	/opt/libjpeg-turbo/include/jerror.h	36;"	d
+JMETHOD	/opt/libjpeg-turbo/include/jmorecfg.h	202;"	d
+JMETHOD	/opt/libjpeg-turbo/include/jmorecfg.h	204;"	d
+JMETHOD	/opt/libjpeg-turbo/include/jpeglib.h	/^typedef JMETHOD(boolean, jpeg_marker_parser_method, (j_decompress_ptr cinfo));$/;"	t
+JMSG_LASTMSGCODE	/opt/libjpeg-turbo/include/jerror.h	/^  JMSG_LASTMSGCODE$/;"	e	enum:__anon11
+JMSG_LENGTH_MAX	/opt/libjpeg-turbo/include/jpeglib.h	729;"	d
+JMSG_STR_PARM_MAX	/opt/libjpeg-turbo/include/jpeglib.h	737;"	d
+JOCTET	/opt/libjpeg-turbo/include/jmorecfg.h	/^typedef char JOCTET;$/;"	t
+JOCTET	/opt/libjpeg-turbo/include/jmorecfg.h	/^typedef unsigned char JOCTET;$/;"	t
+JPEGLIB_H	/opt/libjpeg-turbo/include/jpeglib.h	17;"	d
+JPEG_APP0	/opt/libjpeg-turbo/include/jpeglib.h	1159;"	d
+JPEG_COM	/opt/libjpeg-turbo/include/jpeglib.h	1160;"	d
+JPEG_EOI	/opt/libjpeg-turbo/include/jpeglib.h	1158;"	d
+JPEG_HEADER_OK	/opt/libjpeg-turbo/include/jpeglib.h	1075;"	d
+JPEG_HEADER_TABLES_ONLY	/opt/libjpeg-turbo/include/jpeglib.h	1076;"	d
+JPEG_INTERNAL_OPTIONS	/opt/libjpeg-turbo/include/jmorecfg.h	250;"	d
+JPEG_LIB_VERSION	/opt/libjpeg-turbo/include/jconfig.h	5;"	d
+JPEG_MAX_DIMENSION	/opt/libjpeg-turbo/include/jmorecfg.h	175;"	d
+JPEG_NUMCS	/opt/libjpeg-turbo/include/jmorecfg.h	320;"	d
+JPEG_REACHED_EOI	/opt/libjpeg-turbo/include/jpeglib.h	1106;"	d
+JPEG_REACHED_SOS	/opt/libjpeg-turbo/include/jpeglib.h	1105;"	d
+JPEG_ROW_COMPLETED	/opt/libjpeg-turbo/include/jpeglib.h	1107;"	d
+JPEG_RST0	/opt/libjpeg-turbo/include/jpeglib.h	1157;"	d
+JPEG_SCAN_COMPLETED	/opt/libjpeg-turbo/include/jpeglib.h	1108;"	d
+JPEG_SUSPENDED	/opt/libjpeg-turbo/include/jpeglib.h	1074;"	d
+JPOOL_IMAGE	/opt/libjpeg-turbo/include/jpeglib.h	826;"	d
+JPOOL_NUMPOOLS	/opt/libjpeg-turbo/include/jpeglib.h	827;"	d
+JPOOL_PERMANENT	/opt/libjpeg-turbo/include/jpeglib.h	825;"	d
+JPP	/opt/libjpeg-turbo/include/jpeglib.h	895;"	d
+JPP	/opt/libjpeg-turbo/include/jpeglib.h	897;"	d
+JQUANT_TBL	/opt/libjpeg-turbo/include/jpeglib.h	/^} JQUANT_TBL;$/;"	t	typeref:struct:__anon3
+JSAMPARRAY	/opt/libjpeg-turbo/include/jpeglib.h	/^typedef JSAMPROW *JSAMPARRAY;	\/* ptr to some rows (a 2-D sample array) *\/$/;"	t
+JSAMPIMAGE	/opt/libjpeg-turbo/include/jpeglib.h	/^typedef JSAMPARRAY *JSAMPIMAGE;	\/* a 3-D sample array: top index is color *\/$/;"	t
+JSAMPLE	/opt/libjpeg-turbo/include/jmorecfg.h	/^typedef char JSAMPLE;$/;"	t
+JSAMPLE	/opt/libjpeg-turbo/include/jmorecfg.h	/^typedef short JSAMPLE;$/;"	t
+JSAMPLE	/opt/libjpeg-turbo/include/jmorecfg.h	/^typedef unsigned char JSAMPLE;$/;"	t
+JSAMPROW	/opt/libjpeg-turbo/include/jpeglib.h	/^typedef JSAMPLE FAR *JSAMPROW;	\/* ptr to one image row of pixel samples. *\/$/;"	t
+J_COLOR_SPACE	/opt/libjpeg-turbo/include/jpeglib.h	/^} J_COLOR_SPACE;$/;"	t	typeref:enum:__anon7
+J_DCT_METHOD	/opt/libjpeg-turbo/include/jpeglib.h	/^} J_DCT_METHOD;$/;"	t	typeref:enum:__anon8
+J_DITHER_MODE	/opt/libjpeg-turbo/include/jpeglib.h	/^} J_DITHER_MODE;$/;"	t	typeref:enum:__anon9
+J_MESSAGE_CODE	/opt/libjpeg-turbo/include/jerror.h	/^} J_MESSAGE_CODE;$/;"	t	typeref:enum:__anon11
+LD	./Makefile	/^LD              =       $(CROSSNAME)ld$/;"	m
+LDFLAGS	./Makefile	/^LDFLAGS         :=$/;"	m
+LIBJPEG_TURBO_VERSION	/opt/libjpeg-turbo/include/jconfig.h	8;"	d
+LIBRARY	./Makefile	/^LIBRARY         :=-L\/opt\/libjpeg-turbo\/lib64 -lturbojpeg$/;"	m
+LN	./Makefile	/^LN              =       @ln -sf $/;"	m
+LOCAL	/opt/libjpeg-turbo/include/jmorecfg.h	188;"	d
+MAKESTMT	/opt/libjpeg-turbo/include/jerror.h	258;"	d
+MAXJSAMPLE	/opt/libjpeg-turbo/include/jmorecfg.h	75;"	d
+MAXJSAMPLE	/opt/libjpeg-turbo/include/jmorecfg.h	89;"	d
+MAX_COMPONENTS	/opt/libjpeg-turbo/include/jmorecfg.h	37;"	d
+MAX_COMPS_IN_SCAN	/opt/libjpeg-turbo/include/jpeglib.h	49;"	d
+MAX_SAMP_FACTOR	/opt/libjpeg-turbo/include/jpeglib.h	50;"	d
+MCU_blocks	/opt/libjpeg-turbo/include/jpeglib.h	/^  int MCU_blocks;		\/* MCU_width * MCU_height *\/$/;"	m	struct:__anon5
+MCU_height	/opt/libjpeg-turbo/include/jpeglib.h	/^  int MCU_height;		\/* number of blocks per MCU, vertically *\/$/;"	m	struct:__anon5
+MCU_membership	/opt/libjpeg-turbo/include/jpeglib.h	/^  int MCU_membership[C_MAX_BLOCKS_IN_MCU];$/;"	m	struct:jpeg_compress_struct
+MCU_membership	/opt/libjpeg-turbo/include/jpeglib.h	/^  int MCU_membership[D_MAX_BLOCKS_IN_MCU];$/;"	m	struct:jpeg_decompress_struct
+MCU_rows_in_scan	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION MCU_rows_in_scan;	\/* # of MCU rows in the image *\/$/;"	m	struct:jpeg_compress_struct
+MCU_rows_in_scan	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION MCU_rows_in_scan;	\/* # of MCU rows in the image *\/$/;"	m	struct:jpeg_decompress_struct
+MCU_sample_width	/opt/libjpeg-turbo/include/jpeglib.h	/^  int MCU_sample_width;		\/* MCU width in samples, MCU_width*DCT_[h_]scaled_size *\/$/;"	m	struct:__anon5
+MCU_width	/opt/libjpeg-turbo/include/jpeglib.h	/^  int MCU_width;		\/* number of blocks per MCU, horizontally *\/$/;"	m	struct:__anon5
+MCUs_per_row	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION MCUs_per_row;	\/* # of MCUs across the image *\/$/;"	m	struct:jpeg_compress_struct
+MCUs_per_row	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION MCUs_per_row;	\/* # of MCUs across the image *\/$/;"	m	struct:jpeg_decompress_struct
+MEM_SRCDST_SUPPORTED	/opt/libjpeg-turbo/include/jconfig.h	17;"	d
+METHODDEF	/opt/libjpeg-turbo/include/jmorecfg.h	186;"	d
+MULTIPLIER	/opt/libjpeg-turbo/include/jmorecfg.h	385;"	d
+MULTIPLIER	/opt/libjpeg-turbo/include/jmorecfg.h	387;"	d
+NEED_SYS_TYPES_H	/opt/libjpeg-turbo/include/jconfig.h	44;"	d
+NUMSUBOPT	/opt/libjpeg-turbo/include/turbojpeg.h	873;"	d
+NUM_ARITH_TBLS	/opt/libjpeg-turbo/include/jpeglib.h	48;"	d
+NUM_HUFF_TBLS	/opt/libjpeg-turbo/include/jpeglib.h	47;"	d
+NUM_QUANT_TBLS	/opt/libjpeg-turbo/include/jpeglib.h	46;"	d
+OBJTREE	./Makefile	/^OBJTREE                 = $(if $(BUILD_DIR),$(BUILD_DIR),$(CURDIR))$/;"	m
+OPTS	./Makefile	/^OPTS            := -fPIC -O0 -g -w$/;"	m
+PROJ_HOME	./Makefile	/^PROJ_HOME       = `pwd`$/;"	m
+Q	./Makefile	/^Q = @$/;"	m
+QUANT_1PASS_SUPPORTED	/opt/libjpeg-turbo/include/jmorecfg.h	294;"	d
+QUANT_2PASS_SUPPORTED	/opt/libjpeg-turbo/include/jmorecfg.h	295;"	d
+RGB_BLUE	/opt/libjpeg-turbo/include/jmorecfg.h	317;"	d
+RGB_GREEN	/opt/libjpeg-turbo/include/jmorecfg.h	316;"	d
+RGB_PIXELSIZE	/opt/libjpeg-turbo/include/jmorecfg.h	318;"	d
+RGB_RED	/opt/libjpeg-turbo/include/jmorecfg.h	315;"	d
+RM	./Makefile	/^RM              =       @rm -f$/;"	m
+SAVE_MARKERS_SUPPORTED	/opt/libjpeg-turbo/include/jmorecfg.h	289;"	d
+STRIP	./Makefile	/^STRIP   =       $(CROSSNAME)strip$/;"	m
+Se	/opt/libjpeg-turbo/include/jpeglib.h	/^  int Ss, Se, Ah, Al;		\/* progressive JPEG parameters for scan *\/$/;"	m	struct:jpeg_compress_struct
+Se	/opt/libjpeg-turbo/include/jpeglib.h	/^  int Ss, Se, Ah, Al;		\/* progressive JPEG parameters for scan *\/$/;"	m	struct:jpeg_decompress_struct
+Se	/opt/libjpeg-turbo/include/jpeglib.h	/^  int Ss, Se;			\/* progressive JPEG spectral selection parms *\/$/;"	m	struct:__anon6
+Ss	/opt/libjpeg-turbo/include/jpeglib.h	/^  int Ss, Se, Ah, Al;		\/* progressive JPEG parameters for scan *\/$/;"	m	struct:jpeg_compress_struct
+Ss	/opt/libjpeg-turbo/include/jpeglib.h	/^  int Ss, Se, Ah, Al;		\/* progressive JPEG parameters for scan *\/$/;"	m	struct:jpeg_decompress_struct
+Ss	/opt/libjpeg-turbo/include/jpeglib.h	/^  int Ss, Se;			\/* progressive JPEG spectral selection parms *\/$/;"	m	struct:__anon6
+TJFLAG_ACCURATEDCT	/opt/libjpeg-turbo/include/turbojpeg.h	281;"	d
+TJFLAG_BOTTOMUP	/opt/libjpeg-turbo/include/turbojpeg.h	227;"	d
+TJFLAG_FASTDCT	/opt/libjpeg-turbo/include/turbojpeg.h	272;"	d
+TJFLAG_FASTUPSAMPLE	/opt/libjpeg-turbo/include/turbojpeg.h	255;"	d
+TJFLAG_FORCEMMX	/opt/libjpeg-turbo/include/turbojpeg.h	232;"	d
+TJFLAG_FORCESSE	/opt/libjpeg-turbo/include/turbojpeg.h	237;"	d
+TJFLAG_FORCESSE2	/opt/libjpeg-turbo/include/turbojpeg.h	242;"	d
+TJFLAG_FORCESSE3	/opt/libjpeg-turbo/include/turbojpeg.h	247;"	d
+TJFLAG_NOREALLOC	/opt/libjpeg-turbo/include/turbojpeg.h	263;"	d
+TJPAD	/opt/libjpeg-turbo/include/turbojpeg.h	484;"	d
+TJPF	/opt/libjpeg-turbo/include/turbojpeg.h	/^enum TJPF$/;"	g
+TJPF_ABGR	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJPF_ABGR,$/;"	e	enum:TJPF
+TJPF_ARGB	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJPF_ARGB$/;"	e	enum:TJPF
+TJPF_BGR	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJPF_BGR,$/;"	e	enum:TJPF
+TJPF_BGRA	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJPF_BGRA,$/;"	e	enum:TJPF
+TJPF_BGRX	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJPF_BGRX,$/;"	e	enum:TJPF
+TJPF_GRAY	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJPF_GRAY,$/;"	e	enum:TJPF
+TJPF_RGB	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJPF_RGB=0,$/;"	e	enum:TJPF
+TJPF_RGBA	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJPF_RGBA,$/;"	e	enum:TJPF
+TJPF_RGBX	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJPF_RGBX,$/;"	e	enum:TJPF
+TJPF_XBGR	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJPF_XBGR,$/;"	e	enum:TJPF
+TJPF_XRGB	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJPF_XRGB,$/;"	e	enum:TJPF
+TJSAMP	/opt/libjpeg-turbo/include/turbojpeg.h	/^enum TJSAMP$/;"	g
+TJSAMP_420	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJSAMP_420,$/;"	e	enum:TJSAMP
+TJSAMP_422	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJSAMP_422,$/;"	e	enum:TJSAMP
+TJSAMP_440	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJSAMP_440$/;"	e	enum:TJSAMP
+TJSAMP_444	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJSAMP_444=0,$/;"	e	enum:TJSAMP
+TJSAMP_GRAY	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJSAMP_GRAY,$/;"	e	enum:TJSAMP
+TJSCALED	/opt/libjpeg-turbo/include/turbojpeg.h	491;"	d
+TJXOP	/opt/libjpeg-turbo/include/turbojpeg.h	/^enum TJXOP$/;"	g
+TJXOPT_CROP	/opt/libjpeg-turbo/include/turbojpeg.h	361;"	d
+TJXOPT_GRAY	/opt/libjpeg-turbo/include/turbojpeg.h	366;"	d
+TJXOPT_NOOUTPUT	/opt/libjpeg-turbo/include/turbojpeg.h	373;"	d
+TJXOPT_PERFECT	/opt/libjpeg-turbo/include/turbojpeg.h	351;"	d
+TJXOPT_TRIM	/opt/libjpeg-turbo/include/turbojpeg.h	356;"	d
+TJXOP_HFLIP	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJXOP_HFLIP,$/;"	e	enum:TJXOP
+TJXOP_NONE	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJXOP_NONE=0,$/;"	e	enum:TJXOP
+TJXOP_ROT180	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJXOP_ROT180,$/;"	e	enum:TJXOP
+TJXOP_ROT270	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJXOP_ROT270$/;"	e	enum:TJXOP
+TJXOP_ROT90	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJXOP_ROT90,$/;"	e	enum:TJXOP
+TJXOP_TRANSPOSE	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJXOP_TRANSPOSE,$/;"	e	enum:TJXOP
+TJXOP_TRANSVERSE	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJXOP_TRANSVERSE,$/;"	e	enum:TJXOP
+TJXOP_VFLIP	/opt/libjpeg-turbo/include/turbojpeg.h	/^  TJXOP_VFLIP,$/;"	e	enum:TJXOP
+TJ_411	/opt/libjpeg-turbo/include/turbojpeg.h	877;"	d
+TJ_420	/opt/libjpeg-turbo/include/turbojpeg.h	876;"	d
+TJ_422	/opt/libjpeg-turbo/include/turbojpeg.h	875;"	d
+TJ_444	/opt/libjpeg-turbo/include/turbojpeg.h	874;"	d
+TJ_ALPHAFIRST	/opt/libjpeg-turbo/include/turbojpeg.h	885;"	d
+TJ_BGR	/opt/libjpeg-turbo/include/turbojpeg.h	880;"	d
+TJ_BOTTOMUP	/opt/libjpeg-turbo/include/turbojpeg.h	881;"	d
+TJ_FASTUPSAMPLE	/opt/libjpeg-turbo/include/turbojpeg.h	887;"	d
+TJ_FORCEMMX	/opt/libjpeg-turbo/include/turbojpeg.h	882;"	d
+TJ_FORCESSE	/opt/libjpeg-turbo/include/turbojpeg.h	883;"	d
+TJ_FORCESSE2	/opt/libjpeg-turbo/include/turbojpeg.h	884;"	d
+TJ_FORCESSE3	/opt/libjpeg-turbo/include/turbojpeg.h	886;"	d
+TJ_GRAYSCALE	/opt/libjpeg-turbo/include/turbojpeg.h	878;"	d
+TJ_NUMPF	/opt/libjpeg-turbo/include/turbojpeg.h	116;"	d
+TJ_NUMSAMP	/opt/libjpeg-turbo/include/turbojpeg.h	52;"	d
+TJ_NUMXOP	/opt/libjpeg-turbo/include/turbojpeg.h	287;"	d
+TJ_YUV	/opt/libjpeg-turbo/include/turbojpeg.h	888;"	d
+TRACEMS	/opt/libjpeg-turbo/include/jerror.h	275;"	d
+TRACEMS1	/opt/libjpeg-turbo/include/jerror.h	278;"	d
+TRACEMS2	/opt/libjpeg-turbo/include/jerror.h	282;"	d
+TRACEMS3	/opt/libjpeg-turbo/include/jerror.h	287;"	d
+TRACEMS4	/opt/libjpeg-turbo/include/jerror.h	292;"	d
+TRACEMS5	/opt/libjpeg-turbo/include/jerror.h	297;"	d
+TRACEMS8	/opt/libjpeg-turbo/include/jerror.h	303;"	d
+TRACEMSS	/opt/libjpeg-turbo/include/jerror.h	309;"	d
+TRUE	/opt/libjpeg-turbo/include/jmorecfg.h	238;"	d
+UINT16	/opt/libjpeg-turbo/include/jmorecfg.h	/^typedef unsigned int UINT16;$/;"	t
+UINT16	/opt/libjpeg-turbo/include/jmorecfg.h	/^typedef unsigned short UINT16;$/;"	t
+UINT8	/opt/libjpeg-turbo/include/jmorecfg.h	/^typedef char UINT8;$/;"	t
+UINT8	/opt/libjpeg-turbo/include/jmorecfg.h	/^typedef short UINT8;$/;"	t
+UINT8	/opt/libjpeg-turbo/include/jmorecfg.h	/^typedef unsigned char UINT8;$/;"	t
+UPSAMPLE_MERGING_SUPPORTED	/opt/libjpeg-turbo/include/jmorecfg.h	293;"	d
+UPSAMPLE_SCALING_SUPPORTED	/opt/libjpeg-turbo/include/jmorecfg.h	292;"	d
+WARNMS	/opt/libjpeg-turbo/include/jerror.h	261;"	d
+WARNMS1	/opt/libjpeg-turbo/include/jerror.h	264;"	d
+WARNMS2	/opt/libjpeg-turbo/include/jerror.h	268;"	d
+WITH_SIMD	/opt/libjpeg-turbo/include/jconfig.h	50;"	d
+X_density	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT16 X_density;		\/* Horizontal pixel density *\/$/;"	m	struct:jpeg_compress_struct
+X_density	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT16 X_density;		\/* Horizontal pixel density *\/$/;"	m	struct:jpeg_decompress_struct
+Y_density	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT16 Y_density;		\/* Vertical pixel density *\/$/;"	m	struct:jpeg_compress_struct
+Y_density	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT16 Y_density;		\/* Vertical pixel density *\/$/;"	m	struct:jpeg_decompress_struct
+__TURBOJPEG_H__	/opt/libjpeg-turbo/include/turbojpeg.h	30;"	d
+ac_huff_tbl_ptrs	/opt/libjpeg-turbo/include/jpeglib.h	/^  JHUFF_TBL * ac_huff_tbl_ptrs[NUM_HUFF_TBLS];$/;"	m	struct:jpeg_compress_struct
+ac_huff_tbl_ptrs	/opt/libjpeg-turbo/include/jpeglib.h	/^  JHUFF_TBL * ac_huff_tbl_ptrs[NUM_HUFF_TBLS];$/;"	m	struct:jpeg_decompress_struct
+ac_tbl_no	/opt/libjpeg-turbo/include/jpeglib.h	/^  int ac_tbl_no;		\/* AC entropy table selector (0..3) *\/$/;"	m	struct:__anon5
+actual_number_of_colors	/opt/libjpeg-turbo/include/jpeglib.h	/^  int actual_number_of_colors;	\/* number of entries in use *\/$/;"	m	struct:jpeg_decompress_struct
+addon_message_table	/opt/libjpeg-turbo/include/jpeglib.h	/^  const char * const * addon_message_table; \/* Non-library errors *\/$/;"	m	struct:jpeg_error_mgr
+arith_ac_K	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT8 arith_ac_K[NUM_ARITH_TBLS]; \/* Kx values for AC arith-coding tables *\/$/;"	m	struct:jpeg_compress_struct
+arith_ac_K	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT8 arith_ac_K[NUM_ARITH_TBLS]; \/* Kx values for AC arith-coding tables *\/$/;"	m	struct:jpeg_decompress_struct
+arith_code	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean arith_code;		\/* TRUE=arithmetic coding, FALSE=Huffman *\/$/;"	m	struct:jpeg_compress_struct
+arith_code	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean arith_code;		\/* TRUE=arithmetic coding, FALSE=Huffman *\/$/;"	m	struct:jpeg_decompress_struct
+arith_dc_L	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT8 arith_dc_L[NUM_ARITH_TBLS]; \/* L values for DC arith-coding tables *\/$/;"	m	struct:jpeg_compress_struct
+arith_dc_L	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT8 arith_dc_L[NUM_ARITH_TBLS]; \/* L values for DC arith-coding tables *\/$/;"	m	struct:jpeg_decompress_struct
+arith_dc_U	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT8 arith_dc_U[NUM_ARITH_TBLS]; \/* U values for DC arith-coding tables *\/$/;"	m	struct:jpeg_compress_struct
+arith_dc_U	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT8 arith_dc_U[NUM_ARITH_TBLS]; \/* U values for DC arith-coding tables *\/$/;"	m	struct:jpeg_decompress_struct
+bits	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT8 bits[17];		\/* bits[k] = # of symbols with codes of *\/$/;"	m	struct:__anon4
+block_size	/opt/libjpeg-turbo/include/jpeglib.h	/^  int block_size;		\/* the basic DCT block size: 1..16 *\/$/;"	m	struct:jpeg_compress_struct
+block_size	/opt/libjpeg-turbo/include/jpeglib.h	/^  int block_size;		\/* the basic DCT block size: 1..16 *\/$/;"	m	struct:jpeg_decompress_struct
+blocks_in_MCU	/opt/libjpeg-turbo/include/jpeglib.h	/^  int blocks_in_MCU;		\/* # of DCT blocks per MCU *\/$/;"	m	struct:jpeg_compress_struct
+blocks_in_MCU	/opt/libjpeg-turbo/include/jpeglib.h	/^  int blocks_in_MCU;		\/* # of DCT blocks per MCU *\/$/;"	m	struct:jpeg_decompress_struct
+boolean	/opt/libjpeg-turbo/include/jmorecfg.h	/^typedef int boolean;$/;"	t
+buffered_image	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean buffered_image;	\/* TRUE=multiple output passes *\/$/;"	m	struct:jpeg_decompress_struct
+bytes_in_buffer	/opt/libjpeg-turbo/include/jpeglib.h	/^  size_t bytes_in_buffer;	\/* # of bytes remaining in buffer *\/$/;"	m	struct:jpeg_source_mgr
+cconvert	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_color_converter * cconvert;$/;"	m	struct:jpeg_compress_struct	typeref:struct:jpeg_compress_struct::jpeg_color_converter
+cconvert	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_color_deconverter * cconvert;$/;"	m	struct:jpeg_decompress_struct	typeref:struct:jpeg_decompress_struct::jpeg_color_deconverter
+coef	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_c_coef_controller * coef;$/;"	m	struct:jpeg_compress_struct	typeref:struct:jpeg_compress_struct::jpeg_c_coef_controller
+coef	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_d_coef_controller * coef;$/;"	m	struct:jpeg_decompress_struct	typeref:struct:jpeg_decompress_struct::jpeg_d_coef_controller
+coef_bits	/opt/libjpeg-turbo/include/jpeglib.h	/^  int (*coef_bits)[DCTSIZE2];	\/* -1 or current Al value for each coef *\/$/;"	m	struct:jpeg_decompress_struct
+colormap	/opt/libjpeg-turbo/include/jpeglib.h	/^  JSAMPARRAY colormap;		\/* The color map as a 2-D pixel array *\/$/;"	m	struct:jpeg_decompress_struct
+comp_info	/opt/libjpeg-turbo/include/jpeglib.h	/^  jpeg_component_info * comp_info;$/;"	m	struct:jpeg_compress_struct
+comp_info	/opt/libjpeg-turbo/include/jpeglib.h	/^  jpeg_component_info * comp_info;$/;"	m	struct:jpeg_decompress_struct
+completed_passes	/opt/libjpeg-turbo/include/jpeglib.h	/^  int completed_passes;		\/* passes completed so far *\/$/;"	m	struct:jpeg_progress_mgr
+component_id	/opt/libjpeg-turbo/include/jpeglib.h	/^  int component_id;		\/* identifier for this component (0..255) *\/$/;"	m	struct:__anon5
+component_index	/opt/libjpeg-turbo/include/jpeglib.h	/^  int component_index;		\/* its index in SOF or cinfo->comp_info[] *\/$/;"	m	struct:__anon5
+component_index	/opt/libjpeg-turbo/include/jpeglib.h	/^  int component_index[MAX_COMPS_IN_SCAN]; \/* their SOF\/comp_info[] indexes *\/$/;"	m	struct:__anon6
+component_needed	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean component_needed;	\/* do we need the value of this component? *\/$/;"	m	struct:__anon5
+comps_in_scan	/opt/libjpeg-turbo/include/jpeglib.h	/^  int comps_in_scan;		\/* # of JPEG components in this scan *\/$/;"	m	struct:jpeg_compress_struct
+comps_in_scan	/opt/libjpeg-turbo/include/jpeglib.h	/^  int comps_in_scan;		\/* # of JPEG components in this scan *\/$/;"	m	struct:jpeg_decompress_struct
+comps_in_scan	/opt/libjpeg-turbo/include/jpeglib.h	/^  int comps_in_scan;		\/* number of components encoded in this scan *\/$/;"	m	struct:__anon6
+cquantize	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_color_quantizer * cquantize;$/;"	m	struct:jpeg_decompress_struct	typeref:struct:jpeg_decompress_struct::jpeg_color_quantizer
+cur_comp_info	/opt/libjpeg-turbo/include/jpeglib.h	/^  jpeg_component_info * cur_comp_info[MAX_COMPS_IN_SCAN];$/;"	m	struct:jpeg_compress_struct
+cur_comp_info	/opt/libjpeg-turbo/include/jpeglib.h	/^  jpeg_component_info * cur_comp_info[MAX_COMPS_IN_SCAN];$/;"	m	struct:jpeg_decompress_struct
+customFilter	/opt/libjpeg-turbo/include/turbojpeg.h	/^  int (*customFilter)(short *coeffs, tjregion arrayRegion,$/;"	m	struct:tjtransform
+data	/opt/libjpeg-turbo/include/jpeglib.h	/^  JOCTET FAR * data;		\/* the data contained in the marker *\/$/;"	m	struct:jpeg_marker_struct
+data	/opt/libjpeg-turbo/include/turbojpeg.h	/^  void *data;$/;"	m	struct:tjtransform
+data_length	/opt/libjpeg-turbo/include/jpeglib.h	/^  unsigned int data_length;	\/* # bytes of data saved at data[] *\/$/;"	m	struct:jpeg_marker_struct
+data_precision	/opt/libjpeg-turbo/include/jpeglib.h	/^  int data_precision;		\/* bits of precision in image data *\/$/;"	m	struct:jpeg_compress_struct
+data_precision	/opt/libjpeg-turbo/include/jpeglib.h	/^  int data_precision;		\/* bits of precision in image data *\/$/;"	m	struct:jpeg_decompress_struct
+dc_huff_tbl_ptrs	/opt/libjpeg-turbo/include/jpeglib.h	/^  JHUFF_TBL * dc_huff_tbl_ptrs[NUM_HUFF_TBLS];$/;"	m	struct:jpeg_compress_struct
+dc_huff_tbl_ptrs	/opt/libjpeg-turbo/include/jpeglib.h	/^  JHUFF_TBL * dc_huff_tbl_ptrs[NUM_HUFF_TBLS];$/;"	m	struct:jpeg_decompress_struct
+dc_tbl_no	/opt/libjpeg-turbo/include/jpeglib.h	/^  int dc_tbl_no;		\/* DC entropy table selector (0..3) *\/$/;"	m	struct:__anon5
+dct_method	/opt/libjpeg-turbo/include/jpeglib.h	/^  J_DCT_METHOD dct_method;	\/* DCT algorithm selector *\/$/;"	m	struct:jpeg_compress_struct
+dct_method	/opt/libjpeg-turbo/include/jpeglib.h	/^  J_DCT_METHOD dct_method;	\/* IDCT algorithm selector *\/$/;"	m	struct:jpeg_decompress_struct
+dct_table	/opt/libjpeg-turbo/include/jpeglib.h	/^  void * dct_table;$/;"	m	struct:__anon5
+denom	/opt/libjpeg-turbo/include/turbojpeg.h	/^  int denom;$/;"	m	struct:__anon1
+density_unit	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT8 density_unit;		\/* JFIF code for pixel size units *\/$/;"	m	struct:jpeg_compress_struct
+density_unit	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT8 density_unit;		\/* JFIF code for pixel size units *\/$/;"	m	struct:jpeg_decompress_struct
+desired_number_of_colors	/opt/libjpeg-turbo/include/jpeglib.h	/^  int desired_number_of_colors;	\/* max # colors to use in created colormap *\/$/;"	m	struct:jpeg_decompress_struct
+dest	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_destination_mgr * dest;$/;"	m	struct:jpeg_compress_struct	typeref:struct:jpeg_compress_struct::jpeg_destination_mgr
+dither_mode	/opt/libjpeg-turbo/include/jpeglib.h	/^  J_DITHER_MODE dither_mode;	\/* type of color dithering to use *\/$/;"	m	struct:jpeg_decompress_struct
+do_block_smoothing	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean do_block_smoothing;	\/* TRUE=apply interblock smoothing *\/$/;"	m	struct:jpeg_decompress_struct
+do_fancy_downsampling	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean do_fancy_downsampling; \/* TRUE=apply fancy downsampling *\/$/;"	m	struct:jpeg_compress_struct
+do_fancy_upsampling	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean do_fancy_upsampling;	\/* TRUE=apply fancy upsampling *\/$/;"	m	struct:jpeg_decompress_struct
+downsample	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_downsampler * downsample;$/;"	m	struct:jpeg_compress_struct	typeref:struct:jpeg_compress_struct::jpeg_downsampler
+downsampled_height	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION downsampled_height; \/* actual height in samples *\/$/;"	m	struct:__anon5
+downsampled_width	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION downsampled_width;	 \/* actual width in samples *\/$/;"	m	struct:__anon5
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_c_coef_controller { long dummy; };$/;"	m	struct:jpeg_c_coef_controller
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_c_main_controller { long dummy; };$/;"	m	struct:jpeg_c_main_controller
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_c_prep_controller { long dummy; };$/;"	m	struct:jpeg_c_prep_controller
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_color_converter { long dummy; };$/;"	m	struct:jpeg_color_converter
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_color_deconverter { long dummy; };$/;"	m	struct:jpeg_color_deconverter
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_color_quantizer { long dummy; };$/;"	m	struct:jpeg_color_quantizer
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_comp_master { long dummy; };$/;"	m	struct:jpeg_comp_master
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_d_coef_controller { long dummy; };$/;"	m	struct:jpeg_d_coef_controller
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_d_main_controller { long dummy; };$/;"	m	struct:jpeg_d_main_controller
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_d_post_controller { long dummy; };$/;"	m	struct:jpeg_d_post_controller
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_decomp_master { long dummy; };$/;"	m	struct:jpeg_decomp_master
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_downsampler { long dummy; };$/;"	m	struct:jpeg_downsampler
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_entropy_decoder { long dummy; };$/;"	m	struct:jpeg_entropy_decoder
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_entropy_encoder { long dummy; };$/;"	m	struct:jpeg_entropy_encoder
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_forward_dct { long dummy; };$/;"	m	struct:jpeg_forward_dct
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_input_controller { long dummy; };$/;"	m	struct:jpeg_input_controller
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_inverse_dct { long dummy; };$/;"	m	struct:jpeg_inverse_dct
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_marker_reader { long dummy; };$/;"	m	struct:jpeg_marker_reader
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_marker_writer { long dummy; };$/;"	m	struct:jpeg_marker_writer
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_upsampler { long dummy; };$/;"	m	struct:jpeg_upsampler
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jvirt_barray_control { long dummy; };$/;"	m	struct:jvirt_barray_control
+dummy	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jvirt_sarray_control { long dummy; };$/;"	m	struct:jvirt_sarray_control
+enable_1pass_quant	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean enable_1pass_quant;	\/* enable future use of 1-pass quantizer *\/$/;"	m	struct:jpeg_decompress_struct
+enable_2pass_quant	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean enable_2pass_quant;	\/* enable future use of 2-pass quantizer *\/$/;"	m	struct:jpeg_decompress_struct
+enable_external_quant	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean enable_external_quant;\/* enable future use of external colormap *\/$/;"	m	struct:jpeg_decompress_struct
+entropy	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_entropy_decoder * entropy;$/;"	m	struct:jpeg_decompress_struct	typeref:struct:jpeg_decompress_struct::jpeg_entropy_decoder
+entropy	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_entropy_encoder * entropy;$/;"	m	struct:jpeg_compress_struct	typeref:struct:jpeg_compress_struct::jpeg_entropy_encoder
+fdct	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_forward_dct * fdct;$/;"	m	struct:jpeg_compress_struct	typeref:struct:jpeg_compress_struct::jpeg_forward_dct
+first_addon_message	/opt/libjpeg-turbo/include/jpeglib.h	/^  int first_addon_message;	\/* code for first string in addon table *\/$/;"	m	struct:jpeg_error_mgr
+free_in_buffer	/opt/libjpeg-turbo/include/jpeglib.h	/^  size_t free_in_buffer;	\/* # of byte spaces remaining in buffer *\/$/;"	m	struct:jpeg_destination_mgr
+h	/opt/libjpeg-turbo/include/turbojpeg.h	/^  int h;$/;"	m	struct:__anon2
+h_samp_factor	/opt/libjpeg-turbo/include/jpeglib.h	/^  int h_samp_factor;		\/* horizontal sampling factor (1..4) *\/$/;"	m	struct:__anon5
+height_in_blocks	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION height_in_blocks;$/;"	m	struct:__anon5
+huffval	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT8 huffval[256];		\/* The symbols, in order of incr code length *\/$/;"	m	struct:__anon4
+i	/opt/libjpeg-turbo/include/jpeglib.h	/^    int i[8];$/;"	m	union:jpeg_error_mgr::__anon10
+idct	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_inverse_dct * idct;$/;"	m	struct:jpeg_decompress_struct	typeref:struct:jpeg_decompress_struct::jpeg_inverse_dct
+image_height	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION image_height;	\/* input image height *\/$/;"	m	struct:jpeg_compress_struct
+image_height	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION image_height;	\/* nominal image height *\/$/;"	m	struct:jpeg_decompress_struct
+image_width	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION image_width;	\/* input image width *\/$/;"	m	struct:jpeg_compress_struct
+image_width	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION image_width;	\/* nominal image width (from SOF marker) *\/$/;"	m	struct:jpeg_decompress_struct
+in_color_space	/opt/libjpeg-turbo/include/jpeglib.h	/^  J_COLOR_SPACE in_color_space;	\/* colorspace of input image *\/$/;"	m	struct:jpeg_compress_struct
+input_components	/opt/libjpeg-turbo/include/jpeglib.h	/^  int input_components;		\/* # of color components in input image *\/$/;"	m	struct:jpeg_compress_struct
+input_gamma	/opt/libjpeg-turbo/include/jpeglib.h	/^  double input_gamma;		\/* image gamma of input image *\/$/;"	m	struct:jpeg_compress_struct
+input_iMCU_row	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION input_iMCU_row;	\/* Number of iMCU rows completed *\/$/;"	m	struct:jpeg_decompress_struct
+input_scan_number	/opt/libjpeg-turbo/include/jpeglib.h	/^  int input_scan_number;	\/* Number of SOS markers seen so far *\/$/;"	m	struct:jpeg_decompress_struct
+inputctl	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_input_controller * inputctl;$/;"	m	struct:jpeg_decompress_struct	typeref:struct:jpeg_decompress_struct::jpeg_input_controller
+is_baseline	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean is_baseline;		\/* TRUE if Baseline SOF0 encountered *\/$/;"	m	struct:jpeg_decompress_struct
+j_common_ptr	/opt/libjpeg-turbo/include/jpeglib.h	/^typedef struct jpeg_common_struct * j_common_ptr;$/;"	t	typeref:struct:jpeg_common_struct
+j_compress_ptr	/opt/libjpeg-turbo/include/jpeglib.h	/^typedef struct jpeg_compress_struct * j_compress_ptr;$/;"	t	typeref:struct:jpeg_compress_struct
+j_decompress_ptr	/opt/libjpeg-turbo/include/jpeglib.h	/^typedef struct jpeg_decompress_struct * j_decompress_ptr;$/;"	t	typeref:struct:jpeg_decompress_struct
+jpeg_CreateCompress	/opt/libjpeg-turbo/include/jpeglib.h	910;"	d
+jpeg_CreateDecompress	/opt/libjpeg-turbo/include/jpeglib.h	911;"	d
+jpeg_abort	/opt/libjpeg-turbo/include/jpeglib.h	967;"	d
+jpeg_abort_compress	/opt/libjpeg-turbo/include/jpeglib.h	965;"	d
+jpeg_abort_decompress	/opt/libjpeg-turbo/include/jpeglib.h	966;"	d
+jpeg_add_quant_table	/opt/libjpeg-turbo/include/jpeglib.h	928;"	d
+jpeg_alloc_huff_table	/opt/libjpeg-turbo/include/jpeglib.h	933;"	d
+jpeg_alloc_quant_table	/opt/libjpeg-turbo/include/jpeglib.h	932;"	d
+jpeg_c_coef_controller	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_c_coef_controller { long dummy; };$/;"	s
+jpeg_c_main_controller	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_c_main_controller { long dummy; };$/;"	s
+jpeg_c_prep_controller	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_c_prep_controller { long dummy; };$/;"	s
+jpeg_calc_jpeg_dimensions	/opt/libjpeg-turbo/include/jpeglib.h	938;"	d
+jpeg_calc_output_dimensions	/opt/libjpeg-turbo/include/jpeglib.h	959;"	d
+jpeg_color_converter	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_color_converter { long dummy; };$/;"	s
+jpeg_color_deconverter	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_color_deconverter { long dummy; };$/;"	s
+jpeg_color_quantizer	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_color_quantizer { long dummy; };$/;"	s
+jpeg_color_space	/opt/libjpeg-turbo/include/jpeglib.h	/^  J_COLOR_SPACE jpeg_color_space; \/* colorspace of JPEG image *\/$/;"	m	struct:jpeg_compress_struct
+jpeg_color_space	/opt/libjpeg-turbo/include/jpeglib.h	/^  J_COLOR_SPACE jpeg_color_space; \/* colorspace of JPEG image *\/$/;"	m	struct:jpeg_decompress_struct
+jpeg_common_fields	/opt/libjpeg-turbo/include/jpeglib.h	/^  jpeg_common_fields;		\/* Fields common to both master struct types *\/$/;"	m	struct:jpeg_common_struct
+jpeg_common_fields	/opt/libjpeg-turbo/include/jpeglib.h	/^  jpeg_common_fields;		\/* Fields shared with jpeg_compress_struct *\/$/;"	m	struct:jpeg_decompress_struct
+jpeg_common_fields	/opt/libjpeg-turbo/include/jpeglib.h	/^  jpeg_common_fields;		\/* Fields shared with jpeg_decompress_struct *\/$/;"	m	struct:jpeg_compress_struct
+jpeg_common_fields	/opt/libjpeg-turbo/include/jpeglib.h	270;"	d
+jpeg_common_struct	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_common_struct {$/;"	s
+jpeg_comp_master	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_comp_master { long dummy; };$/;"	s
+jpeg_component_info	/opt/libjpeg-turbo/include/jpeglib.h	/^} jpeg_component_info;$/;"	t	typeref:struct:__anon5
+jpeg_compress_struct	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_compress_struct {$/;"	s
+jpeg_consume_input	/opt/libjpeg-turbo/include/jpeglib.h	955;"	d
+jpeg_copy_critical_parameters	/opt/libjpeg-turbo/include/jpeglib.h	964;"	d
+jpeg_core_output_dimensions	/opt/libjpeg-turbo/include/jpeglib.h	957;"	d
+jpeg_create_compress	/opt/libjpeg-turbo/include/jpeglib.h	984;"	d
+jpeg_create_decompress	/opt/libjpeg-turbo/include/jpeglib.h	987;"	d
+jpeg_d_coef_controller	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_d_coef_controller { long dummy; };$/;"	s
+jpeg_d_main_controller	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_d_main_controller { long dummy; };$/;"	s
+jpeg_d_post_controller	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_d_post_controller { long dummy; };$/;"	s
+jpeg_decomp_master	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_decomp_master { long dummy; };$/;"	s
+jpeg_decompress_struct	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_decompress_struct {$/;"	s
+jpeg_default_colorspace	/opt/libjpeg-turbo/include/jpeglib.h	922;"	d
+jpeg_default_qtables	/opt/libjpeg-turbo/include/jpeglib.h	926;"	d
+jpeg_destination_mgr	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_destination_mgr {$/;"	s
+jpeg_destroy	/opt/libjpeg-turbo/include/jpeglib.h	968;"	d
+jpeg_destroy_compress	/opt/libjpeg-turbo/include/jpeglib.h	912;"	d
+jpeg_destroy_decompress	/opt/libjpeg-turbo/include/jpeglib.h	913;"	d
+jpeg_downsampler	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_downsampler { long dummy; };$/;"	s
+jpeg_entropy_decoder	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_entropy_decoder { long dummy; };$/;"	s
+jpeg_entropy_encoder	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_entropy_encoder { long dummy; };$/;"	s
+jpeg_error_mgr	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_error_mgr {$/;"	s
+jpeg_finish_compress	/opt/libjpeg-turbo/include/jpeglib.h	936;"	d
+jpeg_finish_decompress	/opt/libjpeg-turbo/include/jpeglib.h	948;"	d
+jpeg_finish_output	/opt/libjpeg-turbo/include/jpeglib.h	952;"	d
+jpeg_forward_dct	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_forward_dct { long dummy; };$/;"	s
+jpeg_has_multiple_scans	/opt/libjpeg-turbo/include/jpeglib.h	950;"	d
+jpeg_height	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION jpeg_height;	\/* scaled JPEG image height *\/$/;"	m	struct:jpeg_compress_struct
+jpeg_input_complete	/opt/libjpeg-turbo/include/jpeglib.h	953;"	d
+jpeg_input_controller	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_input_controller { long dummy; };$/;"	s
+jpeg_inverse_dct	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_inverse_dct { long dummy; };$/;"	s
+jpeg_marker_reader	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_marker_reader { long dummy; };$/;"	s
+jpeg_marker_struct	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_marker_struct {$/;"	s
+jpeg_marker_writer	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_marker_writer { long dummy; };$/;"	s
+jpeg_mem_dest	/opt/libjpeg-turbo/include/jpeglib.h	917;"	d
+jpeg_mem_src	/opt/libjpeg-turbo/include/jpeglib.h	918;"	d
+jpeg_memory_mgr	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_memory_mgr {$/;"	s
+jpeg_message_table	/opt/libjpeg-turbo/include/jpeglib.h	/^  const char * const * jpeg_message_table; \/* Library errors *\/$/;"	m	struct:jpeg_error_mgr
+jpeg_new_colormap	/opt/libjpeg-turbo/include/jpeglib.h	954;"	d
+jpeg_progress_mgr	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_progress_mgr {$/;"	s
+jpeg_quality_scaling	/opt/libjpeg-turbo/include/jpeglib.h	929;"	d
+jpeg_read_coefficients	/opt/libjpeg-turbo/include/jpeglib.h	962;"	d
+jpeg_read_header	/opt/libjpeg-turbo/include/jpeglib.h	945;"	d
+jpeg_read_raw_data	/opt/libjpeg-turbo/include/jpeglib.h	949;"	d
+jpeg_read_scanlines	/opt/libjpeg-turbo/include/jpeglib.h	947;"	d
+jpeg_resync_to_restart	/opt/libjpeg-turbo/include/jpeglib.h	969;"	d
+jpeg_save_markers	/opt/libjpeg-turbo/include/jpeglib.h	960;"	d
+jpeg_saved_marker_ptr	/opt/libjpeg-turbo/include/jpeglib.h	/^typedef struct jpeg_marker_struct FAR * jpeg_saved_marker_ptr;$/;"	t	typeref:struct:FAR
+jpeg_scan_info	/opt/libjpeg-turbo/include/jpeglib.h	/^} jpeg_scan_info;$/;"	t	typeref:struct:__anon6
+jpeg_set_colorspace	/opt/libjpeg-turbo/include/jpeglib.h	921;"	d
+jpeg_set_defaults	/opt/libjpeg-turbo/include/jpeglib.h	920;"	d
+jpeg_set_linear_quality	/opt/libjpeg-turbo/include/jpeglib.h	924;"	d
+jpeg_set_marker_processor	/opt/libjpeg-turbo/include/jpeglib.h	961;"	d
+jpeg_set_quality	/opt/libjpeg-turbo/include/jpeglib.h	923;"	d
+jpeg_simple_progression	/opt/libjpeg-turbo/include/jpeglib.h	930;"	d
+jpeg_source_mgr	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_source_mgr {$/;"	s
+jpeg_start_compress	/opt/libjpeg-turbo/include/jpeglib.h	934;"	d
+jpeg_start_decompress	/opt/libjpeg-turbo/include/jpeglib.h	946;"	d
+jpeg_start_output	/opt/libjpeg-turbo/include/jpeglib.h	951;"	d
+jpeg_std_error	/opt/libjpeg-turbo/include/jpeglib.h	909;"	d
+jpeg_stdio_dest	/opt/libjpeg-turbo/include/jpeglib.h	914;"	d
+jpeg_stdio_src	/opt/libjpeg-turbo/include/jpeglib.h	915;"	d
+jpeg_suppress_tables	/opt/libjpeg-turbo/include/jpeglib.h	931;"	d
+jpeg_upsampler	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jpeg_upsampler { long dummy; };$/;"	s
+jpeg_width	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION jpeg_width;	\/* scaled JPEG image width *\/$/;"	m	struct:jpeg_compress_struct
+jpeg_write_coefficients	/opt/libjpeg-turbo/include/jpeglib.h	963;"	d
+jpeg_write_m_byte	/opt/libjpeg-turbo/include/jpeglib.h	943;"	d
+jpeg_write_m_header	/opt/libjpeg-turbo/include/jpeglib.h	942;"	d
+jpeg_write_marker	/opt/libjpeg-turbo/include/jpeglib.h	941;"	d
+jpeg_write_raw_data	/opt/libjpeg-turbo/include/jpeglib.h	940;"	d
+jpeg_write_scanlines	/opt/libjpeg-turbo/include/jpeglib.h	935;"	d
+jpeg_write_tables	/opt/libjpeg-turbo/include/jpeglib.h	944;"	d
+jvirt_barray_control	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jvirt_barray_control { long dummy; };$/;"	s
+jvirt_barray_ptr	/opt/libjpeg-turbo/include/jpeglib.h	/^typedef struct jvirt_barray_control * jvirt_barray_ptr;$/;"	t	typeref:struct:jvirt_barray_control
+jvirt_sarray_control	/opt/libjpeg-turbo/include/jpeglib.h	/^struct jvirt_sarray_control { long dummy; };$/;"	s
+jvirt_sarray_ptr	/opt/libjpeg-turbo/include/jpeglib.h	/^typedef struct jvirt_sarray_control * jvirt_sarray_ptr;$/;"	t	typeref:struct:jvirt_sarray_control
+last_addon_message	/opt/libjpeg-turbo/include/jpeglib.h	/^  int last_addon_message;	\/* code for last string in addon table *\/$/;"	m	struct:jpeg_error_mgr
+last_col_width	/opt/libjpeg-turbo/include/jpeglib.h	/^  int last_col_width;		\/* # of non-dummy blocks across in last MCU *\/$/;"	m	struct:__anon5
+last_jpeg_message	/opt/libjpeg-turbo/include/jpeglib.h	/^  int last_jpeg_message;    \/* Table contains strings 0..last_jpeg_message *\/$/;"	m	struct:jpeg_error_mgr
+last_row_height	/opt/libjpeg-turbo/include/jpeglib.h	/^  int last_row_height;		\/* # of non-dummy blocks down in last MCU *\/$/;"	m	struct:__anon5
+lim_Se	/opt/libjpeg-turbo/include/jpeglib.h	/^  int lim_Se;			\/* min( Se, DCTSIZE2-1 ) *\/$/;"	m	struct:jpeg_compress_struct
+lim_Se	/opt/libjpeg-turbo/include/jpeglib.h	/^  int lim_Se;			\/* min( Se, DCTSIZE2-1 ) for entropy decode *\/$/;"	m	struct:jpeg_decompress_struct
+main	./main.c	/^int main(int argc, char * argv[])$/;"	f
+main	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_c_main_controller * main;$/;"	m	struct:jpeg_compress_struct	typeref:struct:jpeg_compress_struct::jpeg_c_main_controller
+main	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_d_main_controller * main;$/;"	m	struct:jpeg_decompress_struct	typeref:struct:jpeg_decompress_struct::jpeg_d_main_controller
+marker	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT8 marker;			\/* marker code: JPEG_COM, or JPEG_APP0+n *\/$/;"	m	struct:jpeg_marker_struct
+marker	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_marker_reader * marker;$/;"	m	struct:jpeg_decompress_struct	typeref:struct:jpeg_decompress_struct::jpeg_marker_reader
+marker	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_marker_writer * marker;$/;"	m	struct:jpeg_compress_struct	typeref:struct:jpeg_compress_struct::jpeg_marker_writer
+marker_list	/opt/libjpeg-turbo/include/jpeglib.h	/^  jpeg_saved_marker_ptr marker_list; \/* Head of list of saved markers *\/$/;"	m	struct:jpeg_decompress_struct
+master	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_comp_master * master;$/;"	m	struct:jpeg_compress_struct	typeref:struct:jpeg_compress_struct::jpeg_comp_master
+master	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_decomp_master * master;$/;"	m	struct:jpeg_decompress_struct	typeref:struct:jpeg_decompress_struct::jpeg_decomp_master
+max_alloc_chunk	/opt/libjpeg-turbo/include/jpeglib.h	/^  long max_alloc_chunk;$/;"	m	struct:jpeg_memory_mgr
+max_h_samp_factor	/opt/libjpeg-turbo/include/jpeglib.h	/^  int max_h_samp_factor;	\/* largest h_samp_factor *\/$/;"	m	struct:jpeg_compress_struct
+max_h_samp_factor	/opt/libjpeg-turbo/include/jpeglib.h	/^  int max_h_samp_factor;	\/* largest h_samp_factor *\/$/;"	m	struct:jpeg_decompress_struct
+max_memory_to_use	/opt/libjpeg-turbo/include/jpeglib.h	/^  long max_memory_to_use;$/;"	m	struct:jpeg_memory_mgr
+max_v_samp_factor	/opt/libjpeg-turbo/include/jpeglib.h	/^  int max_v_samp_factor;	\/* largest v_samp_factor *\/$/;"	m	struct:jpeg_compress_struct
+max_v_samp_factor	/opt/libjpeg-turbo/include/jpeglib.h	/^  int max_v_samp_factor;	\/* largest v_samp_factor *\/$/;"	m	struct:jpeg_decompress_struct
+min_DCT_h_scaled_size	/opt/libjpeg-turbo/include/jpeglib.h	/^  int min_DCT_h_scaled_size;	\/* smallest DCT_h_scaled_size of any component *\/$/;"	m	struct:jpeg_compress_struct
+min_DCT_h_scaled_size	/opt/libjpeg-turbo/include/jpeglib.h	/^  int min_DCT_h_scaled_size;	\/* smallest DCT_h_scaled_size of any component *\/$/;"	m	struct:jpeg_decompress_struct
+min_DCT_scaled_size	/opt/libjpeg-turbo/include/jpeglib.h	/^  int min_DCT_scaled_size;	\/* smallest DCT_scaled_size of any component *\/$/;"	m	struct:jpeg_decompress_struct
+min_DCT_v_scaled_size	/opt/libjpeg-turbo/include/jpeglib.h	/^  int min_DCT_v_scaled_size;	\/* smallest DCT_v_scaled_size of any component *\/$/;"	m	struct:jpeg_compress_struct
+min_DCT_v_scaled_size	/opt/libjpeg-turbo/include/jpeglib.h	/^  int min_DCT_v_scaled_size;	\/* smallest DCT_v_scaled_size of any component *\/$/;"	m	struct:jpeg_decompress_struct
+msg_code	/opt/libjpeg-turbo/include/jpeglib.h	/^  int msg_code;$/;"	m	struct:jpeg_error_mgr
+msg_parm	/opt/libjpeg-turbo/include/jpeglib.h	/^  } msg_parm;$/;"	m	struct:jpeg_error_mgr	typeref:union:jpeg_error_mgr::__anon10
+my_error_exit	/opt/libjpeg-turbo/doc/example.c	/^my_error_exit (j_common_ptr cinfo)$/;"	f
+my_error_mgr	/opt/libjpeg-turbo/doc/example.c	/^struct my_error_mgr {$/;"	s	file:
+my_error_ptr	/opt/libjpeg-turbo/doc/example.c	/^typedef struct my_error_mgr * my_error_ptr;$/;"	t	typeref:struct:my_error_mgr	file:
+natural_order	/opt/libjpeg-turbo/include/jpeglib.h	/^  const int * natural_order;	\/* natural-order position array *\/$/;"	m	struct:jpeg_compress_struct
+natural_order	/opt/libjpeg-turbo/include/jpeglib.h	/^  const int * natural_order; \/* natural-order position array for entropy decode *\/$/;"	m	struct:jpeg_decompress_struct
+next	/opt/libjpeg-turbo/include/jpeglib.h	/^  jpeg_saved_marker_ptr next;	\/* next in list, or NULL *\/$/;"	m	struct:jpeg_marker_struct
+next_input_byte	/opt/libjpeg-turbo/include/jpeglib.h	/^  const JOCTET * next_input_byte; \/* => next byte to read from buffer *\/$/;"	m	struct:jpeg_source_mgr
+next_output_byte	/opt/libjpeg-turbo/include/jpeglib.h	/^  JOCTET * next_output_byte;	\/* => next byte to write in buffer *\/$/;"	m	struct:jpeg_destination_mgr
+next_scanline	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION next_scanline;	\/* 0 .. image_height-1  *\/$/;"	m	struct:jpeg_compress_struct
+num	/opt/libjpeg-turbo/include/turbojpeg.h	/^  int num;$/;"	m	struct:__anon1
+num_components	/opt/libjpeg-turbo/include/jpeglib.h	/^  int num_components;		\/* # of color components in JPEG image *\/$/;"	m	struct:jpeg_compress_struct
+num_components	/opt/libjpeg-turbo/include/jpeglib.h	/^  int num_components;		\/* # of color components in JPEG image *\/$/;"	m	struct:jpeg_decompress_struct
+num_scans	/opt/libjpeg-turbo/include/jpeglib.h	/^  int num_scans;		\/* # of entries in scan_info array *\/$/;"	m	struct:jpeg_compress_struct
+num_warnings	/opt/libjpeg-turbo/include/jpeglib.h	/^  long num_warnings;		\/* number of corrupt-data warnings *\/$/;"	m	struct:jpeg_error_mgr
+op	/opt/libjpeg-turbo/include/turbojpeg.h	/^  int op;$/;"	m	struct:tjtransform
+optimize_coding	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean optimize_coding;	\/* TRUE=optimize entropy encoding parms *\/$/;"	m	struct:jpeg_compress_struct
+options	/opt/libjpeg-turbo/include/turbojpeg.h	/^  int options;$/;"	m	struct:tjtransform
+original_length	/opt/libjpeg-turbo/include/jpeglib.h	/^  unsigned int original_length;	\/* # bytes of data in the file *\/$/;"	m	struct:jpeg_marker_struct
+out_color_components	/opt/libjpeg-turbo/include/jpeglib.h	/^  int out_color_components;	\/* # of color components in out_color_space *\/$/;"	m	struct:jpeg_decompress_struct
+out_color_space	/opt/libjpeg-turbo/include/jpeglib.h	/^  J_COLOR_SPACE out_color_space; \/* colorspace for output *\/$/;"	m	struct:jpeg_decompress_struct
+output_components	/opt/libjpeg-turbo/include/jpeglib.h	/^  int output_components;	\/* # of color components returned *\/$/;"	m	struct:jpeg_decompress_struct
+output_gamma	/opt/libjpeg-turbo/include/jpeglib.h	/^  double output_gamma;		\/* image gamma wanted in output *\/$/;"	m	struct:jpeg_decompress_struct
+output_height	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION output_height;	\/* scaled image height *\/$/;"	m	struct:jpeg_decompress_struct
+output_iMCU_row	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION output_iMCU_row;	\/* Number of iMCU rows read *\/$/;"	m	struct:jpeg_decompress_struct
+output_scan_number	/opt/libjpeg-turbo/include/jpeglib.h	/^  int output_scan_number;	\/* Nominal scan number being displayed *\/$/;"	m	struct:jpeg_decompress_struct
+output_scanline	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION output_scanline;	\/* 0 .. output_height-1  *\/$/;"	m	struct:jpeg_decompress_struct
+output_width	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION output_width;	\/* scaled image width *\/$/;"	m	struct:jpeg_decompress_struct
+pass_counter	/opt/libjpeg-turbo/include/jpeglib.h	/^  long pass_counter;		\/* work units completed in this pass *\/$/;"	m	struct:jpeg_progress_mgr
+pass_limit	/opt/libjpeg-turbo/include/jpeglib.h	/^  long pass_limit;		\/* total number of work units in this pass *\/$/;"	m	struct:jpeg_progress_mgr
+post	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_d_post_controller * post;$/;"	m	struct:jpeg_decompress_struct	typeref:struct:jpeg_decompress_struct::jpeg_d_post_controller
+prep	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_c_prep_controller * prep;$/;"	m	struct:jpeg_compress_struct	typeref:struct:jpeg_compress_struct::jpeg_c_prep_controller
+progressive_mode	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean progressive_mode;	\/* TRUE if SOFn specifies progressive mode *\/$/;"	m	struct:jpeg_decompress_struct
+progressive_mode	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean progressive_mode;	\/* TRUE if scan script uses progressive mode *\/$/;"	m	struct:jpeg_compress_struct
+pub	/opt/libjpeg-turbo/doc/example.c	/^  struct jpeg_error_mgr pub;	\/* "public" fields *\/$/;"	m	struct:my_error_mgr	typeref:struct:my_error_mgr::jpeg_error_mgr	file:
+q_scale_factor	/opt/libjpeg-turbo/include/jpeglib.h	/^  int q_scale_factor[NUM_QUANT_TBLS];$/;"	m	struct:jpeg_compress_struct
+quant_table	/opt/libjpeg-turbo/include/jpeglib.h	/^  JQUANT_TBL * quant_table;$/;"	m	struct:__anon5
+quant_tbl_no	/opt/libjpeg-turbo/include/jpeglib.h	/^  int quant_tbl_no;		\/* quantization table selector (0..3) *\/$/;"	m	struct:__anon5
+quant_tbl_ptrs	/opt/libjpeg-turbo/include/jpeglib.h	/^  JQUANT_TBL * quant_tbl_ptrs[NUM_QUANT_TBLS];$/;"	m	struct:jpeg_compress_struct
+quant_tbl_ptrs	/opt/libjpeg-turbo/include/jpeglib.h	/^  JQUANT_TBL * quant_tbl_ptrs[NUM_QUANT_TBLS];$/;"	m	struct:jpeg_decompress_struct
+quantize_colors	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean quantize_colors;	\/* TRUE=colormapped output wanted *\/$/;"	m	struct:jpeg_decompress_struct
+quantval	/opt/libjpeg-turbo/include/jpeglib.h	/^  UINT16 quantval[DCTSIZE2];	\/* quantization step for each coefficient *\/$/;"	m	struct:__anon3
+r	/opt/libjpeg-turbo/include/turbojpeg.h	/^  tjregion r;$/;"	m	struct:tjtransform
+raw_data_in	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean raw_data_in;		\/* TRUE=caller supplies downsampled data *\/$/;"	m	struct:jpeg_compress_struct
+raw_data_out	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean raw_data_out;		\/* TRUE=downsampled data wanted *\/$/;"	m	struct:jpeg_decompress_struct
+read_JPEG_file	/opt/libjpeg-turbo/doc/example.c	/^read_JPEG_file (char * filename)$/;"	f
+rec_outbuf_height	/opt/libjpeg-turbo/include/jpeglib.h	/^  int rec_outbuf_height;	\/* min recommended height of scanline buffer *\/$/;"	m	struct:jpeg_decompress_struct
+restart_in_rows	/opt/libjpeg-turbo/include/jpeglib.h	/^  int restart_in_rows;		\/* if > 0, MCU rows per restart interval *\/$/;"	m	struct:jpeg_compress_struct
+restart_interval	/opt/libjpeg-turbo/include/jpeglib.h	/^  unsigned int restart_interval; \/* MCUs per restart interval, or 0 for no restart *\/$/;"	m	struct:jpeg_decompress_struct
+restart_interval	/opt/libjpeg-turbo/include/jpeglib.h	/^  unsigned int restart_interval; \/* MCUs per restart, or 0 for no restart *\/$/;"	m	struct:jpeg_compress_struct
+rgb_blue	/opt/libjpeg-turbo/include/jmorecfg.h	/^static const int rgb_blue[JPEG_NUMCS] = {$/;"	v
+rgb_green	/opt/libjpeg-turbo/include/jmorecfg.h	/^static const int rgb_green[JPEG_NUMCS] = {$/;"	v
+rgb_pixelsize	/opt/libjpeg-turbo/include/jmorecfg.h	/^static const int rgb_pixelsize[JPEG_NUMCS] = {$/;"	v
+rgb_red	/opt/libjpeg-turbo/include/jmorecfg.h	/^static const int rgb_red[JPEG_NUMCS] = {$/;"	v
+s	/opt/libjpeg-turbo/include/jpeglib.h	/^    char s[JMSG_STR_PARM_MAX];$/;"	m	union:jpeg_error_mgr::__anon10
+sample_range_limit	/opt/libjpeg-turbo/include/jpeglib.h	/^  JSAMPLE * sample_range_limit; \/* table for fast range-limiting *\/$/;"	m	struct:jpeg_decompress_struct
+saw_Adobe_marker	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean saw_Adobe_marker;	\/* TRUE iff an Adobe APP14 marker was found *\/$/;"	m	struct:jpeg_decompress_struct
+saw_JFIF_marker	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean saw_JFIF_marker;	\/* TRUE iff a JFIF APP0 marker was found *\/$/;"	m	struct:jpeg_decompress_struct
+scale_denom	/opt/libjpeg-turbo/include/jpeglib.h	/^  unsigned int scale_num, scale_denom; \/* fraction by which to scale image *\/$/;"	m	struct:jpeg_compress_struct
+scale_denom	/opt/libjpeg-turbo/include/jpeglib.h	/^  unsigned int scale_num, scale_denom; \/* fraction by which to scale image *\/$/;"	m	struct:jpeg_decompress_struct
+scale_num	/opt/libjpeg-turbo/include/jpeglib.h	/^  unsigned int scale_num, scale_denom; \/* fraction by which to scale image *\/$/;"	m	struct:jpeg_compress_struct
+scale_num	/opt/libjpeg-turbo/include/jpeglib.h	/^  unsigned int scale_num, scale_denom; \/* fraction by which to scale image *\/$/;"	m	struct:jpeg_decompress_struct
+scan_info	/opt/libjpeg-turbo/include/jpeglib.h	/^  const jpeg_scan_info * scan_info; \/* script for multi-scan file, or NULL *\/$/;"	m	struct:jpeg_compress_struct
+script_space	/opt/libjpeg-turbo/include/jpeglib.h	/^  jpeg_scan_info * script_space; \/* workspace for jpeg_simple_progression *\/$/;"	m	struct:jpeg_compress_struct
+script_space_size	/opt/libjpeg-turbo/include/jpeglib.h	/^  int script_space_size;$/;"	m	struct:jpeg_compress_struct
+sent_table	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean sent_table;		\/* TRUE when table has been output *\/$/;"	m	struct:__anon3
+sent_table	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean sent_table;		\/* TRUE when table has been output *\/$/;"	m	struct:__anon4
+setjmp_buffer	/opt/libjpeg-turbo/doc/example.c	/^  jmp_buf setjmp_buffer;	\/* for return to caller *\/$/;"	m	struct:my_error_mgr	file:
+smoothing_factor	/opt/libjpeg-turbo/include/jpeglib.h	/^  int smoothing_factor;		\/* 1..100, or 0 for no input smoothing *\/$/;"	m	struct:jpeg_compress_struct
+src	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_source_mgr * src;$/;"	m	struct:jpeg_decompress_struct	typeref:struct:jpeg_decompress_struct::jpeg_source_mgr
+tjBlueOffset	/opt/libjpeg-turbo/include/turbojpeg.h	/^static const int tjBlueOffset[TJ_NUMPF] = {2, 0, 2, 0, 1, 3, 0, 2, 0, 1, 3};$/;"	v
+tjGreenOffset	/opt/libjpeg-turbo/include/turbojpeg.h	/^static const int tjGreenOffset[TJ_NUMPF] = {1, 1, 1, 1, 2, 2, 0, 1, 1, 2, 2};$/;"	v
+tjMCUHeight	/opt/libjpeg-turbo/include/turbojpeg.h	/^static const int tjMCUHeight[TJ_NUMSAMP] = {8, 8, 16, 8, 16};$/;"	v
+tjMCUWidth	/opt/libjpeg-turbo/include/turbojpeg.h	/^static const int tjMCUWidth[TJ_NUMSAMP]  = {8, 16, 16, 8, 8};$/;"	v
+tjPixelSize	/opt/libjpeg-turbo/include/turbojpeg.h	/^static const int tjPixelSize[TJ_NUMPF] = {3, 3, 4, 4, 4, 4, 1, 4, 4, 4, 4};$/;"	v
+tjRedOffset	/opt/libjpeg-turbo/include/turbojpeg.h	/^static const int tjRedOffset[TJ_NUMPF] = {0, 2, 0, 2, 3, 1, 0, 0, 2, 3, 1};$/;"	v
+tjhandle	/opt/libjpeg-turbo/include/turbojpeg.h	/^typedef void* tjhandle;$/;"	t
+tjregion	/opt/libjpeg-turbo/include/turbojpeg.h	/^} tjregion;$/;"	t	typeref:struct:__anon2
+tjscalingfactor	/opt/libjpeg-turbo/include/turbojpeg.h	/^} tjscalingfactor;$/;"	t	typeref:struct:__anon1
+tjtransform	/opt/libjpeg-turbo/include/turbojpeg.h	/^typedef struct tjtransform$/;"	s
+tjtransform	/opt/libjpeg-turbo/include/turbojpeg.h	/^} tjtransform;$/;"	t	typeref:struct:tjtransform
+total_iMCU_rows	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION total_iMCU_rows;	\/* # of iMCU rows in image *\/$/;"	m	struct:jpeg_decompress_struct
+total_iMCU_rows	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION total_iMCU_rows;	\/* # of iMCU rows to be input to coef ctlr *\/$/;"	m	struct:jpeg_compress_struct
+total_passes	/opt/libjpeg-turbo/include/jpeglib.h	/^  int total_passes;		\/* total number of passes expected *\/$/;"	m	struct:jpeg_progress_mgr
+trace_level	/opt/libjpeg-turbo/include/jpeglib.h	/^  int trace_level;		\/* max msg_level that will be displayed *\/$/;"	m	struct:jpeg_error_mgr
+two_pass_quantize	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean two_pass_quantize;	\/* TRUE=use two-pass color quantization *\/$/;"	m	struct:jpeg_decompress_struct
+unread_marker	/opt/libjpeg-turbo/include/jpeglib.h	/^  int unread_marker;$/;"	m	struct:jpeg_decompress_struct
+upsample	/opt/libjpeg-turbo/include/jpeglib.h	/^  struct jpeg_upsampler * upsample;$/;"	m	struct:jpeg_decompress_struct	typeref:struct:jpeg_decompress_struct::jpeg_upsampler
+v_samp_factor	/opt/libjpeg-turbo/include/jpeglib.h	/^  int v_samp_factor;		\/* vertical sampling factor (1..4) *\/$/;"	m	struct:__anon5
+w	/opt/libjpeg-turbo/include/turbojpeg.h	/^  int w;$/;"	m	struct:__anon2
+width_in_blocks	/opt/libjpeg-turbo/include/jpeglib.h	/^  JDIMENSION width_in_blocks;$/;"	m	struct:__anon5
+write_Adobe_marker	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean write_Adobe_marker;	\/* should an Adobe marker be written? *\/$/;"	m	struct:jpeg_compress_struct
+write_JFIF_header	/opt/libjpeg-turbo/include/jpeglib.h	/^  boolean write_JFIF_header;	\/* should a JFIF marker be written? *\/$/;"	m	struct:jpeg_compress_struct
+write_JPEG_file	./jpegutil.c	/^write_JPEG_file (char *filename, int quality)$/;"	f
+write_JPEG_file	/opt/libjpeg-turbo/doc/example.c	/^write_JPEG_file (char * filename, int quality)$/;"	f
+x	/opt/libjpeg-turbo/include/turbojpeg.h	/^  int x;$/;"	m	struct:__anon2
+y	/opt/libjpeg-turbo/include/turbojpeg.h	/^  int y;$/;"	m	struct:__anon2
