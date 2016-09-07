@@ -14,6 +14,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 /*
  * Include file for users of JPEG library.
@@ -122,10 +123,12 @@ write_JPEG_file (char *filename, int quality)
   /* First we supply a description of the input image.
    * Four fields of the cinfo struct must be filled in:
    */
-  cinfo.image_width = image_width;      /* image width and height, in pixels */
-  cinfo.image_height = image_height;
+  cinfo.image_width = image_width & -1;      /* image width and height, in pixels */
+  cinfo.image_height = image_height & -1;
   cinfo.input_components = 3;           /* # of color components per pixel */
   cinfo.in_color_space = JCS_RGB;       /* colorspace of input image */
+	//cinfo.in_color_space = JCS_YCbCr;       /* colorspace of input image */
+	
   /* Now use the library's routine to set default compression parameters.
    * (You must set at least cinfo.in_color_space before calling this,
    * since the defaults depend on the source color space.)
@@ -161,6 +164,7 @@ write_JPEG_file (char *filename, int quality)
     row_pointer[0] = & image_buffer[cinfo.next_scanline * row_stride];
     (void) jpeg_write_scanlines(&cinfo, row_pointer, 1);
   }
+
 
   /* Step 6: Finish compression */
 
