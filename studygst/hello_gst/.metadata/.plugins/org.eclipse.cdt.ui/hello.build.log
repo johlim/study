@@ -1,7 +1,0 @@
-23:36:54 **** Clean-only build of configuration Debug for project hello ****
-make clean 
-rm -rf  ./main.o  ./main.d  hello
- 
-
-23:36:54 Build Finished (took 127ms)
-
