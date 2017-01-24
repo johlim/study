@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+#include <unistd.h>
 #include <gst/gst.h>
 
 int
@@ -26,7 +27,7 @@ check_ver (int   argc,
   return 0;
 }
 
-#include <gst/gst.h>
+
 
 int
 main (int   argc,
@@ -36,7 +37,7 @@ main (int   argc,
   GstElement *fileter_element;
   GstElement *pad_element;
   GstElement *pipeline;
-  gchar *name;
+
   /* init GStreamer */
   gst_init (&argc, &argv);
 
