@@ -1,0 +1,13 @@
+alsa 
+
+internal data flow error
+
+jhlim@fox:~/GitHub/study/studygst/hello_gst/camerabin$ sudo gst-launch-1.0 -e v4l2src ! video/x-raw, format=\(string\)I420, width=320, height=240, framerate=\(fraction\)30/1 ! x264enc ! avimux name=avimux ! filesink location=./test.avi alsasrc ! audio/x-raw, format=\(string\)S16LE, rate=22050, channels=1 !  avimux --gst-debug=alsa:4
+Setting pipeline to PAUSED ...
+Pipeline is live and does not need PREROLL ...
+0:00:00.127468952  7114      0x2435230 INFO                    alsa gstalsasrc.c:312:gst_alsasrc_getcaps:<alsasrc0> template caps audio/x-raw, format=(string){ S8, U8, S16LE, S16BE, U16LE, U16BE, S24_32LE, S24_32BE, U24_32LE, U24_32BE, S32LE, S32BE, U32LE, U32BE, S24LE, S24BE, U24LE, U24BE, S20LE, S20BE, U20LE, U20BE, S18LE, S18BE, U18LE, U18BE, F32LE, F32BE, F64LE, F64BE }, layout=(string)interleaved, rate=(int)[ 1, 2147483647 ], channels=(int)[ 1, 2147483647 ]
+Setting pipeline to PLAYING ...
+0:00:00.127595328  7114      0x2435230 INFO                    alsa gstalsasrc.c:322:gst_alsasrc_getcaps:<alsasrc0> returning caps audio/x-raw, format=(string){ U8, S16LE, S24_32LE, S32LE, S24LE }, layout=(string)interleaved, rate=(int)[ 4000, 192000 ], channels=(int)2, channel-mask=(bitmask)0x0000000000000003; audio/x-raw, format=(string){ U8, S16LE, S24_32LE, S32LE, S24LE }, layout=(string)interleaved, rate=(int)[ 4000, 192000 ], channels=(int)1; audio/x-raw, format=(string){ U8, S16LE, S24_32LE, S32LE, S24LE }, layout=(string)interleaved, rate=(int)[ 4000, 192000 ], channels=(int)3, channel-mask=(bitmask)0x000000000000000b; audio/x-raw, format=(string){ U8, S16LE, S24_32LE, S32LE, S24LE }, layout=(string)interleaved, rate=(int)[ 4000, 192000 ], channels=(int)4, channel-mask=(bitmask)0x0000000000000033; audio/x-raw, format=(string){ U8, S16LE, S24_32LE, S32LE, S24LE }, layout=(string)interleaved, rate=(int)[ 4000, 192000 ], channels=(int)6, channel-mask=(bitmask)0x000000000000003f; audio/x-raw, format=(string){ U8, S16LE, S24_32LE, S32LE, S24LE }, layout=(string)interleaved, rate=(int)[ 4000, 192000 ], channels=(int)8, channel-mask=(bitmask)0x0000000000000c3f
+New clock: GstAudioSrcClock
+Redistribute latency...
+ERROR: from element /GstPipeline:pipeline0/GstAlsaSrc:alsasrc0: Internal data flow error
