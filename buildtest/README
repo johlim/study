@@ -12,4 +12,54 @@ To build like.c using autoconf
     ├── Makefile.in
     └── like.c
 
-1 directory, 5 files
+* autoconf macro
+/usr/share/autoconf
+├── Autom4te
+│   ├── C4che.pm
+│   ├── ChannelDefs.pm
+│   ├── Channels.pm
+│   ├── Configure_ac.pm
+│   ├── FileUtils.pm
+│   ├── General.pm
+│   ├── Getopt.pm
+│   ├── Request.pm
+│   └── XFile.pm
+├── INSTALL
+├── autoconf
+│   ├── autoconf.m4
+│   ├── autoconf.m4f
+│   ├── autoheader.m4
+│   ├── autoscan.m4
+│   ├── autotest.m4
+│   ├── autoupdate.m4
+│   ├── c.m4
+│   ├── erlang.m4
+│   ├── fortran.m4
+│   ├── functions.m4
+│   ├── general.m4
+│   ├── go.m4
+│   ├── headers.m4
+│   ├── lang.m4
+│   ├── libs.m4
+│   ├── oldnames.m4
+│   ├── programs.m4
+│   ├── specific.m4
+│   ├── status.m4
+│   └── types.m4
+├── autom4te.cfg
+├── autoscan
+│   └── autoscan.list
+├── autotest
+│   ├── autotest.m4
+│   ├── autotest.m4f
+│   ├── general.m4
+│   └── specific.m4
+└── m4sugar
+├── foreach.m4
+├── m4sh.m4
+├── m4sh.m4f
+├── m4sugar.m4
+├── m4sugar.m4f
+└── version.m4
+
+autoscan -> configure.scan -> configure.ac -> autoconf -> configure -> config.status + * .in -> Makefile
