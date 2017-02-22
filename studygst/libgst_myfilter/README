@@ -1,0 +1,13 @@
+autoconf는 configure.ac 와 makefile.in 으로 makefile을 생성
+Makefile in에는 autoconf를 통해서 확보한 컴파일러 정보 @CC@ @CFLAGS@ @LIBS@를 
+기반으로 템플릿을 만들어두면 최종적으로 Makefile을 생성함.
+configure.ac + makefile.in => makefile  
+
+automake는 configure.ac 에 AM_INIT_AUTOMAKE([],[])을 더하고
+부가적으로 Makefile.am 파일을 통해서 컴파일될 파일리스트정보를 얻어와서
+Makefile.in까지 자동생성하고 
+최종적으로 Makefile을 생성함.
+
+
+configure.ac + makefile.am => (makefile.in) => makefile
+
