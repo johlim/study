@@ -1,0 +1,15 @@
+To build like.c using autoconf
+
+0. prepare Makefile.in configure.ac
+1. run autoconf
+2. ./configure
+3. make
+
+├── Makefile.in
+├── README
+├── configure.ac
+└── src
+    ├── Makefile.in
+    └── like.c
+
+1 directory, 5 files
