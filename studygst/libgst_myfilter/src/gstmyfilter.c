@@ -151,19 +151,19 @@ gst_my_filter_class_init (GstMyFilterClass * klass)
     gst_my_filter_signals[SIGNAL_LDWS_STATUS] = g_signal_new(
             "adas_status", G_TYPE_FROM_CLASS (klass), G_SIGNAL_RUN_LAST,
             G_STRUCT_OFFSET (GstMyFilterClass, adas_status), NULL, NULL,
-            gst_marshal_VOID__POINTER, G_TYPE_NONE, 1, G_TYPE_POINTER);	
+            g_cclosure_marshal_VOID__POINTER, G_TYPE_NONE, 1, G_TYPE_POINTER);	
     gst_my_filter_signals[SIGNAL_LDWS_WARNNING_LEFT] = g_signal_new(
             "adas_warnning_left", G_TYPE_FROM_CLASS (klass), G_SIGNAL_RUN_LAST,
             G_STRUCT_OFFSET (GstMyFilterClass, adas_warnning_left), NULL, NULL,
-            gst_marshal_VOID__POINTER, G_TYPE_NONE, 1, G_TYPE_POINTER);
+            g_cclosure_marshal_VOID__POINTER, G_TYPE_NONE, 1, G_TYPE_POINTER);
     gst_my_filter_signals[SIGNAL_LDWS_WARNNING_RIGHT] = g_signal_new(
             "adas_warnning_right", G_TYPE_FROM_CLASS (klass), G_SIGNAL_RUN_LAST,
             G_STRUCT_OFFSET (GstMyFilterClass, adas_warnning_right), NULL, NULL,
-            gst_marshal_VOID__POINTER, G_TYPE_NONE, 1, G_TYPE_POINTER);
+            g_cclosure_marshal_VOID__POINTER, G_TYPE_NONE, 1, G_TYPE_POINTER);
 		gst_my_filter_signals[SIGNAL_LDWS_CAL_TIMEOUT] = g_signal_new(
             "adas_calibration_timeout", G_TYPE_FROM_CLASS (klass), G_SIGNAL_RUN_LAST,
             G_STRUCT_OFFSET (GstMyFilterClass, adas_calibration_timeout), NULL, NULL,
-            gst_marshal_VOID__POINTER, G_TYPE_NONE, 1, G_TYPE_POINTER);			
+            g_cclosure_marshal_VOID__POINTER, G_TYPE_NONE, 1, G_TYPE_POINTER);			
 #endif
 }
 
@@ -187,14 +187,14 @@ gst_my_filter_init (GstMyFilter * filter)
 			
   //GST_PAD_SET_PROXY_CAPS (filter->sinkpad);
 	gst_pad_set_getcaps_function (filter->sinkpad,
-                                GST_DEBUG_FUNCPTR(gst_pad_proxy_getcaps));
+                                GST_DEBUG_FUNCPTR(gst_pad_proxy_query_caps));
 								
   gst_element_add_pad (GST_ELEMENT (filter), filter->sinkpad);
 
   filter->srcpad = gst_pad_new_from_static_template (&src_factory, "src");
   //GST_PAD_SET_PROXY_CAPS (filter->srcpad);
 	gst_pad_set_getcaps_function (filter->srcpad,
-                                GST_DEBUG_FUNCPTR(gst_pad_proxy_getcaps));  
+                                GST_DEBUG_FUNCPTR(gst_pad_proxy_query_caps));  
   gst_element_add_pad (GST_ELEMENT (filter), filter->srcpad);
 
   filter->silent = FALSE;
@@ -260,7 +260,7 @@ gst_my_filter_sink_event (GstPad * pad, GstEvent * event)
 	case GST_EVENT_EOS:
 		//gst_my_filter_stop_prococessing(filter);
     default:
-      ret = gst_pad_event_default (pad, event);
+      ret = gst_pad_event_default (pad, NULL, event);
       break;
   }
   return ret;
