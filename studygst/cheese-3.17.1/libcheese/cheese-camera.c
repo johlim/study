@@ -72,7 +72,7 @@ struct _CheeseCameraPrivate
 
   ClutterTexture *video_texture;
 
-  GstElement *effect_filter, *effects_capsfilter;
+  GstElement *effect_filter, *effects_capsfilter, *dummy_filter; // modify
   GstElement *video_balance;
   GstElement *camera_tee, *effects_tee;
   GstElement *main_valve, *effects_valve;
@@ -605,6 +605,13 @@ cheese_camera_create_video_filter_bin (CheeseCamera *camera, GError **error)
     cheese_camera_set_error_element_not_found (error, "identity");
     return FALSE;
   }
+#if 1 // myfilter test
+  if ((priv->dummy_filter = gst_element_factory_make ("myfilter", "myfilter")) == NULL)
+  {
+    cheese_camera_set_error_element_not_found (error, "myfilter");
+    return FALSE;
+  }
+#endif
   priv->current_effect_desc = g_strdup("identity");
   if ((priv->video_balance = gst_element_factory_make ("videobalance", "video_balance")) == NULL)
   {
@@ -614,13 +621,22 @@ cheese_camera_create_video_filter_bin (CheeseCamera *camera, GError **error)
 
   if (error != NULL && *error != NULL)
     return FALSE;
+#if 1 // myfilter test
+  gst_bin_add_many (GST_BIN (priv->video_filter_bin), priv->camera_tee,
+                    priv->main_valve, priv->effect_filter, priv->dummy_filter,
+                    priv->video_balance, priv->effects_preview_bin, NULL);
 
+  ok &= gst_element_link_many (priv->camera_tee, priv->main_valve, priv->dummy_filter,
+                               priv->effect_filter, priv->video_balance, NULL);
+
+#else
   gst_bin_add_many (GST_BIN (priv->video_filter_bin), priv->camera_tee,
                     priv->main_valve, priv->effect_filter,
                     priv->video_balance, priv->effects_preview_bin, NULL);
 
   ok &= gst_element_link_many (priv->camera_tee, priv->main_valve,
                                priv->effect_filter, priv->video_balance, NULL);
+#endif
   gst_pad_link (gst_element_get_request_pad (priv->camera_tee, "src_%u"),
                 gst_element_get_static_pad (priv->effects_preview_bin, "sink"));
 

@@ -12,7 +12,7 @@ AC_CONFIG_SRCDIR([src])
 AC_CONFIG_HEADERS([config.h])
 
 dnl required version of automake
-AM_INIT_AUTOMAKE([foreign])
+AM_INIT_AUTOMAKE([1.14 foreign])
 
 dnl enable mainainer mode by default
 AM_MAINTAINER_MODE([enable])
@@ -43,9 +43,9 @@ dnl for libgstrtp-0.10: gstreamer-rtp-0.10 >= $GST_REQUIRED
 dnl for libgstrtsp-0.10: gstreamer-rtsp-0.10 >= $GST_REQUIRED
 dnl etc.
 PKG_CHECK_MODULES(GST, [
-  gstreamer-1.10 >= $GST_REQUIRED
-  gstreamer-base-1.10 >= $GST_REQUIRED
-  gstreamer-controller-1.10 >= $GST_REQUIRED
+  gstreamer-1.0 >= $GST_REQUIRED
+  gstreamer-base-1.0 >= $GST_REQUIRED
+  gstreamer-controller-1.0 >= $GST_REQUIRED
 ], [
   AC_SUBST(GST_CFLAGS)
   AC_SUBST(GST_LIBS)
@@ -72,9 +72,9 @@ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([ ], [ ])], [
 
 dnl set the plugindir where plugins should be installed (for src/Makefile.am)
 if test "x${prefix}" = "x$HOME"; then
-  plugindir="$HOME/GST/.gstreamer-1.10.0/plugins"
+  plugindir="$HOME/GST/gstreamer-1.10.0/plugins"
 else
-  plugindir="\$(libdir)/gstreamer-0.10"
+  plugindir="\$(libdir)/gstreamer-1.0"
 fi
 AC_SUBST(plugindir)
 
