@@ -1,0 +1,12 @@
+hello world with GTK
+
+1. compile
+gcc hello_gtk.c -o hello_gtk `pkg-config --cflags --libs gtk+-x11-3.0`
+
+2. compile with autotools 
+
+prepare configure.ac Makefile.am ./src/Makefile.am 
+autoreconf -i
+./configure
+make
+
