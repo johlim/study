@@ -32,3 +32,9 @@ to places where you need to edit the code.
 
 You still need to adjust the Makefile.am.
 
+cd ../
+./autogen.sh
+make
+cp src/.libs/libgstmyfilter.so /usr/lib/x86_64-linux-gnu/gstreamer-1.0/
+gst-inspect-1.0 myfilter
+gst-launch-1.0 --gst-debug=*:2 fakesrc num-buffers=10 ! myfilter ! fakesink
