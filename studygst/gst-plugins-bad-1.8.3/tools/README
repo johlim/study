@@ -1,0 +1,282 @@
+1.
+compare plugin
+
+2.
+jhlim@fox:~/GitHub/study/studygst/gst-template/gst-plugin$ gst-inspect-1.0 myfilter
+Factory Details:
+Rank                     none (0)
+	Long-name                myfilter
+	Klass                    Generic/Filter
+	Description              FIXME:Generic Template Filter
+	Author                   jhlim <<user@hostname.org>>
+
+	Plugin Details:
+	Name                     myfilter
+	Description              Template myfilter
+	Filename                 /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libgstmyfilter.so
+	Version                  1.0.0
+	License                  LGPL
+	Source module            my-plugin-package
+	Binary package           GStreamer
+	Origin URL               http://gstreamer.net/
+
+	GObject
+	+----GInitiallyUnowned
+	+----GstObject
+	+----GstElement
+	+----GstBaseTransform
+	+----Gstmyfilter
+
+	Pad Templates:
+	SRC template: 'src'
+	Availability: Always
+	Capabilities:
+	ANY
+
+	SINK template: 'sink'
+	Availability: Always
+	Capabilities:
+	ANY
+
+
+	Element Flags:
+	no flags set
+
+	Element Implementation:
+	Has change_state() function: gst_element_change_state_func
+
+	Element has no clocking capabilities.
+	Element has no URI handling capabilities.
+
+	Pads:
+SINK: 'sink'
+Pad Template: 'sink'
+SRC: 'src'
+Pad Template: 'src'
+
+Element Properties:
+name                : The name of the object
+flags: readable, writable
+String. Default: "myfilter0"
+parent              : The parent of the object
+flags: readable, writable
+Object of type "GstObject"
+qos                 : Handle Quality-of-Service events
+flags: readable, writable
+Boolean. Default: false
+silent              : Produce verbose output ?
+flags: readable, writable, controllable
+Boolean. Default: false
+
+2. about myfilter
+jhlim@fox:~/GitHub/study/studygst/gst-template/gst-plugin$ gst-inspect-1.0 myfilter
+Factory Details:
+Rank                     none (0)
+	Long-name                myfilter
+	Klass                    Generic/Filter
+	Description              FIXME:Generic Template Filter
+	Author                   jhlim <<user@hostname.org>>
+
+	Plugin Details:
+	Name                     myfilter
+	Description              Template myfilter
+	Filename                 /usr/lib/x86_64-linux-gnu/gstreamer-1.0/libgstmyfilter.so
+	Version                  1.0.0
+	License                  LGPL
+	Source module            my-plugin-package
+	Binary package           GStreamer
+	Origin URL               http://gstreamer.net/
+
+	GObject
+	+----GInitiallyUnowned
+	+----GstObject
+	+----GstElement
+	+----GstBaseTransform
+	+----Gstmyfilter
+
+	Pad Templates:
+	SRC template: 'src'
+	Availability: Always
+	Capabilities:
+	ANY
+
+	SINK template: 'sink'
+	Availability: Always
+	Capabilities:
+	ANY
+
+
+	Element Flags:
+	no flags set
+
+	Element Implementation:
+	Has change_state() function: gst_element_change_state_func
+
+	Element has no clocking capabilities.
+	Element has no URI handling capabilities.
+
+	Pads:
+SINK: 'sink'
+Pad Template: 'sink'
+SRC: 'src'
+Pad Template: 'src'
+
+Element Properties:
+name                : The name of the object
+flags: readable, writable
+String. Default: "myfilter0"
+parent              : The parent of the object
+flags: readable, writable
+Object of type "GstObject"
+qos                 : Handle Quality-of-Service events
+flags: readable, writable
+Boolean. Default: false
+silent              : Produce verbose output ?
+flags: readable, writable, controllable
+Boolean. Default: false
+
+
+3. about adaspump
+
+jhlim@fox:~/GitHub/study/studygst/gst-template/gst-plugin$ gst-inspect-1.0 adaspump
+Factory Details:
+Rank                     none (0)
+	Long-name                FIXME Long name
+	Klass                    Generic
+	Description              FIXME Description
+	Author                   FIXME <fixme@example.com>
+
+	Plugin Details:
+	Name                     adaspump
+	Description              FIXME plugin description
+	Filename                 /usr/lib/x86_64-linux-gnu/gstreamer-1.0/gstadaspump.so
+	Version                  0.0.FIXME
+	License                  LGPL
+	Source module            FIXME_package
+	Binary package           FIXME_package_name
+	Origin URL               http://FIXME.org/
+
+	GObject
+	+----GInitiallyUnowned
+	+----GstObject
+	+----GstElement
+	+----GstBaseTransform
+	+----GstAdaspump
+
+	Pad Templates:
+	SINK template: 'sink'
+	Availability: Always
+	Capabilities:
+	application/unknown
+
+	SRC template: 'src'
+	Availability: Always
+	Capabilities:
+	application/unknown
+
+
+	Element Flags:
+	no flags set
+
+	Element Implementation:
+	Has change_state() function: gst_element_change_state_func
+
+	Element has no clocking capabilities.
+	Element has no URI handling capabilities.
+
+	Pads:
+SINK: 'sink'
+Pad Template: 'sink'
+SRC: 'src'
+Pad Template: 'src'
+
+Element Properties:
+name                : The name of the object
+flags: readable, writable
+String. Default: "adaspump0"
+parent              : The parent of the object
+flags: readable, writable
+Object of type "GstObject"
+qos                 : Handle Quality-of-Service events
+flags: readable, writable
+Boolean. Default: false
+
+4.  
+template plugin vs bad plugins 
+
+
+@fox:~/GitHub/study/studygst/gst-plugins-bad-1.8.3/tools$ gst-launch-1.0 --gst-debug=*:2 fakesrc num-buffers=10 ! myfilter ! fakesink
+Setting pipeline to PAUSED ...
+Pipeline is PREROLLING ...
+I'm plugged, therefore I'm in.
+Pipeline is PREROLLED ...
+Setting pipeline to PLAYING ...
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+New clock: GstSystemClock
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+Got EOS from element "pipeline0".
+Execution ended after 0:00:00.000103505
+Setting pipeline to PAUSED ...
+Setting pipeline to READY ...
+Setting pipeline to NULL ...
+Freeing pipeline ...
+jhlim@fox:~/GitHub/study/studygst/gst-plugins-bad-1.8.3/tools$ gst-launch-1.0 --gst-debug=*:2 fakesrc num-buffers=10 ! adaspump ! fakesink
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_mini_object_ref: assertion 'mini_object != NULL' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_caps_can_intersect: assertion 'GST_IS_CAPS (caps1)' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_mini_object_unref: assertion 'mini_object != NULL' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_mini_object_ref: assertion 'mini_object != NULL' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_mini_object_ref: assertion 'mini_object != NULL' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_caps_can_intersect: assertion 'GST_IS_CAPS (caps2)' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_mini_object_unref: assertion 'mini_object != NULL' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_mini_object_ref: assertion 'mini_object != NULL' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_pad_template_new: assertion 'caps != NULL' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_mini_object_unref: assertion 'mini_object != NULL' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_element_request_compatible_pad: assertion 'GST_IS_PAD_TEMPLATE (templ)' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_object_unref: assertion 'object != NULL' failed
+0:00:00.020353992 31485      0x1b33120 ERROR           GST_PIPELINE grammar.y:642:gst_parse_perform_link: could not link fakesrc0 to adaspump0
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_mini_object_ref: assertion 'mini_object != NULL' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_caps_can_intersect: assertion 'GST_IS_CAPS (caps2)' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_mini_object_unref: assertion 'mini_object != NULL' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_mini_object_ref: assertion 'mini_object != NULL' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_pad_template_new: assertion 'caps != NULL' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_mini_object_unref: assertion 'mini_object != NULL' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_element_request_compatible_pad: assertion 'GST_IS_PAD_TEMPLATE (templ)' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_object_unref: assertion 'object != NULL' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_mini_object_ref: assertion 'mini_object != NULL' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_caps_can_intersect: assertion 'GST_IS_CAPS (caps1)' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_mini_object_unref: assertion 'mini_object != NULL' failed
+
+(gst-launch-1.0:31485): GStreamer-CRITICAL **: gst_mini_object_ref: assertion 'mini_object != NULL' failed
+0:00:00.020464395 31485      0x1b33120 ERROR           GST_PIPELINE grammar.y:642:gst_parse_perform_link: could not link adaspump0 to fakesink0
+WARNING: erroneous pipeline: could not link fakesrc0 to adaspump0
+
