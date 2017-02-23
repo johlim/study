@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: gst-plugins-bad 1.8.3\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/\n"
+"POT-Creation-Date: 2016-08-19 11:59+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ext/gl/gstgltestsrc.c:680
+msgid "format wasn't negotiated before get function"
+msgstr ""
+
+#: ext/opencv/gsttemplatematch.cpp:188
+msgid "OpenCV failed to load template image"
+msgstr ""
+
+#: ext/resindvd/resindvdsrc.c:362
+msgid "Could not read title information for DVD."
+msgstr ""
+
+#: ext/resindvd/resindvdsrc.c:368
+#, c-format
+msgid "Failed to open DVD device '%s'."
+msgstr ""
+
+#: ext/resindvd/resindvdsrc.c:374
+msgid "Failed to set PGC based seeking."
+msgstr ""
+
+#: ext/resindvd/resindvdsrc.c:1165
+msgid ""
+"Could not read DVD. This may be because the DVD is encrypted and a DVD "
+"decryption library is not installed."
+msgstr ""
+
+#: ext/resindvd/resindvdsrc.c:1170 ext/resindvd/resindvdsrc.c:1179
+msgid "Could not read DVD."
+msgstr ""
+
+#: ext/smoothstreaming/gstmssdemux.c:405
+#: gst-libs/gst/adaptivedemux/gstadaptivedemux.c:647
+msgid "This file contains no playable streams."
+msgstr ""
+
+#: ext/sndfile/gstsfdec.c:769
+msgid "Could not open sndfile stream for reading."
+msgstr ""
+
+#: ext/sndio/sndiosink.c:324 ext/sndio/sndiosrc.c:321
+msgid "Could not establish connection to sndio"
+msgstr ""
+
+#: ext/sndio/sndiosink.c:331 ext/sndio/sndiosrc.c:328
+msgid "Failed to query sndio capabilities"
+msgstr ""
+
+#: ext/sndio/sndiosink.c:424 ext/sndio/sndiosrc.c:422
+msgid "Could not configure sndio"
+msgstr ""
+
+#: ext/sndio/sndiosink.c:430 ext/sndio/sndiosrc.c:428
+msgid "Could not start sndio"
+msgstr ""
+
+#: gst/aiff/aiffparse.c:1504
+msgid "Internal data flow error."
+msgstr ""
+
+#: gst/asfmux/gstasfmux.c:1832
+msgid "Generated file has a larger preroll time than its streams duration"
+msgstr ""
+
+#: gst/camerabin2/camerabingeneral.c:166 gst/camerabin2/gstcamerabin2.c:1876
+#: gst/camerabin2/gstdigitalzoom.c:282 gst/camerabin2/gstviewfinderbin.c:271
+#, c-format
+msgid "Missing element '%s' - check your GStreamer installation."
+msgstr ""
+
+#: gst/camerabin2/gstcamerabin2.c:364
+msgid "File location is set to NULL, please set it to a valid filename"
+msgstr ""
+
+#: gst/camerabin2/gstwrappercamerabinsrc.c:584
+msgid "Digitalzoom element couldn't be created"
+msgstr ""
+
+#: gst/dvdspu/gstdvdspu.c:1042
+msgid "Subpicture format was not configured before data flow"
+msgstr ""
+
+#: gst-libs/gst/adaptivedemux/gstadaptivedemux.c:2740
+msgid "Failed to get fragment URL."
+msgstr ""
+
+#: gst-libs/gst/adaptivedemux/gstadaptivedemux.c:2975
+#: gst-libs/gst/adaptivedemux/gstadaptivedemux.c:3170
+#: gst/mpegtsdemux/mpegtsbase.c:1383 gst/mpegtsdemux/mpegtsbase.c:1387
+#: gst/nuvdemux/gstnuvdemux.c:736
+msgid "Internal data stream error."
+msgstr ""
+
+#: gst-libs/gst/adaptivedemux/gstadaptivedemux.c:3087
+msgid "Couldn't download fragments"
+msgstr ""
+
+#: gst/videomeasure/gstvideomeasure_collector.c:294
+msgid "No file name specified for writing."
+msgstr ""
+
+#: gst/videomeasure/gstvideomeasure_collector.c:300
+#, c-format
+msgid "Given file name \"%s\" can't be converted to local file name encoding."
+msgstr ""
+
+#: gst/videomeasure/gstvideomeasure_collector.c:307
+#, c-format
+msgid "Could not open file \"%s\" for writing."
+msgstr ""
+
+#: sys/dvb/gstdvbsrc.c:1564 sys/dvb/gstdvbsrc.c:1753
+#, c-format
+msgid "Device \"%s\" does not exist."
+msgstr ""
+
+#: sys/dvb/gstdvbsrc.c:1568
+#, c-format
+msgid "Could not open frontend device \"%s\"."
+msgstr ""
+
+#: sys/dvb/gstdvbsrc.c:1582
+#, c-format
+msgid "Could not get settings from frontend device \"%s\"."
+msgstr ""
+
+#: sys/dvb/gstdvbsrc.c:1599
+#, c-format
+msgid "Cannot enumerate delivery systems from frontend device \"%s\"."
+msgstr ""
+
+#: sys/dvb/gstdvbsrc.c:1757
+#, c-format
+msgid "Could not open file \"%s\" for reading."
+msgstr ""
+
+#: sys/dvb/parsechannels.c:165
+msgid "Couldn't find DVB channel configuration file"
+msgstr ""
+
+#: sys/dvb/parsechannels.c:168
+#, c-format
+msgid "Couldn't load DVB channel configuration file: %s"
+msgstr ""
+
+#: sys/dvb/parsechannels.c:175
+msgid "DVB channel configuration file doesn't contain any channels"
+msgstr ""
+
+#: sys/dvb/parsechannels.c:449
+#, c-format
+msgid "Couldn't find details for DVB channel %s"
+msgstr ""
