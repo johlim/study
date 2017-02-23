@@ -281,7 +281,7 @@ gst_my_filter_chain (GstPad * pad, GstBuffer * buf)
   if (filter->silent == FALSE)
 //    g_print ("I'm plugged, therefore I'm in.\n");
 //
-#if 1
+#if 0
 {
 	gint16 *raw;
 	raw = (gint16 *)GST_BUFFER_DATA (buf);
