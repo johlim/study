@@ -45,6 +45,7 @@ struct _Gstmyfilter {
   GstBaseTransform element;
 
   gboolean silent;
+  gboolean loopcnt;
 };
 
 struct _GstmyfilterClass {

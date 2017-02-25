@@ -187,6 +187,8 @@ gst_myfilter_transform_ip (GstBaseTransform * base, GstBuffer * outbuf)
   
   /* FIXME: do something interesting here.  This simply copies the source
    * to the destination. */
+  if ((filter->loopcnt % 100)==0)
+    g_print ("I'm plugged, therefore I'm in.\n");
 
   return GST_FLOW_OK;
 }
