@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=org.gnome.Camera
-Exec=/usr/local/libexec/gnome-camera-service
