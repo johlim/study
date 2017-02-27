@@ -146,6 +146,8 @@ cheese_fileutil_get_new_media_filename (CheeseFileUtil *fileutil, CheeseMediaMod
     case CHEESE_MEDIA_MODE_BURST:
       path = cheese_fileutil_get_photo_path (fileutil);
       break;
+    case CHEESE_MEDIA_MODE_EVENT:
+    	//printf("%s %d event mode file", __func__, __LINE__);
     case CHEESE_MEDIA_MODE_VIDEO:
       path = cheese_fileutil_get_video_path (fileutil);
       break;

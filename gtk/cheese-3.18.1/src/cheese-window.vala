@@ -1349,7 +1349,7 @@ public class Cheese.MainWindow : Gtk.ApplicationWindow
                 case MediaMode.PHOTO:
                     set_window_title (_("Take a Photo"));
                     break;
-
+                                       
                 case MediaMode.VIDEO:
                     set_window_title (_("Record a Video"));
                     break;

@@ -601,9 +601,9 @@ cheese_camera_create_video_filter_bin (CheeseCamera *camera, GError **error)
     return FALSE;
   }
 #ifdef jhlim_add_test_20170225
-  if ((priv->dummy_filter = gst_element_factory_make ("myfilter", "myfilter")) == NULL)
+  if ((priv->dummy_filter = gst_element_factory_make ("adaspump", "adaspump")) == NULL)
   {
-    cheese_camera_set_error_element_not_found (error, "myfilter");
+    cheese_camera_set_error_element_not_found (error, "adaspump");
     return FALSE;
   }
 #endif
@@ -618,11 +618,11 @@ cheese_camera_create_video_filter_bin (CheeseCamera *camera, GError **error)
     return FALSE;
 #ifdef jhlim_add_test_20170225
   gst_bin_add_many (GST_BIN (priv->video_filter_bin), priv->camera_tee,
-                    priv->main_valve, priv->effect_filter,priv->dummy_filter,
+                    priv->main_valve, priv->dummy_filter,priv->effect_filter,
                     priv->video_balance, priv->effects_preview_bin, NULL);
 
   ok &= gst_element_link_many (priv->camera_tee, priv->main_valve,
-                               priv->effect_filter, priv->dummy_filter, priv->video_balance, NULL);
+		  priv->dummy_filter, priv->effect_filter, priv->video_balance, NULL);
 #else
   gst_bin_add_many (GST_BIN (priv->video_filter_bin), priv->camera_tee,
                     priv->main_valve, priv->effect_filter,
@@ -851,7 +851,26 @@ cheese_camera_change_effect_filter (CheeseCamera *camera, GstElement *new_filter
   priv = cheese_camera_get_instance_private (camera);
 
   g_object_set (G_OBJECT (priv->main_valve), "drop", TRUE, NULL);
+#ifdef jhlim_add_test_20170227
+  printf("-----------------------\n");
+  gst_element_unlink_many (priv->main_valve, priv->dummy_filter, priv->effect_filter,
+                           priv->video_balance, NULL);
 
+  g_object_ref (priv->effect_filter);
+
+  gst_bin_remove (GST_BIN (priv->video_filter_bin), priv->effect_filter);
+  gst_element_set_state (priv->effect_filter, GST_STATE_NULL);
+  g_object_unref (priv->effect_filter);
+
+  gst_bin_add (GST_BIN (priv->video_filter_bin), new_filter);
+  ok = gst_element_link_many (priv->main_valve, priv->dummy_filter, new_filter,
+                              priv->video_balance, NULL);
+  gst_element_set_state (new_filter, GST_STATE_PAUSED);
+
+  g_return_if_fail (ok);
+
+  g_object_set (G_OBJECT (priv->main_valve), "drop", FALSE, NULL);
+#else
   gst_element_unlink_many (priv->main_valve, priv->effect_filter,
                            priv->video_balance, NULL);
 
@@ -868,7 +887,7 @@ cheese_camera_change_effect_filter (CheeseCamera *camera, GstElement *new_filter
   g_return_if_fail (ok);
 
   g_object_set (G_OBJECT (priv->main_valve), "drop", FALSE, NULL);
-
+#endif
   priv->effect_filter = new_filter;
 }
 

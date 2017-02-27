@@ -455,6 +455,8 @@ public class Cheese.Application : Gtk.Application
             update_mode (MediaMode.VIDEO);
         else if (state == "burst")
             update_mode (MediaMode.BURST);
+        else if (state == "event")
+            update_mode (MediaMode.VIDEO);
         else
             assert_not_reached ();
 

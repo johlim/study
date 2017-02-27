@@ -462,9 +462,11 @@ gst_adaspump_transform_ip (GstBaseTransform * trans, GstBuffer * buf)
 
   GST_DEBUG_OBJECT (adaspump, "transform_ip");
 
-  if (adaspump->process_count++ % 100)
-	  g_print ("I'm plugged, 100 th buf \n"); 
+  if (adaspump->process_count++ % 3000)
+	  g_print ("I'm plugged, 3000 th buf \n");
 
+  /* just push out the incoming buffer without touching it */
+  //return gst_pad_push (adaspump->srcpad, buf);
   return GST_FLOW_OK;
 }
 
