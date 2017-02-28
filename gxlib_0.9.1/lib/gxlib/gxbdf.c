@@ -36,21 +36,21 @@ static void  _text_out_( dc_t *dc, int org_x , int org_y, unsigned short* string
     unsigned int    nCode;
     bdfFont         Font;
     pbdfFont        pFont;
-    
+
     for( k = 0 ; string[k] != 0x0000 ; k+=1 )
     {
         nCode = string[k];//(0xff00 & ( ((unsigned char ) str[strIndex][k]) << 8 )) | ( ( (unsigned char) str[strIndex][k+1]) & 0x00ff );
-        
+
         if ( ReadFontOfCode( &dc->font->fontcache, dc->font->fontfile, dc->font->fndex, nCode ,&Font ))
             pFont = &Font;
         else
             pFont = NULL;
-        
+
         if ( pFont != NULL )
         {
             save_x = xPixel = org_x + pFont->bbxoff;
             yPixel = org_y - pFont->bbyoff;
-            
+            //printf("x %d %d %d y %d %d %d pFont->bbw %d \n", org_x, save_x, xPixel, org_y, yPixel, pFont->bbxoff, pFont->bbw);
             for( i = pFont->bbh -1 ; i >=0   ; --i )
             {
                 for ( j=0 ; j < (pFont->bbw+8)/8 ; ++ j)
@@ -74,6 +74,7 @@ static void  _text_out_( dc_t *dc, int org_x , int org_y, unsigned short* string
                 yPixel--;
                 xPixel = save_x;
             }
+						//printf("org_x %d pFont->dwidth %d \n ", org_x , pFont->dwidth);
             org_x+= pFont->dwidth;
         }
     }
@@ -85,15 +86,15 @@ int gx_text_out( dc_t *dc, int coor_x, int coor_y, char *text)
     주의: coo_y는 문자열 출력의 하단 좌표. 즉, coor_x=좌측 좌표, coor_y=하단 좌표
     @param  dc : Device Context
             coor_x : x 좌표
-            coor_y : 하단 y 좌표 
+            coor_y : 하단 y 좌표
             text : 출력할 문자열
 */
 {
     static unsigned short   uniString[MAX_STRING_LENGTH+1];
     int                     szText;
-                     
+
     if  ( NULL == dc->font)                                             // 지정된 폰트가 없다면 복귀
-    {          
+    {
         printf( "gx_text_out() : no font assigned.\n");
         return GXERR_NO_ASSIGNED_FONT;
     }
@@ -103,10 +104,10 @@ int gx_text_out( dc_t *dc, int coor_x, int coor_y, char *text)
        text[MAX_STRING_LENGTH] = '\0';
        szText                  = MAX_STRING_LENGTH;
     }
-    
+
     convertMultibyteToUnicodeString( (unsigned char*)text, szText, uniString, MAX_STRING_LENGTH);
     _text_out_( dc, coor_x ,coor_y, uniString);
-    
+
     return GXERR_NONE;
 }
 
@@ -138,7 +139,7 @@ font_t *gx_open_font( char *font_filename)
 */
 {
     font_t  *font;
-    
+
     font = malloc( sizeof( font_t));                                               // dc_t 구조체 메모리 할당
     if ( NULL != font)                                                             // 메모리 구하기에 성공함녀
     {
@@ -154,7 +155,7 @@ font_t *gx_open_font( char *font_filename)
     }
     else
     {
-        printf( "gx_open_font() : out of memory.\n");    
+        printf( "gx_open_font() : out of memory.\n");
     }
     return font;
 }

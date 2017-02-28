@@ -39,10 +39,10 @@ static font_t 		*hfont_2;
 static char  buff[MAX_BUFF_SIZE];                                       // 1차 함수에서만 사용할 수 있는 버퍼
 static char  fb_dev_name[MAX_DEV_NANE];
 
-#define	VIEW_LEFT	    0
-#define	VIEW_TOP	    0
-#define	VIEW_RIGHT	    319
-#define VIEW_BOTTOM	    239
+#define	VIEW_LEFT	    10
+#define	VIEW_TOP	    10
+#define	VIEW_RIGHT	    300
+#define VIEW_BOTTOM	    200
 #define	VIEW_WIDTH	    ( VIEW_RIGHT  	- VIEW_LEFT)
 #define VIEW_HEIGHT	    ( VIEW_BOTTOM	- VIEW_TOP )
 
@@ -55,30 +55,29 @@ static void display_text( void){
 
 	// counter 출력
     dc_buffer->font = hfont_2;
-    dc_buffer->font_color   = gx_color(    0, 255, 255, 255);
-    gx_text_out( dc_buffer, VIEW_LEFT, VIEW_TOP+50, "counter=");
+    dc_buffer->font_color   = gx_color(    0, 255, 255, 60);
 
+    gx_text_out( dc_buffer, VIEW_LEFT, VIEW_TOP+50, "TEST");
     sprintf( buff, "%d", ndx_counter++);
 	dc_buffer->font	= hfont_1;
-	dc_buffer->font_color	= gx_color( 255,    0, 255, 255);
+	dc_buffer->font_color	= gx_color( 100,    255, 100, 255);
 	gx_text_out( dc_buffer, VIEW_LEFT+190, VIEW_TOP+40, buff);
 
-	// falinux 문자열 출력
+	// 한글 문자열 출력
 
     if ( ndx_counter % 5){
         dc_buffer->font = hfont_2;
-        dc_buffer->font_color   = gx_color( 255, 255, 255, 255);
-        gx_text_out( dc_buffer, VIEW_LEFT, VIEW_TOP+120, "www.falinux.com");
+        dc_buffer->font_color   = gx_color( 0, 0, 0, 255);
+        gx_text_out( dc_buffer, VIEW_LEFT, VIEW_TOP+120, "검정색");
     }
     else {
         dc_buffer->font = hfont_1;
-        dc_buffer->font_color   = gx_color( 255, 255, 0  , 255);
-        gx_text_out( dc_buffer, VIEW_LEFT, VIEW_TOP+120, "---------------");
+        dc_buffer->font_color   = gx_color( 0, 255, 0  , 255);
+        gx_text_out( dc_buffer, VIEW_LEFT, VIEW_TOP+120, "black-");
     }
 
-    gx_bitblt( dc_screen, VIEW_LEFT, VIEW_TOP, dc_buffer, VIEW_LEFT, VIEW_TOP, VIEW_WIDTH, VIEW_HEIGHT);
-//		gx_bitblt90(dc_screen, dc_buffer);
-//	gx_bitblt270(dc_screen, dc_buffer);
+//    gx_bitblt( dc_screen, VIEW_LEFT, VIEW_TOP, dc_buffer, VIEW_LEFT, VIEW_TOP, VIEW_WIDTH, VIEW_HEIGHT);
+		gx_bitblt_rotation(dc_screen, dc_buffer);
 }
 
 
@@ -102,17 +101,14 @@ int alpha=0;
     if  ( NULL == ( dc_buffer
                     = gx_get_buffer_dc( 320, 240) ))   return 1;   // 화면 깜빡임을 없애기 위한 버퍼 DC, width swap
 
-    
-		
+		dc_buffer->dc_type = DCTYPE_SCREEN;
+
     gx_clear( dc_screen, gx_color( 0xf, 0xf, 0xf, 0xf0));
 		gx_clear( dc_buffer, gx_color( 0xf, 0xf, 0xf, 0xf0));
 
-		
-		
-		
     printf( "font loading\n");
     if ( NULL == ( hfont_1 = gx_open_font( "gulim12.bdf")) )   return 1;
-    if ( NULL == ( hfont_2 = gx_open_font( "nbold32.bdf")) )   return 1;
+    if ( NULL == ( hfont_2 = gx_open_font( "nago28.bdf")) )   return 1;
 
     printf( "running....%s\n", fb_dev_name);
     printf( "screen widht= %d\n"      , dc_screen->width);              // 화면 폭과 넓이를 출력
@@ -123,6 +119,7 @@ int alpha=0;
 		//		gx_clear( dc_screen, gx_color( 0x0, 0xf, 0xff, alpha++%255));
 		    display_text();
         usleep( 100 * 1000);                                            // 200 msec 대기
+				//sleep(3);
     }
 
     gx_release_dc( dc_screen);

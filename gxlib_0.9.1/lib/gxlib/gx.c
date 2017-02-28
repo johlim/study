@@ -1196,6 +1196,40 @@ void  gx_bitblt( dc_t *dc_dest, int dest_x, int dest_y, dc_t *dc_sour, int sour_
     }
 }
 
+/* example 320x240 -> 240x320 */
+void  gx_bitblt_rotation(  dc_t *dc_dest, dc_t *dc_sour)
+{           
+    int     sour_x, sour_y;
+    int     dest_x, dest_y;
+    int     width , height;
+    color_t color_sour;
+    color_t color_dest;
+              
+    width   = dc_sour->width;
+    height  = dc_sour->height;
+
+    if ( dc_dest->height < width )  width  = dc_dest->height;
+    if ( dc_dest->width  < height)  height = dc_dest->width;
+
+		//printf("src h %d w %d \n", dc_sour->height, dc_sour->width);
+		//printf("des h %d w %d \n", dc_dest->height, dc_dest->width);
+		//printf("src x %d y %d : des x %d w %y  \n", dc_dest->height, dc_dest->width);
+    {
+        dest_x = 0;              
+        for ( sour_y = 0; sour_y < height; sour_y++)
+        {
+            dest_y = dc_dest->height-1;
+            for ( sour_x = 0; sour_x < width; sour_x++)
+            {            
+                gx_get_pixel( dc_sour, sour_x, sour_y, &color_sour);
+                gx_set_pixel( dc_dest, dest_x, dest_y,  color_sour);
+                dest_y--;            
+            }
+            dest_x++;
+        }
+    }        
+}
+
 void  gx_bitblt90(  dc_t *dc_dest, dc_t *dc_sour)
 {           
     int     sour_x, sour_y;
@@ -1209,7 +1243,7 @@ void  gx_bitblt90(  dc_t *dc_dest, dc_t *dc_sour)
 
     if ( dc_dest->height < width )  width  = dc_dest->height;
     if ( dc_dest->width  < height)  height = dc_dest->width;
-              
+
     if ( DCTYPE_PNG == dc_sour->dc_type)                                           // 원본이 PNG 파일이면 투명 영역을 처리한다.
     {   
         dest_x = 0;              
