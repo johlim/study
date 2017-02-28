@@ -176,25 +176,29 @@ static void
 gst_my_filter_init (GstMyFilter * filter)
 {
   filter->sinkpad = gst_pad_new_from_static_template (&sink_factory, "sink");
-  
+#if 0  
   gst_pad_set_event_function (filter->sinkpad,
                               GST_DEBUG_FUNCPTR(gst_my_filter_sink_event));
+#endif
   gst_pad_set_chain_function (filter->sinkpad,
                               GST_DEBUG_FUNCPTR(gst_my_filter_chain));
 // add 
-    gst_pad_set_setcaps_function(filter->sinkpad,
-            GST_DEBUG_FUNCPTR(gst_my_filter_set_caps));
+#if 0
+   // gst_pad_set_setcaps_function(filter->sinkpad,
+     //       GST_DEBUG_FUNCPTR(gst_my_filter_set_caps));
 			
   //GST_PAD_SET_PROXY_CAPS (filter->sinkpad);
-	gst_pad_set_getcaps_function (filter->sinkpad,
+	//gst_pad_set_getcaps_function (filter->sinkpad,
                                 GST_DEBUG_FUNCPTR(gst_pad_proxy_query_caps));
-								
+#endif							
   gst_element_add_pad (GST_ELEMENT (filter), filter->sinkpad);
 
   filter->srcpad = gst_pad_new_from_static_template (&src_factory, "src");
   //GST_PAD_SET_PROXY_CAPS (filter->srcpad);
+#if 0
 	gst_pad_set_getcaps_function (filter->srcpad,
                                 GST_DEBUG_FUNCPTR(gst_pad_proxy_query_caps));  
+#endif
   gst_element_add_pad (GST_ELEMENT (filter), filter->srcpad);
 
   filter->silent = FALSE;
@@ -279,7 +283,7 @@ gst_my_filter_chain (GstPad * pad, GstBuffer * buf)
   GST_TRACE_OBJECT(filter, "buf (%p)", buf);
   
   if (filter->silent == FALSE)
-//    g_print ("I'm plugged, therefore I'm in.\n");
+    g_print ("I'm plugged, therefore I'm in.\n");
 //
 #if 0
 {

@@ -145,20 +145,20 @@ gst_adaspump_class_init (GstAdaspumpClass * klass)
   base_transform_class->accept_caps = GST_DEBUG_FUNCPTR (gst_adaspump_accept_caps);
   base_transform_class->set_caps = GST_DEBUG_FUNCPTR (gst_adaspump_set_caps);
   base_transform_class->query = GST_DEBUG_FUNCPTR (gst_adaspump_query);
-  base_transform_class->decide_allocation = GST_DEBUG_FUNCPTR (gst_adaspump_decide_allocation);
-  base_transform_class->filter_meta = GST_DEBUG_FUNCPTR (gst_adaspump_filter_meta);
-  base_transform_class->propose_allocation = GST_DEBUG_FUNCPTR (gst_adaspump_propose_allocation);
-  base_transform_class->transform_size = GST_DEBUG_FUNCPTR (gst_adaspump_transform_size);
-  base_transform_class->get_unit_size = GST_DEBUG_FUNCPTR (gst_adaspump_get_unit_size);
+  //base_transform_class->decide_allocation = GST_DEBUG_FUNCPTR (gst_adaspump_decide_allocation);
+  //base_transform_class->filter_meta = GST_DEBUG_FUNCPTR (gst_adaspump_filter_meta);
+  //base_transform_class->propose_allocation = GST_DEBUG_FUNCPTR (gst_adaspump_propose_allocation);
+  //base_transform_class->transform_size = GST_DEBUG_FUNCPTR (gst_adaspump_transform_size);
+  //base_transform_class->get_unit_size = GST_DEBUG_FUNCPTR (gst_adaspump_get_unit_size);
   base_transform_class->start = GST_DEBUG_FUNCPTR (gst_adaspump_start);
   base_transform_class->stop = GST_DEBUG_FUNCPTR (gst_adaspump_stop);
   base_transform_class->sink_event = GST_DEBUG_FUNCPTR (gst_adaspump_sink_event);
   base_transform_class->src_event = GST_DEBUG_FUNCPTR (gst_adaspump_src_event);
-  base_transform_class->prepare_output_buffer = GST_DEBUG_FUNCPTR (gst_adaspump_prepare_output_buffer);
-  base_transform_class->copy_metadata = GST_DEBUG_FUNCPTR (gst_adaspump_copy_metadata);
-  base_transform_class->transform_meta = GST_DEBUG_FUNCPTR (gst_adaspump_transform_meta);
-  base_transform_class->before_transform = GST_DEBUG_FUNCPTR (gst_adaspump_before_transform);
-  base_transform_class->transform = GST_DEBUG_FUNCPTR (gst_adaspump_transform);
+  //base_transform_class->prepare_output_buffer = GST_DEBUG_FUNCPTR (gst_adaspump_prepare_output_buffer);
+  //base_transform_class->copy_metadata = GST_DEBUG_FUNCPTR (gst_adaspump_copy_metadata);
+  //base_transform_class->transform_meta = GST_DEBUG_FUNCPTR (gst_adaspump_transform_meta);
+  //base_transform_class->before_transform = GST_DEBUG_FUNCPTR (gst_adaspump_before_transform);
+  //base_transform_class->transform = GST_DEBUG_FUNCPTR (gst_adaspump_transform);
   base_transform_class->transform_ip = GST_DEBUG_FUNCPTR (gst_adaspump_transform_ip);
 
 }
