@@ -1,0 +1,27 @@
+dot file 생성하기
+
+
+
+1. source 
+
+dot을 생성하려는 bin, pipepine 생성후에
+
+GST_DEBUG_BIN_TO_DOT_FILE(video_filter_bin, GST_DEBUG_GRAPH_SHOW_ALL, "video_filter_bin")
+
+
+2. run
+export GST_DEBUG_DUMP_DOT_DIR=./
+
+/usr/local/bin/cheese
+
+3. check
+check ./video_filter_bin.dot
+
+4. make png
+dot -Tpng ./video_filter_bin.dot > video.png
+
+5. view (other png viewer)
+eog video.png 
+
+
+
