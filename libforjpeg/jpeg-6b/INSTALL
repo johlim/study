@@ -1,0 +1,8 @@
+1. enter cross compile mode
+sb2 -t cortex-a9
+
+2. configure cross compile env
+./configure --prefix=/opt/crosstools/arm-cortex_a9-eabi-4.7-eglibc-2.18/arm-cortex_a9-linux-gnueabi/sysroot/usr CC=arm-cortex_a9-linux-gnueabi-gcc CC=arm-cortex_a9-linux-gnueabi-gcc --enable-shared --enable-static
+
+3. build
+make
