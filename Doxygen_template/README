@@ -1,0 +1,4 @@
+1. check Doxyfile
+2. run  doxygen 
+doxygen
+3. check html folder
