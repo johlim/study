@@ -647,6 +647,10 @@ cheese_camera_create_video_filter_bin (CheeseCamera *camera, GError **error)
   if (!ok)
     g_error ("Unable to create filter bin");
 
+  {
+  GstElement *video_filter_bin=priv->video_filter_bin;
+  GST_DEBUG_BIN_TO_DOT_FILE(video_filter_bin, GST_DEBUG_GRAPH_SHOW_ALL, "video_filter_bin");
+  }
   return TRUE;
 }
 
