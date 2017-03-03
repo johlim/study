@@ -143,7 +143,7 @@ gst_adaspump_class_init (GstAdaspumpClass * klass)
   //base_transform_class->transform_caps = GST_DEBUG_FUNCPTR (gst_adaspump_transform_caps);
   //base_transform_class->fixate_caps = GST_DEBUG_FUNCPTR (gst_adaspump_fixate_caps);
   //base_transform_class->accept_caps = GST_DEBUG_FUNCPTR (gst_adaspump_accept_caps);
-  //base_transform_class->set_caps = GST_DEBUG_FUNCPTR (gst_adaspump_set_caps);
+  base_transform_class->set_caps = GST_DEBUG_FUNCPTR (gst_adaspump_set_caps);
   //base_transform_class->query = GST_DEBUG_FUNCPTR (gst_adaspump_query);
   //base_transform_class->decide_allocation = GST_DEBUG_FUNCPTR (gst_adaspump_decide_allocation);
   //base_transform_class->filter_meta = GST_DEBUG_FUNCPTR (gst_adaspump_filter_meta);
@@ -285,6 +285,32 @@ gst_adaspump_set_caps (GstBaseTransform * trans, GstCaps * incaps,
 
   GST_DEBUG_OBJECT (adaspump, "set_caps");
 
+  GstStructure *structure;
+  int rate, channels;
+  gboolean ret;
+  gchar * format;
+  //GstCaps *outcaps;
+
+  structure = gst_caps_get_structure (incaps, 0);
+  ret = gst_structure_get_int (structure, "rate", &rate);
+  ret = ret && gst_structure_get_int (structure, "channels", &channels);
+  format = gst_structure_get_string (structure, "format");
+
+  g_print("in format %s \n", format);
+
+  structure = gst_caps_get_structure (outcaps, 0);
+  ret = gst_structure_get_int (structure, "rate", &rate);
+  ret = ret && gst_structure_get_int (structure, "channels", &channels);
+  format = gst_structure_get_string (structure, "format");
+
+  g_print("out format %s \n", format);
+
+#if 0
+  if (g_strcmp0(format, "S16LE")==0)
+	  return TRUE;
+  else
+	  return FALSE;
+#endif
   return TRUE;
 }
 
@@ -452,6 +478,9 @@ gst_adaspump_transform (GstBaseTransform * trans, GstBuffer * inbuf,
 
   GST_DEBUG_OBJECT (adaspump, "transform");
 
+  g_print ("I'm plugged, tranform\n");
+
+ // memcpy(adaspump->src, inbuf);
   return GST_FLOW_OK;
 }
 
@@ -462,11 +491,12 @@ gst_adaspump_transform_ip (GstBaseTransform * trans, GstBuffer * buf)
 
   GST_DEBUG_OBJECT (adaspump, "transform_ip");
 
-  if (adaspump->process_count++ % 3000)
+  if (adaspump->process_count++ == 0)
 	  g_print ("I'm plugged, 3000 th buf \n");
 
+  //memset(buf,0x00,100);
   /* just push out the incoming buffer without touching it */
-  //return gst_pad_push (adaspump->srcpad, buf);
+  //gst_pad_push (adaspump->src, buf);
   return GST_FLOW_OK;
 }
 
