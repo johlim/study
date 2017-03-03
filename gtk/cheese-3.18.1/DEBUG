@@ -1,7 +1,5 @@
 dot file 생성하기
 
-
-
 1. source 
 
 dot을 생성하려는 bin, pipepine 생성후에
@@ -24,4 +22,5 @@ dot -Tpng ./video_filter_bin.dot > video.png
 eog video.png 
 
 
-
+ref:
+https://developer.ridgerun.com/wiki/index.php/How_to_generate_a_Gstreamer_pipeline_diagram_(graph)

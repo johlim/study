@@ -8,6 +8,17 @@
 
 static GMainLoop *loop;
 
+static void
+seek_to_time (GstElement *pipeline,
+		gint64      time_nanoseconds)
+{
+	if (!gst_element_seek (pipeline, 1.0, GST_FORMAT_TIME, GST_SEEK_FLAG_FLUSH,
+				GST_SEEK_TYPE_SET, time_nanoseconds,
+				GST_SEEK_TYPE_NONE, GST_CLOCK_TIME_NONE)) {
+		g_print ("Seek failed!\n");
+	}
+}
+
 static gboolean
 cb_print_position (GstElement *pipeline)
 {
@@ -140,6 +151,7 @@ main (int argc, char *argv[])
 	gst_element_set_state (GST_ELEMENT (pipeline), GST_STATE_PLAYING);	
 
 	g_timeout_add (200, (GSourceFunc) cb_print_position, pipeline);
+	seek_to_time(pipeline, 1000*1000*1000*100);
 	g_main_loop_run (loop);
 
 	/* clean up */
