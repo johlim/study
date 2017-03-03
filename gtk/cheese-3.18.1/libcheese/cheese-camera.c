@@ -646,11 +646,12 @@ cheese_camera_create_video_filter_bin (CheeseCamera *camera, GError **error)
 
   if (!ok)
     g_error ("Unable to create filter bin");
-
+#define jhlim_add_test_20170301 (1)
   {
   GstElement *video_filter_bin=priv->video_filter_bin;
   GST_DEBUG_BIN_TO_DOT_FILE(video_filter_bin, GST_DEBUG_GRAPH_SHOW_ALL, "video_filter_bin");
   }
+#endif
   return TRUE;
 }
 
@@ -1661,6 +1662,14 @@ cheese_camera_setup (CheeseCamera *camera, CheeseCameraDevice *device, GError **
 
   g_signal_connect (G_OBJECT (priv->bus), "message",
                     G_CALLBACK (cheese_camera_bus_message_cb), camera);
+#ifdef jhlim_add_test_20170303
+  {
+
+  GST_DEBUG_BIN_TO_DOT_FILE(priv->camera_source, GST_DEBUG_GRAPH_SHOW_ALL, "camera_source");
+  
+  GST_DEBUG_BIN_TO_DOT_FILE(priv->camerabin, GST_DEBUG_GRAPH_SHOW_ALL, "camerabin");
+  }
+#endif
 }
 
 /**
