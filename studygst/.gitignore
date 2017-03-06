@@ -1,1 +1,9 @@
 gst-plugins-bad-1.8.3
+myedgefilter/Makefile.in
+myedgefilter/aclocal.m4
+myedgefilter/autom4te.cache
+myedgefilter/config.h.in
+myedgefilter/configure
+myedgefilter/ltmain.sh
+myedgefilter/src/Makefile.in
+
