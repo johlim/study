@@ -1,0 +1,6 @@
+!!! myedgefilter require gstreamer-video-1.0 >= $GST_REQUIRED
+
+gst-launch-1.0 videotestsrc ! video/x-raw ,format=\(string\)I420 ! myedgefilter ! xvimagesink --gst-debug=*:4
+
+why adaspump and myedgefilter work differently
+

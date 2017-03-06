@@ -2,7 +2,7 @@ dnl required version of autoconf
 AC_PREREQ([2.53])
 
 dnl TODO: fill in your package name and package version here
-AC_INIT([myedgefilter],[1.0.0])
+AC_INIT([my-plugin-edgefilter],[1.0.0])
 
 dnl required versions of gstreamer and plugins-base
 GST_REQUIRED=1.0.0
@@ -12,7 +12,7 @@ AC_CONFIG_SRCDIR([src/gstmyedgefilter.c])
 AC_CONFIG_HEADERS([config.h])
 
 dnl required version of automake
-AM_INIT_AUTOMAKE([1.10] foreign)
+AM_INIT_AUTOMAKE([1.10 foreign])
 
 dnl enable mainainer mode by default
 AM_MAINTAINER_MODE([enable])
@@ -47,6 +47,7 @@ PKG_CHECK_MODULES(GST, [
   gstreamer-base-1.0 >= $GST_REQUIRED
   gstreamer-controller-1.0 >= $GST_REQUIRED
   gstreamer-audio-1.0 >= $GST_REQUIRED
+  gstreamer-video-1.0 >= $GST_REQUIRED
 ], [
   AC_SUBST(GST_CFLAGS)
   AC_SUBST(GST_LIBS)
