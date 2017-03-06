@@ -1,5 +1,4 @@
-/* compile with:
- *  * gcc -o tags tags.c `pkg-config --cflags --libs gstreamer-1.0` */
+#include <glib.h>
 #include <gst/gst.h>
 
 	static void
@@ -65,15 +64,17 @@ on_new_pad (GstElement * dec, GstPad * pad, GstElement * fakesink)
 	int
 main (int argc, char ** argv)
 {
-	GstElement *pipe, *dec, *sink;
+	GstElement *pipe, *dec, *sink, *sink2;
 	GstMessage *msg;
 	gchar *uri;
 
 	gst_init (&argc, &argv);
 
 	if (argc < 2)
+	{
 		g_error ("Usage: %s FILE or URI", argv[0]);
-
+		exit(0);
+	}
 	if (gst_uri_is_valid (argv[1])) {
 		uri = g_strdup (argv[1]);
 	} else {
@@ -85,11 +86,15 @@ main (int argc, char ** argv)
 	dec = gst_element_factory_make ("uridecodebin", NULL);
 	g_object_set (dec, "uri", uri, NULL);
 	gst_bin_add (GST_BIN (pipe), dec);
-
+#if 0
+	sink2 = gst_element_factory_make ("adaspump", NULL);
+	gst_bin_add (GST_BIN (pipe), sink2);
+#endif
 	sink = gst_element_factory_make ("fakesink", NULL);
 	gst_bin_add (GST_BIN (pipe), sink);
 
 	g_signal_connect (dec, "pad-added", G_CALLBACK (on_new_pad), sink);
+
 
 	gst_element_set_state (pipe, GST_STATE_PAUSED);
 
