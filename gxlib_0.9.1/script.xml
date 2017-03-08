@@ -1,0 +1,188 @@
+<main>
+	<state name="INST_MAIN (0.SID_INST_MAIN)" id="0"
+				x="0" y="0" w="320" h="240" img="install_warn_popup">
+		<button id="0" x="0" y="35" w="90" h="86" img="displayunit/trans_97_66"
+				style="i" focusable="1" func="Draw_Install_Type"></button>
+		<button id="1" x="0" y="85" w="90" h="87" img="displayunit/trans_97_66"
+				style="i" focusable="1" func="Draw_Install_Position"></button>
+		<button id="2" x="0" y="135" w="89" h="87" img="displayunit/trans_97_66"
+				style="i" focusable="1" func="Draw_Install_Dimension"></button>
+		<button id="3" x="0" y="185" w="89" h="87" img="displayunit/trans_97_66"
+				style="i" focusable="1" func="Draw_Install_Reset"></button>
+	</state>
+
+	<state name="INST_TYPE (1.SID_INST_TYPE)" id="1"
+				x="0" y="0" w="320" h="240" img="install_type_bg">
+		<button id="0" x="97" y="35" w="80" h="47" img="install_type_sedan" img_f="install_type_sedan_1"
+				style="s" focusable="1" func="Click_Install_carType"></button>
+		<button id="1" x="97" y="101" w="80" h="47" img="install_type_suv" img_f="install_type_suv_1"
+				style="s" focusable="1" func="Click_Install_carType"></button>
+		<button id="2" x="97" y="167" w="80" h="47" img="install_type_bus" img_f="install_type_bus_1"
+				style="s" focusable="1" func="Click_Install_carType"></button>
+		<button id="3" x="209" y="35" w="80" h="47" img="install_type_compact" img_f="install_type_compact_1"
+				style="s" focusable="1" func="Click_Install_carType"></button>
+		<button id="4" x="209" y="101" w="80" h="47" img="install_type_rv" img_f="install_type_rv_1"
+				style="s" focusable="1" func="Click_Install_carType"></button>
+		<button id="5" x="209" y="167" w="80" h="47" img="install_type_truck" img_f="install_type_truck_1"
+				style="s" focusable="1" func="Click_Install_carType"></button>
+	</state>
+	
+	<state name="INST_POSITION (2.SID_INST_POSITION)" id="2"
+				x="0" y="0" w="320" h="240" img="install_position_bg">
+		<button group="0" id="0" x="122" y="114" w="80" h="47" img="icon/circle_btn_off" img_f="icon/circle_btn_on"
+				style="s" focusable="1" func="Click_Install_Position_Atta"></button>
+		<button group="0" id="1" x="190" y="114" w="80" h="47" img="icon/circle_btn_off" img_f="icon/circle_btn_on"
+				style="s" focusable="1" func="Click_Install_Position_Atta"></button>
+		<button group="0" id="2" x="258" y="114" w="80" h="47" img="icon/circle_btn_off" img_f="icon/circle_btn_on"
+				style="s" focusable="1" func="Click_Install_Position_Atta"></button>
+		<button group="1" id="0" x="143" y="178" w="80" h="47" img="icon/smart_car_settings_arrow_l"
+				style="s" focusable="1" func="Click_Install_Position_Len"></button>
+		<button group="1" id="1" x="242" y="178" w="80" h="47" img="icon/smart_car_settings_arrow_r"
+				style="s" focusable="1" func="Click_Install_Position_Len"></button>
+		<button group="1" id="2" x="182" y="180" w="80" h="47" img="number/digit_29x45_0"
+				style="s" focusable="1"></button>
+		<button group="1" id="3" x="211" y="180" w="80" h="47" img="number/digit_29x45_0"
+				style="s" focusable="1"></button>
+	</state>
+	
+	<state name="INST_DIMENSION (3.SID_INST_DIMENSION)" id="3"
+				x="0" y="0" w="320" h="240" img="install_dimension_bg">
+		<button group="0" id="0" x="160" y="44" w="80" h="47" img="icon/smart_car_settings_arrow_l"
+				style="s" focusable="1" func="Click_Install_Dimension_Cam"></button>
+		<button group="0" id="1" x="280" y="44" w="80" h="47" img="icon/smart_car_settings_arrow_r"
+				style="s" focusable="1" func="Click_Install_Dimension_Cam"></button>
+		<button group="0" id="2" x="200" y="46" w="80" h="47" img="number/digit_29x45_0"
+				style="s" focusable="1"></button>
+		<button group="0" id="3" x="248" y="46" w="80" h="47" img="number/digit_29x45_0"
+				style="s" focusable="1"></button>
+		<button group="1" id="0" x="160" y="109" w="80" h="47" img="icon/smart_car_settings_arrow_l"
+				style="s" focusable="1" func="Click_Install_Dimension_Vehicle"></button>
+		<button group="1" id="1" x="280" y="109" w="80" h="47" img="icon/smart_car_settings_arrow_r"
+				style="s" focusable="1" func="Click_Install_Dimension_Vehicle"></button>
+		<button group="1" id="2" x="200" y="111" w="80" h="47" img="number/digit_29x45_0"
+				style="s" focusable="1"></button>
+		<button group="1" id="3" x="248" y="111" w="80" h="47" img="number/digit_29x45_0"
+				style="s" focusable="1"></button>
+		<button group="2" id="0" x="182" y="175" w="80" h="47" img="icon/circle_btn_off" img_f="icon/circle_btn_on"
+				style="s" focusable="1" func="Click_Install_Dimension_Blinker"></button>
+		<button group="2" id="1" x="251" y="175" w="80" h="47" img="icon/circle_btn_off" img_f="icon/circle_btn_on"
+				style="s" focusable="1" func="Click_Install_Dimension_Blinker"></button>
+	</state>
+	
+	<state name="INST_RESET (4.SID_INST_RESET)" id="4"
+				x="0" y="0" w="320" h="240" img="install_cam_reset_bg">
+		<button group="0" id="0" x="147" y="113" w="80" h="47" img="rect_btn_cam_reset_up" img_f="rect_btn_cam_reset_dn"
+				style="s" focusable="1" func="Click_Install_Rst_Step1"></button>
+		<button group="1" id="0" x="78" y="180" w="80" h="40" img="rect_btn_insmod_prev_up" img_f="rect_btn_insmod_prev_dn"
+				style="s" focusable="1" func="Draw_Install_Reset"></button>
+		<button group="1" id="1" x="163" y="180" w="80" h="40" img="rect_btn_insmod_ok_up" img_f="rect_btn_insmod_ok_dn"
+				style="s" focusable="1" func="Click_Install_Rst_Step2"></button>
+		<button group="2" id="0" x="120" y="180" w="80" h="40" img="rect_btn_insmod_ok_up" img_f="rect_btn_insmod_ok_dn"
+				style="s" focusable="1" func="Click_Install_Rst_Popup"></button>
+		<button group="3" id="0" x="72" y="118" w="55" h="55" img="icon/cam_arrow_up_off" img_f="icon/cam_arrow_up_on"
+				style="s" focusable="1" ></button>
+		<button group="3" id="1" x="133" y="118" w="55" h="55" img="icon/cam_arrow_ok_off" img_f="icon/cam_arrow_ok_on"
+				style="s" focusable="1" ></button>				
+		<button group="3" id="2" x="192" y="118" w="55" h="55" img="icon/cam_arrow_dn_off" img_f="icon/cam_arrow_dn_on"
+				style="s" focusable="1" ></button>
+					</state>
+
+		<state name="PLAY_FB_MENU (5.SID_PLAY_FB_MENU)" id="5"
+				x="0" y="0" w="320" h="240" bg_color="0x000000">
+		<button id="0" x="0" y="0" w="0" h="0"
+				style="i" focusable="1" func="0"></button>
+		<button id="1" x="0" y="35" w="97" h="67" img="displayunit/trans_97_66"
+				style="i" focusable="1" func="OnClickEnterPb_cctv"></button>
+		<button id="2" x="0" y="101" w="97" h="67" img="displayunit/trans_97_66"
+				style="i" focusable="1" func="OnClickEnterPb_event"></button>
+		<button id="3" x="0" y="167" w="97" h="67" img="displayunit/trans_97_66"
+				style="i" focusable="1" func="OnClickEnterPb_parking"></button>
+		<button id="4" x="0" y="0" w="0" h="0"
+				style="i" focusable="1" func="0"></button>
+		<button id="5" x="0" y="0" w="0" h="0"
+				style="i" focusable="1" func="0"></button>
+	</state>
+	
+	<state name="PLAY_FB_LIST (6.SID_PLAY_FB_LIST)" id="6"
+				x="0" y="0" w="320" h="240" bg_color="0x000000">
+		<button id="0" x="276" y="50" w="36" h="67" img="icon/file_browser_page_up" img_f="icon/file_browser_page_up"
+				style="i" focusable="1" func="Draw_Pb_TOP"></button>
+		<button id="1" x="276" y="117" w="36" h="67" img="icon/file_browser_page_dn" img_f="icon/file_browser_page_dn"
+				style="i" focusable="1" func="Draw_Pb_BOTTOM"></button>
+		<button id="2" x="277" y="184" w="35" h="36" img="icon/file_browser_play" img_f="icon/file_browser_play_1"
+				style="i" focusable="1" func="Draw_PlayWait"></button>
+	</state>
+	
+	<state name="PLAY_PLAYER (7.SID_PLAY_PLAYER)" id="7"
+				x="0" y="0" w="320" h="240" bg_color="0x000000">
+		<button id="0" x="64" y="192" w="46" h="46" img="icon/player_stop_nor" img_f="icon/player_stop_sel"
+				style="i" focusable="1" func="OnClickEnterPbPlay_exit"></button>
+		<button id="1" x="112" y="192" w="46" h="46" img="icon/player_prev_play_nor" img_f="icon/player_prev_play_sel"
+				style="i" focusable="1" func="Draw_Pb_Playback_Prev"></button>
+		<button id="2" x="160" y="192" w="46" h="46" img="icon/player_pause_nor" img_f="icon/player_pause_sel"
+				style="i" focusable="1" func="Draw_Pb_Playback_Pause"></button>
+		<button id="3" x="208" y="192" w="46" h="46" img="icon/player_next_play_nor" img_f="icon/player_next_play_sel"
+				style="i" focusable="1" func="Draw_Pb_Playback_Next"></button>
+	</state>
+	
+	<state name="PASSWORD_INPUT (8.SID_PASSWORD_INPUT)" id="8"
+				x="0" y="0" w="320" h="240" img="password/password_input_on">
+		<button id="10" x="103" y="189" w="115" h="29" img="password/password_input_ok_up" img_f="password/password_input_ok_dn"
+				style="i" focusable="1" func="s_password_input_ok"></button>
+		<button id="1" x="27" y="62" w="48" h="48" img="password/password_input_1_up" img_f="password/password_input_1_dn"
+				style="i" focusable="1" func="s_password_input_x"></button>
+		<button id="2" x="82" y="62" w="48" h="48" img="password/password_input_2_up" img_f="password/password_input_2_dn"
+				style="i" focusable="1" func="s_password_input_x"></button>
+		<button id="3" x="136" y="62" w="48" h="48" img="password/password_input_3_up" img_f="password/password_input_3_dn"
+				style="i" focusable="1" func="s_password_input_x"></button>
+		<button id="4" x="191" y="62" w="48" h="48" img="password/password_input_4_up" img_f="password/password_input_4_dn"
+				style="i" focusable="1" func="s_password_input_x"></button>
+		<button id="5" x="245" y="62" w="48" h="48" img="password/password_input_5_up" img_f="password/password_input_5_dn"
+				style="i" focusable="1" func="s_password_input_x"></button>
+		<button id="6" x="27" y="122" w="48" h="48" img="password/password_input_6_up" img_f="password/password_input_6_dn"
+				style="i" focusable="1" func="s_password_input_x"></button>
+		<button id="7" x="82" y="122" w="48" h="48" img="password/password_input_7_up" img_f="password/password_input_7_dn"
+				style="i" focusable="1" func="s_password_input_x"></button>
+		<button id="8" x="136" y="122" w="48" h="48" img="password/password_input_8_up" img_f="password/password_input_8_dn"
+				style="i" focusable="1" func="s_password_input_x"></button>
+		<button id="9" x="191" y="122" w="48" h="48" img="password/password_input_9_up" img_f="password/password_input_9_dn"
+				style="i" focusable="1" func="s_password_input_x"></button>
+		<button id="0" x="245" y="122" w="48" h="48" img="password/password_input_0_up" img_f="password/password_input_0_dn"
+				style="i" focusable="1" func="s_password_input_x"></button>
+	</state>
+		
+	<state name="PLAY_FB_MENU_3WIFI (9.SID_PLAY_FB_MENU_3WIFI)" id="9"
+				x="0" y="0" w="320" h="240" bg_color="0x000000">
+		<button id="0" x="0" y="0" w="0" h="0"
+				style="i" focusable="1" func="0"></button>
+		<button id="1" x="0" y="35" w="97" h="67" img="displayunit/trans_97_66"
+				style="i" focusable="1" func="OnClickEnterPb_cctv"></button>
+		<button id="2" x="0" y="101" w="97" h="67" img="displayunit/trans_97_66"
+				style="i" focusable="1" func="OnClickEnterPb_event"></button>
+		<button id="3" x="0" y="167" w="97" h="67" img="displayunit/trans_97_66"
+				style="i" focusable="1" func="OnClickEnterPb_download"></button>
+		<button id="4" x="0" y="0" w="0" h="0"
+				style="i" focusable="1" func="0"></button>
+		<button id="5" x="0" y="0" w="0" h="0"
+				style="i" focusable="1" func="0"></button>
+	</state>
+	
+	<state name="PLAY_FB_MENU_4WIFI (10.SID_PLAY_FB_MENU_4WIFI)" id="10"
+				x="0" y="0" w="320" h="240" bg_color="0x000000">
+		<button id="0" x="0" y="0" w="0" h="0"
+				style="i" focusable="1" func="0"></button>
+		<button id="1" x="0" y="35" w="97" h="50" img="displayunit/trans_97_50"
+				style="i" focusable="1" func="OnClickEnterPb_cctv"></button>
+		<button id="2" x="0" y="85" w="97" h="50" img="displayunit/trans_97_50"
+				style="i" focusable="1" func="OnClickEnterPb_event"></button>
+		<button id="3" x="0" y="135" w="97" h="50" img="displayunit/trans_97_50"
+				style="i" focusable="1" func="OnClickEnterPb_parking"></button>
+		<button id="4" x="0" y="185" w="97" h="50" img="displayunit/trans_97_50"
+				style="i" focusable="1" func="OnClickEnterPb_download"></button>
+		<button id="5" x="0" y="0" w="0" h="0"
+				style="i" focusable="1" func="0"></button>
+		<button id="6" x="0" y="0" w="0" h="0"
+				style="i" focusable="1" func="0"></button>
+	</state>
+	
+</main>

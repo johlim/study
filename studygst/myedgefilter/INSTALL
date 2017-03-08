@@ -368,3 +368,9 @@ operates.
 
 `configure' also accepts some other, not widely useful, options.  Run
 `configure --help' for more details.
+
+example 
+autoreconf -i
+./configure --prefix=/home/jhlim/GST/lib/gstreamer-1.0
+make
+make install
