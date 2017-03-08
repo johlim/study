@@ -5,7 +5,7 @@
 #CROSS_PREFIX	= mipsel-linux
 #CROSS_PREFIX	= arm-linux
 #CROSS_PREFIX   = arm-generic-linux-gnueabi
-CROSS_PREFIX	= arm-cortex_a9-linux-gnueabi
+#CROSS_PREFIX	= arm-cortex_a9-linux-gnueabi
 ## 사용자 소스
 TARGET			= app_gxlib
 SRCS			= sample.c
@@ -20,11 +20,11 @@ SRCS			+= $(SRCS_GXLIB)
 
 #---------------------------------------------------------------------
 ## UI 소스
-DIR_UILIB		= ../state/
-SRCS_UILIB		= $(DIR_UILIB)obj_common.c $(DIR_UILIB)parser.c $(DIR_UILIB)state.c $(DIR_UILIB)list_if.c
+#DIR_UILIB		= ../state/
+#SRCS_UILIB		= $(DIR_UILIB)obj_common.c $(DIR_UILIB)parser.c $(DIR_UILIB)state.c $(DIR_UILIB)list_if.c
 
-SRCS			+= $(SRCS_UILIB) 
-INCLUDEDIRS		+= -I$(DIR_UILIB)
+#SRCS			+= $(SRCS_UILIB) 
+#INCLUDEDIRS		+= -I$(DIR_UILIB)
 
 ## GLIB for UI
 #SYSROOT += /opt/crosstools/arm-cortex_a9-eabi-4.7-eglibc-2.18/arm-cortex_a9-linux-gnueabi/sysroot
@@ -41,7 +41,7 @@ INCLUDEDIRS		+= -I. -I../include/gxlib
 
 OBJS			= $(SRCS:.c=.o)
 
-CFLAGS			= $(INCLUDEDIRS) -W -Wall -O2
+CFLAGS			= $(INCLUDEDIRS) -W -Wall -O2 -g
 LIBS			= -lm -lz 
 LIBS			+= -lglib-2.0
 #LIBS			+= -ljpeg

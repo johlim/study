@@ -22,6 +22,7 @@
 #include <stdlib.h>                                                              // malloc srand
 #include <string.h>                                                              // abs
 #include <stdarg.h>
+#include <stdint.h>                                                               // O_RDWR
 
 #include <unistd.h>                                                              // open/close
 #include <fcntl.h>                                                               // O_RDWR
@@ -409,14 +410,16 @@ static void b24_vline( dc_t *dc, int coor_x, int y_1st, int y_2nd, color_t color
 
 /********************************************************************** 32 bpp */
 
-static int b32_color( color_t color)
+static uint32_t b32_color( color_t color)
 //-------------------------------------------------------------------------------
 // 설명: R,G,B 값을 지정했을 때, DC에 해당하는 정수 칼라 값을 구한다.
 // 인수: red:0부터 255 사이의 red 값, green:green 값, blud:blue  값
 // 반환: 정수 칼라 값
 {
 	//ARGB8888
-   return  ((color.alpha << 24) | ( color.red << 16) | ( color.green << 8) | (color.blue));
+   //return  ((color.alpha << 24) | ( color.red << 16) | ( color.green << 8) | (color.blue));
+   // BGRA8888
+   return  ((color.green<< 24) | ( color.blue << 16) | ( color.alpha << 8) | (color.red));
 	 
 }
 
@@ -425,7 +428,7 @@ static void b32_clear( dc_t *dc, color_t color)
 // 설명: 스크린을 특정 칼라로 채움
 // 인수: color       칼라
 {
-   volatile unsigned long  *ptr;
+   uint32_t	*ptr;
    int             n_color;
    int             ndx;
 
@@ -433,7 +436,7 @@ static void b32_clear( dc_t *dc, color_t color)
    //n_color  = color.alpha<<24 | 0x0000ff;// b32_color( color);
 	 n_color = b32_color( color);
 	 
-   ptr = (unsigned long *)dc->mapped;
+   ptr = (uint32_t *)dc->mapped;
 		
 	printf("%s %d color %x ptr (%x) color.alpha (%x) n_color(%x)\n", __func__, __LINE__, color, ptr, color.alpha, n_color);
 		
@@ -445,9 +448,9 @@ static void b32_set_pixel( dc_t *dc, int coor_x, int coor_y, color_t color)
 //-------------------------------------------------------------------------------
 // 설명: 점을 찍는다.
 {
-   unsigned long *ptr;
+   uint32_t	*ptr;
 
-   ptr   = (unsigned long *)dc->mapped +dc->width*coor_y +coor_x;
+   ptr   = (uint32_t *)dc->mapped +dc->width*coor_y +coor_x;
    *ptr  = b32_color( color);
 }
 
@@ -455,10 +458,10 @@ static void b32_get_pixel( dc_t *dc, int coor_x, int coor_y, color_t *color)
 //-------------------------------------------------------------------------------
 // 설명: 좌표에 대한 칼라 값을 구한다.
 {
-   unsigned long  *ptr;
+   uint32_t	*ptr;
    unsigned long   clr_bit;
 
-   ptr            = (unsigned long *)dc->mapped +dc->width*coor_y +coor_x;
+   ptr            = (uint32_t *)dc->mapped +dc->width*coor_y +coor_x;
    clr_bit        = *ptr;
 
    color->blue    =  clr_bit & 0xff;
@@ -470,12 +473,12 @@ static void b32_hline( dc_t *dc, int x1st, int x_2nd, int coor_y, color_t color)
 //-------------------------------------------------------------------------------
 // 설명: 수평선을 그린다.
 {
-   unsigned long *ptr;
+   uint32_t	*ptr;
    int            n_color;
    int            ndx;
 
    n_color  = b32_color( color);
-   ptr      = (unsigned long *)dc->mapped + dc->width * coor_y +x1st;
+   ptr      = (uint32_t *)dc->mapped + dc->width * coor_y +x1st;
    for ( ndx = x1st; ndx <= x_2nd; ndx++)
      *ptr++ = n_color;
 }
@@ -484,12 +487,12 @@ static void b32_vline( dc_t *dc, int coor_x, int y_1st, int y_2nd, color_t color
 //-------------------------------------------------------------------------------
 // 설명: 수직선을 그린다.
 {
-   unsigned long *ptr;
+   uint32_t	*ptr;
    int            n_color;
    int            ndx;
 
    n_color  = b32_color( color);
-   ptr   = (unsigned long *)dc->mapped + dc->width * y_1st +coor_x;
+   ptr   = (uint32_t *)dc->mapped + dc->width * y_1st +coor_x;
    for ( ndx = y_1st; ndx <= y_2nd; ndx++)
    {
      *ptr   = n_color;
@@ -1111,10 +1114,10 @@ void  gx_bitblt( dc_t *dc_dest, int dest_x, int dest_y, dc_t *dc_sour, int sour_
     int         ncheck;
 
     if ( 0 > dest_x)                                   							// 출력 위치의 X 좌표가 음수라면
-    {                                                                                                                                 
-       sour_x -= dest_x;                                                       	// 원본 X 위치에서 출력되지 않는 음수 만큼을 제거한다.
-       sour_w += dest_x;                                                       	// 제거한 만큼 출력 폭도 줄인다.
-       dest_x = 0;                                                             	// 출력 위치 X 좌표를 0으로 설정한다.
+    {                                                                                                                                 
+       sour_x -= dest_x;                                                       	// 원본 X 위치에서 출력되지 않는 음수 만큼을 제거한다.
+       sour_w += dest_x;                                                       	// 제거한 만큼 출력 폭도 줄인다.
+       dest_x = 0;                                                             	// 출력 위치 X 좌표를 0으로 설정한다.
        if ( 0 >= sour_w)     return;                                            // 출력할 이미지 폭이 없다면 복귀
     }
     if ( dc_dest->width <= dest_x)      return;
@@ -1474,7 +1477,7 @@ dc_t *gx_get_buffer_dc( int width, int height)
     printf( "bits per pixel = %d\n", dc->bits_per_pixel);
     printf( "line length    = %d\n", dc->bytes_per_line   );
     printf( "memory size    = %d\n", dc->bytes      );
-		printf( "memory addr    = %x\n", dc->mapped      );
+	printf( "memory addr    = %x\n", dc->mapped      );
 	
 }
 #endif
@@ -1700,7 +1703,7 @@ int gx_open( char *dev_name)                                            // 장치 
     printf( "bits per pixel = %d\n", p_fb->bits_per_pixel);
     printf( "line length    = %d\n", p_fb->bytes_per_line   );
     printf( "memory size    = %d\n", p_fb->bytes      );
-		printf( "memory addr    = %x\n", p_fb->mapped      );
+	printf( "memory addr    = %x\n", p_fb->mapped      );
 	
 }
 #endif
