@@ -108,16 +108,17 @@ int alpha=0;
 
     printf( "font loading\n");
     if ( NULL == ( hfont_1 = gx_open_font( "gulim12.bdf")) )   return 1;
-    if ( NULL == ( hfont_2 = gx_open_font( "nago28.bdf")) )   return 1;
+    if ( NULL == ( hfont_2 = gx_open_font( "nbold32.bdf")) )   return 1;
 
     printf( "running....%s\n", fb_dev_name);
     printf( "screen widht= %d\n"      , dc_screen->width);              // È­¸é Æø°ú ³ÐÀÌ¸¦ Ãâ·Â
 		printf( "screen height= %d\n"      , dc_screen->height);              // È­¸é Æø°ú ³ÐÀÌ¸¦ Ãâ·Â
     printf( "screen color depth= %d\n", dc_screen->colors);
 
+		display_text();
     while( 1){
 		//		gx_clear( dc_screen, gx_color( 0x0, 0xf, 0xff, alpha++%255));
-		    display_text();
+		    //display_text();
         usleep( 100 * 1000);                                            // 200 msec ´ë±â
 				//sleep(3);
     }

@@ -445,7 +445,7 @@ static void b32_set_pixel( dc_t *dc, int coor_x, int coor_y, color_t color)
 //-------------------------------------------------------------------------------
 // 설명: 점을 찍는다.
 {
-   unsigned long *ptr;
+   volatile unsigned long *ptr;
 
    ptr   = (unsigned long *)dc->mapped +dc->width*coor_y +coor_x;
    *ptr  = b32_color( color);
@@ -455,7 +455,7 @@ static void b32_get_pixel( dc_t *dc, int coor_x, int coor_y, color_t *color)
 //-------------------------------------------------------------------------------
 // 설명: 좌표에 대한 칼라 값을 구한다.
 {
-   unsigned long  *ptr;
+   volatile unsigned long  *ptr;
    unsigned long   clr_bit;
 
    ptr            = (unsigned long *)dc->mapped +dc->width*coor_y +coor_x;
@@ -820,8 +820,8 @@ void  gx_get_pixel( dc_t  *dc, int coor_x, int coor_y, color_t *color)
 //       coor_x, coor_y    색상을 구할 좌표
 //       color             색상을 받을 레퍼런스 변수
 {
-   if ( 0 > coor_x || dc->width  <= coor_x)     return;
-   if ( 0 > coor_y || dc->height <= coor_y)     return;
+   if ( 0 > coor_x || dc->width  <= coor_x)     {printf("error %s",__func__); return;}
+   if ( 0 > coor_y || dc->height <= coor_y)     {printf("error %s",__func__); return;}
 
    dc->get_pixel( dc, coor_x, coor_y, color);
 }
@@ -1208,14 +1208,17 @@ void  gx_bitblt_rotation(  dc_t *dc_dest, dc_t *dc_sour)
     width   = dc_sour->width;
     height  = dc_sour->height;
 
-    if ( dc_dest->height < width )  width  = dc_dest->height;
-    if ( dc_dest->width  < height)  height = dc_dest->width;
+		// printf("src w %d h %d \n", dc_sour->width, dc_sour->height);
+		// printf("des w %d h %d \n", dc_dest->width, dc_dest->height);
+		// printf("-------------------");
+    // if ( dc_dest->height < width )  width  = dc_dest->height;
+    // if ( dc_dest->width  < height)  height = dc_dest->width;
 
-		//printf("src h %d w %d \n", dc_sour->height, dc_sour->width);
-		//printf("des h %d w %d \n", dc_dest->height, dc_dest->width);
-		//printf("src x %d y %d : des x %d w %y  \n", dc_dest->height, dc_dest->width);
+		// printf("src w %d h %d \n", dc_sour->width, dc_sour->height);
+		// printf("des w %d h %d \n", dc_dest->width, dc_dest->height);
+		// printf("dest  %p sour %p\n", dc_dest->mapped, dc_sour->mapped);
     {
-        dest_x = 0;              
+        dest_x = 0;
         for ( sour_y = 0; sour_y < height; sour_y++)
         {
             dest_y = dc_dest->height-1;
@@ -1225,6 +1228,7 @@ void  gx_bitblt_rotation(  dc_t *dc_dest, dc_t *dc_sour)
                 gx_set_pixel( dc_dest, dest_x, dest_y,  color_sour);
                 dest_y--;            
             }
+						usleep(10*1000);
             dest_x++;
         }
     }        

@@ -19,12 +19,28 @@ SRCS_GXLIB		= $(DIR_GXLIB)gx.c $(DIR_GXLIB)gxjpg.c $(DIR_GXLIB)gxbmp.c $(DIR_GXL
 SRCS			+= $(SRCS_GXLIB) 
 
 #---------------------------------------------------------------------
-## UI 家胶
+## TOUCH 家胶
+DIR_TOUCHLIB		= ../touch/
+SRCS_TOUCHLIB		= $(DIR_TOUCHLIB)GUI_Thread_Touch.c $(DIR_TOUCHLIB)nca_touch.c 
+SRCS			+= $(SRCS_TOUCHLIB) 
+INCLUDEDIRS		+= -I$(DIR_TOUCHLIB)
+
+#---------------------------------------------------------------------
+## state 家胶
 DIR_UILIB		= ../state/
 SRCS_UILIB		= $(DIR_UILIB)obj_common.c $(DIR_UILIB)parser.c $(DIR_UILIB)state.c $(DIR_UILIB)list_if.c
 
 SRCS			+= $(SRCS_UILIB) 
 INCLUDEDIRS		+= -I$(DIR_UILIB)
+
+#---------------------------------------------------------------------
+## GUI 家胶
+DIR_GUILIB		= ../gui/
+SRCS_GUILIB		= $(DIR_GUILIB)fwup_scen.c
+
+SRCS			+= $(SRCS_GUILIB) 
+INCLUDEDIRS		+= -I$(DIR_GUILIB)
+
 
 ## GLIB for UI
 #SYSROOT += /opt/crosstools/arm-cortex_a9-eabi-4.7-eglibc-2.18/arm-cortex_a9-linux-gnueabi/sysroot
@@ -44,6 +60,8 @@ OBJS			= $(SRCS:.c=.o)
 CFLAGS			= $(INCLUDEDIRS) -W -Wall -O2
 LIBS			= -lm -lz 
 LIBS			+= -lglib-2.0
+LIBS			+= -pthread
+LIBS			+= -lts	# touch adjust library
 #LIBS			+= -ljpeg
 #LIBS			+= -lpng12
 
