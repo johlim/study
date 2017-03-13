@@ -110,7 +110,7 @@ gst_myedgefilter_class_init (GstMyedgefilterClass * klass)
   base_transform_class->start = GST_DEBUG_FUNCPTR (gst_myedgefilter_start);
   base_transform_class->stop = GST_DEBUG_FUNCPTR (gst_myedgefilter_stop);
   video_filter_class->set_info = GST_DEBUG_FUNCPTR (gst_myedgefilter_set_info);
-  video_filter_class->transform_frame = GST_DEBUG_FUNCPTR (gst_myedgefilter_transform_frame);
+//  video_filter_class->transform_frame = GST_DEBUG_FUNCPTR (gst_myedgefilter_transform_frame);
   video_filter_class->transform_frame_ip = GST_DEBUG_FUNCPTR (gst_myedgefilter_transform_frame_ip);
 
 }
@@ -223,6 +223,20 @@ gst_myedgefilter_transform_frame_ip (GstVideoFilter * filter, GstVideoFrame * fr
   GstMyedgefilter *myedgefilter = GST_MYEDGEFILTER (filter);
 
   GST_DEBUG_OBJECT (myedgefilter, "transform_frame_ip");
+
+  int i= gst_buffer_n_memory(frame->buffer);
+  GstMapInfo info={0,};
+  GstMapFlags flags=GST_MAP_WRITE;
+
+  for(int j=0; j<i; j++)
+  {
+	  GstMemory * tmpMemory = gst_buffer_peek_memory(frame->buffer, j);
+	  if (gst_memory_map(tmpMemory, &info, flags ))
+	  {
+		  memset(info.data, 0xff, info.size);
+		  gst_memory_unmap(tmpMemory, &info);
+	  }
+  }
 
   return GST_FLOW_OK;
 }
