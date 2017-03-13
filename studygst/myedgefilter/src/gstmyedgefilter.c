@@ -216,6 +216,39 @@ gst_myedgefilter_transform_frame (GstVideoFilter * filter, GstVideoFrame * infra
 
   return GST_FLOW_OK;
 }
+int VANISH_POINT=180;
+
+void PrewittEdgeDetection(unsigned char *Img_Raw, unsigned char *Img_Sobel, int threshold)
+{
+        int k, j;
+        int     centerValue1=0, centerValue2=0;
+        int     sum=0;
+        int W=320, H=240;
+        int ImageSize = W*H;
+
+        for (k=239-VANISH_POINT; k<238; k++)
+        {
+                for (j=0; j<W; j++)
+                {
+                        centerValue1 += (-1*Img_Raw[W*k + j] +          1*Img_Raw[W*k + (j+2)]) +
+                                                        (-1*Img_Raw[W*(k+1) + j] +      1*Img_Raw[W*(k+1) + (j+2)]) +
+                                                        (-1*Img_Raw[W*(k+2) + j] +      1*Img_Raw[W*(k+2) + (j+2)]);
+
+                        centerValue2 += ( 1*Img_Raw[W*k + j] +          1*Img_Raw[W*k + (j+1)] +                1*Img_Raw[W*k + (j+2)]) +
+                                                        (-1*Img_Raw[W*(k+2) + j] -      1*Img_Raw[W*(k+2) + (j+1)] -    Img_Raw[W*(k+2) + (j+2)]);
+
+                        sum = abs(centerValue1) + abs(centerValue2);
+
+                        if (sum>255)    sum = 255;
+                        if (sum < threshold)    sum = 0;
+                        Img_Sobel[W*(k+1)+(j+1)] = (unsigned char)sum;
+                        centerValue1 = 0;
+                        centerValue2 = 0;
+                        sum = 0;
+                }
+        }
+}
+
 
 static GstFlowReturn
 gst_myedgefilter_transform_frame_ip (GstVideoFilter * filter, GstVideoFrame * frame)
@@ -233,7 +266,10 @@ gst_myedgefilter_transform_frame_ip (GstVideoFilter * filter, GstVideoFrame * fr
 	  GstMemory * tmpMemory = gst_buffer_peek_memory(frame->buffer, j);
 	  if (gst_memory_map(tmpMemory, &info, flags ))
 	  {
-		  memset(info.data, 0xff, info.size);
+		  char * sobelbuffer = malloc(info.size); 
+		  PrewittEdgeDetection(info.data , sobelbuffer, 10);
+		  memcpy(info.data, sobelbuffer, info.size);
+		  free(sobelbuffer);
 		  gst_memory_unmap(tmpMemory, &info);
 	  }
   }
