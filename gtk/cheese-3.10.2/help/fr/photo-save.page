@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-save" xml:lang="fr">
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.0" date="2011-08-25" status="review"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Enregistrer une photo ou une vidéo dans un dossier différent.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2008-2009,2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2008-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yannick Tailliez</mal:name>
+      <mal:email>ytdispatch-libre@yahoo.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Laurent Coudeur</mal:name>
+      <mal:email>laurentc@iol.ie</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Luc Pionchon</mal:name>
+      <mal:email>pionchon.luc@gmail.com</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Luc Guillemin</mal:name>
+      <mal:email>luc.guillemin@gmail.com</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mickael Albertus</mal:name>
+      <mal:email>mickael.albertus@gmail.com</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Enregistrement d'une photo ou d'une vidéo</title>
+
+  <p>Par défaut, Cheese enregistre les photos et les vidéos dans les dossiers <guiseq><gui>Images</gui><gui>Webcam</gui></guiseq> et <guiseq><gui>Vidéos</gui><gui>Webcam</gui></guiseq> de votre dossier Personnel.</p>
+
+  <p>Pour enregistrer une image dans un autre dossier, faites un clic droit sur la photo dans le flux d'images et cliquez sur <gui>Enregistrer sous</gui> puis choisissez le dossier où vous voulez enregistrer l'image.</p>
+
+  <p>Vous pouvez aussi utiliser le gestionnaire de fichiers pour ouvrir le dossier où vous souhaitez enregistrer l'image, puis la glisser du flux d'images vers le dossier.</p>
+
+  <p>Une nouvelle copie de l'image est enregistrée dans le nouvel emplacement. L'ancienne version reste dans le dossier <guiseq><gui>Images</gui><gui>Webcam</gui></guiseq> ou <guiseq><gui>Vidéos</gui><gui>Webcam</gui></guiseq>.</p>
+
+</page>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-delete" xml:lang="sl">
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Odstranitev fotografij in videov, ki jih ne želite več obdržati.</desc>
+  </info>
+
+  <title>Izbris fotografije ali videa</title>
+
+  <p>Če fotografije ali videa ne želite več, ga lahko trajno izbrišete:</p>
+
+  <steps>
+    <item>
+      <p>Najdite fotografijo ali video, ki ga želite izbrisati v pretoku fotografij na dnu okna <app>Cheese</app>.</p>
+    </item>
+    <item>
+      <p>Desno kliknite nanj in izberite <gui>Izbriši</gui>. Namesto tega ga lahko tudi kliknete in pritisnite na tipko <key>Delete</key>.</p>
+    </item>
+    <item>
+      <p>Vprašani boste ali želite fotografijo trajno izbrisati. To potrdite s klikom na <gui>Izbriši</gui>. Fotografije ne boste mogli obnoviti.</p>
+    </item>
+  </steps>
+
+  <p>Če niste prepričani, da želite fotografijo ali video trajno izbrisati, jo lahko desno kliknete in izberete <gui>Premakni v smeti</gui>. To jo bo premaknilo v računalnikovo mapo <gui>Smeti</gui>.</p>
+  <note>
+    <p>Cheese nima lastne mape <gui>Smeti</gui> in iz njega ne morete dostopati do računalnikove mape <gui>Smeti</gui>.</p>
+  </note>
+
+</page>

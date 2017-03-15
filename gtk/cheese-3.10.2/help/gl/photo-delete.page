@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-delete" xml:lang="gl">
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Eliminar fotos e vídeos que non desexa manter máis.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Fran Dieguez</mal:name>
+      <mal:email>frandieguez@gnome.org</mal:email>
+      <mal:years>2013.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Eliminar unha foto ou vídeo</title>
+
+  <p>Se non quere usar unha foto ou un vídeo máis, pode eliminala permanentemente:</p>
+
+  <steps>
+    <item>
+      <p>Busque a foto ou vídeo que quere eliminar da tira de fotos na parte inferior da xanela de <app>Cheese</app>.</p>
+    </item>
+    <item>
+      <p>Prema co botón dereito sobre ela e seleccione <gui>Eliminar</gui>. De forma alternativa, prema sobre ela unha vez para seleccionala e prema a tecla <key>Eliminar</key>.</p>
+    </item>
+    <item>
+      <p>Preguntaráselle se quere eliminala permanentemente. Confirme premendo <gui>Eliminar</gui>. Teña en conta que non poderá recuperar a foto.</p>
+    </item>
+  </steps>
+
+  <p>Se non está seguro se quere eliminar unha foto permanentemente ou un vídeo, pode premer co botón dereito sobre ela e seleccionar <gui>Mover ao lixo</gui>. Isto moveraa ao cartafol <gui>Lixo</gui> do computador.</p>
+  <note>
+    <p>Cheese non ten o seu propio cartafol <gui>Lixo</gui> polo que non pode acceder ao cartafol <gui>Lixo</gui> do computador desde <app>Cheese</app>.</p>
+  </note>
+
+</page>

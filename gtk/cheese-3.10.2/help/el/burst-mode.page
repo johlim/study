@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="burst-mode" xml:lang="el">
+
+  <info>
+    <link type="guide" xref="index#main" group="#first"/>
+    <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
+    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
+    <revision pkgversion="3.8" date="2013-04-19" status="review"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email its:translate="no">yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+      <years>2011, 2013</years>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Λήψη πολλών φωτογραφιών με ένα πάτημα κουμπιού. Αλλάξτε πόζα ανάμεσα σε κάθε φωτογραφία!</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>  Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>  Ευστάθιος Ιωσηφίδης</mal:name>
+      <mal:email>diamond_gr@freemail.gr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>  Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Λήψη φωτογραφιών με γρήγορη διαδοχή χρησιμοποιώντας τη λειτουργία <gui>Πολλαπλή φωτογράφηση</gui></title>
+
+  <p>Χρησιμοποιήσετε την λειτουργία <gui>Πολλαπλής φωτογράφησης</gui> για να τραβήξετε αυτόματα πολλές φωτογραφίες στη σειρά. Είναι διασκεδαστικό αν αλλάζετε πόζες ανάμεσα στις φωτογραφίες! Για να χρησιμοποιήσετε την λειτουργία <gui>Πολλαπλής φωτογράφησης</gui>:</p>
+
+  <steps>
+    <item>
+      <p>Επιλέξτε <guiseq><gui style="menu">Cheese</gui> <gui style="menuitem">Πολλαπλή φωτογράφηση</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Πατήστε <gui style="button">Λήψη πολλαπλών φωτογραφιών</gui> ή το πλήκτρο <key>διαστήματος</key>.</p>
+      <p>Από προεπιλογή, τέσσερις φωτογραφίες θα τραβηχτούν, με καθυστέρηση ενός δευτερολέπτου και αντίστροφη μέτρηση ανάμεσα στις φωτογραφίες.</p>
+    </item>
+  </steps>
+
+  <p>Πατήστε <key>Esc</key> αναπάσα στιγμή αν θέλετε να σταματήσετε το <app>Cheese</app> από το να βγάλει φωτογραφίες.</p>
+
+<section id="burst-preferences">
+  <title>Αλλαγή προτιμήσεων <gui>Πολλαπλής φωτογράφησης</gui></title>
+
+  <p>Μπορείτε να αλλάξετε πόσες φωτογραφίες θα βγαίνουν σε κάθε πολλαπλή φωτογράφηση και την διάρκεια της καθυστέρησης ανάμεσα τους:</p>
+
+  <steps>
+    <item>
+      <p>Επιλέξτε <guiseq><gui style="menu">Cheese</gui><gui style="menuitem">Προτιμήσεις</gui> <gui style="tab">Λήψη</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Τροποποίηση των ρυθμίσεων προτίμησης:</p>
+      <terms>
+        <item>
+          <title>Αντίστροφη μέτρηση</title>
+          <p>Αντίστροφη μέτρηση από το τρία πριν να ληφθεί η φωτογραφία.</p>
+        </item>
+        <item>
+          <title>Ενεργοποίηση αναλαμπής</title>
+          <p>Η οθόνη σας θα λάμψει όταν λαμβάνεται η φωτογραφία.</p>
+        </item>
+        <item>
+          <title>Αριθμός φωτογραφιών</title>
+          <p>Ο αριθμός των φωτογραφιών που θα ληφθούν σε μια μόνο πολλαπλή φωτογράφηση.</p>
+        </item>
+        <item>
+          <title>Καθυστέρηση μεταξύ φωτογραφιών (δευτερόλεπτα)</title>
+          <p>Η καθυστέρηση ανάμεσα στην τελευταία φωτογραφία και την αρχή της επόμενης αντίστροφης μέτρησης. Αν η <gui>αντίστροφη μέτρηση</gui> είναι ανενεργή, αυτή είναι η καθυστέρηση μεταξύ φωτογραφιών.</p>
+        </item>
+      </terms>
+    </item>
+  </steps>
+
+</section>
+
+</page>

@@ -1,0 +1,829 @@
+# translation of cheese.master.kn.po to Kannada
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Shankar Prasad <svenkate@redhat.com>, 2008, 2009, 2010, 2011, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: cheese.master.kn\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=cheese&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-07-29 09:59+0000\n"
+"PO-Revision-Date: 2012-08-10 16:30+0530\n"
+"Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: ../data/cheese-actions.ui.h:1
+msgid "Share…"
+msgstr "ಹಂಚು..."
+
+#: ../data/cheese-actions.ui.h:2
+msgid "Save _As…"
+msgstr "ಹೀಗೆ ಉಳಿಸು (_A)..."
+
+#: ../data/cheese-actions.ui.h:3
+msgid "Move to _Trash"
+msgstr "ಕಸದ ಬುಟ್ಟಿಗೆ ಜರುಗಿಸು(_T)"
+
+#: ../data/cheese-actions.ui.h:4
+msgid "Move _All to Trash"
+msgstr "ಎಲ್ಲವನ್ನೂ ಕಸದಬುಟ್ಟಿಗೆ ಜರುಗಿಸು (_A)"
+
+#: ../data/cheese-actions.ui.h:5
+msgid "_Wide Mode"
+msgstr "ಅಗಲ ಕ್ರಮ (_W)"
+
+#: ../data/cheese-actions.ui.h:6
+msgid "P_revious Effects"
+msgstr "ಹಿಂದಿನ ಪರಿಣಾಮಗಳು (_r)"
+
+#: ../data/cheese-actions.ui.h:7
+msgid "Ne_xt Effects"
+msgstr "ಮುಂದಿನ ಪರಿಣಾಮಗಳು (_x)"
+
+#: ../data/cheese-main-window.ui.h:1
+msgid "Photo mode"
+msgstr "ಚಿತ್ರ ಕ್ರಮ"
+
+#: ../data/cheese-main-window.ui.h:2
+msgid "Video mode"
+msgstr "ವಿಡಿಯೋ ಕ್ರಮ"
+
+#: ../data/cheese-main-window.ui.h:3
+msgid "Photo burst mode"
+msgstr "ಚಿತ್ರ ಸ್ಫೋಟ ಕ್ರಮ"
+
+#: ../data/cheese-main-window.ui.h:4 ../libcheese/cheese-avatar-chooser.c:263
+#: ../src/cheese-window.vala:1504
+msgid "Take a photo"
+msgstr "ಒಂದು ಚಿತ್ರವನ್ನು ತೆಗೆದುಕೊಳ್ಳಿ"
+
+#: ../data/cheese-main-window.ui.h:5
+msgid "_Take a Photo"
+msgstr "ಒಂದು ಚಿತ್ರವನ್ನು ತೆಗೆದುಕೋ(_T)"
+
+#: ../data/cheese-main-window.ui.h:6
+msgid "Previous"
+msgstr "ಹಿಂದಿನ"
+
+#: ../data/cheese-main-window.ui.h:7
+msgid "Effects"
+msgstr "ಪರಿಣಾಮಗಳು"
+
+#: ../data/cheese-main-window.ui.h:8 ../src/cheese-main.vala:107
+msgid "_Effects"
+msgstr "ಪರಿಣಾಮಗಳು(_E)"
+
+#: ../data/cheese-main-window.ui.h:9
+msgid "Next"
+msgstr "ಮುಂದಕ್ಕೆ"
+
+#: ../data/cheese-main-window.ui.h:10
+msgid "Leave fullscreen"
+msgstr "ಪೂರ್ಣತೆರೆಯಿಂದ ನಿರ್ಗಮಿಸಿ"
+
+#: ../data/cheese-main-window.ui.h:11
+msgid "_Leave Fullscreen"
+msgstr "ಪೂರ್ಣತೆರೆಯಿಂದ ನಿರ್ಗಮಿಸು(_L)"
+
+#: ../data/cheese-prefs.ui.h:1
+msgid "Preferences"
+msgstr "ಆದ್ಯತೆಗಳು"
+
+#: ../data/cheese-prefs.ui.h:2
+msgid "Device"
+msgstr "ಸಾಧನ"
+
+#: ../data/cheese-prefs.ui.h:3
+msgid "Photo resolution"
+msgstr "ಚಿತ್ರ ರೆಸಲ್ಯೂಶನ್"
+
+#: ../data/cheese-prefs.ui.h:4
+msgid "Video resolution"
+msgstr "ವೀಡಿಯೊ ರೆಸಲ್ಯೂಶನ್"
+
+#: ../data/cheese-prefs.ui.h:5
+msgid "Webcam"
+msgstr "ವೆಬ್‌ಕ್ಯಾಮ್"
+
+#: ../data/cheese-prefs.ui.h:6
+msgid "Brightness"
+msgstr "ಪ್ರಕಾಶ"
+
+#: ../data/cheese-prefs.ui.h:7
+msgid "Saturation"
+msgstr "ಸ್ಯಾಚುರೇಶನ್"
+
+#: ../data/cheese-prefs.ui.h:8
+msgid "Hue"
+msgstr "ಬಣ್ಣ"
+
+#: ../data/cheese-prefs.ui.h:9
+msgid "Contrast"
+msgstr "ವೈದೃಶ್ಯ"
+
+#: ../data/cheese-prefs.ui.h:10
+msgid "Image"
+msgstr "ಚಿತ್ರ"
+
+#: ../data/cheese-prefs.ui.h:11
+#| msgid "Shutter sound"
+msgid "Shutter"
+msgstr "ಶಟರ್"
+
+#: ../data/cheese-prefs.ui.h:12
+msgid "_Countdown"
+msgstr "ಕೌಂಟ್‌ಡೌನ್ (_C)"
+
+#: ../data/cheese-prefs.ui.h:13
+msgid "Fire _Flash"
+msgstr "ಬೆಂಕಿಯ ಹೊಳಪು (_F)"
+
+#: ../data/cheese-prefs.ui.h:14
+msgid "Burst mode"
+msgstr "ಸ್ಫೋಟ ಕ್ರಮ"
+
+#: ../data/cheese-prefs.ui.h:15
+msgid "Number of photos"
+msgstr "ಚಿತ್ರಗಳ ಸಂಖ್ಯೆ"
+
+#: ../data/cheese-prefs.ui.h:16
+msgid "Delay between photos (seconds)"
+msgstr "ಚಿತ್ರಗಳ ನಡುವಿನ ವಿಳಂಬ (ಸೆಕೆಂಡುಗಳು)"
+
+#: ../data/cheese-prefs.ui.h:17
+msgid "Capture"
+msgstr "ಸೆರೆಹಿಡಿ"
+
+#: ../data/cheese.desktop.in.in.h:1 ../src/cheese-main.vala:81
+#: ../src/cheese-main.vala:489
+msgid "Cheese"
+msgstr "ಚೀಸ್"
+
+#: ../data/cheese.desktop.in.in.h:2
+msgid "Cheese Webcam Booth"
+msgstr "ಚೀಸ್ ವೆಬ್‌ಕ್ಯಾಮ್ ಬೂತ್"
+
+#: ../data/cheese.desktop.in.in.h:3 ../src/cheese-main.vala:484
+msgid "Take photos and videos with your webcam, with fun graphical effects"
+msgstr ""
+"ನಿಮ್ಮ ವೆಬ್‌ಕ್ಯಾಮ್‌ ಅನ್ನು ಬಳಸಿಕೊಂಡು ತಮಾಷೆಯ ಗ್ರಾಫಿಕಲ್ ಪರಿಣಾಮಗಳೊಂದಿಗೆ "
+"ಚಿತ್ರಗಳನ್ನು ಹಾಗು "
+"ವಿಡಿಯೋಗಳನ್ನು ತೆಗೆಯಿರಿ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:1
+msgid "Use a countdown"
+msgstr "ಒಂದು ಕೌಂಟ್‌ಡೌನ್ ಅನ್ನು ಬಳಸು"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:2
+msgid "Set to true to show a countdown before taking a photo"
+msgstr ""
+"ಒಂದು ಛಾಯಾಚಿತ್ರವನ್ನು ತೆಗೆಯುವಾಗ ಕೌಂಟ್‌ಡೌನ್‌ ಅನ್ನು ತೋರಿಸಲು ಇದನ್ನು ಟ್ರೂಗೆ ಗುರುತು "
+"ಹಾಕಿ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:3
+msgid "Countdown length"
+msgstr "ಎಣಿಕೆಯ ಉದ್ದ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:4
+msgid "The duration of the countdown before taking a photo, in seconds"
+msgstr "ಒಂದು ಛಾಯಾಚಿತ್ರವನ್ನು ತೆಗೆಯುವ ಮೊದಲಿನ ಎಣಿಕೆಯ ಕಾಲಾವಧಿ, ಸೆಕೆಂಡುಗಳಲ್ಲಿ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:5
+msgid "Fire flash before taking a picture"
+msgstr "ಚಿತ್ರವನ್ನು ತೆಗೆದೆಕೊಳ್ಳುವ ಮೊದಲು ಫ್ಲಾಶ್ ಅನ್ನು ಬೆಳಗಿಸು"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:6
+msgid "Set to true to fire a flash when taking a picture"
+msgstr ""
+"ಒಂದು ಛಾಯಾಚಿತ್ರವನ್ನು ತೆಗೆಯುವಾಗ ಫ್ಲಾಶ್ ಅನ್ನು ಬೆಳಗಿಸಲು ಇದನ್ನು ಟ್ರೂ ಎಂದು ಗುರುತು "
+"ಹಾಕಿ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:7
+msgid "Camera device string indicator"
+msgstr "ಕ್ಯಾಮೆರಾ ಸಾಧನ ವಾಕ್ಯ ಸೂಚಕ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:8
+msgid ""
+"The path to the device node which points to the camera, for example /dev/"
+"video0"
+msgstr "ಕ್ಯಾಮೆರಾದತ್ತ ಸೂಚಿತಗೊಂಡಿರುವ ಸಾಧನದ ಮಾರ್ಗ, ಉದಾಹರಣೆಗೆ, /dev/video0"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:9
+msgid "Last selected effect"
+msgstr "ಕೊನೆಯ ಬಾರಿಗೆ ಆರಿಸಲಾದ ಪರಿಣಾಮಗಳು"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:10
+msgid "Name of the installed effect that was selected last"
+msgstr "ಕೊನೆಯ ಬಾರಿಗೆ ಆರಿಸಲಾದ ಅನುಸ್ಥಾಪಿಸಲಾಗಿರುವ ಪರಿಣಾಮಗಳ ಹೆಸರು"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:11
+msgid "Photo width"
+msgstr "ಚಿತ್ರದ ಅಗಲ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:12
+msgid "The width of the image captured from the camera, in pixels"
+msgstr "ಕ್ಯಾಮೆರಾದಿಂದ ಸೆರೆಹಿಡಿಯಲಾದ ಚಿತ್ರದ ಅಗಲ, ಪಿಕ್ಸೆಲ್ಲುಗಳಲ್ಲಿ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:13
+msgid "Photo height"
+msgstr "ಚಿತ್ರದ ಎತ್ತರ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:14
+msgid "The height of the image captured from the camera, in pixels"
+msgstr "ಕ್ಯಾಮೆರಾದಿಂದ ಸೆರೆಹಿಡಿಯಲಾದ ಚಿತ್ರದ ಎತ್ತರ, ಪಿಕ್ಸೆಲ್ಲುಗಳಲ್ಲಿ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:15
+msgid "Video width"
+msgstr "ವಿಡಿಯೋ ಅಗಲ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:16
+msgid "The width of the video captured from the camera, in pixels"
+msgstr "ಕ್ಯಾಮೆರಾದಿಂದ ಸೆರೆಹಿಡಿಯಲಾದ ವೀಡಿಯೊದ ಅಗಲ, ಪಿಕ್ಸೆಲ್ಲುಗಳಲ್ಲಿ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:17
+msgid "Video height"
+msgstr "ವಿಡಿಯೋ ಎತ್ತರ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:18
+msgid "The height of the video captured from the camera, in pixels"
+msgstr "ಕ್ಯಾಮೆರಾದಿಂದ ಸೆರೆಹಿಡಿಯಲಾದ ವಿಡಿಯೊದ ಎತ್ತರ, ಪಿಕ್ಸೆಲ್ಲುಗಳಲ್ಲಿ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:19
+msgid "Picture brightness"
+msgstr "ಚಿತ್ರದ ಪ್ರಕಾಶತೆ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:20
+msgid "Adjusts the brightness of the picture coming from the camera"
+msgstr "ಕ್ಯಾಮೆರಾದಿಂದ ಬರುತ್ತಿರುವ ಚಿತ್ರಗಳ ಪ್ರಕಾಶತೆಯ ಮಟ್ಟವನ್ನು ಸರಿಹೊಂದಿಸುತ್ತದೆ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:21
+msgid "Picture contrast"
+msgstr "ಚಿತ್ರದ ವೈದೃಶ್ಯ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:22
+msgid "Adjusts the contrast of the picture coming from the camera"
+msgstr "ಕ್ಯಾಮೆರಾದಿಂದ ಬರುತ್ತಿರುವ ಚಿತ್ರಗಳ ವೈದೃಶ್ಯದ ಮಟ್ಟವನ್ನು ಸರಿಹೊಂದಿಸುತ್ತದೆ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:23
+msgid "Picture saturation"
+msgstr "ಚಿತ್ರದ ಸ್ಯಾಚುರೇಶನ್"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:24
+msgid "Adjusts the saturation of the picture coming from the camera"
+msgstr "ಕ್ಯಾಮೆರಾದಿಂದ ಬರುತ್ತಿರುವ ಚಿತ್ರಗಳ ರೆಸಲ್ಯೂಶನ್ ಮಟ್ಟವನ್ನು ಸರಿಹೊಂದಿಸುತ್ತದೆ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:25
+msgid "Picture hue"
+msgstr "ಚಿತ್ರದ ಬಣ್ಣ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:26
+msgid "Adjusts the hue (color tint) of the picture coming from the camera"
+msgstr "ಕ್ಯಾಮೆರಾದಿಂದ ಬರುತ್ತಿರುವ ಚಿತ್ರಗಳ ಬಣ್ಣದ ಮಟ್ಟವನ್ನು ಸರಿಹೊಂದಿಸುತ್ತದೆ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:27
+msgid "Video Path"
+msgstr "ವಿಡಿಯೋ ಮಾರ್ಗ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:28
+msgid ""
+"Defines the path where the videos are stored. If empty, \"XDG_VIDEO/Webcam\" "
+"will be used."
+msgstr ""
+"ವಿಡಿಯೋಗಳನ್ನು ಎಲ್ಲಿ ಶೇಖರಿಸಿಡಬೇಕು ಎಂಬುದನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಖಾಲಿ ಇದ್ದಲ್ಲಿ  "
+"\"XDG_VIDEO/"
+"Webcam\" ಅನ್ನು ಬಳಸಲಾಗುತ್ತದೆ."
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:29
+msgid "Photo Path"
+msgstr "ಚಿತ್ರದ ಮಾರ್ಗ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:30
+msgid ""
+"Defines the path where the photos are stored. If empty, \"XDG_PHOTO/Webcam\" "
+"will be used."
+msgstr ""
+"ಚಿತ್ರಗಳನ್ನು ಎಲ್ಲಿ ಶೇಖರಿಸಿಡಬೇಕು ಎಂಬುದನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಖಾಲಿ ಇದ್ದಲ್ಲಿ "
+"\"XDG_PHOTO/"
+"Webcam\" ಅನ್ನು ಬಳಸಲಾಗುತ್ತದೆ."
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:31
+msgid "Whether to start in wide mode"
+msgstr "ಅಗಲ ಪ್ರದರ್ಶಕನದ ಕ್ರಮದಲ್ಲಿ ಆರಂಭಿಸಬೇಕೆ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:32
+msgid ""
+"If set to true, Cheese will start up in wide mode, with the image collection "
+"placed on the right-hand side. Useful with small screens."
+msgstr ""
+"ನಿಜಕ್ಕೆ ಬದಲಾಯಿಸಿದಲ್ಲಿ, ಚೀಸ್ ಚಿತ್ರಗಳ ಸಂಗ್ರಹವನ್ನು ಬಲಕ್ಕೆ ಇರಿಸಲ್ಪಟ್ಟು ಅಗಲ "
+"ಪ್ರದರ್ಶಕದ "
+"ಕ್ರಮದಲ್ಲಿ ಆರಂಭಗೊಳ್ಳುತ್ತದೆ. ಇದು ಸಣ್ಣ ತೆರೆಗಳಲ್ಲಿ ಸಹಾಯಕವಾಗುತ್ತದೆ."
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:33
+msgid "Whether to start in fullscreen"
+msgstr "ಪೂರ್ಣತೆರೆ ಕ್ರಮದಲ್ಲಿ ಆರಂಭಿಸಬೇಕೆ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:34
+msgid "If set to true, Cheese will start up in fullscreen mode."
+msgstr "ಟ್ರೂಗೆ ಬದಲಾಯಿಸಿದಲ್ಲಿ, ಚೀಸ್ ಪೂರ್ಣತೆರೆ ಕ್ರಮದಲ್ಲಿ ಆರಂಭಗೊಳ್ಳುತ್ತದೆ."
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:35
+msgid "Time between photos in burst mode"
+msgstr "ಸ್ಫೋಟ ಕ್ರಮದಲ್ಲಿ ತೆಗೆಯಬಹುದಾದ ಚಿತ್ರಗಳ ನಡುವಿನ ಸಮಯ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:36
+msgid ""
+"The length of time, in milliseconds, to delay between taking each photo in a "
+"burst sequence of photos. If the burst delay is less than the countdown "
+"duration, the countdown duration will be used instead."
+msgstr ""
+"ಸ್ಫೋಟ ಕ್ರಮದಲ್ಲಿ ಚಿತ್ರಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳುವಾಗ ಪ್ರತಿ ಚಿತ್ರಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳುವ "
+"ನಡುವಿನ ಕಾಲ "
+"ವಿಳಂಬ, ಮಿಲಿಸೆಕೆಂಡುಗಳಲ್ಲಿ. ಸ್ಫೋಟದ ವಿಳಂಬವು ಎಣಿಕೆಯ ಕಾಲಾವಧಿಗಿಂತ ಚಿಕ್ಕದಾಗಿದ್ದರೆ, "
+"ಇದರ "
+"ಬದಲಿಗೆ ಎಣಿಕೆ ಕಾಲಾವಧಿಯನ್ನು ಬಳಸಲಾಗುತ್ತದೆ."
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:37
+msgid "Number of photos in burst mode"
+msgstr "ಸ್ಫೋಟ ಕ್ರಮದಲ್ಲಿನ ಚಿತ್ರಗಳ ಸಂಖ್ಯೆ"
+
+#: ../data/org.gnome.Cheese.gschema.xml.h:38
+msgid "The number of photos to take in a single burst."
+msgstr "ಒಂದು ಸ್ಫೋಟದಲ್ಲಿ ತೆಗೆಯಬಹುದಾದ ಚಿತ್ರಗಳ ಸಂಖ್ಯೆ."
+
+#: ../libcheese/cheese-avatar-chooser.c:138 ../src/cheese-window.vala:807
+msgid "Shutter sound"
+msgstr "ಶಟರಿನ ವೇಗ"
+
+#: ../libcheese/cheese-avatar-chooser.c:260
+msgid "Select"
+msgstr "ಆರಿಸು"
+
+#: ../libcheese/cheese-avatar-chooser.c:281
+msgid "_Take a photo"
+msgstr "ಒಂದು ಚಿತ್ರವನ್ನು ತೆಗೆ(_T)"
+
+#: ../libcheese/cheese-avatar-chooser.c:294
+msgid "_Discard photo"
+msgstr "ಚಿತ್ರವನ್ನು ತಿರಸ್ಕರಿಸು(_D)"
+
+#: ../libcheese/cheese-camera-device.c:390
+msgid "Device capabilities not supported"
+msgstr "ಸಾಧನ ಸಾಮರ್ಥ್ಯಗಳಿಗೆ ಬೆಂಬಲವಿಲ್ಲ"
+
+#: ../libcheese/cheese-camera-device.c:419
+#, c-format
+msgid "Failed to initialize device %s for capability probing"
+msgstr "ತನಿಖೆಯ ಸಲುವಾಗಿ %s ಎಂಬ ಸಾಧನವನ್ನು ಆರಂಭಿಸುವಲ್ಲಿ ವಿಫಲಗೊಂಡಿದೆ"
+
+#: ../libcheese/cheese-camera-device.c:608
+msgid "Unknown device"
+msgstr "ಗೊತ್ತಿರದ ಸಾಧನ"
+
+#: ../libcheese/cheese-camera-device.c:631
+msgid "Cancellable initialization not supported"
+msgstr "ರದ್ದುಗೊಳಿಸಬಹುದಾದ ಆರಂಭಕ್ಕೆ ಬೆಂಬಲವಿಲ್ಲ"
+
+#: ../libcheese/cheese-camera.c:430 ../libcheese/cheese-camera.c:1549
+msgid "One or more needed GStreamer elements are missing: "
+msgstr "ಅಗತ್ಯವಿರುವ ಒಂದು ಅಥವ ಹೆಚ್ಚಿನ Gstreamer ಘಟಕಗಳು ಕಾಣೆಯಾಗಿವೆ: "
+
+#: ../libcheese/cheese-camera.c:1509
+#, c-format
+msgid "No device found"
+msgstr "ಯಾವುದೆ ಸಾಧನವು ಕಂಡು ಬಂದಿಲ್ಲ"
+
+#. Translators: This is a time format, like "09:05:02" for 9
+#. * hours, 5 minutes, and 2 seconds. You may change ":" to
+#. * the separator that your locale uses or use "%Id" instead
+#. * of "%d" if your locale uses localized digits.
+#.
+#: ../libcheese/cheese-camera.c:1786
+#, c-format
+msgctxt "time format"
+msgid "%02i:%02i:%02i"
+msgstr "%02i:%02i:%02i"
+
+#: ../src/cheese-effects-manager.vala:50
+msgid "No Effect"
+msgstr "ಯಾವುದೆ ಪರಿಣಾಮ ಇಲ್ಲ"
+
+#: ../src/cheese-main.vala:51
+msgid "Start in wide mode"
+msgstr "ಅಗಲ ಕ್ರಮದಲ್ಲಿ ಆರಂಭಿಸು"
+
+#: ../src/cheese-main.vala:52
+msgid "Device to use as a camera"
+msgstr "ಒಂದು ಕ್ಯಾಮರಾ ಆಗಿ ಬಳಸಬೇಕಿರುವ ಸಾಧನ"
+
+#: ../src/cheese-main.vala:52
+msgid "DEVICE"
+msgstr "ಸಾಧನ"
+
+#: ../src/cheese-main.vala:53
+msgid "Output version information and exit"
+msgstr "ಆವೃತ್ತಿಯ ಮಾಹಿತಿಯನ್ನು ತೋರಿಸಿ ನಿರ್ಗಮಿಸುತ್ತದೆ"
+
+#: ../src/cheese-main.vala:54
+msgid "Start in fullscreen mode"
+msgstr "ಪೂರ್ಣತೆರೆ ಕ್ರಮದಲ್ಲಿ ಆರಂಭಿಸು"
+
+#: ../src/cheese-main.vala:92
+msgid "_Shoot"
+msgstr "ಚಿತ್ರ ತೆಗೆದುಕೊ (_S)"
+
+#: ../src/cheese-main.vala:96
+msgid "Mode:"
+msgstr "ಸ್ಥಿತಿ:"
+
+#: ../src/cheese-main.vala:97
+msgid "_Photo"
+msgstr "ಚಿತ್ರ(_P)"
+
+#: ../src/cheese-main.vala:98
+msgid "_Video"
+msgstr "ವಿಡಿಯೋ(_V)"
+
+#: ../src/cheese-main.vala:99
+msgid "_Burst"
+msgstr "ಸ್ಫೋಟ (_B)"
+
+#: ../src/cheese-main.vala:102
+#| msgid "Fullscreen"
+msgid "_Fullscreen"
+msgstr "ಪೂರ್ಣತೆರೆ (_F)"
+
+#: ../src/cheese-main.vala:110
+#| msgid "Preferences"
+msgid "P_references"
+msgstr "ಆದ್ಯತೆಗಳು (_r)"
+
+#: ../src/cheese-main.vala:113
+msgid "_About"
+msgstr "ಇದರ ಬಗ್ಗೆ (_A)"
+
+#: ../src/cheese-main.vala:114
+msgid "_Help"
+msgstr "ನೆರವು(_H)"
+
+#: ../src/cheese-main.vala:117
+msgid "_Quit"
+msgstr "ನಿರ್ಗಮಿಸು (_Q)"
+
+#: ../src/cheese-main.vala:177
+msgid "- Take photos and videos from your webcam"
+msgstr ""
+"- ನಿಮ್ಮ ವೆಬ್‌ಕ್ಯಾಮ್‌ ಅನ್ನು ಬಳಸಿಕೊಂಡು ಚಿತ್ರಗಳನ್ನು ಹಾಗು ವಿಡಿಯೋಗಳನ್ನು ಸೆರೆ "
+"ಹಿಡಿಯಿರಿ"
+
+#: ../src/cheese-main.vala:189
+#, c-format
+msgid "Run '%s --help' to see a full list of available command line options.\n"
+msgstr ""
+"ಲಭ್ಯವಿರುವ ಎಲ್ಲಾ ಆಜ್ಞಾ ಸಾಲಿನ ಆಯ್ಕೆಗಳನ್ನು ನೋಡಲು '%s --help' ಅನ್ನು ಚಲಾಯಿಸಿ.\n"
+
+#: ../src/cheese-main.vala:204
+#, c-format
+msgid "Another instance of Cheese is currently running\n"
+msgstr "ಚೀಸ್‌ ಪ್ರಸಕ್ತ ಇನ್ನೊಂದು ಕಡೆಯಲ್ಲಿ ಚಾಲನೆಯಲ್ಲಿದೆ\n"
+
+#: ../src/cheese-main.vala:490
+msgid "translator-credits"
+msgstr "ಶಂಕರ್ ಪ್ರಸಾದ್ ಎಂ. ವಿ. <svenkate@redhat.com>"
+
+#: ../src/cheese-main.vala:492
+msgid "Cheese Website"
+msgstr "ಚೀಸ್ ಜಾಲತಾಣ"
+
+#: ../src/cheese-window.vala:192
+#, c-format
+msgid "Could not open %s"
+msgstr "%s ಅನ್ನು ತೆರೆಯಲಾಗಿಲ್ಲ"
+
+#: ../src/cheese-window.vala:220
+#, c-format
+msgid "Are you sure you want to permanently delete the file?"
+msgid_plural "Are you sure you want to permanently delete %d files?"
+msgstr[0] "ನೀವು ಕಡತವನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಲು ನೀವು ಖಚಿತವೆ?"
+msgstr[1] "ನೀವು %d ಕಡತಗಳನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಲು ನೀವು ಖಚಿತವೆ?"
+
+#: ../src/cheese-window.vala:226
+msgid "If you delete an item, it will be permanently lost"
+msgid_plural "If you delete the items, they will be permanently lost"
+msgstr[0] "ಒಂದು ಅಂಶವನ್ನು ಅಳಿಸಿದರೆ, ಅದು ಶಾಶ್ವತವಾಗಿ ಕಾಣೆಯಾಗುತ್ತದೆ."
+msgstr[1] "ಅಂಶಗಳನ್ನು ಅಳಿಸಿದರೆ, ಅವುಗಳು ಶಾಶ್ವತವಾಗಿ ಕಾಣೆಯಾಗುತ್ತದೆ."
+
+#: ../src/cheese-window.vala:302
+#, c-format
+msgid "Could not move %s to trash"
+msgstr "%s ಅನ್ನು ಕಸದ ಬುಟ್ಟಿಗೆ ವರ್ಗಾಯಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
+
+#. Nothing selected.
+#: ../src/cheese-window.vala:451
+msgid "Save File"
+msgstr "ಕಡತವನ್ನು ಉಳಿಸು"
+
+#: ../src/cheese-window.vala:485
+#, c-format
+msgid "Could not save %s"
+msgstr "%s ಅನ್ನು ಉಳಿಸಲಾಗಿಲ್ಲ"
+
+#: ../src/cheese-window.vala:918
+msgid "Stop _Recording"
+msgstr "ರೆಕಾರ್ಡು ಮಾಡುವುದನ್ನು ನಿಲ್ಲಿಸು (_R)"
+
+#: ../src/cheese-window.vala:919
+msgid "Stop recording"
+msgstr "ರೆಕಾರ್ಡು ಮಾಡುವುದನ್ನು ನಿಲ್ಲಿಸು"
+
+#: ../src/cheese-window.vala:934 ../src/cheese-window.vala:1508
+#| msgid "_Record a Video"
+msgid "Record a Video"
+msgstr "ಒಂದು ವೀಡಿಯೊವನ್ನು ರೆಕಾರ್ಡ್ ಮಾಡು"
+
+#: ../src/cheese-window.vala:935 ../src/cheese-window.vala:1509
+msgid "Record a video"
+msgstr "ಒಂದು ವೀಡಿಯೊವನ್ನು ರೆಕಾರ್ಡು ಮಾಡಿ"
+
+#. FIXME: Set the effects action to be inactive.
+#: ../src/cheese-window.vala:970
+msgid "Stop _Taking Pictures"
+msgstr "ಚಿತ್ರಗಳನ್ನು ತೆಗೆಯುವುದನ್ನು ನಿಲ್ಲಿಸು (_T)"
+
+#: ../src/cheese-window.vala:971
+msgid "Stop taking pictures"
+msgstr "ಚಿತ್ರಗಳನ್ನು ತೆಗೆಯುವುದನ್ನು ನಿಲ್ಲಿಸು"
+
+#: ../src/cheese-window.vala:994
+#| msgid "Take _Multiple Photos"
+msgid "Take Multiple Photos"
+msgstr "ಅನೇಕ ಚಿತ್ರಗಳನ್ನು ತೆಗೆದುಕೊ"
+
+#: ../src/cheese-window.vala:995 ../src/cheese-window.vala:1516
+msgid "Take multiple photos"
+msgstr "ಅನೇಕ ಚಿತ್ರವನ್ನು ತೆಗೆದುಕೊಳ್ಳಿ"
+
+#: ../src/cheese-window.vala:1147
+msgid "No effects found"
+msgstr "ಯಾವುದೆ ಪರಿಣಾಮಗಳು ಕಂಡು ಬಂದಿಲ್ಲ"
+
+#: ../src/cheese-window.vala:1503
+#| msgid "_Take a Photo"
+msgid "Take a Photo"
+msgstr "ಒಂದು ಚಿತ್ರವನ್ನು ತೆಗೆದುಕೋ"
+
+#: ../src/cheese-window.vala:1515
+msgid "Take _Multiple Photos"
+msgstr "ಅನೇಕ ಚಿತ್ರವನ್ನು ತೆಗೆದುಕೊ (_M)"
+
+#~ msgid "_Cheese"
+#~ msgstr "ಚೀಸ್(_C)"
+
+#~| msgid "Help _Contents"
+#~ msgid "_Contents"
+#~ msgstr "ವಿಷಯಗಳು (_C)"
+
+#~ msgid "_Edit"
+#~ msgstr "ಸಂಪಾದನೆ(_E)"
+
+#~ msgid "<b>Shutter</b>"
+#~ msgstr "<b>ಶಟರ್</b>"
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version.\n"
+#~ "\n"
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public License for more details.\n"
+#~ "\n"
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program. If not, see http://www.gnu.org/licenses/\n"
+#~ msgstr ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version.\n"
+#~ "\n"
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public License for more details.\n"
+#~ "\n"
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program. If not, see http://www.gnu.org/licenses/\n"
+
+#~| msgid "Delete"
+#~ msgid "_Delete"
+#~ msgstr "ಅಳಿಸು (_D)"
+
+#~ msgid "_Open"
+#~ msgstr "ತೆರೆ(_O)"
+
+#~| msgid "Preferences"
+#~ msgid "_Preferences"
+#~ msgstr "ಆದ್ಯತೆಗಳು (_P)"
+
+#~ msgid "Image properties"
+#~ msgstr "ಚಿತ್ರದ ಗುಣಲಕ್ಷಣಗಳು"
+
+#~ msgid ""
+#~ "A list of effects applied on startup. Possible values are: \"mauve\", "
+#~ "\"noir_blanc\", \"saturation\", \"hulk\", \"vertical-flip\", \"horizontal-"
+#~ "flip\", \"shagadelic\", \"vertigo\", \"edge\", \"dice\" and \"warp\""
+#~ msgstr ""
+#~ "ಆರಂಭಗೊಳ್ಳುವಾಗ ಅನ್ವಯಿಸಬೇಕಿರುವ ಪರಿಣಾಮಗಳ ಪಟ್ಟಿ. ಪಟ್ಟಿಯು ಈ ಕೆಳಗಿನಂತಿದೆ:  \"ಮಾವ್\", "
+#~ "\"ನೋಯಿರ್_ಬ್ಲಾಂಕ್\", \"ಸ್ಯಾಚುರೇಶನ್\", \"ಹಲ್ಕ್‍\", \"ಅಡ್ಡ-ಮಡಚುವಿಕೆ\", \"ಲಂಬ -ಮಡಚುವಿಕೆ"
+#~ "\", \"ಶೆಗಾಡೆಲಿಕ್\", \"ವರ್ಟಿಗೋ\", \"ಅಂಚು\", \"ಡೈಸ್\" ಹಾಗು \"ಆವರಿಕೆ\""
+
+#~ msgid ""
+#~ "If set to true, then Cheese will have a feature allowing you to delete a "
+#~ "file immediately and in-place, instead of moving it to the trash. This "
+#~ "feature can be dangerous, so use caution."
+#~ msgstr ""
+#~ "ಇದನ್ನು ನಿಜ ಎಂದು ಗುರುತು ಹಾಕಿದಲ್ಲಿ, ಒಂದು ಕಡತವನ್ನು ಕಸದಬುಟ್ಟಿಗೆ ಜರುಗಿಸದೆ, ಅದು "
+#~ "ಎಲ್ಲಿ ಇದೆಯೋ ಅಲ್ಲಿಯೆ ಆ ಕೂಡಲೆ ಅಳಿಸಬಹುದಾದ ಒಂದು ಸವಲತ್ತನ್ನು ಚೀಸ್ ಹೊಂದಿರುತ್ತದೆ. ಈ "
+#~ "ಸವಲತ್ತು ಕೆಲವು ಬಾರಿ ಅಪಾಯಕಾರಿಯೂ ಆಗಬಹುದು, ಆದ್ದರಿಂದ ಎಚ್ಚರಿಕೆಯಿಂದ ಬಳಸಿ."
+
+#~ msgid "Whether to enable immediate deletion"
+#~ msgstr "ಕೂಡಲೆ ಅಳಿಸುವದನ್ನು ಶಕ್ತಗೊಳಿಸಬೇಕೆ"
+
+#~ msgid "Switch to Burst Mode"
+#~ msgstr "ಸ್ಫೋಟ ಕ್ರಮಕ್ಕೆ ಬದಲಾಯಿಸು"
+
+#~ msgid "Switch to Photo Mode"
+#~ msgstr "ಚಿತ್ರದ ಮಾರ್ಗಕ್ಕೆ ಬದಲಾಯಿಸು"
+
+#~ msgid "Switch to Video Mode"
+#~ msgstr "ವಿಡಿಯೋ ಕ್ರಮಕ್ಕೆ ಬದಲಾಯಿಸು"
+
+#~ msgid "Switch to the Effects Selector"
+#~ msgstr "ಪರಿಣಾಮ ಆಯ್ಕೆಗಾರನಿಗೆ ಬದಲಾಯಿಸು"
+
+#~ msgid "Resolution"
+#~ msgstr "ರೆಸಲ್ಯೂಶನ್"
+
+#~ msgid "%d "
+#~ msgstr "%d "
+
+#~ msgid "_Skip"
+#~ msgstr "ಕಡೆಗಣಿಸು(_S)"
+
+#~ msgid "S_kip All"
+#~ msgstr "ಎಲ್ಲವನ್ನೂ ಕಡೆಗಣಿಸು(_k)"
+
+#~ msgid "Delete _All"
+#~ msgstr "ಎಲ್ಲವನ್ನೂ ಅಳಿಸು(_A)"
+
+#~ msgid ""
+#~ "Failed to launch program to show:\n"
+#~ "%s\n"
+#~ "%s"
+#~ msgstr ""
+#~ "ತೋರಿಸಲು ಪ್ರೋಗ್ರಾಂ ಅನ್ನು ಆರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ:\n"
+#~ "%s\n"
+#~ "%s"
+
+#~ msgid "Error while deleting"
+#~ msgstr "ಅಳಿಸುವಾಗ ದೋಷ"
+
+#~ msgid "The file \"%s\" cannot be deleted. Details: %s"
+#~ msgstr "\"%s\" ಕಡತವನ್ನು ಅಳಿಸಲಾಗುವುದಿಲ್ಲ. ವಿವರಗಳು: %s"
+
+#~ msgid "Are you sure you want to permanently delete the %'d selected item?"
+#~ msgid_plural ""
+#~ "Are you sure you want to permanently delete the %'d selected items?"
+#~ msgstr[0] "ಆರಿಸಲಾದ %'d ಅಂಶವನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಲು ನೀವು ಖಚಿತವೆ?"
+#~ msgstr[1] "ಆರಿಸಲಾದ %'d ಅಂಶಗಳನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಲು ನೀವು ಖಚಿತವೆ?"
+
+#~ msgid "Unknown Error"
+#~ msgstr "ಅಜ್ಞಾತ ದೋಷ"
+
+#~ msgid "Cannot move file to trash, do you want to delete immediately?"
+#~ msgstr "ಕಡತವನ್ನು ಕಸದಬುಟ್ಟಿಗೆ ಜರುಗಿಸಲಾಗುವುದಿಲ್ಲ, ಈ ಕೂಡಲೆ ಅಳಿಸಿಹಾಕಲು ಬಯಸುತ್ತೀರೆ?"
+
+#~ msgid "The file \"%s\" cannot be moved to the trash. Details: %s"
+#~ msgstr "\"%s\" ಕಡತವನ್ನು ಕಸದಬುಟ್ಟಿಗೆ ಜರುಗಿಸಲಾಗುವುದಿಲ್ಲ. ವಿವರಗಳು: %s"
+
+#~ msgid "Really move all photos and videos to the trash?"
+#~ msgstr "ಎಲ್ಲಾ ಚಿತ್ರಗಳನ್ನು ಹಾಗು ವೀಡಿಯೋಗಳನ್ನು ಕಸದ ಬುಟ್ಟಿಗೆ ಜರುಗಿಸಬೇಕೆ?"
+
+#~ msgid "_Move to Trash"
+#~ msgstr "ಕಸದ ಬುಟ್ಟಿಗೆ ಜರುಗಿಸು(_M)"
+
+#~ msgid "Unable to open help file for Cheese"
+#~ msgstr "ಚೀಸ್‌ಗಾಗಿನ ನೆರವಿನ ಕಡತಗಳನ್ನು ತೆರೆಯಲಾಗಿಲ್ಲ"
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version.\n"
+#~ msgstr ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 2 of the License, or (at your "
+#~ "option) any later version.\n"
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public License for more details.\n"
+#~ msgstr ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General "
+#~ "Public License for more details.\n"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program. If not, see <http://www.gnu.org/licenses/>."
+#~ msgstr ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program. If not, see <http://www.gnu.org/licenses/>."
+
+#~ msgid "Mauve"
+#~ msgstr "ಮಾವ್"
+
+#~ msgid "Noir/Blanc"
+#~ msgstr "ನೋಯಿರ್/ಬ್ಲಾಂಕ್"
+
+#~ msgid "Hulk"
+#~ msgstr "ಹಲ್ಕ್‍"
+
+#~ msgid "Vertical Flip"
+#~ msgstr "ಲಂಬ-ಮಡಚುವಿಕೆ"
+
+#~ msgid "Horizontal Flip"
+#~ msgstr "ಅಡ್ಡ-ಮಡಚುವಿಕೆ"
+
+#~ msgid "Shagadelic"
+#~ msgstr "ಶೆಗಾಡೆಲಿಕ್"
+
+#~ msgid "Vertigo"
+#~ msgstr "ವರ್ಟಿಗೋ"
+
+#~ msgid "Edge"
+#~ msgstr "ಅಂಚು"
+
+#~ msgid "Dice"
+#~ msgstr "ಡೈಸ್"
+
+#~ msgid "Warp"
+#~ msgstr "ಆವರಿಕೆ"
+
+#~ msgid "No camera found!"
+#~ msgstr "ಯಾವುದೆ ಕ್ಯಾಮರಾ ಕಂಡುಬಂದಿಲ್ಲ!"
+
+#~ msgid "Please refer to the help for further information."
+#~ msgstr "ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ ದಯವಿಟ್ಟು ನೆರವನ್ನು ನೋಡಿ."
+
+#~ msgid "Help on this Application"
+#~ msgstr "ಈ ಅನ್ವಯಕ್ಕಾಗಿನ ಸಹಾಯ"
+
+#~ msgid "_Start Recording"
+#~ msgstr "ರೆಕಾರ್ಡು ಮಾಡುವುದನ್ನು ಆರಂಭಿಸು(_S)"
+
+#~ msgid "Be verbose"
+#~ msgstr "ವರ್ಬೋಸ್‌ ಆಗಿರು"
+
+#~ msgid "Enable wide mode"
+#~ msgstr "ಅಗಲ ಕ್ರಮವನ್ನು ಶಕ್ತಗೊಳಿಸು"
+
+#~ msgid "Could not set the Account Photo"
+#~ msgstr "ಖಾತೆಯ ಭಾವಚಿತ್ರವನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ"
+
+#~ msgid "Media files"
+#~ msgstr "ಮೀಡಿಯಾ ಕಡತಗಳು"
+
+#~ msgid "_Set As Account Photo"
+#~ msgstr "ಖಾತೆಯ ಭಾವಚಿತ್ರವಾಗಿ ಬಳಸು(_S)"
+
+#~ msgid "Send by _Mail"
+#~ msgstr "ಮೈಲ್‌ನಲ್ಲಿ ಕಳುಹಿಸು(_M)"
+
+#~ msgid "Send _To"
+#~ msgstr "ಇಲ್ಲಿಗೆ ಕಳುಹಿಸು(_T)"
+
+#~ msgid "Export to F-_Spot"
+#~ msgstr "F-_Spot ಗೆ ರವಾನಿಸು"
+
+#~ msgid "Export to _Flickr"
+#~ msgstr "_Flickr ಗೆ ರವಾನಿಸು"
+
+#~ msgid "_Start recording"
+#~ msgstr "ರೆಕಾರ್ಡು ಮಾಡುವುದನ್ನು ಆರಂಭಿಸು(_S)"
+
+#~ msgid "Check your gstreamer installation"
+#~ msgstr "gstreamer ಅನುಸ್ಥಾಪನೆಯನ್ನು ಪರಿಶೀಲಿಸಿ"

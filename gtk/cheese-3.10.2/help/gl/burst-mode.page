@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="burst-mode" xml:lang="gl">
+
+  <info>
+    <link type="guide" xref="index#main" group="#first"/>
+    <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
+    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
+    <revision pkgversion="3.8" date="2013-04-19" status="review"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email its:translate="no">yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+      <years>2011, 2013</years>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Capture varias fotos premendo un botón. Cambie a súa pose entre cada disparo!</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Fran Dieguez</mal:name>
+      <mal:email>frandieguez@gnome.org</mal:email>
+      <mal:years>2013.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Saque fotos nunha sucesión rápida usando o modo <gui>ráfaga</gui></title>
+
+  <p>Use o modo <gui>ráfaga</gui> para sacar varias fotos en fila de forma automática. Isto é particularmente divertido se cambia a súa foto entre as poses! Para usar o modo <gui>ráfaga</gui>:</p>
+
+  <steps>
+    <item>
+      <p>Seleccione <guiseq><gui style="menu">Cheese</gui> <gui style="menuitem">Ráfaga</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Prema <gui style="button">Sacar varias fotos</gui> ou prema a tecla <key>Barra espaciadora</key>.</p>
+      <p>Por omisión, tomaranse catro fotos, con un segundo de atraso e unha conta atrás entre as fotos.</p>
+    </item>
+  </steps>
+
+  <p>Prema <key>Esc</key> se desexa deter a toma de fotos de <app>Cheese</app> en calquera punto.</p>
+
+<section id="burst-preferences">
+  <title>Cambiar as preferencias da <gui>Ráfaga</gui></title>
+
+  <p>Pode cambiar cantas fotos se toman para cada modo ráfaga e a cantidade de atrase entre as fotos:</p>
+
+  <steps>
+    <item>
+      <p>Seleccione <guiseq><gui style="menu">Cheese</gui> <gui style="menuitem">Preferencias</gui> <gui style="tab">Capturar</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Editar as preferencias:</p>
+      <terms>
+        <item>
+          <title>Conta atrás</title>
+          <p>Conta atrás desde tres antes de que se saque unha foto.</p>
+        </item>
+        <item>
+          <title>Disparar flash</title>
+          <p>A súa pantalla fará un flash cando se saque a foto.</p>
+        </item>
+        <item>
+          <title>Número de fotos</title>
+          <p>O número de fotos que tomar nunha sola ráfaga.</p>
+        </item>
+        <item>
+          <title>Atraso entre fotos (segundos)</title>
+          <p>O atraso entre a última foto e o inicio da seguinte conta atrás. Se <gui>Conta atrás</gui> está desactivado, isto será o atraso entre fotos.</p>
+        </item>
+      </terms>
+    </item>
+  </steps>
+
+</section>
+
+</page>

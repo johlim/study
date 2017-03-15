@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="full-screen" xml:lang="cs">
+  <info>
+    <revision version="3.6" date="2012-05-09" status="stub"/>
+    <link type="guide" xref="index#preferences"/>
+	
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Zapněte nebo vypněte režim celé obrazovky</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lucas Lommer</mal:name>
+      <mal:email>llommer@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Martin Jablečník</mal:name>
+      <mal:email>martin.jablecnik@seznam.cz</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Celá obrazovka</title>
+
+  <p>Když chcete zapnout režim celé obrazovky:</p>
+
+  <steps>
+    <item><p>Vyberte <guiseq><gui>Cheese</gui><gui>Celá obrazovka</gui></guiseq></p></item>
+  </steps>
+
+  <p>Když chcete vypnout režim celé obrazovky:</p>
+
+  <steps>
+    <item><p>Vyberte <gui>Opustit celou obrazovku</gui></p></item>
+  </steps>
+
+  <note style="tip">
+    <p>Režim celé obrazovky můžete zapnout nebo vypnout také zmáčknutím <key>F11</key>.</p>
+  </note>
+</page>

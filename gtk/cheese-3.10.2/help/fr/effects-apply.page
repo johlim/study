@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="effects-apply" xml:lang="fr">
+  <info>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+    <link type="guide" xref="index#main"/>
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Ajouter des effets amusants à vos photos et vidéos, comme devenir tout vert ou distordre l'image comme dans un miroir déformant.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2008-2009,2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2008-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yannick Tailliez</mal:name>
+      <mal:email>ytdispatch-libre@yahoo.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Laurent Coudeur</mal:name>
+      <mal:email>laurentc@iol.ie</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Luc Pionchon</mal:name>
+      <mal:email>pionchon.luc@gmail.com</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Luc Guillemin</mal:name>
+      <mal:email>luc.guillemin@gmail.com</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mickael Albertus</mal:name>
+      <mal:email>mickael.albertus@gmail.com</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Ajout d'effets aux photos et aux vidéos</title>
+
+  <p>Vous pouvez appliquer des effets amusants à vos photos et vos vidéos :</p>
+  <steps>
+    <item><p>Cliquez sur <gui>Effets</gui>.</p></item>
+    <item>
+     <p>Sélectionnez les effets souhaités en cliquant sur une des options.</p>
+     <p>Si vous le souhaitez, vous pouvez sélectionner plusieurs effets. Par exemple, si vous sélectionnez <gui>Hulk</gui> et <gui>Kung-Fu</gui>, la vidéo va être transformée pour avoir un ton vert et afficher une image répétée.</p>
+    </item>
+    <item>
+     <p>Cliquez sur <gui>Effets</gui> pour cacher le menu des effets et revenir à la vue normale.</p>
+    </item>
+  </steps>
+
+  <p><app>Cheese</app> fournit 34 effets. Seuls 9 d'entre eux sont affichés sur la première page. Cliquez sur <gui>Effets suivants</gui> ou <gui>Effets précédents</gui> pour naviguer parmi les autres pages.</p>
+
+  <figure>
+    <title>Quelques effets, de gauche à droite : boursouflure, contours et miroir</title>
+    <media type="image" src="figures/effects.png" width="840" height="320"/>
+  </figure>
+
+  <note style="tip"><p>Pour enlever tous les effets, cliquez sur <gui>Effets</gui> et sélectionnez <gui>Aucun effet</gui>.</p></note>
+
+</page>

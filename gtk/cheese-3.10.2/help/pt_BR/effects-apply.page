@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="effects-apply" xml:lang="pt-BR">
+  <info>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+    <link type="guide" xref="index#main"/>
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Adicionando efeitos divertidos a suas fotos e vídeos, como lhe deixar verde ou distorcer a imagem como um espelho de parque de diversões.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Fabrício Godoy</mal:name>
+      <mal:email>skarllot@gmail.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Leonardo Ferreira Fontenelle</mal:name>
+      <mal:email>leonardof@gnome.org</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabriel Speckhahn</mal:name>
+      <mal:email>gabspeck@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Enrico Nicoletto</mal:name>
+      <mal:email>liverig@gmail.com</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Ferreira</mal:name>
+      <mal:email>rafael.f.f1@gmail.com</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Aplicando efeitos a fotos e vídeos</title>
+
+  <p>Você pode aplicar efeitos divertidos e interessantes a suas fotos e vídeos:</p>
+  <steps>
+    <item><p>Clique em <gui>Efeitos</gui>.</p></item>
+    <item>
+     <p>Selecione o efeito que você quer usar clicando em uma das opções.</p>
+     <p>Se você quiser, pode selecionar vários efeitos. Por exemplo, se você selecionar <gui>Hulk</gui> e <gui>Kung-Fu</gui>, o vídeo será alterado para ter um tom verde e irá mostrar uma imagem repetida.</p>
+    </item>
+    <item>
+     <p>Clique em <gui>Efeitos</gui> para esconder o menu de efeitos e retornar à visualização normal.</p>
+    </item>
+  </steps>
+
+  <p>O <app>Cheese</app> oferece 34 efeitos, dos quais apenas 9 são mostrados na primeira página. Clique em <gui>Efeitos seguintes</gui> e <gui>Efeitos anteriores</gui> para navegar para as outras páginas.</p>
+
+  <figure>
+    <title>Alguns dos efeitos, da esquerda para a direita: Protuberância, Limite e Espelho</title>
+    <media type="image" src="figures/effects.png" width="840" height="320"/>
+  </figure>
+
+  <note style="tip"><p>Para remover a seleção de todos os efeitos, clique em <gui>Efeitos</gui> e selecione <gui>Nenhum efeito</gui>.</p></note>
+
+</page>

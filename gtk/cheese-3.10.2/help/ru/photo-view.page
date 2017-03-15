@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-view" xml:lang="ru">
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.0" date="2011-08-25" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+
+    <credit type="author copyright">
+      <name>Джулита Инка (Julita Inca)</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Екатерина Герасимова (Ekaterina Gerasimova)</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Фотографии и видеозаписи автоматически появляются в ленте.</desc>
+  </info>
+
+
+  <title>Просмотр фотографий и видеозаписей</title>
+
+  <p>После создания фотографии или видеозаписи они появятся в ленте в нижней части окна.</p>
+
+  <p>Если вы хотите посмотреть фотографию в большом разрешении или воспроизвести видео, дважды щёлкните по фотографии или видео. Фотография будет открыта в приложении для просмотра изображений, а видео — в видеопроигрывателе.</p>
+
+  <p>Все фотографии и видеозаписи в ленте сохраняются в домашнем каталоге в каталогах <guiseq><gui>Изображения</gui><gui>Webcam</gui></guiseq> и <guiseq><gui>Видео</gui><gui>Webcam</gui></guiseq>.</p>
+
+</page>

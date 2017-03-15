@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="burst-mode" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#main" group="#first"/>
+    <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
+    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
+    <revision pkgversion="3.8" date="2013-04-19" status="review"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email its:translate="no">yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+      <years>2011, 2013</years>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Pořiďte několik snímků jediným zmáčknutím tlačítka. Mezi každým snímkem změňte svoji polohu!</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lucas Lommer</mal:name>
+      <mal:email>llommer@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Martin Jablečník</mal:name>
+      <mal:email>martin.jablecnik@seznam.cz</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Jak pořídit <gui>sérii</gui> několika snímků v rychlém sledu</title>
+
+  <p>Použijte režim <gui>série snímků</gui> k automatickému pořízení několik snímků v řadě. To je obzvlášť zábavné, když mezi snímky měníte svou polohu a výraz! Pro použití režimu <gui>série snímků</gui>:</p>
+
+  <steps>
+    <item>
+      <p>Vyberte <guiseq><gui style="menu">Cheese</gui> <gui style="menuitem">Série</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Klikněte na <gui style="button">Pořídit více snímků</gui> nebo zmáčkněte <key>mezerník</key>.</p>
+      <p>Standardně je nastaveno pořízení čtyř snímků s prodlevou jedné sekundy a odpočítáváním mezi snímky.</p>
+    </item>
+  </steps>
+
+  <p>Zmáčkněte <key>Esc</key>, když budete kdykoliv chtít zastavit pořizování snímků.</p>
+
+<section id="burst-preferences">
+  <title>Změna předvoleb <gui>série snímků</gui></title>
+
+  <p>Množství pořizovaných snímků v sérii a prodlevu mezi nimi můžete změnit:</p>
+
+  <steps>
+    <item>
+      <p>Vyberte <guiseq><gui style="menu">Cheese</gui> <gui style="menuitem">Předvolby</gui> <gui style="tab">Snímání</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Upravte nastavení předvoleb:</p>
+      <terms>
+        <item>
+          <title>Odpočet</title>
+          <p>Odpočítávání od tří do okamžiku pořízení snímku.</p>
+        </item>
+        <item>
+          <title>Spustit blesk</title>
+          <p>Při pořizování smímku obrazovka bíle zableskne.</p>
+        </item>
+        <item>
+          <title>Počet snímků</title>
+          <p>Počet snímků, které se pořídí v jedné sérii.</p>
+        </item>
+        <item>
+          <title>Prodleva mezi snímky (v sekundách)</title>
+          <p>Časová prodleva je mezi posledním pořízeným snímkem a začátkem odpočítávání pro další snímek. V případě, že je <gui>Odpočítávání</gui> vypnuté, jedná se o prodlevu přímo mezi snímky.</p>
+        </item>
+      </terms>
+    </item>
+  </steps>
+
+</section>
+
+</page>
