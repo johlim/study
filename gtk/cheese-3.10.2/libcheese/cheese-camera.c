@@ -604,11 +604,28 @@ cheese_camera_create_video_filter_bin (CheeseCamera *camera, GError **error)
     cheese_camera_set_error_element_not_found (error, "main_valve");
     return FALSE;
   }
+#if 0
   if ((priv->effect_filter = gst_element_factory_make ("identity", "effect")) == NULL)
   {
     cheese_camera_set_error_element_not_found (error, "identity");
     return FALSE;
   }
+#endif
+#if 0 // OK
+  if ((priv->effect_filter = gst_element_factory_make ("adaspump", "adaspump")) == NULL)
+  {
+    cheese_camera_set_error_element_not_found (error, "adaspump");
+    return FALSE;
+  }
+#endif
+#if 1 // jhlim 20170316
+  if ((priv->effect_filter = gst_element_factory_make ("myedgefilter", "myedgefilter")) == NULL)
+  {
+    cheese_camera_set_error_element_not_found (error, "myedgefilter");
+    return FALSE;
+  }
+#endif
+
   priv->current_effect_desc = g_strdup("identity");
   if ((priv->video_balance = gst_element_factory_make ("videobalance", "video_balance")) == NULL)
   {
@@ -1628,6 +1645,10 @@ cheese_camera_setup (CheeseCamera *camera, const gchar *uuid, GError **error)
 
   priv->bus = gst_element_get_bus (priv->camerabin);
   gst_bus_add_signal_watch (priv->bus);
+
+// jhlim 20170316
+	GST_DEBUG_BIN_TO_DOT_FILE(priv->video_filter_bin, GST_DEBUG_GRAPH_SHOW_ALL, "video_filter_bin");
+	GST_DEBUG_BIN_TO_DOT_FILE(priv->camerabin , GST_DEBUG_GRAPH_SHOW_ALL, "camerabin");
 
   g_signal_connect (G_OBJECT (priv->bus), "message",
                     G_CALLBACK (cheese_camera_bus_message_cb), camera);

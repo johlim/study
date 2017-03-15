@@ -249,6 +249,33 @@ void PrewittEdgeDetection(unsigned char *Img_Raw, unsigned char *Img_Sobel, int 
         }
 }
 
+///////////////////////////////////////////////////////////////////////////////////////
+//  Function Name : AveragingSmoothing
+//  Abstract : ������ ���ſ��� ��
+//  Arguments : Img_Raw �Է�Y���� (320x240), Img_Out ���������ſ��� (320x240)
+///////////////////////////////////////////////////////////////////////////////////////
+void AveragingSmoothing (unsigned char *Img_Raw, unsigned char *Img_Out)
+{
+	int k, j;
+	int	centerValue1=0;
+	int	sum=0;
+	int left_val, right_val, center_val;
+	int prevprev_right_val, prev_right_val;
+
+	for (k=239-VANISH_POINT; k<238; k++)
+	{
+		for (j=2; j<318; j++)
+		{
+			left_val  = Img_Raw[320*(k-1) + (j-0)] + Img_Raw[320*(k+1) + (j-0)];
+			center_val = 2*Img_Raw[320*k + j];
+			right_val = Img_Raw[320*(k-0) + (j-1)] + Img_Raw[320*(k+0) + (j+1)];
+			sum = (left_val + center_val + right_val)/6;
+
+			if (sum>255)	sum = 255;
+			Img_Out[320*k+j] = (unsigned char)sum;
+		}
+	}
+}
 
 static GstFlowReturn
 gst_myedgefilter_transform_frame_ip (GstVideoFilter * filter, GstVideoFrame * frame)
@@ -266,9 +293,11 @@ gst_myedgefilter_transform_frame_ip (GstVideoFilter * filter, GstVideoFrame * fr
 	  GstMemory * tmpMemory = gst_buffer_peek_memory(frame->buffer, j);
 	  if (gst_memory_map(tmpMemory, &info, flags ))
 	  {
-		  char * sobelbuffer = malloc(info.size); 
+		  char * sobelbuffer = malloc(info.size);
+		  //
+		  //AveragingSmoothing(info.data , sobelbuffer);
 		  PrewittEdgeDetection(info.data , sobelbuffer, 10);
-		  memcpy(info.data, sobelbuffer, info.size);
+		  memcpy(info.data, sobelbuffer, info.size/2);
 		  free(sobelbuffer);
 		  gst_memory_unmap(tmpMemory, &info);
 	  }
