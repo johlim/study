@@ -110,7 +110,7 @@ gst_myedgefilter_class_init (GstMyedgefilterClass * klass)
   base_transform_class->start = GST_DEBUG_FUNCPTR (gst_myedgefilter_start);
   base_transform_class->stop = GST_DEBUG_FUNCPTR (gst_myedgefilter_stop);
   video_filter_class->set_info = GST_DEBUG_FUNCPTR (gst_myedgefilter_set_info);
-  video_filter_class->transform_frame = GST_DEBUG_FUNCPTR (gst_myedgefilter_transform_frame);
+//  video_filter_class->transform_frame = GST_DEBUG_FUNCPTR (gst_myedgefilter_transform_frame);
   video_filter_class->transform_frame_ip = GST_DEBUG_FUNCPTR (gst_myedgefilter_transform_frame_ip);
 
 }
@@ -216,6 +216,66 @@ gst_myedgefilter_transform_frame (GstVideoFilter * filter, GstVideoFrame * infra
 
   return GST_FLOW_OK;
 }
+int VANISH_POINT=180;
+
+void PrewittEdgeDetection(unsigned char *Img_Raw, unsigned char *Img_Sobel, int threshold)
+{
+        int k, j;
+        int     centerValue1=0, centerValue2=0;
+        int     sum=0;
+        int W=320, H=240;
+        int ImageSize = W*H;
+
+        for (k=239-VANISH_POINT; k<238; k++)
+        {
+                for (j=0; j<W; j++)
+                {
+                        centerValue1 += (-1*Img_Raw[W*k + j] +          1*Img_Raw[W*k + (j+2)]) +
+                                                        (-1*Img_Raw[W*(k+1) + j] +      1*Img_Raw[W*(k+1) + (j+2)]) +
+                                                        (-1*Img_Raw[W*(k+2) + j] +      1*Img_Raw[W*(k+2) + (j+2)]);
+
+                        centerValue2 += ( 1*Img_Raw[W*k + j] +          1*Img_Raw[W*k + (j+1)] +                1*Img_Raw[W*k + (j+2)]) +
+                                                        (-1*Img_Raw[W*(k+2) + j] -      1*Img_Raw[W*(k+2) + (j+1)] -    Img_Raw[W*(k+2) + (j+2)]);
+
+                        sum = abs(centerValue1) + abs(centerValue2);
+
+                        if (sum>255)    sum = 255;
+                        if (sum < threshold)    sum = 0;
+                        Img_Sobel[W*(k+1)+(j+1)] = (unsigned char)sum;
+                        centerValue1 = 0;
+                        centerValue2 = 0;
+                        sum = 0;
+                }
+        }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
+//  Function Name : AveragingSmoothing
+//  Abstract : ������ ���ſ��� ��
+//  Arguments : Img_Raw �Է�Y���� (320x240), Img_Out ���������ſ��� (320x240)
+///////////////////////////////////////////////////////////////////////////////////////
+void AveragingSmoothing (unsigned char *Img_Raw, unsigned char *Img_Out)
+{
+	int k, j;
+	int	centerValue1=0;
+	int	sum=0;
+	int left_val, right_val, center_val;
+	int prevprev_right_val, prev_right_val;
+
+	for (k=239-VANISH_POINT; k<238; k++)
+	{
+		for (j=2; j<318; j++)
+		{
+			left_val  = Img_Raw[320*(k-1) + (j-0)] + Img_Raw[320*(k+1) + (j-0)];
+			center_val = 2*Img_Raw[320*k + j];
+			right_val = Img_Raw[320*(k-0) + (j-1)] + Img_Raw[320*(k+0) + (j+1)];
+			sum = (left_val + center_val + right_val)/6;
+
+			if (sum>255)	sum = 255;
+			Img_Out[320*k+j] = (unsigned char)sum;
+		}
+	}
+}
 
 static GstFlowReturn
 gst_myedgefilter_transform_frame_ip (GstVideoFilter * filter, GstVideoFrame * frame)
@@ -223,6 +283,25 @@ gst_myedgefilter_transform_frame_ip (GstVideoFilter * filter, GstVideoFrame * fr
   GstMyedgefilter *myedgefilter = GST_MYEDGEFILTER (filter);
 
   GST_DEBUG_OBJECT (myedgefilter, "transform_frame_ip");
+
+  int i= gst_buffer_n_memory(frame->buffer);
+  GstMapInfo info={0,};
+  GstMapFlags flags=GST_MAP_WRITE;
+
+  for(int j=0; j<i; j++)
+  {
+	  GstMemory * tmpMemory = gst_buffer_peek_memory(frame->buffer, j);
+	  if (gst_memory_map(tmpMemory, &info, flags ))
+	  {
+		  char * sobelbuffer = malloc(info.size);
+		  //
+		  //AveragingSmoothing(info.data , sobelbuffer);
+		  PrewittEdgeDetection(info.data , sobelbuffer, 10);
+		  memcpy(info.data, sobelbuffer, info.size/2);
+		  free(sobelbuffer);
+		  gst_memory_unmap(tmpMemory, &info);
+	  }
+  }
 
   return GST_FLOW_OK;
 }

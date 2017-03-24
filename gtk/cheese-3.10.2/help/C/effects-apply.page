@@ -1,0 +1,53 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic" style="task"
+      id="effects-apply">
+  <info>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+    <link type="guide" xref="index#main"/>
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <desc>Add fun effects to your photos and videos, like turning yourself green
+    or distorting the picture like a funhouse mirror.</desc>
+  </info>
+
+  <title>Apply effects to photos and videos</title>
+
+  <p>You can apply fun, interesting effects to your photos and videos:</p>
+  <steps>
+    <item><p>Click <gui>Effects</gui>.</p></item>
+    <item>
+     <p>Select the effect you want to use by clicking one of the options.</p>
+     <p>If you like, you can select multiple effects. For example, if you select
+     <gui>Hulk</gui> and <gui>Kung-Fu</gui>, the video will be altered to have a
+     green shade and will show a repeated image.</p>
+    </item>
+    <item>
+     <p>Click <gui>Effects</gui> to hide the effects menu and return to the
+     normal view.</p>
+    </item>
+  </steps>
+
+  <p><app>Cheese</app> offers 34 effects, of which only 9 are shown on the first
+  page. Click <gui>Next Effects</gui> and <gui>Previous Effects</gui> to
+  navigate to the other pages.</p>
+
+  <figure>
+    <title>Some of the effects, from left to right: Bulge, Edge and Mirror</title>
+    <media type="image" src="figures/effects.png" width="840" height="320"/>
+  </figure>
+
+  <note style="tip"><p>To deselect all effects, click <gui>Effects</gui> and
+  select <gui>No Effect</gui>.</p></note>
+
+</page>

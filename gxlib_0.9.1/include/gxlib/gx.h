@@ -58,7 +58,7 @@ struct frame_buffer_t_
     int      bytes_per_line;                                                    // 라인당 바이트 개수
     int      bits_per_pixel;                                                    // 비트당 픽셀 개수
 
-    unsigned short *mapped;                                                     // 메모리 매핑된 포인터
+    char       *mapped;                                                 // 메모리 매핑된 포인터
 };
 
 typedef struct dc_t_ dc_t;

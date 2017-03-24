@@ -1,0 +1,28 @@
+Description: Look for -plugins-good as camerabin has moved there from -bad (Ubuntu local change, for now)
+Author: Iain Lane <iain.lane@canonical.com>
+Forwarded: not-needed
+Last-Update: 2013-12-15
+
+diff -pruN -x '*~' cheese-3.10.1.orig/configure.ac cheese-3.10.1/configure.ac
+--- cheese-3.10.1.orig/configure.ac	2013-10-14 16:15:17.000000000 +0200
++++ cheese-3.10.1/configure.ac	2013-12-15 03:53:25.000000000 +0100
+@@ -65,8 +65,8 @@ GDK_PIXBUF_REQUIRED="gdk-pixbuf-2.0"
+ LIBGNOMEDESKTOP_REQUIRED="gnome-desktop-3.0 >= 2.91.6"
+ GSTREAMER_VERSION=0.11.0
+ GSTREAMER_REQUIRED="gstreamer-plugins-base-1.0 >= $GSTREAMER_VERSION gstreamer-1.0 >= $GSTREAMER_VERSION gstreamer-pbutils-1.0 >= $GSTREAMER_VERSION"
+-GSTREAMER_PLUGINS_BAD_VERSION=0.11.0
+-GSTREAMER_PLUGINS_BAD_REQUIRED="gstreamer-plugins-bad-1.0 >= $GSTREAMER_PLUGINS_BAD_VERSION"
++GSTREAMER_PLUGINS_GOOD_VERSION=0.11.0
++GSTREAMER_PLUGINS_GOOD_REQUIRED="gstreamer-plugins-good-1.0 >= $GSTREAMER_PLUGINS_GOOD_VERSION"
+ CAIRO_REQUIRED="cairo >= 1.10.0"
+ PANGOCAIRO_REQUIRED="pangocairo >= 1.28.0"
+ LIBRSVG_REQUIRED="librsvg-2.0 >= 2.32.0"
+@@ -108,7 +108,7 @@ PKG_CHECK_MODULES([CHEESE],
+   $GOBJECT_REQUIRED
+   $GDK_PIXBUF_REQUIRED
+   $GSTREAMER_REQUIRED
+-  $GSTREAMER_PLUGINS_BAD_REQUIRED
++  $GSTREAMER_PLUGINS_GOOD_REQUIRED
+   $LIBGNOMEDESKTOP_REQUIRED
+   $CAIRO_REQUIRED
+   $PANGOCAIRO_REQUIRED
