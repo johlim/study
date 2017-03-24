@@ -1662,7 +1662,7 @@ cheese_camera_setup (CheeseCamera *camera, CheeseCameraDevice *device, GError **
 
   g_signal_connect (G_OBJECT (priv->bus), "message",
                     G_CALLBACK (cheese_camera_bus_message_cb), camera);
-#ifdef jhlim_add_test_20170303
+#if 0//def jhlim_add_test_20170303
   {
 
   GST_DEBUG_BIN_TO_DOT_FILE(priv->camera_source, GST_DEBUG_GRAPH_SHOW_ALL, "camera_source");

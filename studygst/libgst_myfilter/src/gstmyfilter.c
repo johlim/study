@@ -242,14 +242,26 @@ static gboolean gst_my_filter_set_caps(GstPad * pad, GstCaps * caps)
 {
 	GstMyFilter *filter;
 	GstPad *otherpad;
+	GstCaps * l_caps; //jhlim
 
 	filter = GST_MYFILTER (gst_pad_get_parent (pad));
 	GST_TRACE_OBJECT(filter, "set caps");
 
+	l_caps = gst_caps_new_simple("audio/x-raw", 
+        "format", G_TYPE_STRING, GST_AUDIO_NE(32),
+        "rate", G_TYPE_INT, 22050,
+        "channels", G_TYPE_INT, 1, NULL);		
+
 	otherpad = (pad == filter->srcpad) ? filter->sinkpad : filter->srcpad;
 	gst_object_unref (filter);
 
-	return gst_pad_set_caps (otherpad, caps);
+	if (!gst_pad_set_caps (pad, l_caps)) {
+		GST_ELEMENT_ERROR (pad, CORE, NEGOTIATION, (NULL),
+				("Some debug information here"));
+		return GST_FLOW_ERROR;
+	}
+	return GST_FLOW_OK;
+//	return gst_pad_set_caps (otherpad, caps);
 }
 /* this function handles sink events */
 static gboolean

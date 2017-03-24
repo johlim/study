@@ -48,7 +48,7 @@ int main (int argc, char *argv)
 
 	timer.it_value.tv_sec=3;
 	timer.it_value.tv_usec = 0;
-	timer.it_interval.tv_sec=0;
+	timer.it_interval.tv_sec=5;
 	timer.it_interval.tv_usec=0;
 
 	//setitimer(ITIMER_PROF, &timer, NULL);
