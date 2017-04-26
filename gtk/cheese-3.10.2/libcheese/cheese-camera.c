@@ -611,14 +611,14 @@ cheese_camera_create_video_filter_bin (CheeseCamera *camera, GError **error)
     return FALSE;
   }
 #endif
-#if 0 // OK
+#if 1 // OK
   if ((priv->effect_filter = gst_element_factory_make ("adaspump", "adaspump")) == NULL)
   {
     cheese_camera_set_error_element_not_found (error, "adaspump");
     return FALSE;
   }
 #endif
-#if 1 // jhlim 20170316
+#if 0 // jhlim 20170316
   if ((priv->effect_filter = gst_element_factory_make ("myedgefilter", "myedgefilter")) == NULL)
   {
     cheese_camera_set_error_element_not_found (error, "myedgefilter");
