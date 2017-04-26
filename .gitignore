@@ -30,3 +30,8 @@
 
 # Debug files
 *.dSYM/
+
+#build temporary
+studygst/myedgefilter/autom4te.cache/
+*.cbp
+*.layout
