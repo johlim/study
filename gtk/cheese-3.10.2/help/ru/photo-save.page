@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-save" xml:lang="ru">
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.0" date="2011-08-25" status="review"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+
+    <credit type="author copyright">
+      <name>Джулита Инка (Julita Inca)</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Екатерина Герасимова (Ekaterina Gerasimova)</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Сохранение фотографии или видеозаписи в другом каталоге.</desc>
+  </info>
+
+  <title>Сохранение фотографии или видеозаписи</title>
+
+  <p>По умолчанию Cheese сохраняет фотографии и видеозаписи в каталоги <guiseq><gui>Изображения</gui><gui>Webcam</gui></guiseq> и <guiseq><gui>Видео</gui><gui>Webcam</gui></guiseq> в домашнем каталоге.</p>
+
+  <p>Для того, чтобы сохранить файлы в другом месте, щёлкните правой кнопкой мыши по изображению в ленте и выберите <gui>Сохранить как</gui>. Затем выберите желаемое местоположение файла.</p>
+
+  <p>Вы также можете открыть папку в файловом менеджере, в которую хотите поместить изображение, и перетащить с помощью мыши фотографию из ленты в эту папку.</p>
+
+  <p>Копия изображения будет сохранена в новом местоположении. Старая версия останется в каталоге <guiseq><gui>Изображения</gui><gui>Webcam</gui></guiseq> или <guiseq><gui>Видео</gui><gui>Webcam</gui></guiseq>.</p>
+
+</page>

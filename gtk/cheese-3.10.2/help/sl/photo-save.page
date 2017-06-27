@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-save" xml:lang="sl">
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.0" date="2011-08-25" status="review"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Shranjevanje fotografije ali videa v drugi mapi.</desc>
+  </info>
+
+  <title>Shranjevanje fotografije ali videa</title>
+
+  <p>Privzeto Cheese shrani fotografije in videoposnetke v mapah <guiseq><gui>Slike</gui><gui>Spletna kamera</gui></guiseq> in <guiseq><gui>Video</gui><gui>Spletna kamera</gui></guiseq> v vaši domači mapi.</p>
+
+  <p>Za shranitev slike na drugo mesto desno kliknite nanjo v pretoku fotografij in kliknite <gui>Shrani kot</gui>. Nato izberite kje želite shraniti sliko.</p>
+
+  <p>Namesto tega lahko odprete mapo kamor želite shraniti slike v upravljalniku datotek in nato sliko povlečete iz pretoka fotografij v to mapo.</p>
+
+  <p>Nova kopija slike bo bila shranjena na novo mesto. Stara različica bo ostala v mapi <guiseq><gui>Slike</gui><gui>Spletna kamera</gui></guiseq> ali <guiseq><gui>Video</gui><gui>Spletna kamera</gui></guiseq></p>
+
+</page>

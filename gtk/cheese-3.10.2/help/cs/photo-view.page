@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-view" xml:lang="cs">
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.0" date="2011-08-25" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Snímky a videa se automaticky objeví v panelu snímků.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lucas Lommer</mal:name>
+      <mal:email>llommer@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Martin Jablečník</mal:name>
+      <mal:email>martin.jablecnik@seznam.cz</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+
+  <title>Jak si prohlédnout pořízené snímky a videa</title>
+
+  <p>Po pořízení snímku nebo nahrání videa se snímek či video objeví v panelu snímků ve spodní části okna.</p>
+
+  <p>Jestliže chcete vidět větší verzi snímku nebo přehrát video, tak na ně dvojitě klikněte. Otevřou se ve výchozím prohlížeči fotografií nebo výchozím videopřehrávači.</p>
+
+  <p>Všechny snímky a videa v panelu snímků máte uloženy ve složce <guiseq><gui>Obrázky</gui><gui>Webcam</gui></guiseq> nebo <guiseq><gui>Videa</gui><gui>Webcam</gui></guiseq> ve své domovské složce.</p>
+
+</page>

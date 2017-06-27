@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="effects-apply" xml:lang="sl">
+  <info>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+    <link type="guide" xref="index#main"/>
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Dodajanje zabavnih učinkov vašim fotografijam in videom kot je obarvanost zeleno ali popačenje slike kot v zrcalu iz zabaviščnega parka.</desc>
+  </info>
+
+  <title>Uveljavitev učinkov na fotografije in videoposnetke</title>
+
+  <p>Za svoje fotografije lahko uveljavite zabavne, zanimive učinke:</p>
+  <steps>
+    <item><p>Kliknite <gui>Učinki</gui>.</p></item>
+    <item>
+     <p>Izberite učinek, ki ga želite uporabiti s klikom na eno od možnosti.</p>
+     <p>Če želite, lahko izberete več učinkov. Če na primer izberete <gui>Hulk</gui> in <gui>Kung-Fu</gui>, bo video spremenjen tako da bo imel zeleno senco in bo pokazal ponovljeno sliko.</p>
+    </item>
+    <item>
+     <p>Kliknite <gui>Učinki</gui> za skritje menija učinkov in vrnitev na običajni pogled.</p>
+    </item>
+  </steps>
+
+  <p><app>Cheese</app> ponuja 34 učinkov od katerih jih je na prvi strani prikazanih le 9. Za ogled drugih strani kliknite na <gui>Naslednji učinki</gui> in <gui>Predhodni učinki</gui>.</p>
+
+  <figure>
+    <title>Nekateri od učinkov od leve proti desni: Bulge, Rob in Zrcalo</title>
+    <media type="image" src="figures/effects.png" width="840" height="320"/>
+  </figure>
+
+  <note style="tip"><p>Za odstranitev izbire vseh učinkov kliknite <gui>Učinki</gui> in izberite <gui>Brez učinka</gui>.</p></note>
+
+</page>

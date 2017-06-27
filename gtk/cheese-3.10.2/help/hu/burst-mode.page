@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="burst-mode" xml:lang="hu">
+
+  <info>
+    <link type="guide" xref="index#main" group="#first"/>
+    <revision pkgversion="3.0" date="2011-08-24" status="candidate"/>
+    <revision pkgversion="3.1" date="2011-09-05" status="review"/>
+    <revision pkgversion="3.8" date="2013-04-19" status="review"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email its:translate="no">yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+      <years>2011, 2013</years>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Készítsen egymás után több képet egy gombnyomással. Váltson pózt minden kép előtt!</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2011, 2012, 2013.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Fényképek készítése gyors egymásutánban a <gui>Sorozat</gui> módban</title>
+
+  <p>A <gui>Sorozat</gui> mód használatával egymás után automatikusan több fényképet készíttethet. Külön vicces, ha a képek közt pózt vált! A <gui>Sorozat</gui> mód használatához:</p>
+
+  <steps>
+    <item>
+      <p>Válassza a <guiseq><gui style="menu">Csííz</gui> <gui style="menuitem">Sorozat</gui></guiseq> menüpontot.</p>
+    </item>
+    <item>
+      <p>Nyomja meg a <gui style="button">Több fénykép készítése</gui> gombot, vagy a <key>szóközt</key>.</p>
+      <p>Alapesetben négy fénykép készül, egy másodperc késleltetéssel és visszaszámlálással a fényképek közt.</p>
+    </item>
+  </steps>
+
+  <p>Nyomja meg bármikor az <key>Esc</key> billentyűt a fényképezés megszakításához.</p>
+
+<section id="burst-preferences">
+  <title>A <gui>Sorozat</gui> beállításainak módosítása</title>
+
+  <p>Megváltoztathatja, hogy hány fénykép készüljön egy-egy sorozatban, valamint a fényképek közti késleltetést:</p>
+
+  <steps>
+    <item>
+      <p>Válassza a <guiseq><gui style="menu">Csííz</gui><gui style="menuitem">Beállítások</gui><gui style="tab">Felvétel</gui></guiseq> fület.</p>
+    </item>
+    <item>
+      <p>Szerkessze a beállításokat:</p>
+      <terms>
+        <item>
+          <title>Visszaszámlálás</title>
+          <p>Visszaszámlálás háromtól a fénykép készítése előtt.</p>
+        </item>
+        <item>
+          <title>Vaku villantása</title>
+          <p>A képernyő felvillan a fénykép készítésekor.</p>
+        </item>
+        <item>
+          <title>Fényképek száma</title>
+          <p>Az egy sorozatban készítendő fényképek száma.</p>
+        </item>
+        <item>
+          <title>Késleltetés a fényképek között (mp)</title>
+          <p>A késleltetés az utolsó fénykép elkészítése és a következő visszaszámlálás megkezdése között. Ha a <gui>Visszaszámlálás</gui> ki van kapcsolva, akkor ez a fényképek közti késleltetés.</p>
+        </item>
+      </terms>
+    </item>
+  </steps>
+
+</section>
+
+</page>

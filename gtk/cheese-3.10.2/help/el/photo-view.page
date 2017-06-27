@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-view" xml:lang="el">
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.0" date="2011-08-25" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Φωτογραφίες και βίντεο θα εμφανιστούν αυτόματα στον διαχειριστή εικόνων.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>  Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>  Ευστάθιος Ιωσηφίδης</mal:name>
+      <mal:email>diamond_gr@freemail.gr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>  Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+
+  <title>Προβολή φωτογραφίων ή βίντεο που έχετε τραβήξει</title>
+
+  <p>Αφού τραβήξετε μια φωτογραφία ή καταγράψετε ένα βίντεο, θα εμφανιστεί στον διαχειριστή φωτογραφιών στο κάτω μέρος του παραθύρου.</p>
+
+  <p>Αν θέλετε να δείτε μια μεγαλύτερη έκδοση μιας φωτογραφίας, ή να παίξετε ένα βίντεο, κάνετ διπλό κλικ πάνω του. Έτσι θα ανοίξει τον προεπιλεγμένο προβολέα εικόνων ή αναπαραγωγέα πολυμέσων.</p>
+
+  <p>Όλες οι εικόνας και τα βίντεο στον διαχειριστή φωτογραφιών αποθηκεύονται στους φακέλους <guiseq><gui>Εικόνες</gui><gui>Webcam</gui></guiseq> or <guiseq><gui>Βίντεο</gui><gui>Webcam</gui></guiseq> στον προσωπικό σας φάκελο.</p>
+
+</page>

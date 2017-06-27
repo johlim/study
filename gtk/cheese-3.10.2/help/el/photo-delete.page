@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="photo-delete" xml:lang="el">
+  <info>
+    <link type="guide" xref="index#main"/>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Αφαιρέστε φωτογραφίες και βίντεο που δεν θέλετε να κρατήσετε πια.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>  Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>  Ευστάθιος Ιωσηφίδης</mal:name>
+      <mal:email>diamond_gr@freemail.gr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>  Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Διαγραφή μιας φωτογραφίας ή ενός βίντεο</title>
+
+  <p>Αν δεν θέλετε άλλο κάποια φωτογραφία ή βίντεο, μπορεί να το διαγράψετε οριστικά:</p>
+
+  <steps>
+    <item>
+      <p>Βρείτε την φωτογραφία ή το βίντεο που θέλετε να διαγράψετε στον διαχειριστή φωτογραφιών στο κάτω μέρος του παραθύρου <app>Cheese</app>.</p>
+    </item>
+    <item>
+      <p>Δεξί κλικ και επιλέξτε <gui>Διαγραφή</gui>. Εναλλακτικά, πατήστε πάνω του μια φορά για να το επιλέξτε και μετά το κουμπί <key>Delete</key>.</p>
+    </item>
+    <item>
+      <p>Θα σας ρωτήσει αν θέλετε να το διαγράψετε οριστικά. Επιβεβαιώστε πατώντας <gui>Delete</gui>· δεν θα μπορείτε να ανακτήσετε την φωτογραφία.</p>
+    </item>
+  </steps>
+
+  <p>Αν δεν είστε σίγουροι αν θέλετε να διαγράψετε οριστικά την φωτογραφία ή βίντεο, μπορείτε να πατήσετε δεξί κλικ πάνω του και να επιλέξετε <gui>Μεταφορά στα απορρίμματα</gui>. Αυτό θα το μετακινήσεις στον φάκελο των <gui>Απορριμμάτων</gui>.</p>
+  <note>
+    <p>Το Cheese δεν έχει τον δικό του φάκελο <gui>Απορριμμάτων</gui> και δεν μπορείς να έχεις πρόσβαση στον φάκελο <gui>Απορριμμάτων</gui> του υπολογιστή σου από το <app>Cheese</app>.</p>
+  </note>
+
+</page>

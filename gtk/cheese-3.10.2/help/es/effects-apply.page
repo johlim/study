@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="effects-apply" xml:lang="es">
+  <info>
+    <revision version="3.0" date="2011-08-24" status="candidate"/>
+    <revision version="3.1" date="2011-09-05" status="review"/>
+    <link type="guide" xref="index#main"/>
+    <credit type="author copyright">
+      <name>Julita Inca</name>
+      <email>yrazes@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Y efectos divertidos a sus fotos y vídeos, como volverse verde o distorsionar la imagen como un espejo de feria.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011 - 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Aplicar efectos a fotos y vídeos</title>
+
+  <p>Puede aplicar efectos interesantes y divertidos a sus fotos y vídeos:</p>
+  <steps>
+    <item><p>Pulse <gui>Efectos</gui>.</p></item>
+    <item>
+     <p>Seleccione el efecto que quiere usar pulsando una de las opciones.</p>
+     <p>Si quiere, puede seleccionar múltiples efectos. Por ejemplo, si selecciona <gui>Hulk</gui> y <gui>Kung-Fu</gui>, el vídeo se alterará para tener una sombra verde y mostrará una imagen repetida.</p>
+    </item>
+    <item>
+     <p>Pulse <gui>Efectos</gui> para ocultar el menú de efectos y volver a la vista normal.</p>
+    </item>
+  </steps>
+
+  <p><app>Cheese</app> ofrece 34 efectos, de los que sólo 9 se muestran en esta página. Pulse <gui>Siguientes efectos</gui> y <gui>Efectos anteriores</gui> para navegar por el resto de páginas.</p>
+
+  <figure>
+    <title>Algunos de los efectos, de izquierda a derecha: bulto, contornos y espejo</title>
+    <media type="image" src="figures/effects.png" width="840" height="320"/>
+  </figure>
+
+  <note style="tip"><p>Pulse <gui>Efectos</gui> y seleccione <gui>Sin efectos</gui> para desactivar todos los efectos.</p></note>
+
+</page>
