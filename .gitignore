@@ -35,3 +35,5 @@
 studygst/myedgefilter/autom4te.cache/
 *.cbp
 *.layout
+output.*
+traces.*

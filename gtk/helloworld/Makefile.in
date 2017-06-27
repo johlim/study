@@ -80,8 +80,8 @@ host_triplet = @host@
 subdir = .
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/configure $(am__configure_deps) \
-	$(srcdir)/config.h.in COPYING INSTALL README compile \
-	config.guess config.sub depcomp install-sh missing ltmain.sh
+	$(srcdir)/config.h.in README compile config.guess config.sub \
+	depcomp install-sh missing ltmain.sh
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
@@ -220,6 +220,9 @@ GREP = @GREP@
 GST_CFLAGS = @GST_CFLAGS@
 GST_LIBS = @GST_LIBS@
 GST_PLUGIN_LDFLAGS = @GST_PLUGIN_LDFLAGS@
+GTK_CFLAGS = @GTK_CFLAGS@
+GTK_LFLAGS = @GTK_LFLAGS@
+GTK_LIBS = @GTK_LIBS@
 HAVE_PKGCONFIG = @HAVE_PKGCONFIG@
 INSTALL = @INSTALL@
 INSTALL_DATA = @INSTALL_DATA@
