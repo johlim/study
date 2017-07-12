@@ -32,7 +32,7 @@ int main(int argc, char *argv[]){
         return -1;
     }
  
-    g_object_set(data.playbin, "uri", "http://docs.gstreamer.com/media/sintel_trailer-480p.webm", NULL);
+    g_object_set(data.playbin, "uri", "http://docs.gstreamer.com/media/small/720p-60frames.avi", NULL);
  
     ret = gst_element_set_state(data.playbin, GST_STATE_PLAYING);
     if(ret == GST_STATE_CHANGE_FAILURE){
@@ -82,6 +82,7 @@ int main(int argc, char *argv[]){
 static void handle_message(CustomData *data, GstMessage *msg){
     GError *err;
     gchar *debug_info;
+    GstState old_state, new_state, pending_state;
  
     switch(GST_MESSAGE_TYPE(msg)){
         case GST_MESSAGE_ERROR:
@@ -100,7 +101,6 @@ static void handle_message(CustomData *data, GstMessage *msg){
             data->duration = GST_CLOCK_TIME_NONE;
             break;
         case GST_MESSAGE_STATE_CHANGED:
-            GstState old_state, new_state, pending_state;
             gst_message_parse_state_changed(msg, &old_state, &new_state, &pending_state);
             if(GST_MESSAGE_SRC(msg) == GST_OBJECT(data->playbin)){
                 g_print("Pipeline state changed from %s to %s:\n", gst_element_state_get_name(old_state), gst_element_state_get_name(new_state));
