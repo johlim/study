@@ -32,7 +32,7 @@ int main(int argc, char *argv[]){
         return -1;
     }
  
-    g_object_set(data.playbin, "uri", "http://docs.gstreamer.com/media/small/720p-60frames.avi", NULL);
+    g_object_set(data.playbin, "uri", "http://docs.gstreamer.com/media/small/sintel.mkv", NULL);
  
     ret = gst_element_set_state(data.playbin, GST_STATE_PLAYING);
     if(ret == GST_STATE_CHANGE_FAILURE){
