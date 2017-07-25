@@ -604,7 +604,7 @@ cheese_camera_create_video_filter_bin (CheeseCamera *camera, GError **error)
     cheese_camera_set_error_element_not_found (error, "main_valve");
     return FALSE;
   }
-#if 0
+#if 0 // origin
   if ((priv->effect_filter = gst_element_factory_make ("identity", "effect")) == NULL)
   {
     cheese_camera_set_error_element_not_found (error, "identity");
