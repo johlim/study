@@ -2,57 +2,63 @@
 
 int main(int argc, char *argv[]) {
   GstElement *pipeline, *source, *sink;
-  GstElement *o_pipeline, *o_source, *o_filter;
-  GstElement *bin;
+  GstElement *bin, *filter;
   GstPad *pad;
   GstBus *bus;
   GstMessage *msg;
   GstStateChangeReturn ret;
+  GstCaps * caps;
 
   /* Initialize GStreamer */
   gst_init (&argc, &argv);
 
   /* Create the elements */
-  o_source = gst_element_factory_make ("videotestsrc", "source");
-  o_filter = gst_element_factory_make ("bayer2rgb", "filter");
+  source = gst_element_factory_make ("videotestsrc", "source");
+  filter = gst_element_factory_make ("bayer2rgb", "filter");
   sink = gst_element_factory_make ("fakesink", "sink");
-  
+#if 1  
   bin = gst_bin_new("my_bin");
-  gst_bin_add(GST_BIN(bin),sink);
-  pad =gst_element_get_static_pad(sink,"sink"); //extract sink
+  gst_bin_add_many(GST_BIN(bin),filter, sink, NULL);
+  gst_element_link (filter, sink);
+  pad =gst_element_get_static_pad(filter,"sink"); //extract sink
   gst_element_add_pad(bin,gst_ghost_pad_new("sink",pad)); //link sink to bin
   gst_object_unref(GST_OBJECT(pad));
-/*(
+#else
   bin = gst_bin_new("my_srcbin");
-  gst_bin_add(GST_BIN(bin),src);
-  pad =gst_element_get_static_pad(sink,"sink"); //extract sink
-  gst_element_add_pad(bin,gst_ghost_pad_new("sink",pad)); //link sink to bin
+  gst_bin_add_many(GST_BIN(bin),source,filter, NULL);
+  pad =gst_element_get_static_pad(filter,"src"); //extract sink
+  gst_element_add_pad(bin,gst_ghost_pad_new("src",pad)); //link sink to bin
   gst_object_unref(GST_OBJECT(pad));
-*/
+#endif
+
   /* Create the empty pipeline */
-  o_pipeline = gst_pipeline_new ("src-pipeline");
   pipeline = gst_pipeline_new ("test-pipeline");
 
-  if (!pipeline || !source || !sink) {
+  if (!pipeline || !source || !sink || !filter) {
     g_printerr ("Not all elements could be created.\n");
     return -1;
   }
 
   /* Build the pipeline */
-  gst_bin_add_many (GST_BIN (pipeline), o_source, o_filter, bin , NULL);
-//  gst_bin_add_many (GST_BIN (pipeline), o_pipeline, sink, NULL);
+  gst_bin_add_many (GST_BIN (pipeline), source, bin , NULL);
 
-  gst_element_link_many (o_source, o_filter, bin , NULL);
-#if 0
-  if (gst_element_link (o_filter, sink) != TRUE) {
+
+  /* create cap */
+
+  caps = gst_caps_new_simple("video/x-bayer",
+          "format",G_TYPE_STRING,"bggr",
+          "width",G_TYPE_INT,320,
+          "height",G_TYPE_INT,240,
+          "framerate",GST_TYPE_FRACTION,25,1, NULL);
+
+  if (gst_element_link_filtered (source,bin,caps) != TRUE) {
     g_printerr ("Elements could not be linked.\n");
     gst_object_unref (pipeline);
     return -1;
   }
-#endif
   /* Modify the source's properties */
-  g_object_set (o_source, "pattern", 0, NULL);
-  g_object_set (o_source, "num-buffers", 1000, NULL);
+  g_object_set (source, "pattern", 0, NULL);
+  g_object_set (source, "num-buffers", 1000, NULL);
 
   GST_DEBUG_BIN_TO_DOT_FILE(pipeline, GST_DEBUG_GRAPH_SHOW_ALL, "testdot");
   /* Start playing */
