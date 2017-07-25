@@ -285,10 +285,11 @@ gst_myedgefilter_transform_frame_ip (GstVideoFilter * filter, GstVideoFrame * fr
   GST_DEBUG_OBJECT (myedgefilter, "transform_frame_ip");
 
   int i= gst_buffer_n_memory(frame->buffer);
+  int j=0;
   GstMapInfo info={0,};
   GstMapFlags flags=GST_MAP_WRITE;
 
-  for(int j=0; j<i; j++)
+  for(j=0; j<i; j++)
   {
 	  GstMemory * tmpMemory = gst_buffer_peek_memory(frame->buffer, j);
 	  if (gst_memory_map(tmpMemory, &info, flags ))
