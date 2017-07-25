@@ -37,8 +37,8 @@
 #include <linux/types.h>          /* for videodev2.h */
 #include <linux/videodev2.h>
 
-#include "../../mjpg_streamer.h"
-#include "../../utils.h"
+#include "port_streamer.h"
+#include "utils.h"
 #include "httpd.h"
 
 #define OUTPUT_PLUGIN_NAME "HTTP output plugin"
