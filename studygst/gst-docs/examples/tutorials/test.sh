@@ -1,0 +1,1 @@
+gst-launch-1.0 videotestsrc ! 'video/x-raw, format=(string)I420, width=(int)320, height=(int)240' !  rgbdemux ! tee name=src2 ! queue ! vgaratio ! fakesink src2. ! queue ! vgagoldfilter ! fakesink src2. ! queue ! vgahorizontaledge ! fakesink  src2. ! queue ! vgathreshold ! fakesink
