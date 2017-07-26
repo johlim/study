@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[]) {
   GstElement *pipeline, *source, *sink;
-  GstElement *bin, *filter;
+  GstElement *bin, *filter, *tee1 , *tee2;
   GstPad *pad;
   GstBus *bus;
   GstMessage *msg;
@@ -13,13 +13,17 @@ int main(int argc, char *argv[]) {
   gst_init (&argc, &argv);
 
   /* Create the elements */
-  source = gst_element_factory_make ("videotestsrc", "source");
+  source = gst_element_factory_make ("videotestsrc", "source");	
   filter = gst_element_factory_make ("bayer2rgb", "filter");
   sink = gst_element_factory_make ("fakesink", "sink");
+	tee1  = gst_element_factory_make ("tee","src1");
+	tee2  = gst_element_factory_make ("tee","src2");
+	
 #if 1  
   bin = gst_bin_new("my_bin");
-  gst_bin_add_many(GST_BIN(bin),filter, sink, NULL);
-  gst_element_link (filter, sink);
+  gst_bin_add_many(GST_BIN(bin),filter, tee2, sink, NULL);
+	gst_element_link (filter, tee2);
+  gst_element_link (tee2, sink);
   pad =gst_element_get_static_pad(filter,"sink"); //extract sink
   gst_element_add_pad(bin,gst_ghost_pad_new("sink",pad)); //link sink to bin
   gst_object_unref(GST_OBJECT(pad));
@@ -60,7 +64,7 @@ int main(int argc, char *argv[]) {
   g_object_set (source, "pattern", 0, NULL);
   g_object_set (source, "num-buffers", 1000, NULL);
 
-  GST_DEBUG_BIN_TO_DOT_FILE(pipeline, GST_DEBUG_GRAPH_SHOW_ALL, "testdot");
+  //GST_DEBUG_BIN_TO_DOT_FILE((struct GstBin *)pipeline, GST_DEBUG_GRAPH_SHOW_ALL, "testdot");
   /* Start playing */
   ret = gst_element_set_state (pipeline, GST_STATE_PLAYING);
   if (ret == GST_STATE_CHANGE_FAILURE) {
