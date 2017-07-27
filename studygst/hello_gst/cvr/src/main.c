@@ -256,15 +256,19 @@ void GST_CVR_SetMP4Param(GST_CVR_Handle hHandle)
 
     fprintf(stderr, "[GST_CVR]  SetMP4Param ++ \n");
 
+
+	hCamcorder->m_vidconvert = gst_element_factory_make ("videoconvert", "videoconvert");
+	if(!hCamcorder->m_vidconvert) fprintf(stderr, "### m_vidconvert create error\n");
+
     hCamcorder->m_vsource = gst_element_factory_make ("v4l2src", "v4l2src");
     if (!hCamcorder->m_vsource) fprintf(stderr, "### v412src create error\n");
     hCamcorder->m_tee = gst_element_factory_make ("tee", "t1");
     if (!hCamcorder->m_tee) fprintf(stderr, "### tee create error\n");
 
     hCamcorder->m_video_in_caps = gst_caps_new_simple("video/x-raw",
-                                    "format", G_TYPE_STRING, "I420",
-                                    "width", G_TYPE_INT, 1280,
-                                    "height", G_TYPE_INT, 720,
+//                                    "format", G_TYPE_STRING, "YUY2",
+                                    "width", G_TYPE_INT, 320,
+                                    "height", G_TYPE_INT, 240,
                                     NULL);
 
     hCamcorder->m_asource = gst_element_factory_make("alsasrc", "alsasrc");
@@ -283,8 +287,8 @@ void GST_CVR_SetMP4Param(GST_CVR_Handle hHandle)
     hCamcorder->m_queue_aud2 = gst_element_factory_make("queue", "queue_adu2");
     hCamcorder->m_queue_mux = gst_element_factory_make("queue", "queue_mux");
 
-    hCamcorder->m_imagesink = gst_element_factory_make("faksink", "sink");
-    if(!hCamcorder->m_imagesink) fprintf(stderr, "### fakesink create error\n");
+    hCamcorder->m_imagesink = gst_element_factory_make("ximagesink", "sink");
+    if(!hCamcorder->m_imagesink) fprintf(stderr, "### ximagesink create error\n");
 
     hCamcorder->m_video_enc = gst_element_factory_make ("avenc_mpeg4", "avenc_mpeg4");
     if (!hCamcorder->m_video_enc) fprintf(stderr, "### avenc_mpeg4 create error\n");
@@ -348,8 +352,8 @@ void GST_CVR_SetH264Param(GST_CVR_Handle hHandle)
     hCamcorder->m_queue_aud2 = gst_element_factory_make("queue", "queue_adu2");
     hCamcorder->m_queue_mux = gst_element_factory_make("queue", "queue_mux");
 
-    hCamcorder->m_imagesink = gst_element_factory_make("fakesink", "sink");
-    if(!hCamcorder->m_imagesink) fprintf(stderr, "### fakesink create error\n");
+    hCamcorder->m_imagesink = gst_element_factory_make("ximagesink", "sink");
+    if(!hCamcorder->m_imagesink) fprintf(stderr, "### ximagesink create error\n");
 
     hCamcorder->m_video_enc = gst_element_factory_make ("x264enc", "x264enc");
     if (!hCamcorder->m_video_enc) fprintf(stderr, "### x264enc create error\n");
@@ -442,13 +446,35 @@ Description:
 void GST_CVR_PreviewStart(GST_CVR_Handle hHandle)
 {
     GST_CVR_Struct* hCamcorder = (GST_CVR_Struct*)hHandle;
+    GstCaps * caps;
 
     fprintf(stderr, "[GST_CVR]  PreviewStart ++\n");
-    gst_bin_add_many(GST_BIN(hCamcorder->m_bin), hCamcorder->m_vsource,
+    if (hCamcorder->m_pipeline==NULL)
+    	hCamcorder->m_pipeline = gst_pipeline_new("pipeline");
+
+    gst_bin_add_many(GST_BIN(hCamcorder->m_pipeline), hCamcorder->m_vsource,
+    				hCamcorder->m_vidconvert,
                      hCamcorder->m_imagesink,
                      NULL);
 
-    gst_element_link(hCamcorder->m_vsource, hCamcorder->m_imagesink);
+    /* create cap */
+
+#if 0
+    if (gst_element_link_filtered (hCamcorder->m_vsource, hCamcorder->m_imagesink,caps) != TRUE) {
+      g_printerr ("Elements could not be linked.\n");
+      return -1;
+    }
+#else
+    if ( gst_element_link_filtered(hCamcorder->m_vsource, hCamcorder->m_vidconvert, hCamcorder->m_video_in_caps) != TRUE)
+    {
+    	g_printerr("source, convert Element could not be linked.\n");
+    }
+
+    if (gst_element_link(hCamcorder->m_vidconvert, hCamcorder->m_imagesink) != TRUE)
+    {
+    	g_printerr("convert, sink Element could not be linked.\n");
+	}
+#endif
 
     gst_bus_add_watch(hCamcorder->m_bus, hCamcorder->m_buscb, hCamcorder);
     gst_element_set_state (hCamcorder->m_pipeline, GST_STATE_PLAYING);
@@ -472,11 +498,16 @@ void GST_CVR_PreviewStop(GST_CVR_Handle hHandle)
     fprintf(stderr, "[GST_CVR]	PreviewStop ++\n");
 
 
-    gst_element_set_state (hCamcorder->m_pipeline, GST_STATE_PAUSED);
+    gst_element_set_state (hCamcorder->m_pipeline, GST_STATE_NULL);
 
     gst_element_unlink_many (hCamcorder->m_vsource,
+    						hCamcorder->m_vidconvert,
                             hCamcorder->m_imagesink,
                             NULL);
+
+    gst_object_unref(hCamcorder->m_pipeline);
+    hCamcorder->m_pipeline=NULL;
+
     fprintf(stderr, "[GST_CVR]	PreviewStop --\n");
 }
 
@@ -589,7 +620,7 @@ void GST_CVR_Stop(GST_CVR_Handle hHandle)
 
     fprintf(stderr, "[GST_CVR]	Stop ++\n");
 
-    /* 처음의 source 가 되는 element에다가 end-of-stream event를 날려준다.  */
+    /* 泥섏쓬�쓽 source 媛� �릺�뒗 element�뿉�떎媛� end-of-stream event瑜� �궇�젮以��떎.  */
     if(hCamcorder->m_vsource)
         gst_element_send_event(hCamcorder->m_vsource, gst_event_new_eos());
 
@@ -597,13 +628,13 @@ void GST_CVR_Stop(GST_CVR_Handle hHandle)
         gst_element_send_event(hCamcorder->m_asource, gst_event_new_eos());
 
     /*
-            처음의 mux의 sink pad에다가 end-of-stream event를 날려줘두 된다.
-            Mux에다 던져두 안된당.. ㅠㅠ.
+            泥섏쓬�쓽 mux�쓽 sink pad�뿉�떎媛� end-of-stream event瑜� �궇�젮以섎몢 �맂�떎.
+            Mux�뿉�떎 �뜕�졇�몢 �븞�맂�떦.. �뀪�뀪.
        */
     //pad = gst_element_get_pad (hCamcorder->m_mux, "sink");
     //gst_element_add_pad (pad, gst_event_new_eos());
 
-    /* BUS에다 end-of-stream event를 보내지 않도록 한다. */
+    /* BUS�뿉�떎 end-of-stream event瑜� 蹂대궡吏� �븡�룄濡� �븳�떎. */
 
     fprintf(stderr, "[GST_CVR]	Stop --\n");
 
