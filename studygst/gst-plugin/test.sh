@@ -1,4 +1,5 @@
-gst-launch-1.0 videotestsrc ! 'video/x-raw, format=(string)I420, width=(int)320, height=(int)240' ! nvvidconv ! 'video/x-raw(memory:NVMM), width=(int)320, height=(int)240, format=(string)I420' ! rgbdemux ! fakesink
+gst-launch-1.0 videotestsrc ! 'video/x-raw, format=(string)I420, width=(int)320, height=(int)240' !  rgbdemux ! tee name=src2 ! queue ! vgaratio ! fakesink src2. ! queue ! vgagoldfilter ! fakesink src2. ! queue ! vgahorizontaledge ! fakesink  src2. ! queue ! vgathreshold ! fakesink
+#gst-launch-1.0 videotestsrc ! 'video/x-raw, format=(string)I420, width=(int)320, height=(int)240' ! nvvidconv ! 'video/x-raw(memory:NVMM), width=(int)320, height=(int)240, format=(string)I420' ! rgbdemux ! fakesink
 
 #gst-launch-1.0 videotestsrc ! 'video/x-raw, format=(string)I420, width=(int)1280, height=(int)720' ! nvvidconv ! 'video/x-raw(memory:NVMM), width=(int)640, height=(int)480' ! omxh264enc ! 'video/x-h264, stream-format=(string)byte-stream' ! h264parse ! qtmux ! fakesink
 
