@@ -1,7 +1,6 @@
 #include "GST_CVR_API.h"
 
 
-
 /*
 =================================================================================================================
 Function Name: GST_CVR_Main
@@ -102,6 +101,7 @@ void GST_CVR_Main(gpointer data)
             case 14:
                 hCamcorder = (GST_CVR_Struct*)hGST_CVR;
                 GST_DEBUG_BIN_TO_DOT_FILE(GST_BIN(hCamcorder->m_pipeline), GST_DEBUG_GRAPH_SHOW_ALL, "GST_CVR");
+								
                 break;
 
             default:
@@ -264,23 +264,23 @@ void GST_CVR_SetMP4Param(GST_CVR_Handle hHandle)
     if (!hCamcorder->m_vsource) fprintf(stderr, "### v412src create error\n");
     hCamcorder->m_tee = gst_element_factory_make ("tee", "t1");
     if (!hCamcorder->m_tee) fprintf(stderr, "### tee create error\n");
-
+/*
     hCamcorder->m_video_in_caps = gst_caps_new_simple("video/x-raw",
 //                                    "format", G_TYPE_STRING, "YUY2",
                                     "width", G_TYPE_INT, 320,
                                     "height", G_TYPE_INT, 240,
                                     NULL);
-
+*/
     hCamcorder->m_asource = gst_element_factory_make("alsasrc", "alsasrc");
     if(!hCamcorder->m_asource) fprintf(stderr, "### arlsasrc create error\n");
-
+/*
     hCamcorder->m_audio_in_caps = gst_caps_new_simple("audio/x-raw",
                                     "depth", G_TYPE_INT, 16,
                                     "rate", G_TYPE_INT, 8000,
                                     "channels", G_TYPE_INT, 1,
                                     "width", G_TYPE_INT, 16,
                                     NULL);
-
+*/
     hCamcorder->m_queue_disp = gst_element_factory_make("queue", "queue_disp");
     hCamcorder->m_queue_save = gst_element_factory_make("queue", "queue_save");
     hCamcorder->m_queue_aud1 = gst_element_factory_make("queue", "queue_aud1");
@@ -289,6 +289,7 @@ void GST_CVR_SetMP4Param(GST_CVR_Handle hHandle)
 
     hCamcorder->m_imagesink = gst_element_factory_make("ximagesink", "sink");
     if(!hCamcorder->m_imagesink) fprintf(stderr, "### ximagesink create error\n");
+		g_object_set(hCamcorder->m_imagesink, "async", FALSE, NULL);
 
     hCamcorder->m_video_enc = gst_element_factory_make ("avenc_mpeg4", "avenc_mpeg4");
     if (!hCamcorder->m_video_enc) fprintf(stderr, "### avenc_mpeg4 create error\n");
@@ -436,7 +437,7 @@ void GST_CVR_SetAODParam(GST_CVR_Handle hHandle)
 
 
 
-
+GstCaps *caps;
 /*
 =================================================================================================================
 Function Name: GST_CVR_PreviewStart
@@ -446,40 +447,61 @@ Description:
 void GST_CVR_PreviewStart(GST_CVR_Handle hHandle)
 {
     GST_CVR_Struct* hCamcorder = (GST_CVR_Struct*)hHandle;
-    GstCaps * caps;
 
+		GstClockTime timeout;
+		GstState *pending;
+		GstState *state;
+		
     fprintf(stderr, "[GST_CVR]  PreviewStart ++\n");
     if (hCamcorder->m_pipeline==NULL)
     	hCamcorder->m_pipeline = gst_pipeline_new("pipeline");
 
-    gst_bin_add_many(GST_BIN(hCamcorder->m_pipeline), hCamcorder->m_vsource,
-    				hCamcorder->m_vidconvert,
-                     hCamcorder->m_imagesink,
-                     NULL);
+		gst_element_get_state(hCamcorder->m_pipeline,  state, pending, timeout);
+		
+		if (state == GST_STATE_PAUSED);
+		{
+			gst_bin_add_many(GST_BIN(hCamcorder->m_pipeline), hCamcorder->m_vsource,
+											hCamcorder->m_vidconvert,
+											hCamcorder->m_imagesink,
+											NULL);
 
-    /* create cap */
-
+			/* create cap */
 #if 0
-    if (gst_element_link_filtered (hCamcorder->m_vsource, hCamcorder->m_imagesink,caps) != TRUE) {
-      g_printerr ("Elements could not be linked.\n");
-      return -1;
-    }
+			caps = gst_caps_new_simple("video/x-raw",
+	//                                    "format", G_TYPE_STRING, "YUY2",
+																			"width", G_TYPE_INT, 320,
+																			"height", G_TYPE_INT, 240,
+																			NULL);
+
+
+			if ( gst_element_link_filtered(hCamcorder->m_vsource, hCamcorder->m_vidconvert,caps) != TRUE)
+			{
+				g_printerr("source, convert , caps Element could not be linked.\n");
+			}
+			gst_object_unref(caps);
 #else
-    if ( gst_element_link_filtered(hCamcorder->m_vsource, hCamcorder->m_vidconvert, hCamcorder->m_video_in_caps) != TRUE)
-    {
-    	g_printerr("source, convert Element could not be linked.\n");
-    }
+			if ( gst_element_link(hCamcorder->m_vsource, hCamcorder->m_vidconvert) != TRUE)
+			{
+				g_printerr("source, convert Element could not be linked.\n");
+			}
+#endif			
+			
+			if (gst_element_link(hCamcorder->m_vidconvert, hCamcorder->m_imagesink) != TRUE)
+			{
+				g_printerr("convert, sink Element could not be linked.\n");
+			}
+			
+			gst_bus_add_watch(hCamcorder->m_bus, hCamcorder->m_buscb, hCamcorder->m_loop);
+			
+		}
+		
 
-    if (gst_element_link(hCamcorder->m_vidconvert, hCamcorder->m_imagesink) != TRUE)
-    {
-    	g_printerr("convert, sink Element could not be linked.\n");
-	}
-#endif
-
-    gst_bus_add_watch(hCamcorder->m_bus, hCamcorder->m_buscb, hCamcorder);
+		
+		
     gst_element_set_state (hCamcorder->m_pipeline, GST_STATE_PLAYING);
+		
 
-
+		
     fprintf(stderr, "[GST_CVR]  PreviewStart --\n");
 
 }
@@ -497,17 +519,25 @@ void GST_CVR_PreviewStop(GST_CVR_Handle hHandle)
 
     fprintf(stderr, "[GST_CVR]	PreviewStop ++\n");
 
-
-    gst_element_set_state (hCamcorder->m_pipeline, GST_STATE_NULL);
-
-    gst_element_unlink_many (hCamcorder->m_vsource,
-    						hCamcorder->m_vidconvert,
+    gst_element_set_state (hCamcorder->m_pipeline, GST_STATE_PAUSED);
+	
+    gst_element_unlink_many (hCamcorder->m_vsource,														
+														hCamcorder->m_vidconvert,
                             hCamcorder->m_imagesink,
                             NULL);
-
-    gst_object_unref(hCamcorder->m_pipeline);
-    hCamcorder->m_pipeline=NULL;
-
+		
+		//gst_bin_remove (GST_BIN (hCamcorder->m_pipeline), hCamcorder->m_video_in_caps);	
+		gst_bin_remove (GST_BIN (hCamcorder->m_pipeline), hCamcorder->m_vidconvert);	
+		gst_bin_remove (GST_BIN (hCamcorder->m_pipeline), hCamcorder->m_vsource);
+		gst_bin_remove (GST_BIN (hCamcorder->m_pipeline), hCamcorder->m_imagesink);
+	
+		
+		gst_object_unref(hCamcorder->m_vidconvert);
+		gst_object_unref(hCamcorder->m_vsource);
+		gst_object_unref(hCamcorder->m_imagesink);
+		
+		//gst_element_set_state (hCamcorder->m_pipeline, GST_STATE_NULL);
+		
     fprintf(stderr, "[GST_CVR]	PreviewStop --\n");
 }
 
