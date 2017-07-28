@@ -257,10 +257,10 @@ void GST_CVR_SetMP4Param(GST_CVR_Handle hHandle)
     fprintf(stderr, "[GST_CVR]  SetMP4Param ++ \n");
 
 
-	hCamcorder->m_vidconvert = gst_element_factory_make ("videoconvert", "videoconvert");
+	hCamcorder->m_vidconvert = gst_element_factory_make ("nvvidconv", "nvvidconv");
 	if(!hCamcorder->m_vidconvert) fprintf(stderr, "### m_vidconvert create error\n");
 
-    hCamcorder->m_vsource = gst_element_factory_make ("v4l2src", "v4l2src");
+    hCamcorder->m_vsource = gst_element_factory_make ("nvcamerasrc", "nvcamerasrc");
     if (!hCamcorder->m_vsource) fprintf(stderr, "### v412src create error\n");
     hCamcorder->m_tee = gst_element_factory_make ("tee", "t1");
     if (!hCamcorder->m_tee) fprintf(stderr, "### tee create error\n");
@@ -287,12 +287,12 @@ void GST_CVR_SetMP4Param(GST_CVR_Handle hHandle)
     hCamcorder->m_queue_aud2 = gst_element_factory_make("queue", "queue_adu2");
     hCamcorder->m_queue_mux = gst_element_factory_make("queue", "queue_mux");
 
-    hCamcorder->m_imagesink = gst_element_factory_make("ximagesink", "sink");
-    if(!hCamcorder->m_imagesink) fprintf(stderr, "### ximagesink create error\n");
+    hCamcorder->m_imagesink = gst_element_factory_make("nveglglessink", "sink");
+    if(!hCamcorder->m_imagesink) fprintf(stderr, "### nveglglessink create error\n");
 		g_object_set(hCamcorder->m_imagesink, "async", FALSE, NULL);
 
-    hCamcorder->m_video_enc = gst_element_factory_make ("avenc_mpeg4", "avenc_mpeg4");
-    if (!hCamcorder->m_video_enc) fprintf(stderr, "### avenc_mpeg4 create error\n");
+    hCamcorder->m_video_enc = gst_element_factory_make ("omxh264enc", "omxnc_mpeg4");
+    if (!hCamcorder->m_video_enc) fprintf(stderr, "### omxh264enc create error\n");
 
     hCamcorder->m_audio_enc = gst_element_factory_make ("avenc_aac", "avenc_aac");
     if(!hCamcorder->m_audio_enc) fprintf(stderr, "### avenc_aac create error\n");
@@ -325,7 +325,7 @@ void GST_CVR_SetH264Param(GST_CVR_Handle hHandle)
 
     fprintf(stderr, "[GST_CVR]  SetH264Param ++ \n");
 
-    hCamcorder->m_vsource = gst_element_factory_make ("v4l2src", "v4l2src");
+    hCamcorder->m_vsource = gst_element_factory_make ("nvcamerasrc", "nvcamerasrc");
     if (!hCamcorder->m_vsource) fprintf(stderr, "### v412src create error\n");
     hCamcorder->m_tee = gst_element_factory_make ("tee", "t1");
     if (!hCamcorder->m_tee) fprintf(stderr, "### tee create error\n");
@@ -353,8 +353,8 @@ void GST_CVR_SetH264Param(GST_CVR_Handle hHandle)
     hCamcorder->m_queue_aud2 = gst_element_factory_make("queue", "queue_adu2");
     hCamcorder->m_queue_mux = gst_element_factory_make("queue", "queue_mux");
 
-    hCamcorder->m_imagesink = gst_element_factory_make("ximagesink", "sink");
-    if(!hCamcorder->m_imagesink) fprintf(stderr, "### ximagesink create error\n");
+    hCamcorder->m_imagesink = gst_element_factory_make("nveglglessink", "sink");
+    if(!hCamcorder->m_imagesink) fprintf(stderr, "### nveglglessink create error\n");
 
     hCamcorder->m_video_enc = gst_element_factory_make ("x264enc", "x264enc");
     if (!hCamcorder->m_video_enc) fprintf(stderr, "### x264enc create error\n");
