@@ -1,6 +1,35 @@
 #include "GST_CVR_API.h"
 
+enum
+{
+  PROP_0,
+  PROP_VIDEO_TEXTURE,
+  PROP_DEVICE_NODE,
+  PROP_FORMAT,
+  PROP_NUM_CAMERA_DEVICES,
+  PROP_LAST
+};
 
+enum
+{
+  PHOTO_SAVED,
+  PHOTO_TAKEN,
+  VIDEO_SAVED,
+  STATE_FLAGS_CHANGED,
+  LAST_SIGNAL
+};
+
+
+enum
+{
+    CAMERA_ERROR_ELEMENT_NOT_FOUND,
+    CAMERA_ERROR_LAST
+};
+static guint camera_signals[LAST_SIGNAL];
+static GParamSpec *properties[PROP_LAST];
+
+
+#define CAMERA_ERROR camera_error_quark ()
 /*
 =================================================================================================================
 Function Name: GST_CVR_Main
@@ -100,7 +129,7 @@ void GST_CVR_Main(gpointer data)
 
             case 14:
                 hCamcorder = (GST_CVR_Struct*)hGST_CVR;
-                GST_DEBUG_BIN_TO_DOT_FILE(GST_BIN(hCamcorder->m_pipeline), GST_DEBUG_GRAPH_SHOW_ALL, "GST_CVR");
+                GST_DEBUG_BIN_TO_DOT_FILE(GST_BIN(hCamcorder->video_filter_bin), GST_DEBUG_GRAPH_SHOW_ALL, "_filter");
 								
                 break;
 
@@ -157,6 +186,125 @@ static gboolean GST_CVR_CallBack (GstBus *bus, GstMessage *msg, gpointer data)
     }
     return TRUE;
 }
+GQuark camera_error_quark (void);
+
+GQuark
+camera_error_quark (void)
+{
+  return g_quark_from_static_string ("camera-error-quark");
+}
+
+camera_set_error_element_not_found (GError **error, const gchar *factoryname)
+{
+  g_return_if_fail (error == NULL || *error == NULL);
+
+}
+
+static gboolean
+camera_create_effects_preview_bin (GST_CVR_Handle hHandle , GError ** error)
+{
+  GST_CVR_Struct *priv = hHandle;
+
+  gboolean ok = TRUE;
+  GstElement *scale;
+  GstPad  *pad;
+
+  g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+
+  priv->effects_preview_bin = gst_bin_new ("effects_preview_bin");
+
+  if ((priv->effects_valve = gst_element_factory_make ("valve", "effects_valve")) == NULL)
+  {
+    camera_set_error_element_not_found (error, "effects_valve");
+    return FALSE;
+  }
+  g_object_set (G_OBJECT (priv->effects_valve), "drop", TRUE, NULL);
+  if ((scale = gst_element_factory_make ("videoscale", "effects_scale")) == NULL)
+  {
+    camera_set_error_element_not_found (error, "videoscale");
+    return FALSE;
+  }
+  if ((priv->effects_capsfilter = gst_element_factory_make ("capsfilter", "effects_capsfilter")) == NULL)
+  {
+    camera_set_error_element_not_found (error, "capsfilter");
+    return FALSE;
+  }
+  if ((priv->effects_tee = gst_element_factory_make ("tee", "effects_tee")) == NULL)
+  {
+    camera_set_error_element_not_found (error, "tee");
+    return FALSE;
+  }
+
+  gst_bin_add_many (GST_BIN (priv->effects_preview_bin), priv->effects_valve,
+                    scale, priv->effects_capsfilter, priv->effects_tee, NULL);
+
+  ok &= gst_element_link_many (priv->effects_valve, scale,
+                           priv->effects_capsfilter, priv->effects_tee, NULL);
+
+  /* add ghostpads */
+
+  pad = gst_element_get_static_pad (priv->effects_valve, "sink");
+  gst_element_add_pad (priv->effects_preview_bin, gst_ghost_pad_new ("sink", pad));
+  gst_object_unref (GST_OBJECT (pad));
+
+  if (!ok)
+    g_error ("Unable to create effects preview bin");
+
+  return TRUE;
+}
+
+static gboolean 
+camera_create_video_filter_bin (GST_CVR_Handle hHandle , GError ** error)
+{
+    GST_CVR_Struct *priv = (GST_CVR_Struct *)hHandle; 
+    gboolean ok = TRUE;
+    GstPad  *pad;
+
+    priv->video_filter_bin = gst_bin_new("video_filter_bin");
+    if ((priv->camera_tee = gst_element_factory_make ("tee", "camera_tee")) == NULL)
+    {
+        camera_set_error_element_not_found (error, "tee");
+        return FALSE;
+    }
+    if ((priv->main_valve = gst_element_factory_make ("valve", "main_valve")) == NULL)
+    {
+        camera_set_error_element_not_found (error, "main_valve");
+        return FALSE;
+    }
+    if ((priv->effect_filter = gst_element_factory_make ("identity", "effect")) == NULL)
+    {
+        camera_set_error_element_not_found (error, "identity");
+        return FALSE;
+    }
+    priv->current_effect_desc = g_strdup("identity");
+    if ((priv->video_balance = gst_element_factory_make ("videobalance", "video_balance")) == NULL)
+    {
+        camera_set_error_element_not_found (error, "videobalance");
+        return FALSE;
+    }
+
+    gst_bin_add_many (GST_BIN (priv->video_filter_bin), priv->camera_tee,
+            priv->main_valve, priv->effect_filter,
+            priv->video_balance, priv->effects_preview_bin, NULL);
+
+    ok &= gst_element_link_many (priv->camera_tee, priv->main_valve,
+            priv->effect_filter, priv->video_balance, NULL);
+
+    /* add ghostpads */
+
+    pad = gst_element_get_static_pad (priv->video_balance, "src");
+    gst_element_add_pad (priv->video_filter_bin, gst_ghost_pad_new ("src", pad));
+    gst_object_unref (GST_OBJECT (pad));
+
+    pad = gst_element_get_static_pad (priv->camera_tee, "sink");
+    gst_element_add_pad (priv->video_filter_bin, gst_ghost_pad_new ("sink", pad));
+    gst_object_unref (GST_OBJECT (pad));
+
+    if (!ok)
+        g_error ("Unable to create filter bin");
+
+    return TRUE;
+}
 
 /*
 =================================================================================================================
@@ -167,6 +315,7 @@ Description:
 GST_CVR_Struct* GST_CVR_Create(void)
 {
     GST_CVR_Struct* pRecorder;
+    GError  *tmp_error = NULL;
     const gchar *nano_str;
     guint major, minor, micro, nano;
     fprintf(stderr, "[GST_CVR]  Create  ++\n");
@@ -187,10 +336,16 @@ GST_CVR_Struct* GST_CVR_Create(void)
     if (!pRecorder->m_bus) GST_DEBUG("### [GST_CVR] get_element_get_bus fails\n");
     pRecorder->m_buscb = GST_CVR_CallBack;
 
+    gst_bus_add_signal_watch (pRecorder->m_bus);
+    g_signal_connect (G_OBJECT (pRecorder->m_bus), "message",
+                    G_CALLBACK (pRecorder->m_buscb), pRecorder);
+
     // Make Main Binary
     pRecorder->m_bin = gst_bin_new ("src_bin");
-    gst_bin_add(GST_BIN(pRecorder->m_pipeline), pRecorder->m_bin);
+  //  gst_bin_add(GST_BIN(pRecorder->m_pipeline), pRecorder->m_bin);
 
+    // Makefile Filter bin
+    camera_create_video_filter_bin (pRecorder, &tmp_error);
 
     g_set_prgname("GST_CVR");
     gst_version(&major, &minor, &micro, &nano);
@@ -257,10 +412,10 @@ void GST_CVR_SetMP4Param(GST_CVR_Handle hHandle)
     fprintf(stderr, "[GST_CVR]  SetMP4Param ++ \n");
 
 
-	hCamcorder->m_vidconvert = gst_element_factory_make ("nvvidconv", "nvvidconv");
+	hCamcorder->m_vidconvert = gst_element_factory_make ("videoconvert", "videoconvert");
 	if(!hCamcorder->m_vidconvert) fprintf(stderr, "### m_vidconvert create error\n");
 
-    hCamcorder->m_vsource = gst_element_factory_make ("nvcamerasrc", "nvcamerasrc");
+    hCamcorder->m_vsource = gst_element_factory_make ("v4l2src", "v4l2src");
     if (!hCamcorder->m_vsource) fprintf(stderr, "### v412src create error\n");
     hCamcorder->m_tee = gst_element_factory_make ("tee", "t1");
     if (!hCamcorder->m_tee) fprintf(stderr, "### tee create error\n");
@@ -287,11 +442,11 @@ void GST_CVR_SetMP4Param(GST_CVR_Handle hHandle)
     hCamcorder->m_queue_aud2 = gst_element_factory_make("queue", "queue_adu2");
     hCamcorder->m_queue_mux = gst_element_factory_make("queue", "queue_mux");
 
-    hCamcorder->m_imagesink = gst_element_factory_make("nveglglessink", "sink");
-    if(!hCamcorder->m_imagesink) fprintf(stderr, "### nveglglessink create error\n");
+    hCamcorder->m_imagesink = gst_element_factory_make("ximagesink", "sink");
+    if(!hCamcorder->m_imagesink) fprintf(stderr, "### ximagesink create error\n");
 		g_object_set(hCamcorder->m_imagesink, "async", FALSE, NULL);
 
-    hCamcorder->m_video_enc = gst_element_factory_make ("omxh264enc", "omxnc_mpeg4");
+    hCamcorder->m_video_enc = gst_element_factory_make ("x264enc", "x264enc");
     if (!hCamcorder->m_video_enc) fprintf(stderr, "### omxh264enc create error\n");
 
     hCamcorder->m_audio_enc = gst_element_factory_make ("avenc_aac", "avenc_aac");
@@ -325,7 +480,7 @@ void GST_CVR_SetH264Param(GST_CVR_Handle hHandle)
 
     fprintf(stderr, "[GST_CVR]  SetH264Param ++ \n");
 
-    hCamcorder->m_vsource = gst_element_factory_make ("nvcamerasrc", "nvcamerasrc");
+    hCamcorder->m_vsource = gst_element_factory_make ("v4l2src", "v4l2src");
     if (!hCamcorder->m_vsource) fprintf(stderr, "### v412src create error\n");
     hCamcorder->m_tee = gst_element_factory_make ("tee", "t1");
     if (!hCamcorder->m_tee) fprintf(stderr, "### tee create error\n");
@@ -353,8 +508,8 @@ void GST_CVR_SetH264Param(GST_CVR_Handle hHandle)
     hCamcorder->m_queue_aud2 = gst_element_factory_make("queue", "queue_adu2");
     hCamcorder->m_queue_mux = gst_element_factory_make("queue", "queue_mux");
 
-    hCamcorder->m_imagesink = gst_element_factory_make("nveglglessink", "sink");
-    if(!hCamcorder->m_imagesink) fprintf(stderr, "### nveglglessink create error\n");
+    hCamcorder->m_imagesink = gst_element_factory_make("ximagesink", "sink");
+    if(!hCamcorder->m_imagesink) fprintf(stderr, "### ximagesink create error\n");
 
     hCamcorder->m_video_enc = gst_element_factory_make ("x264enc", "x264enc");
     if (!hCamcorder->m_video_enc) fprintf(stderr, "### x264enc create error\n");
@@ -491,7 +646,7 @@ void GST_CVR_PreviewStart(GST_CVR_Handle hHandle)
 				g_printerr("convert, sink Element could not be linked.\n");
 			}
 			
-			gst_bus_add_watch(hCamcorder->m_bus, hCamcorder->m_buscb, hCamcorder->m_loop);
+//			gst_bus_add_watch(hCamcorder->m_bus, hCamcorder->m_buscb, hCamcorder->m_loop);
 			
 		}
 		
