@@ -10,19 +10,32 @@
 */
 typedef struct GST_CVR_Struct
 {
-    char        m_filename[256];
-    GMainLoop   *m_loop;
-    GstElement 	*m_pipeline;
     GstBus 		*m_bus;
+    GMainLoop   *m_loop;
     GstElement 	*m_bin;
+    GstElement 	*m_pipeline;
+    GstElement  *video_filter_bin;
+    GstElement *video_balance;
+    GstElement *camera_tee, *effects_tee;
+    GstElement *main_valve, *effects_valve;
+    gchar *current_effect_desc;
+
+    GstElement *effects_preview_bin;
+    GstElement *effect_filter, *effects_capsfilter;
 
     GstElement 	*m_vsource, *m_vidconvert, *m_filter, *m_parser, *m_colcon,
                 *m_tee, *m_queue_disp, *m_queue_save, *m_queue_aud1, *m_queue_aud2, *m_scale,
                 *m_imagesink, *m_video_enc, *m_mux, *m_queue_mux, *m_file,
                 *m_asource, *m_audconvert, *m_audio_enc;
-            
+
+    GstElement  *video_file_sink; 
+
     GstCaps 	*m_scale_caps, *m_video_in_caps,  *m_audio_in_caps, *m_audio_out_caps;
     gboolean     (*m_buscb)(GstBus *bus, GstMessage *msg, gpointer data);
+    gboolean    is_recording;
+    gboolean    pipeline_is_playing;
+    gboolean    effect_pipeline_is_playing;
+    char        m_filename[256];
 }
 GST_CVR_Struct;
 
