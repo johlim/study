@@ -429,26 +429,22 @@ void GST_CVR_SetMP4Param(GST_CVR_Handle hHandle)
  gst-launch-1.0 alsasrc ! audioconvert ! audioresample ! audiorate 
  ! "audio/x-raw, rate=48000, channels=1" ! queue ! voaacenc ! queue ! filesink location="test.aac"
  */
-/*
+
     hCamcorder->m_asource = gst_element_factory_make("alsasrc", "alsasrc");
     if (!hCamcorder->m_asource)
         fprintf(stderr, "### arlsasrc create error\n");
-    /*
-    hCamcorder->m_audio_in_caps = gst_caps_new_simple("audio/x-raw",
-                                    "depth", G_TYPE_INT, 16,
-                                    "rate", G_TYPE_INT, 8000,
-                                    "channels", G_TYPE_INT, 1,
-                                    "width", G_TYPE_INT, 16,
-                                    NULL);
+    
 
     hCamcorder->m_queue_disp = gst_element_factory_make("queue", "queue_disp");
     hCamcorder->m_queue_save = gst_element_factory_make("queue", "queue_save");
     hCamcorder->m_queue_aud1 = gst_element_factory_make("queue", "queue_aud1");
-    hCamcorder->m_queue_aud2 = gst_element_factory_make("queue", "queue_adu2");
-*/
+    // hCamcorder->m_queue_aud2 = gst_element_factory_make("queue", "queue_adu2");
+
     hCamcorder->m_queue_mux = gst_element_factory_make("queue", "queue_mux");
 
     hCamcorder->m_imagesink = gst_element_factory_make("ximagesink", "sink");
+    ///////////////////////////////////////////////////////////////////////////
+    //hCamcorder->m_imagesink = gst_element_factory_make("vaapisink", "sink");
     if (!hCamcorder->m_imagesink)
         fprintf(stderr, "### ximagesink create error\n");
     g_object_set(hCamcorder->m_imagesink, "async", FALSE, NULL);
@@ -457,12 +453,12 @@ void GST_CVR_SetMP4Param(GST_CVR_Handle hHandle)
     if (!hCamcorder->m_video_enc)
         fprintf(stderr, "### omxh264enc create error\n");
 
-    // hCamcorder->m_audio_enc = gst_element_factory_make("avenc_aac", "avenc_aac");
-    // if (!hCamcorder->m_audio_enc)
-    //     fprintf(stderr, "### avenc_aac create error\n");
-    // g_object_set(hCamcorder->m_audio_enc, "bitrate", 8000, NULL);
+    hCamcorder->m_audio_enc = gst_element_factory_make("voaacenc", "voaacenc");
+    if (!hCamcorder->m_audio_enc)
+        fprintf(stderr, "### voaacenc create error\n");
+    g_object_set(hCamcorder->m_audio_enc, "bitrate", 8000, NULL);
 
-    // hCamcorder->m_audconvert = gst_element_factory_make("audioconvert", "audioconvert");
+    hCamcorder->m_audconvert = gst_element_factory_make("audioconvert", "audioconvert");
 
     hCamcorder->m_mux = gst_element_factory_make("mp4mux", "mp4mux");
     if (!hCamcorder->m_mux)
@@ -505,7 +501,7 @@ void GST_CVR_SetH264Param(GST_CVR_Handle hHandle)
                                                       "width", G_TYPE_INT, 640,
                                                       "height", G_TYPE_INT, 480,
                                                       NULL);
-
+#endif
     hCamcorder->m_asource = gst_element_factory_make("alsasrc", "alsasrc");
     if (!hCamcorder->m_asource)
         fprintf(stderr, "### arlsasrc create error\n");
@@ -514,16 +510,16 @@ void GST_CVR_SetH264Param(GST_CVR_Handle hHandle)
     hCamcorder->m_queue_disp = gst_element_factory_make("queue", "queue_disp");
     hCamcorder->m_queue_save = gst_element_factory_make("queue", "queue_save");
     hCamcorder->m_queue_aud1 = gst_element_factory_make("queue", "queue_aud1");
-    hCamcorder->m_queue_aud2 = gst_element_factory_make("queue", "queue_adu2");
+    // hCamcorder->m_queue_aud2 = gst_element_factory_make("queue", "queue_adu2");
     
 
-    hCamcorder->m_audio_enc = gst_element_factory_make("avenc_aac", "avenc_aac");
+    hCamcorder->m_audio_enc = gst_element_factory_make("voaacenc", "voaacenc");
     if (!hCamcorder->m_audio_enc)
-        fprintf(stderr, "### avenc_aac create error\n");
+        fprintf(stderr, "### voaacenc create error\n");
     g_object_set(hCamcorder->m_audio_enc, "bitrate", 8000, NULL);
 
     hCamcorder->m_audconvert = gst_element_factory_make("audioconvert", "audioconvert");
-#endif
+
     hCamcorder->m_queue_mux = gst_element_factory_make("queue", "queue_mux");
 
     hCamcorder->m_imagesink = gst_element_factory_make("ximagesink", "sink");
@@ -689,6 +685,8 @@ Description:
 // gst-launch-1.0 v4l2src ! 'video/x-raw, format=(string)I420, width=(int)640, height=(int)480' 
 //! x264enc ! avmux_mp4 ! filesink location=test.mp4 -e
 // gst-launch-1.0 v4l2src ! 'video/x-raw, format=(string)I420, width=(int)640, height=(int)480' ! tee name=t1 ! x264enc ! avmux_mp4 ! filesink location=test.mp4 t1. ! videoconvert ! ximagesink ! "async=false"
+//  gst-launch-1.0 alsasrc ! audioconvert ! audioresample ! audiorate 
+//  ! "audio/x-raw, rate=48000, channels=1" ! queue ! voaacenc ! queue ! filesink location="test.aac"
 void GST_CVR_Record(GST_CVR_Handle hHandle)
 {
     gboolean bRet;
@@ -709,11 +707,17 @@ void GST_CVR_Record(GST_CVR_Handle hHandle)
     if (hCamcorder->pipeline_is_playing == FALSE)
     {
         gst_bin_add_many(GST_BIN(hCamcorder->m_pipeline), hCamcorder->m_vsource,
-                        hCamcorder->m_tee,
+                        hCamcorder->m_asource,
+                        hCamcorder->m_audconvert, 
+                        hCamcorder->m_audio_enc,
+                        hCamcorder->m_queue_aud1,
                         //hCamcorder->video_filter_bin,                    
+                        hCamcorder->m_tee,                        
                         hCamcorder->m_vidconvert,
+                        hCamcorder->m_queue_disp,
                         hCamcorder->m_imagesink,
                         hCamcorder->m_video_enc, 
+                        hCamcorder->m_queue_save,
                         hCamcorder->m_mux, 
                         hCamcorder->m_queue_mux, 
                         hCamcorder->m_file,
@@ -729,20 +733,44 @@ void GST_CVR_Record(GST_CVR_Handle hHandle)
 
         if (gst_element_link_pads_filtered(hCamcorder->m_vsource, "src",  hCamcorder->m_tee, "sink", caps) != TRUE)
         {
-            g_printerr("source, convert Element could not be linked.\n");
+            g_printerr("m_vsource, m_tee Element could not be linked.\n");
         }
         //gst_object_unref(caps);
 
+
+        hCamcorder->m_audio_in_caps = gst_caps_new_simple("audio/x-raw",
+                                        "depth", G_TYPE_INT, 16,
+                                        "rate", G_TYPE_INT, 8000,
+                                        "channels", G_TYPE_INT, 1,
+                                        "format", G_TYPE_STRING, "S16",
+                                        NULL);
+
+        //if (gst_element_link_pads_filtered(hCamcorder->m_asource, "src",  hCamcorder->m_audconvert, "sink") != TRUE)
+        if (gst_element_link(hCamcorder->m_asource, hCamcorder->m_audconvert) != TRUE)
+        {
+            g_printerr("m_asource, m_audconvert Element could not be linked.\n");
+        }
+
          //gst_element_link(hCamcorder->m_tee, hCamcorder->video_filter_bin);
-         gst_element_link(hCamcorder->m_tee, hCamcorder->m_video_enc);
-         gst_element_link(hCamcorder->m_tee, hCamcorder->m_vidconvert);
+         gst_element_link(hCamcorder->m_tee, hCamcorder->m_video_enc);//encoding
+         gst_element_link(hCamcorder->m_tee, hCamcorder->m_vidconvert);//display
 
         
-        gst_element_link(hCamcorder->m_video_enc, hCamcorder->m_mux);
+        gst_element_link(hCamcorder->m_video_enc, hCamcorder->m_queue_save);
+        gst_element_link(hCamcorder->m_queue_save, hCamcorder->m_mux);
         gst_element_link(hCamcorder->m_mux, hCamcorder->m_queue_mux);
         gst_element_link(hCamcorder->m_queue_mux, hCamcorder->m_file);
 
-        gst_element_link(hCamcorder->m_vidconvert, hCamcorder->m_imagesink);
+        gst_element_link(hCamcorder->m_vidconvert, hCamcorder->m_queue_disp);
+        gst_element_link(hCamcorder->m_queue_disp, hCamcorder->m_imagesink);
+        
+        // audio
+        gst_element_link(hCamcorder->m_audconvert, hCamcorder->m_audio_enc);
+        gst_element_link(hCamcorder->m_audio_enc, hCamcorder->m_queue_aud1);
+        gst_element_link(hCamcorder->m_queue_aud1, hCamcorder->m_mux);
+        gst_element_link(hCamcorder->m_video_enc, hCamcorder->m_mux);
+
+
         hCamcorder->pipeline_is_playing = TRUE;
     }
     gst_element_set_state(hCamcorder->m_pipeline, GST_STATE_PLAYING);
@@ -764,6 +792,9 @@ void GST_CVR_Stop(GST_CVR_Handle hHandle)
 
     if (hCamcorder->m_vsource)
         gst_element_send_event(hCamcorder->m_vsource, gst_event_new_eos());
+
+    if (hCamcorder->m_asource)
+        gst_element_send_event(hCamcorder->m_asource, gst_event_new_eos());
 
     fprintf(stderr, "[GST_CVR]	Stop --\n");
 }
