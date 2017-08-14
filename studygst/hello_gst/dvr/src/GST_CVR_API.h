@@ -40,16 +40,23 @@ typedef struct GST_CVR_Struct
 		GstElement *catchPipeline;
     GstElement *binRec1;
     GstElement *binRec2;
+    GstElement *queue_1;
+    GstElement *queue_2;
     GstElement *identity1;
     GstElement *identity2;
     GstElement *file_sink1;
     GstElement *file_sink2;
     GstElement *ph264_1;
     GstElement *ph264_2;
+    GstElement *mp4mux1;
+    GstElement *mp4mux2;
     GstElement *fakesrc;
     GstElement *fakesink;
+    GstElement *queue_catch;
+    GstElement *mainFakesink;
 
 		char        byteHeader[57];
+    guint       filecount;
 }
 GST_CVR_Struct;
 
