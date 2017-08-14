@@ -36,6 +36,20 @@ typedef struct GST_CVR_Struct
     gboolean    pipeline_is_playing;
     gboolean    effect_pipeline_is_playing;
     char        m_filename[256];
+		///
+		GstElement *catchPipeline;
+    GstElement *binRec1;
+    GstElement *binRec2;
+    GstElement *identity1;
+    GstElement *identity2;
+    GstElement *file_sink1;
+    GstElement *file_sink2;
+    GstElement *ph264_1;
+    GstElement *ph264_2;
+    GstElement *fakesrc;
+    GstElement *fakesink;
+
+		char        byteHeader[57];
 }
 GST_CVR_Struct;
 

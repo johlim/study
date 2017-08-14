@@ -139,6 +139,37 @@ void GST_CVR_Main(gpointer data)
     }
 }
 
+static GstPadProbeReturn 
+checkForKeyFrames(GstPad * pad, GstPadProbeInfo *info, gpointer user_data)
+{
+    GstBuffer * buffer;
+
+
+    buffer = GST_PAD_PROBE_INFO_BUFFER(info);
+    buffer = gst_buffer_make_writable(buffer);
+
+    if (buffer == NULL)
+        return GST_PAD_PROBE_OK;
+
+    if  (!GST_BUFFER_FLAG_IS_SET(buffer, GST_BUFFER_FLAG_DELTA_UNIT))
+    {
+        char * dummyheader[57];
+        GstMapInfo map;
+        GstMemory * mem = gst_allocator_alloc(NULL, 56, NULL);
+
+        if ( gst_memory_map(mem, &map, GST_MAP_WRITE))
+        {
+            memcpy((gchar*)map.data, dummyheader, 56);
+            gst_memory_unmap(mem,&map);
+            gst_buffer_prepend_memory(buffer, mem);
+            fprintf(stderr,"%s %d\n", __func__, __LINE__);
+        }
+
+        GST_PAD_PROBE_INFO_DATA(info) = buffer;
+
+    } 
+    return GST_PAD_PROBE_OK;
+}
 /*
 =================================================================================================================
 Function Name: GST_CVR_BusCallBack
@@ -441,7 +472,12 @@ void GST_CVR_SetMP4Param(GST_CVR_Handle hHandle)
     // hCamcorder->m_queue_aud2 = gst_element_factory_make("queue", "queue_adu2");
 
     hCamcorder->m_queue_mux = gst_element_factory_make("queue", "queue_mux");
-
+    {
+        GstPad * pad = gst_element_get_static_pad(hCamcorder->m_queue_save, "src");
+        gst_pad_add_probe(pad, GST_PAD_PROBE_TYPE_BUFFER, (GstPadProbeCallback) checkForKeyFrames, NULL, NULL);
+        gst_object_unref(pad);
+    }
+		
     hCamcorder->m_imagesink = gst_element_factory_make("ximagesink", "sink");
     ///////////////////////////////////////////////////////////////////////////
     //hCamcorder->m_imagesink = gst_element_factory_make("vaapisink", "sink");
@@ -460,9 +496,9 @@ void GST_CVR_SetMP4Param(GST_CVR_Handle hHandle)
 
     hCamcorder->m_audconvert = gst_element_factory_make("audioconvert", "audioconvert");
 
-    hCamcorder->m_mux = gst_element_factory_make("mp4mux", "mp4mux");
+    hCamcorder->m_mux = gst_element_factory_make("avimux", "avimux");
     if (!hCamcorder->m_mux)
-        fprintf(stderr, "### mp4mux create error\n");
+        fprintf(stderr, "### avimux create error\n");
 
     hCamcorder->m_file = gst_element_factory_make("filesink", "filesink");
     if (!hCamcorder->m_file)
