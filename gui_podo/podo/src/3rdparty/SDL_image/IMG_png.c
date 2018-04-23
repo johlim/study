@@ -28,7 +28,7 @@
 #include <stdio.h>
 
 #include "SDL_image.h"
-#define LOAD_PNG
+
 #ifdef LOAD_PNG
 
 /*=============================================================================
