@@ -7,5 +7,5 @@ set(CMAKE_CXX_FLAGS "-g -Wall -O2 -fno-omit-frame-pointer")
 
 add_subdirectory(src)
 add_subdirectory(demo)
-add_subdirectory(examples)
+#add_subdirectory(examples)
 
