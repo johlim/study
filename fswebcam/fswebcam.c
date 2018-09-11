@@ -697,7 +697,8 @@ int fswc_grab(fswebcam_config_t *config)
 	}
 	
 	HEAD("--- Processing captured image...");
-	
+#define PROCESS // jhlim test
+#if defined(PROCESS)
 	/* Copy the average bitmap image to a gdImage. */
 	original = gdImageCreateTrueColor(config->width, config->height);
 	if(!original)
@@ -955,7 +956,7 @@ int fswc_grab(fswebcam_config_t *config)
 	gdImageDestroy(original);
 	
 	if(modified) WARN("There are unsaved changes to the image.");
-	
+#endif // #if defined(PROCESS)
 	return(0);
 }
 
