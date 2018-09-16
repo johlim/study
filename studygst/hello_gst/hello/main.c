@@ -81,21 +81,22 @@ main (int   argc,
 
   check_ver(argc, argv);
   /* create element */
+
   source_element = gst_element_factory_make ("audiotestsrc", "source");
   if (!source_element) {
-    g_print ("Failed to create element of type 'fakesrc'\n");
+    g_print ("Failed to create element of type 'audiotestsrc'\n");
     return -1;
   }
 
   fileter_element = gst_element_factory_make ("audioresample", "filter");
   if (!fileter_element) {
-    g_print ("Failed to create element of type 'fakesrc'\n");
+    g_print ("Failed to create element of type 'audioresample'\n");
     return -1;
   }
 
-  pad_element = gst_element_factory_make ("pulsesink", "sink");
+  pad_element = gst_element_factory_make ("autoaudiosink", "sink");
   if (!pad_element) {
-    g_print ("Failed to create element of type 'fakesrc'\n");
+    g_print ("Failed to create element of type 'autoaudiosink'\n");
     return -1;
   }
 
@@ -106,7 +107,6 @@ main (int   argc,
   if (!gst_element_link_many (source_element, fileter_element, pad_element, NULL)) {
     g_warning ("Failed to link elements!");
   }
-  //audiotestsrc !  audioresample ! pulsesink
 
   gst_element_set_state (GST_ELEMENT (pipeline), GST_STATE_PLAYING);
 
