@@ -1,0 +1,16 @@
+rework 용 F/W 업데이트 방법 
+
+1) SD카드에 FACTORY 폴더를 만들고 업데이트파일 5개를 복사한다.
+\FACTORY\MD7150P_fw_2nd_boot.bin
+\FACTORY\MD7150P_fw_eboot.bin
+\FACTORY\MD7150P_fw_etc.bin
+\FACTORY\MD7150P_fw_main.bin
+\FACTORY\MD7150P_fw_minfo.bin
+
+2) touch calibraion 초기화 파일 1개를 복사한다.
+
+\FACTORY\reset.ini
+
+3) 전원인가
+
+2번 기능은 FW 1.4(가칭)에서 지원됨.
