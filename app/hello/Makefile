@@ -5,12 +5,13 @@ CC=$(CROSS_COMPILE)gcc
 LIB = -lpthread
 #DEBUGOPTS = -fprofile-arcs -ftest-coverage -pg
 
-all : $(TARGET)
+all : clean $(TARGET)
 
 $(TARGET):
 	$(CC)	-o $(TARGET) $(SOURCE) -g $(DEBUGOPTS) $(LIB)
 
 clean :
-	rm $(TARGET)
-	rm *.gcno
+	rm -f $(TARGET)
+	rm -f *.o
+	rm -f *.gcno
 
