@@ -8,12 +8,31 @@ import time
 import requests 
 import logging
 
+from datetime import datetime
+
+now = datetime.now() # current date and time
+
+year = now.strftime("%Y")
+print("year:", year)
+
+month = now.strftime("%m")
+print("month:", month)
+
+day = now.strftime("%d")
+print("day:", day)
+
+date_time = now.strftime("%Y%m%d%H%M%S")
+logfilename = "munic_"+date_time+".log"
+
+print (logfilename)
+
 #logging.basicConfig(filename='./munic.log',level=logging.INFO)
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
+
 formatter = logging.Formatter('%(asctime)s \n %(message)s')
-file_handler = logging.FileHandler('./munic.log')
+file_handler = logging.FileHandler(logfilename)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
