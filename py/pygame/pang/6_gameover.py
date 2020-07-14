@@ -74,7 +74,15 @@ balls.append({
     "to_y": -6, # Y direction
     "init_speed_y":ball_speed_y[0] #ball_speed_y
 })
+
+# Font 
+total_time = 100
+game_font = pygame.font.Font(None,40)
+start_ticks = pygame.time.get_ticks()
+game_result="Game Over"
+#
 running=True
+
 
 while running:
     dt = clock.tick(30)
@@ -199,7 +207,12 @@ while running:
     if weapon_to_remove > -1:
         del weapons[weapon_to_remove]
         weapon_to_remove = -1
-
+    # Game Over
+    if len(balls) == 0:
+        game_result = "Mission complete"
+        running = False
+        
+    
     # 5 display
     screen.blit(background,(0,0))
 
@@ -214,9 +227,24 @@ while running:
     screen.blit(stage,(0,screen_height-stage_height))
     screen.blit(character,(character_x_pos,character_y_pos))
 
-
+    # calculate elapse time
+    elapsed_time = (pygame.time.get_ticks() - start_ticks) / 1000
+    timer = game_font.render("Time : {}".format(int(total_time - elapsed_time)),1,(255, 0, 225))
+    screen.blit(timer,(10,10))
+    
+    if total_time - elapsed_time <= 0:
+        game_result = "Time Over"
+        running = False
+    
+    
     pygame.display.update()
 
+# game over message
+msg = game_font.render(game_result,1,(255,255,0))
+msg_rect = msg.get_rect(center=(int(screen_width/2),int(screen_height/2)))
+screen.blit(msg,msg_rect)
+    
 
+pygmae.time.delay(2000)
 
 pygame.quit()
