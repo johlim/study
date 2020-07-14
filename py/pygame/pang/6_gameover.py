@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jul 15 01:02:58 2020
+
+@author: jhlim
+"""
+
 import pygame
 import random
 import os
@@ -13,9 +20,9 @@ pygame.display.set_caption("Quiz")
 clock = pygame.time.Clock()
 current_path = os.path.dirname(__file__)
 
-## 배경만들기
+## background
 background = pygame.image.load("background.png")
-## stage 만들기
+## stage
 stage = pygame.image.load("stage.png")
 stage_size = stage.get_rect().size
 stage_width = stage_size[0]
@@ -32,7 +39,8 @@ character_y_pos = screen_height - character_height - stage_height
 to_x = 0
 to_y = 0
 character_speed = 10
-
+player_to_x_LEFT=0
+player_to_x_RIGHT=0
 
 ## enemy
 enemy = pygame.image.load("enemy.png")
@@ -94,19 +102,22 @@ while running:
     
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                to_x -= character_speed
+                player_to_x_LEFT -= character_speed 
             elif event.key == pygame.K_RIGHT:
-                to_x += character_speed
+                player_to_x_RIGHT += character_speed
             elif event.key == pygame.K_SPACE:
                 weapon_x_pos = character_x_pos+(character_width/2)-(weapon_width/2)
                 weapon_y_pos = character_y_pos
                 weapons.append([weapon_x_pos,weapon_y_pos])
 
         if event.type == pygame.KEYUP:
-            if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
-                to_x = 0
+            if event.key == pygame.K_LEFT:
+                player_to_x_LEFT = 0
+            elif event.key == pygame.K_RIGHT:
+                player_to_x_RIGHT = 0
     
-    character_x_pos += to_x
+    #character_x_pos += to_x
+    character_x_pos += player_to_x_LEFT + player_to_x_RIGHT
 
     if character_x_pos < 0:
         character_x_pos = 0
@@ -198,8 +209,10 @@ while running:
                         "to_y": -6, # Y direction
                         "init_speed_y":ball_speed_y[ball_img_idx+1] #ball_speed_y
                     })
-                    
                 break
+        else: ## for else
+            continue
+        break
     # remove ball and weapon to remove
     if ball_to_remove > -1:
         del balls[ball_to_remove]
@@ -245,6 +258,6 @@ msg_rect = msg.get_rect(center=(int(screen_width/2),int(screen_height/2)))
 screen.blit(msg,msg_rect)
     
 
-pygmae.time.delay(2000)
+pygame.time.delay(2000)
 
 pygame.quit()
