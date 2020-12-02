@@ -22,8 +22,11 @@ static int str_match_string( char* key, char* target )
 
 	return iret;
 }
+
+int print_tablesize(void);
 int main(int argc, char * argv)
 {
+	print_tablesize();
 	printf("hello world %d \n", str_match_string("20200611","/mnt/config/20200611_product.cfg"));
 	return 0;
 }
