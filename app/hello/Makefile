@@ -1,6 +1,6 @@
 TARGET = hello_world
 
-SOURCE = hello_main.c hello_table.c
+SOURCE = hello_main.c hello_table.c hello_time.c
 CC=$(CROSS_COMPILE)gcc
 LIB = -lpthread
 #DEBUGOPTS = -fprofile-arcs -ftest-coverage -pg
