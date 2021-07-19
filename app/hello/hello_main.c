@@ -30,8 +30,8 @@ int print_tablesize(void);
 void request_set_rtc(void);
 int main(int argc, char * argv)
 {
-	print_tablesize();
-	printf("hello world %d \n", str_match_string("20200611","/mnt/config/20200611_product.cfg"));
+//print_tablesize();
+//printf("hello world %d \n", str_match_string("20200611","/mnt/config/20200611_product.cfg"));
 	request_set_rtc();
 	return 0;
 }

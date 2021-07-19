@@ -6,7 +6,9 @@
 #define DLOG printf
 void request_set_rtc(void)
 {
-	const char *value = "1625627755160";
+//	//const char *value = "1625627755160";
+	//const char *value = "1626425073275";
+        const char *value = "1626426413605";
 
 	time_t epoch; 
 	struct tm *tm;
@@ -23,12 +25,14 @@ void request_set_rtc(void)
 		char str_epoch_ms[64]={0};
 		strncpy(str_epoch_ms, value, strlen(value));
 		printf(" %s %lu \n", str_epoch_ms, strlen(value));
-//epoch = strtol(value, &ptr, 10) / 1000;
+		epoch = strtoll(str_epoch_ms, &ptr, 10) / 1000;
+	DLOG("value = %s", value);
+	DLOG("epoch = %lld\n", epoch);
 		epoch = strtol(str_epoch_ms, &ptr, 10) / 1000;
+	DLOG("value = %s", value);
+	DLOG("epoch = %lld\n", epoch);
 	}
 
-	DLOG("value = %s", value);
-	DLOG("epoch = %ld", epoch);
 
 	tm = gmtime(&epoch);
 
@@ -39,6 +43,6 @@ void request_set_rtc(void)
 	min = tm->tm_min;
 	sec = tm->tm_sec;
 
-	DLOG("%s() year=%d, month=%d, day=%d, hour=%d, min=%d, sec=%d", __func__
+	DLOG("\n %s() year=%d, month=%d, day=%d, hour=%d, min=%d, sec=%d", __func__
 			, year, month, mday, hour, min, sec);
 }
