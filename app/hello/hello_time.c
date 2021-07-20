@@ -7,9 +7,10 @@
 void request_set_rtc(void)
 {
 //	//const char *value = "1625627755160";
-	//const char *value = "1626425073275";
-        const char *value = "1626426413605";
-
+//	const char *value = "1626425073275";
+        //const char *value = "1626426413605";
+	const char *value = "1626678230449";
+	//const char *value = "1626678220921";
 	time_t epoch; 
 	struct tm *tm;
 
@@ -23,14 +24,24 @@ void request_set_rtc(void)
 	{
 		char *ptr = NULL;
 		char str_epoch_ms[64]={0};
+		long long int epoch_ms;
+		time_t _epoch_sec;
+
 		strncpy(str_epoch_ms, value, strlen(value));
 		printf(" %s %lu \n", str_epoch_ms, strlen(value));
-		epoch = strtoll(str_epoch_ms, &ptr, 10) / 1000;
-	DLOG("value = %s", value);
-	DLOG("epoch = %lld\n", epoch);
-		epoch = strtol(str_epoch_ms, &ptr, 10) / 1000;
-	DLOG("value = %s", value);
-	DLOG("epoch = %lld\n", epoch);
+		_epoch_sec = epoch_ms = strtoll(str_epoch_ms, &ptr, 10);
+		if (epoch_ms > 1000000000000LL)
+		{
+		   DLOG("1. epoch_ms = %lld is over \n", epoch_ms);
+		   epoch_ms = (epoch_ms / 1000LL); 
+		   DLOG("2. _epoch_sec = %ld \n", _epoch_sec);
+		   _epoch_sec = (long)epoch_ms;
+		   DLOG("3. _epoch_sec = %ld \n", _epoch_sec);
+		}
+		epoch = _epoch_sec;
+	DLOG("value = %s\n", value);
+	DLOG("epoch_ms = %lld\n", epoch_ms);
+	DLOG("epoch = %ld\n", epoch);
 	}
 
 
@@ -45,4 +56,6 @@ void request_set_rtc(void)
 
 	DLOG("\n %s() year=%d, month=%d, day=%d, hour=%d, min=%d, sec=%d", __func__
 			, year, month, mday, hour, min, sec);
+
+	DLOG("\n %ld \n", time(NULL));
 }
