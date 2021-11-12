@@ -1,0 +1,15 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "run Make",
+            "command": "make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "run make for Makefile."
+        }
+    ],
+    "version": "2.0.0"
+}
