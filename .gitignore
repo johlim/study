@@ -37,3 +37,5 @@ studygst/myedgefilter/autom4te.cache/
 *.layout
 output.*
 traces.*
+#editor
+.vscode
