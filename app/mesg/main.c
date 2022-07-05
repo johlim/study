@@ -3,6 +3,11 @@
 #include <string.h>
 #include <pthread.h>
 
+#define DBG(fmt,args...)	\
+	{	\
+	fprintf(stderr, "[%s] %d " fmt,  __FUNCTION__, __LINE__, ##args); \
+	}
+
 typedef struct
 {
 		int32_t buf_id;	
@@ -27,11 +32,11 @@ void * rear_process( void * inptr)
 		
 		if ( ReciveMsg(MSG_TYPE_PD, &recv_msg) > 0 )
 		{
-			printf("MSG_TYPE_PD recv_msg->buf_id %d \n",recv_msg.buf_id);			
+			DBG("MSG_TYPE_PD recv_msg->buf_id %d \n",recv_msg.buf_id);			
 		}
 		else
 		{
-			printf("empty\n");
+			DBG("empty\n");
 		}
 		
 		// processs
@@ -40,10 +45,10 @@ void * rear_process( void * inptr)
 #if 1/// HOLD TEST
 		memcpy(&send_msg, &recv_msg, sizeof(MSG_BUFFER_INFO));
 		send_msg.buf_id+=100;
-		printf("SendToMain\n");
+		DBG("SendToMain\n");
 		if ( SendToAdasMain(&send_msg) < 0)
 		{
-			printf("message queue full\n");
+			DBG("message queue full\n");
 		}
 #endif
 		
@@ -63,9 +68,9 @@ int main(int argc, char ** argv[], char ** envp[])
 		ret = pthread_create(&s_tid_rearprocess, NULL, rear_process,
 				(void*) &i);
 		if (ret != 0) {
-			perror("rear process create error");
+			DBG("rear process create error");
 		} else {
-			printf("create ok\n");
+			DBG("create ok\n");
 		}
 	}	
 	
@@ -77,21 +82,21 @@ int main(int argc, char ** argv[], char ** envp[])
 
 
 		send_msg.buf_id = i++;		
-		printf("SendToPD\n");
+		DBG("SendToPD\n");
 		if ( SendToPD(&send_msg) <0 )
 		{
-			printf("message queue full\n");
+			DBG("message queue full\n");
 		}
 		// process		
 		if ( ReciveMsg(MSG_TYPE_MAIN, &recv_msg) > 0 )
 		{
-			printf("MSG_TYPE_MAIN recv_msg->buf_id %d \n",recv_msg.buf_id);			
+			DBG("MSG_TYPE_MAIN recv_msg->buf_id %d \n",recv_msg.buf_id);			
 		}
 		else
 		{
-			printf("empty\n");
+			DBG("empty\n");
 		}
-		
+		sleep(1);
 	}
 	DestoryPDMsg(0);
 }
