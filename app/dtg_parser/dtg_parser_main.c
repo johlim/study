@@ -231,7 +231,7 @@ int dump_convert_record(AIM_MDTG_HEADER_s* header, int offset, AIM_MDTG_RECORD_s
     printf("dump_record < err=%d\n", err);
 #endif
 
-    printf("%d,%d,%s,%s,%s,%d,%s,%s,%s,%d,%d,[%d/%d/%d_%d:%d:%d],%d,%d,%d,%d,%d,%d,%.1f,%.1f,%.1f\n",
+    printf("%d,%d,%s,%s,%s,%d,%s,%s,%s,%d,%d,[%d/%02d/%02d_%02d:%02d:%02d],%04d,%04d,%d,%d,%d,%d,%06.1f,%06.1f,%06.1f\n",
             offset,
             obj->id,
             header->slack[obj->approval_idx],
