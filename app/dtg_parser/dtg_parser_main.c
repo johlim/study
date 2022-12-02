@@ -3,16 +3,16 @@
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
-
+#include <stdint.h> 
 #define TRUE 		1
 #define FALSE		0
 
 #define U08			unsigned char
 #define UINT8		unsigned char
-#define UINT32		unsigned int
-#define UINT64		unsigned int
-#define INT32		int
-#define UINT16		unsigned short
+#define UINT32		uint32_t
+#define UINT64		uint64_t
+#define INT32		int32_t
+#define UINT16		uint16_t
 #define DOUBLE      double
 #define FLOAT       float
 #define aim_strlen 	strlen
@@ -93,7 +93,8 @@ typedef struct AIM_MDTG_RECORD_s_ {
     UINT16                  rpm_tick;								// 1초단위 평균 RPM
 
     UINT8                   brake_pressure;							// 브레이크 여부
-    UINT8                   reserved_2[3];
+     UINT8                   dtc;
+    UINT8                   reserved_2[2];
 
     UINT32                  latitude;								// 위도
     UINT32                  longtitude;								// 경도
@@ -202,7 +203,7 @@ int dump_record(AIM_MDTG_RECORD_s* obj)
 int dump_guide(void)
 {
     int err = SVC_OK;
-    printf("offset,tripid,approval,serial,vehicle_id,vehicle_type,vehicle_plate,provider_code,driver_code,odometerday,odometer,YYMMDD_HHMMSS,vss_tick,rpm_tick,brake_pressure,latitude,longtitude,true_course,accelx,accely,accelz\n");
+    printf("offset,tripid,approval,serial,vehicle_id,vehicle_type,vehicle_plate,provider_code,driver_code,odometerday,odometer,YYMMDD_HHMMSS,vss_tick,rpm_tick,brake_pressure,latitude,longtitude,true_course,accelx,accely,accelzz,dtc\n");
     return err;
 }
 
@@ -231,7 +232,7 @@ int dump_convert_record(AIM_MDTG_HEADER_s* header, int offset, AIM_MDTG_RECORD_s
     printf("dump_record < err=%d\n", err);
 #endif
 
-    printf("%d,%d,%s,%s,%s,%d,%s,%s,%s,%d,%d,[%d/%02d/%02d_%02d:%02d:%02d],%04d,%04d,%d,%d,%d,%d,%06.1f,%06.1f,%06.1f\n",
+    printf("%d,%d,%s,%s,%s,%d,%s,%s,%s,%d,%d,[%d/%02d/%02d_%02d:%02d:%02d],%04d,%04d,%d,%d,%d,%d,%06.1f,%06.1f,%06.1f,%d\n",
             offset,
             obj->id,
             header->slack[obj->approval_idx],
@@ -252,7 +253,8 @@ int dump_convert_record(AIM_MDTG_HEADER_s* header, int offset, AIM_MDTG_RECORD_s
             obj->true_course,
             obj->accelx,
             obj->accely, 
-            obj->accelz);
+            obj->accelz,
+            obj->dtc);
 
     return err;
 }
@@ -267,11 +269,14 @@ int main(int argc, char* argv[])
     int err = 0, i=0;
     AIM_MDTG_HEADER_s header;
     AIM_MDTG_RECORD_s record;
-    int pos = 0;
+    long pos = 0;
+
+//	argc = 2;
+//	argv[1]=(char *)"trip.tmp";
 
     if(argc == 2){
         char* fullpath = argv[1];
-        FILE* file_ptr = fopen(fullpath, "r");
+        FILE* file_ptr = fopen(fullpath, "rb");
         err = (file_ptr!=NULL) ? SVC_OK : SVC_NG;
 
         if(err == SVC_OK){
