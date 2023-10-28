@@ -1,0 +1,3 @@
+/media/jhlim/sdb1_ghost/study/use_turbojpeg/cmake-build-debug/CMakeFiles/doturbojpeg.dir
+/media/jhlim/sdb1_ghost/study/use_turbojpeg/cmake-build-debug/CMakeFiles/edit_cache.dir
+/media/jhlim/sdb1_ghost/study/use_turbojpeg/cmake-build-debug/CMakeFiles/rebuild_cache.dir

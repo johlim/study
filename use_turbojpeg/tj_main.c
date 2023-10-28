@@ -1,6 +1,7 @@
 #include <stdio.h>
 //#include <jpeglib.h>
 #include <turbojpeg.h>
+#include <stdlib.h>
 unsigned char * image_buffer;
 int image_height;
 int image_width;
@@ -19,12 +20,14 @@ int main(int argc, char * argv[])
 	FILE * fp;
   	FILE * outfile;               /* target file */
 	//fp = fopen("00_menu_bg.bmp","r");	
-	fp = fopen("/mnt/nfs/fcw/ldws_stream.yuv","r");
+	fp = fopen("/media/jhlim/sdb1_ghost/study/use_turbojpeg/output640480.yuv","r");
+    if (fp != NULL)
+    {
+
 	size = fread(yuv_buffer,1,image_width*image_height*3/2, fp);
 	printf("in size : %d \n", size);
 	fclose(fp);
 
-	{
 
 		const int JPEG_QUALITY = 75;
 		const int COLOR_COMPONENTS = 3;
@@ -56,7 +59,7 @@ int main(int argc, char * argv[])
 	outfile = fopen("./test.jpg","w");
 	fwrite(image_buffer, 1, _jpegSize, outfile);
 	fclose(outfile);
-	printf("out size : %d \n", _jpegSize);
+	printf("out size : %ld \n", _jpegSize);
 	}
 
 
