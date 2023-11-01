@@ -5,12 +5,13 @@ CC=$(CROSSNAME)gcc
 CC=gcc
 LIB = -lpthread
 DEBUGOPTS = #-fprofile-arcs -ftest-coverage -pg
+DEBUGOPTS = -O2
 
-all : $(TARGET) $(SOURCE)
+all : clean $(TARGET) $(SOURCE)
 
 $(TARGET):
 	$(CC)	-o $(TARGET) $(SOURCE) -g $(DEBUGOPTS) $(LIB)
 
 clean :
-	rm $(TARGET)
+	rm -f $(TARGET)
 
