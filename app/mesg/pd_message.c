@@ -6,7 +6,10 @@
 
 #include <stdio.h>
 
-#define DBG(...)	do{}while(0)
+#define DBG(fmt,args...)	\
+	{	\
+	fprintf(stderr, "[%s] %d " fmt,  __FUNCTION__, __LINE__, ##args); \
+	}
 #define BUFSIZE 16
 #define QKEY (key_t)0x0111
 typedef struct _msgq_data {
@@ -69,8 +72,11 @@ int ReciveMsg(int msgType, MSG_BUFFER_INFO * output)
 	else
 	{
 		memcpy(output, &(recv_data.contents), sizeof(MSG_BUFFER_INFO));
+		DBG("(%d) (%d) (%d) \n", recv_data.msg_type , recv_data.msg_id, recv_data.size);	
+		DBG("-- %s len(%d)\n",__func__, len );	
 	}
-	DBG("-- %s\n",__func__);	
+
+	
 	return 1;
 }
 
@@ -89,6 +95,7 @@ int SendToPD(MSG_BUFFER_INFO *msg)
 
 	DBG("%d\n",msg->buf_id);
 	DBG("send qid %x\n", qid);	
+	DBG("send size %x\n", snd_msg.size);	
 	memcpy(&snd_msg.contents, msg, snd_msg.size);	
 	ret = msgsnd(qid , (void *)&snd_msg, sizeof(BUF_MESSAGE), IPC_NOWAIT);
 	DBG("-- %s\n",__func__);
