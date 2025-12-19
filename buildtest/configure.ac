@@ -3,6 +3,7 @@ AC_PREREQ([2.69])
 AC_INIT(like , 0.0.1, johlim@daum.net,like.tar.gz)
 AC_CONFIG_SRCDIR([src/like.c])
 AC_CONFIG_HEADERS([config.h])
+AM_INIT_AUTOMAKE([foreign -Wall -Werror])
 
 # Checks for programs.
 AC_PROG_CC
